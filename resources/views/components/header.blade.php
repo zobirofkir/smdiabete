@@ -11,7 +11,7 @@
             </svg>
         </button>
 
-        <nav id="menu" role="navigation" class="fixed top-0 right-0 h-full w-64 bg-gray-50 shadow-lg transform translate-x-full transition-transform duration-300 lg:static lg:translate-x-0 lg:shadow-none lg:bg-transparent lg:flex lg:flex-row lg:items-center lg:space-x-6 lg:h-auto lg:w-auto">
+        <nav id="menu" role="navigation" class="fixed top-0 right-0 h-full w-64 bg-gray-50 shadow-lg transform translate-x-full transition-transform duration-300 lg:static lg:translate-x-0 lg:shadow-none lg:bg-transparent lg:flex lg:flex-row lg:items-center lg:space-x-6 lg:h-auto lg:w-auto z-[999]">
 
         <button id="close-menu" class="absolute top-4 right-4 text-gray-500 lg:hidden" aria-label="Close Menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
