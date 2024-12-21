@@ -49,7 +49,7 @@
                 </div>
             </div>
 
-            <div class="flex justify-center">
+            <div class="flex justify-center max-w-xl">
                 <img
                     src="{{asset('assets/images/affiche/affiche.jpeg')}}"
                     alt="Actualities Image"
