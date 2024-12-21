@@ -17,5 +17,6 @@
     @include('components.footer')
 
     <script src="{{asset('assets/js/sidebare.js')}}"></script>
+    <script src="{{asset('assets/js/counter.js')}}"></script>
 </body>
 </html>
