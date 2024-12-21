@@ -8,8 +8,8 @@
         </div>
         <div class="p-4">
           <h3 class="text-2xl font-semibold">1er Congrès National de Diabétologie</h3>
-          <p class="text-gray-900 text-xl">1er Congrès National de Diabétologie</p>
-          <p class="text-gray-700 mt-2 text-md">Du 16 au 19 Mai 2024</p>
+          <p class="text-gray-900 md:text-xl text-md">1er Congrès National de Diabétologie</p>
+          <p class="text-gray-700 mt-2 md:text-md text-sm">Du 16 au 19 Mai 2024</p>
           <div class="flex space-x-4 mt-3">
             <!-- WhatsApp Icon -->
             <a href="#" class="text-green-500 hover:text-green-700">
@@ -33,9 +33,9 @@
           <img src="https://smdiabete.org/assets/img/last-events/last-event-2.jpeg" alt="Event Image" class="w-full h-full object-cover">
         </div>
         <div class="p-4">
-          <h3 class="text-2xl font-semibold">La Journée Mondiale du Diabète</h3>
-          <p class="text-gray-900 text-xl">La Journée Mondiale du Diabète</p>
-          <p class="text-gray-700 mt-2 text-md">16 Novembre 2024</p>
+          <h3 class="md:text-2xl text-xl font-semibold">La Journée Mondiale du Diabète</h3>
+          <p class="text-gray-900 md:text-xl text-md">La Journée Mondiale du Diabète</p>
+          <p class="text-gray-700 mt-2 md:text-md text-sm">16 Novembre 2024</p>
           <div class="flex space-x-4 mt-3">
             <!-- WhatsApp Icon -->
             <a href="#" class="text-green-500 hover:text-green-700">
