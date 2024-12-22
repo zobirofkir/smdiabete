@@ -35,4 +35,12 @@
         </h1>
     </div>
     @include('components.sponsors.sponsors')
+
+    <div class="text-center mt-10">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-blue-900 mb-4 transition-all duration-300 transform hover:text-blue-600 hover:scale-105">
+            Membres du Bureau
+        </h1>
+    </div>
+    @include('components.membres.membres')
+
 </x-app-layout>
