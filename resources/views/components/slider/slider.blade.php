@@ -8,20 +8,26 @@
         <!-- sky opacity layer -->
         <div class="absolute inset-0 bg-sky-500 bg-opacity-70"></div>
 
-        <div class="relative z-10 flex items-center justify-center h-full text-center">
-            <div class="text-white space-y-6 px-6">
-                <h1 class="text-4xl md:text-6xl font-bold">
+        <div class="relative z-10 flex items-center justify-between px-6 h-full container mx-auto">
+            <!-- Left side text content -->
+            <div class="text-white space-y-6 w-full md:w-2/3">
+                <h1 class="text-4xl md:text-6xl font-bold text-center">
                     Société Marocaine de Diabétologie
                 </h1>
-                <p class="text-xl md:text-2xl font-medium">
+                <p class="text-xl md:text-2xl font-medium text-center">
                     Moroccan Diabetology Society
                 </p>
-                <p class="text-lg md:text-xl">
+                <p class="text-lg md:text-xl text-center">
                     الجمعية المغربية لأمراض السكري
                 </p>
-                <p class="text-lg md:text-xl">
+                <p class="text-lg md:text-xl text-center">
                     ⵜⴰⵎⵙⵎⵓⵏⵜ ⵜⴰⵎⵔⵔⵓⴽⵉⵜ ⵏ ⵡⴰⵟⵟⴰⵏ ⵏ ⵙⵙⴽⴻⵕ
                 </p>
+            </div>
+
+            <!-- Right side logo -->
+            <div class="w-1/ flex justify-center md:justify-end md:block hidden">
+                <img src="{{asset('assets/images/logo.png')}}" alt="Logo" class="max-w-full h-auto">
             </div>
         </div>
     </div>
