@@ -1,8 +1,8 @@
-<div class=" px-8 md:px-16 mb-12">
-    <h2 class="text-2xl font-bold mb-6">Section Title</h2>
+<div class=" px-8 md:px-16 my-12 text-center">
+    <h2 class="text-2xl font-bold mb-6 ">Section Title</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div>
-            <h3 class="text-xl font-semibold mb-2">Présidente</h3>
+            <h3 class="text-xl font-semibold mb-2 text-center">Présidente</h3>
             <p>Pr. Halima BENJELLOUN</p>
         </div>
         <div>
