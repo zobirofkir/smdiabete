@@ -25,6 +25,7 @@
 
 <header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300 ease-in-out" id="main-header">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+
         <a href="{{url('/')}}" class="flex items-center">
             <img src="{{asset('assets/images/logo.png')}}" alt="Logo" class="h-12">
         </a>
@@ -43,6 +44,11 @@
             </button>
 
             <ul class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 mt-12 lg:mt-0 px-6 lg:px-0">
+
+                <a href="{{url('/')}}" class="flex items-center justify-center md:hidden block mb-[50px]">
+                    <img src="{{asset('assets/images/logo.png')}}" alt="Logo" class="h-20 text">
+                </a>
+
                 <li><a href="{{url('/')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Accueil</a></li>
                 <li><a href="{{url('/actualities')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Actualité</a></li>
                 <li><a href="{{url('/abouts')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">À propos</a></li>
