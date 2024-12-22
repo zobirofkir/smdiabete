@@ -42,6 +42,7 @@
                 <li><a href="/actualities" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Actualité</a></li>
                 <li><a href="/abouts" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">À propos</a></li>
                 <li><a href="/events" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Événements</a></li>
+                <li><a href="/galleries" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Galerie</a></li>
                 <li><a href="/login" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Identification</a></li>
                 <li><a href="/contacts" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Contact</a></li>
             </ul>
