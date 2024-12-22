@@ -25,7 +25,7 @@
 
 <header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300 ease-in-out" id="main-header">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="/" class="flex items-center">
+        <a href="{{url('/')}}" class="flex items-center">
             <img src="{{asset('assets/images/logo.png')}}" alt="Logo" class="h-12">
         </a>
 
