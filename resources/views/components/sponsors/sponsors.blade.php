@@ -6,7 +6,7 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        @foreach (range(1, 24) as $item)
+        @foreach (range(1, 23) as $item)
             <div class="bg-white rounded-lg shadow-md p-4 text-center">
                 <div class="flex justify-center items-center h-32 w-full overflow-hidden bg-white rounded-lg">
                     <img

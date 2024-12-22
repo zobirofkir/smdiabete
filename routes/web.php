@@ -15,3 +15,5 @@ Route::get('/login', function () { return view('pages.login.login'); });
 Route::get('/contacts', function () { return view('pages.contacts.contacts'); });
 
 Route::get('/galleries', function () { return view('pages.galleries.galleries'); });
+
+Route::get('/inscriptions', function () { return view('pages.inscriptions.inscriptions'); });

@@ -3,42 +3,30 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div>
             <h3 class="text-xl font-semibold mb-2 text-center">Présidente</h3>
-            <p>Pr. Halima BENJELLOUN</p>
+            <p>Dr Sonia ABAHOU </p>
         </div>
         <div>
-            <h3 class="text-xl font-semibold mb-2">Assesseurs</h3>
-            <ul class="list-disc pl-4">
-                <li>Dr. Laila BOUCHAARA</li>
-                <li>Dr. Asmae TAMDY</li>
-            </ul>
+            <h3 class="text-xl font-semibold mb-2">Secrétaire Générale</h3>
+            <p>Dr Zineb AL HOUARI</p>
         </div>
         <div>
-            <h3 class="text-xl font-semibold mb-2">1ère Vice-Présidente</h3>
-            <p>Dr. Ltimad LOUAH</p>
-        </div>
-        <div>
-            <h3 class="text-xl font-semibold mb-2">2ème Vice-Présidente</h3>
-            <p>Pr. Abdelmajid BOUZERDA</p>
-        </div>
-        <div>
-            <h3 class="text-xl font-semibold mb-2">3ème Vice-Présidente</h3>
-            <p>Pr. Nawal Kanouni</p>
-        </div>
-        <div>
-            <h3 class="text-xl font-semibold mb-2">Secrétaire Général</h3>
-            <p>Pr. Najat MOUINE</p>
-        </div>
-        <div>
-            <h3 class="text-xl font-semibold mb-2">Secrétaire Général Adjoint</h3>
-            <p>Dr. Raida EL AKIL</p>
+            <h3 class="text-xl font-semibold mb-2">Secrétaire Générale Adjointe</h3>
+            <p>Dr Yousra AOUINATI</p>
         </div>
         <div>
             <h3 class="text-xl font-semibold mb-2">Trésorière</h3>
-            <p>Pr. Souad ABOUDRAR</p>
+            <p>Dr Mounia CHANA</p>
         </div>
         <div>
-            <h3 class="text-xl font-semibold mb-2">Trésorière Adjoint</h3>
-            <p>Pr. Mustapha EL BAKKALI</p>
+            <h3 class="text-xl font-semibold mb-2">Vice Trésorier</h3>
+            <p>Dr My El Hassan EL ALAOUI</p>
+        </div>
+        <div>
+            <h3 class="text-xl font-semibold mb-2">Assesseurs</h3>
+            <p>Dr Imane KHALDOUNI</p>
+            <p>Dr Jade ISSOUANI</p>
+            <p>Dr Nadia BOUIZMAN</p>
+            <p>Dr Siham DRISSI ABOULAHJOUL</p>
         </div>
     </div>
 </div>
