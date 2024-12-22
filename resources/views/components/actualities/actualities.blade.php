@@ -39,7 +39,7 @@
                 </p>
 
                 <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
-                    <button class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg">
+                    <button id="openModalActualities" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg">
                         Inscription
                     </button>
                     <button class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg">
@@ -62,3 +62,35 @@
         </div>
     </div>
 </section>
+
+
+<!-- Inscription Modal -->
+<div id="inscriptionModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden justify-center items-center z-50">
+    <div class="bg-white p-8 rounded-lg w-11/12 max-w-lg">
+        <h2 class="text-3xl font-semibold text-center mb-6">Inscription</h2>
+
+        <!-- Form -->
+        <form action="#" method="POST">
+            <div class="mb-4">
+                <label for="name" class="block text-lg font-medium">Nom</label>
+                <input type="text" id="name" name="name" class="w-full p-3 border rounded-lg mt-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-lg font-medium">Email</label>
+                <input type="email" id="email" name="email" class="w-full p-3 border rounded-lg mt-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="subject" class="block text-lg font-medium">Sujet</label>
+                <input type="text" id="subject" name="subject" class="w-full p-3 border rounded-lg mt-2" required>
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-lg font-medium">Mot de passe</label>
+                <input type="password" id="password" name="password" class="w-full p-3 border rounded-lg mt-2" required>
+            </div>
+            <div class="flex justify-center gap-4">
+                <button type="submit" class="bg-sky-700 hover:bg-sky-900 text-white py-3 px-6 rounded-lg">S'inscrire</button>
+                <button type="button" id="closeModal" class="bg-gray-500 hover:bg-gray-700 text-white py-3 px-6 rounded-lg">Fermer</button>
+            </div>
+        </form>
+    </div>
+</div>

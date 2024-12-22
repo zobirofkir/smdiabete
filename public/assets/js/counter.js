@@ -22,3 +22,19 @@ const countdown = () => {
 setInterval(countdown, 1000);
 
 countdown();
+
+
+document.getElementById('openModalActualities').addEventListener('click', function() {
+    const modal = document.getElementById('inscriptionModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex', 'transition-all', 'duration-500', 'opacity-100');
+});
+
+document.getElementById('closeModal').addEventListener('click', function() {
+    const modal = document.getElementById('inscriptionModal');
+    modal.classList.add('opacity-0', 'transition-all', 'duration-500');
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('opacity-0');
+    }, 500);
+});
