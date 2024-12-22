@@ -43,13 +43,13 @@
             </button>
 
             <ul class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 mt-12 lg:mt-0 px-6 lg:px-0">
-                <li><a href="/" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Accueil</a></li>
-                <li><a href="/actualities" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Actualité</a></li>
-                <li><a href="/abouts" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">À propos</a></li>
-                <li><a href="/events" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Événements</a></li>
-                <li><a href="/galleries" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Galerie</a></li>
-                <li><a href="/login" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Identification</a></li>
-                <li><a href="/contacts" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Contact</a></li>
+                <li><a href="{{url('/')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Accueil</a></li>
+                <li><a href="{{url('/actualities')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Actualité</a></li>
+                <li><a href="{{url('/abouts')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">À propos</a></li>
+                <li><a href="{{url('/events')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Événements</a></li>
+                <li><a href="{{url('/galleries')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Galerie</a></li>
+                <li><a href="{{url('/login')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Identification</a></li>
+                <li><a href="{{url('/contacts')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Contact</a></li>
             </ul>
         </nav>
     </div>
