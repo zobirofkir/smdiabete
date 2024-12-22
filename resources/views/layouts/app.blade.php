@@ -20,5 +20,6 @@
     <script src="{{asset('assets/js/sidebare.js')}}"></script>
     <script src="{{asset('assets/js/counter.js')}}"></script>
     <script src="{{asset('assets/js/abouts.js')}}"></script>
+    <script src="{{asset('assets/js/galleries.js')}}"></script>
 </body>
 </html>
