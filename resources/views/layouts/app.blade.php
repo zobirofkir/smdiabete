@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>{{config('app.name')}}</title>
 </head>
-<body>
+<body class="min-h-screen flex flex-col fade-in">
     @include('components.header')
 
     <main>
@@ -20,6 +20,5 @@
     <script src="{{asset('assets/js/sidebare.js')}}"></script>
     <script src="{{asset('assets/js/counter.js')}}"></script>
     <script src="{{asset('assets/js/abouts.js')}}"></script>
-    <script src="{{asset('assets/js/videos.js')}}"></script>
 </body>
 </html>
