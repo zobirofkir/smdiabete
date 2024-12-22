@@ -16,3 +16,15 @@ body {
 .bg-light-blue {
     @apply bg-sky-900; /* Light blue color */
 }
+
+
+#mobile-text,
+#mobile-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+#mobile-text {
+    transition-delay: 0.2s;
+}
