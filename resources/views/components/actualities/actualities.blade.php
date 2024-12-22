@@ -3,6 +3,14 @@
         <!-- Main Grid Container -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
+            <div class="flex justify-center items-center">
+                <img
+                    src="{{asset('assets/images/affiche/affiche.jpeg')}}"
+                    alt="Affiche de l'événement"
+                    class="w-96 md:w-[600px] shadow-lg rounded-lg"
+                />
+            </div>
+
             <!-- Left Section: Text and Countdown -->
             <div class="flex flex-col justify-center items-center md:items-start text-sky-900 space-y-12">
                 <!-- Title -->
@@ -49,14 +57,6 @@
                         Bureau
                     </button>
                 </div>
-            </div>
-
-            <div class="flex justify-center items-center">
-                <img
-                    src="{{asset('assets/images/affiche/affiche.jpeg')}}"
-                    alt="Affiche de l'événement"
-                    class="w-96 md:w-[600px] shadow-lg rounded-lg"
-                />
             </div>
 
         </div>
