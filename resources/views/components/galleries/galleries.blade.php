@@ -21,7 +21,7 @@
                 <img id="modalImage" src="" alt="Popup Image" class="rounded-lg shadow-xl max-w-full max-h-[80vh] transition-transform duration-300 ease-in-out z-[999]">
             </div>
 
-            <div class="mt-6 mb-6 flex justify-center space-x-4">
+            <div class="flex justify-center space-x-4">
                 <button id="zoomInButton" class="bg-white text-sky-600 px-6 py-3 rounded-full shadow-lg hover:bg-sky-100 focus:ring focus:ring-sky-200 transition-all ease-in-out transform hover:scale-110">
                     <i class="fa-solid fa-magnifying-glass-plus text-black"></i>
                 </button>
