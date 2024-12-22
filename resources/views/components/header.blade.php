@@ -1,8 +1,13 @@
 <div class="flex bg-sky-500 text-white justify-between py-2 px-4" id="header">
     <div class="flex items-center">
-        <span class="mr-4">zobirofkir19@gmail.com</span>
+        <span class="mr-4 flex items-center gap-2 whitespace-nowrap">
+          <i class="fa-solid fa-envelope"></i>  smdiabete@gmail.com
+        </span>
+        <span class="mr-4 flex items-center gap-2 whitespace-nowrap">
+            <i class="fa-solid fa-phone"></i>  +212 6 19 92 09 42
+        </span>
     </div>
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-4 md:block hidden">
         <a href="#" class="text-white hover:text-gray-200">
             <i class="fab fa-facebook-f"></i>
         </a>
