@@ -15,6 +15,12 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'description' => env('SEO_DESCRIPTION', 'Diabere est votre source fiable d\'informations sur le diabète, avec des ressources et des conseils pour mieux comprendre et gérer le diabète. Restez informé grâce à des articles d\'experts et des conseils sur la santé, la nutrition et le bien-être des personnes atteintes de diabète.'),
+    'keywords' => env('SEO_KEYWORDS', 'diabète, diabere, gestion du diabète, santé, bien-être, conseils diabète, contrôle de la glycémie, éducation au diabète, nutrition pour diabétiques'),
+    'author' => env('SEO_AUTHOR', 'smdiabete'),
+    'image' => env('SEO_IMAGE', 'assets/images/logo.png'),
+    'favicon' => env('SEO_FAVICON', 'assets/images/logo.png'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
