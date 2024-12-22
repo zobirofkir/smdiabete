@@ -39,9 +39,9 @@
   </div>
 
   <!-- Modal for Video 1 -->
-  <div id="videoModal1" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden transition-all duration-500 ease-in-out transform scale-0">
+  <div id="videoModal1" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden transition-all duration-500 ease-in-out transform scale-0 z-[999]">
     <div class="bg-white p-4 rounded-lg w-11/12 md:w-1/2">
-      <button onclick="closeModal('video1')" class="absolute top-0 right-0 p-2 text-white bg-red-600 rounded-full">X</button>
+      <button onclick="closeModal('video1')" class="absolute top-0 right-0 p-2 text-white bg-red-600 rounded-full mt-4 mx-4">X</button>
       <video id="video1" class="w-full h-auto" controls>
         <source src="https://smdiabete.org/assets/videos/best-of-smd.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -50,29 +50,9 @@
   </div>
 
   <!-- Modal for Video 2 -->
-  <div id="videoModal2" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden transition-all duration-500 ease-in-out transform scale-0">
+  <div id="videoModal2" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden transition-all duration-500 ease-in-out transform scale-0 z-[999]">
     <div class="bg-white p-4 rounded-lg w-11/12 md:w-1/2">
-      <button onclick="closeModal('video2')" class="absolute top-0 right-0 p-2 text-white bg-red-600 rounded-full">X</button>
+      <button onclick="closeModal('video2')" class="absolute top-0 right-0 p-2 text-white bg-red-600 rounded-full mt-4 mx-4">X</button>
       <iframe id="videoFrame" style="border-radius: 20px;" width="100%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="https://www.youtube.com/embed/aBtaq1r8TM4"></iframe>
     </div>
   </div>
-
-  <script>
-    function openModal(videoId) {
-      let modal = document.getElementById('videoModal' + videoId.charAt(videoId.length - 1));
-      modal.classList.remove('hidden');
-      modal.classList.add('scale-100');
-      document.getElementById(videoId).play();
-    }
-
-    function closeModal(videoId) {
-      let modal = document.getElementById('videoModal' + videoId.charAt(videoId.length - 1));
-      modal.classList.remove('scale-100');
-      modal.classList.add('scale-0');
-      document.getElementById(videoId).pause();
-      // For iframe (Video 2), reset the video to stop playback
-      if (videoId === 'video2') {
-        document.getElementById('videoFrame').src = document.getElementById('videoFrame').src;
-      }
-    }
-  </script>
