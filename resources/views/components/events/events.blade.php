@@ -3,7 +3,7 @@
       <!-- Event 1 Card -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
         <div class="max-h-[300px] overflow-hidden ">
-          <img src="https://smdiabete.org/assets/img/last-events/last-event-1.jpeg" alt="Event Image" class="w-full h-full object-cover">
+          <img src="{{asset('assets/images/events/last-event-1.jpeg')}}" alt="Event Image" class="w-full h-full object-cover">
 
         </div>
         <div class="p-4">
@@ -30,7 +30,7 @@
       <!-- Event 2 Card -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
         <div class="max-h-[300px] overflow-hidden">
-          <img src="https://smdiabete.org/assets/img/last-events/last-event-2.jpeg" alt="Event Image" class="w-full h-full object-cover">
+          <img src="{{asset('assets/images/events/last-event-2.jpeg')}}" alt="Event Image" class="w-full h-full object-cover">
         </div>
         <div class="p-4">
           <h3 class="md:text-2xl text-xl font-semibold">La Journée Mondiale du Diabète</h3>

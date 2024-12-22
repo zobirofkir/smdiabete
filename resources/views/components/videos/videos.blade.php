@@ -3,7 +3,7 @@
       <!-- Event 1 Card -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
         <div class="max-h-[300px] overflow-hidden">
-          <img src="https://smdiabete.org/assets/img/last-events/last-event-1.jpeg" alt="Event Image" class="w-full h-full object-cover">
+          <img src="{{asset('assets/images/events/last-event-1.jpeg')}}" alt="Event Image" class="w-full h-full object-cover">
         </div>
         <div class="p-4">
           <h3 class="md:text-2xl text-xl font-semibold">1er Congrès National de Diabétologie</h3>
@@ -21,7 +21,7 @@
       <!-- Event 2 Card -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
         <div class="max-h-[300px] overflow-hidden">
-          <img src="https://smdiabete.org/assets/img/last-events/last-event-2.jpeg" alt="Event Image" class="w-full h-full object-cover">
+          <img src="{{asset('assets/images/events/last-event-2.jpeg')}}" alt="Event Image" class="w-full h-full object-cover">
         </div>
         <div class="p-4">
           <h3 class="md:text-2xl text-xl font-semibold">La Journée Mondiale du Diabète</h3>
@@ -43,7 +43,7 @@
     <div class="bg-white p-4 rounded-lg w-11/12 md:w-1/2">
       <button onclick="closeModal('video1')" class="absolute top-0 right-0 p-2 text-white bg-red-600 rounded-full mt-4 mx-4">X</button>
       <video id="video1" class="w-full h-auto" controls>
-        <source src="https://smdiabete.org/assets/videos/best-of-smd.mp4" type="video/mp4">
+        <source src="{{asset('assets/videos/video.mp4')}}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
