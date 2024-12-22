@@ -45,9 +45,9 @@
 
             <ul class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 mt-12 lg:mt-0 px-6 lg:px-0">
 
-                <a href="{{url('/')}}" class="flex items-center justify-center md:hidden block mb-[50px]">
+                <div class="flex items-center justify-center md:hidden block mb-[50px]">
                     <img src="{{asset('assets/images/logo.png')}}" alt="Logo" class="h-20 text">
-                </a>
+                </div>
 
                 <li><a href="{{url('/')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Accueil</a></li>
                 <li><a href="{{url('/actualities')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Actualité</a></li>
