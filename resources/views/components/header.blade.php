@@ -1,4 +1,4 @@
-<div class="flex  bg-blue-500 text-white justify-between py-2 px-4" id="header">
+<div class="flex bg-sky-500 text-white justify-between py-2 px-4" id="header">
     <div class="flex items-center">
         <span class="mr-4">zobirofkir19@gmail.com</span>
     </div>

@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
 
-            <div class="text-center md:text-left text-blue-900 space-y-8">
+            <div class="text-center md:text-left text-sky-900 space-y-8">
                 <h2 class="text-3xl md:text-5xl font-semibold">
                     Inscrivez-vous ! Plus que
                 </h2>
@@ -37,13 +37,13 @@
 
                 <!-- Buttons -->
                 <div class="flex justify-center md:justify-start space-x-6 mt-8">
-                    <button class="bg-blue-700 hover:bg-blue-900 text-white font-medium py-3 md:px-6 px-4 rounded-lg whitespace-nowrap">
+                    <button class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 md:px-6 px-4 rounded-lg whitespace-nowrap">
                         Inscription
                     </button>
-                    <button class="bg-blue-700 hover:bg-blue-900 text-white font-medium py-3 md:px-6 px-4 rounded-lg whitespace-nowrap">
+                    <button class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 md:px-6 px-4 rounded-lg whitespace-nowrap">
                         Visiter les stands
                     </button>
-                    <button class="bg-blue-700 hover:bg-blue-900 text-white font-medium py-3 md:px-6 px-4 rounded-lg whitespace-nowrap">
+                    <button class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 md:px-6 px-4 rounded-lg whitespace-nowrap">
                         Bureau
                     </button>
                 </div>

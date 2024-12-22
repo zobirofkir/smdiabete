@@ -5,8 +5,8 @@
             Your browser does not support the video tag.
         </video>
 
-        <!-- Blue opacity layer -->
-        <div class="absolute inset-0 bg-blue-500 bg-opacity-70"></div>
+        <!-- sky opacity layer -->
+        <div class="absolute inset-0 bg-sky-500 bg-opacity-70"></div>
 
         <div class="relative z-10 flex items-center justify-center h-full text-center">
             <div class="text-white space-y-6 px-6">
