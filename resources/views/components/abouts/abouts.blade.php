@@ -13,15 +13,47 @@
             Société Marocaine de Diabétologie
         </h3>
 
+        <!-- Content visible only on larger screens -->
+        <div id="large-text" class="md:block hidden text-blue-900 text-base md:text-lg leading-relaxed mb-6 tracking-wide opacity-90 hover:opacity-100 transition-all duration-300 hidden md:block">
+            La Société Marocaine de Diabétologie (SMD) est une association à but non lucratif, dédiée aux médecins spécialistes en diabétologie ou intéressés par cette discipline distinguée. Fondée pour promouvoir une meilleure compréhension et gestion du diabète, la SMD joue un rôle crucial dans la formation continue des professionnels de la santé, notamment au Maroc.
+            <br><br>
+            Notre association s’engage à offrir des ressources éducatives de qualité, y compris des conférences, des séminaires et des ateliers pratiques. Nous croyons que l'union et la collaboration entre les spécialistes de la santé sont essentielles pour relever les défis liés au diabète.
+        </div>
+
+        <!-- List content visible only on larger screens -->
+        <div id="large-list" class="space-y-4 md:space-y-4 md:block hidden md:block">
+            <h2 class="text-base md:text-lg font-semibold text-blue-900 hover:text-gray-100 cursor-pointer transition duration-300 relative pl-6">
+                <span class="absolute left-0 top-0 text-blue-400 font-bold">1.</span>
+                Assurer une formation continue et mise à jour pour les professionnels de la santé.
+            </h2>
+            <h2 class="text-base md:text-lg font-semibold text-blue-900 hover:text-gray-100 cursor-pointer transition duration-300 relative pl-6">
+                <span class="absolute left-0 top-0 text-blue-400 font-bold">2.</span>
+                Promouvoir la recherche en diabétologie pour innover dans les méthodes de traitement.
+            </h2>
+            <h2 class="text-base md:text-lg font-semibold text-blue-900 hover:text-gray-100 cursor-pointer transition duration-300 relative pl-6">
+                <span class="absolute left-0 top-0 text-blue-400 font-bold">3.</span>
+                Faciliter l’échange d’expertises et de connaissances entre praticiens via des plateformes de communication et événements dédiés.
+            </h2>
+            <h2 class="text-base md:text-lg font-semibold text-blue-900 hover:text-gray-100 cursor-pointer transition duration-300 relative pl-6">
+                <span class="absolute left-0 top-0 text-blue-400 font-bold">4.</span>
+                Sensibiliser le grand public aux enjeux de la prévention et du traitement du diabète.
+            </h2>
+            <h2 class="text-base md:text-lg font-semibold text-blue-900 hover:text-gray-100 cursor-pointer transition duration-300 relative pl-6">
+                <span class="absolute left-0 top-0 text-blue-400 font-bold">5.</span>
+                Fédérer les efforts des acteurs autour d'une vision commune du traitement et de la prise en charge du diabète.
+            </h2>
+        </div>
+
+
         <!-- Text content with toggle for mobile view -->
-        <div id="mobile-text" class="text-blue-900 text-base md:text-lg leading-relaxed mb-6 tracking-wide opacity-90 hover:opacity-100 transition-all duration-300 md:max-h-screen max-h-0 overflow-hidden ease-in-out transition-all duration-500 md:hidden">
+        <div id="mobile-text" class="text-blue-900 text-base md:text-lg leading-relaxed mb-6 tracking-wide opacity-90 hover:opacity-100 transition-all duration-300 md:max-h-screen max-h-0 overflow-hidden ease-in-out transition-all duration-500">
             La Société Marocaine de Diabétologie (SMD) est une association à but non lucratif, dédiée aux médecins spécialistes en diabétologie ou intéressés par cette discipline distinguée. Fondée pour promouvoir une meilleure compréhension et gestion du diabète, la SMD joue un rôle crucial dans la formation continue des professionnels de la santé, notamment au Maroc.
             <br><br>
             Notre association s’engage à offrir des ressources éducatives de qualité, y compris des conférences, des séminaires et des ateliers pratiques. Nous croyons que l'union et la collaboration entre les spécialistes de la santé sont essentielles pour relever les défis liés au diabète.
         </div>
 
         <!-- Mobile List with full display on large screens -->
-        <div id="mobile-list" class="space-y-4 md:space-y-4 md:max-h-screen max-h-0 overflow-hidden ease-in-out transition-all duration-500 md:hidden">
+        <div id="mobile-list" class="space-y-4 md:space-y-4 md:max-h-screen max-h-0 overflow-hidden ease-in-out transition-all duration-500">
             <h2 class="text-base md:text-lg font-semibold text-blue-900 hover:text-gray-100 cursor-pointer transition duration-300 relative pl-6">
                 <span class="absolute left-0 top-0 text-blue-400 font-bold">1.</span>
                 Assurer une formation continue et mise à jour pour les professionnels de la santé.
