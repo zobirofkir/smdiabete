@@ -1,8 +1,4 @@
 <div class="flex flex-col md:flex-row items-center justify-center py-16 px-8 md:px-16 space-y-8 md:space-y-0 md:space-x-12 rounded-lg shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300">
-    <!-- Image Section -->
-    <div class="w-full md:w-1/2 max-w-xl">
-        <img src="{{asset('assets/images/affiche/affiche-two.jpeg')}}" alt="SMD Image" class="w-full h-auto md:h-full rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-    </div>
 
     <!-- Text Section -->
     <div class="w-full md:w-1/2 text-center md:text-left space-y-6">
@@ -80,5 +76,10 @@
         <button id="read-more-btn" class="text-blue-600 font-bold md:hidden" onclick="toggleText()">
             Lire la suite
         </button>
+    </div>
+
+    <!-- Image Section -->
+    <div class="w-full md:w-1/2 max-w-xl">
+        <img src="{{asset('assets/images/affiche/affiche-two.jpeg')}}" alt="SMD Image" class="w-full h-auto md:h-full rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
     </div>
 </div>
