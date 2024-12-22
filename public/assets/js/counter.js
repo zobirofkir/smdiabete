@@ -1,6 +1,7 @@
 const countdown = () => {
-    const endDate = new Date("2024-12-31T23:59:59");
+    const endDate = new Date("2025-05-01T00:00:00");
     const now = new Date();
+
     const timeDifference = endDate - now;
 
     if (timeDifference > 0) {
@@ -19,3 +20,5 @@ const countdown = () => {
 };
 
 setInterval(countdown, 1000);
+
+countdown();
