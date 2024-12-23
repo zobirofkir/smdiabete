@@ -53,9 +53,6 @@
                     <a href="{{url('/galleries')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg">
                         Visiter les stands
                     </a>
-                    <a href="{{url('/contacts')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg">
-                        Bureau
-                    </a>
                 </div>
             </div>
 

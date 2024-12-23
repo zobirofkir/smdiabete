@@ -18,6 +18,26 @@
 
     <div class="grid grid-cols-2 gap-4 mt-4">
         <div>
+            <label for="ville" class="block text-sm font-medium text-gray-700">
+                Ville*
+            </label>
+            <input type="text" id="ville" name="ville" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre ville">
+        </div>
+        <div>
+            <label for="secteur" class="block text-sm font-medium text-gray-700">
+                Secteur*
+            </label>
+            <select id="secteur" name="secteur" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                <option value="">-</option>
+                <option value="public">Public</option>
+                <option value="liberal">Libéral</option>
+                <option value="chu">Chu</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mt-4">
+        <div>
             <label for="telephone" class="block text-sm font-medium text-gray-700">
                 Téléphone*
             </label>
@@ -31,49 +51,18 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-2 gap-4 mt-4">
-        <div>
-            <label for="secteur" class="block text-sm font-medium text-gray-700">
-                Secteur*
-            </label>
-            <select id="secteur" name="secteur" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                <option value="">-</option>
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-            </select>
-        </div>
-        <div>
-            <label for="type" class="block text-sm font-medium text-gray-700">
-                Type*
-            </label>
-            <select id="type" name="type" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                <option value="">-</option>
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-            </select>
-        </div>
+    <div>
+        <label for="adresse" class="block text-sm font-medium text-gray-700 mt-4">
+            Adresse*
+        </label>
+        <textarea id="adresse" name="adresse" rows="2" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre adresse"></textarea>
     </div>
 
     <div>
-        <label for="specialite" class="block text-sm font-medium text-gray-700 mt-4">
-            Spécialité
+        <label for="objectifs" class="block text-sm font-medium text-gray-700 mt-4">
+            Objectifs attendus de la formation
         </label>
-        <textarea id="specialite" name="specialite" rows="4" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre spécialité"></textarea>
-    </div>
-
-    <div class="grid grid-cols-2 gap-4 mt-4">
-        <div>
-            <label for="ville" class="block text-sm font-medium text-gray-700">
-                Ville*
-            </label>
-            <input type="text" id="ville" name="ville" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre ville">
-        </div>
-        <div>
-            <label for="pays" class="block text-sm font-medium text-gray-700">
-                Pays*
-            </label>
-            <input type="text" id="pays" name="pays" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre pays">
-        </div>
+        <textarea id="objectifs" name="objectifs" rows="4" class="mt-1 p-2 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Vos objectifs"></textarea>
     </div>
 
     <button type="submit" class="mt-6 bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded">
