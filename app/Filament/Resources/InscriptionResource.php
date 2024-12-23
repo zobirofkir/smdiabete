@@ -49,9 +49,24 @@ class InscriptionResource extends Resource
                 Tables\Columns\TextColumn::make('email')->label('Email')->searchable(),
                 Tables\Columns\TextColumn::make('adresse')->label('Adresse')->searchable(),
                 Tables\Columns\TextColumn::make('objectif')->label('Objectif')->searchable(),
+                Tables\Columns\BadgeColumn::make('status')
+                    ->label('Statut')
+                    ->colors([
+                        'primary' => 'pending',
+                        'success' => 'accepted',
+                        'danger' => 'refused',
+                    ]),
             ])
             ->defaultSort('created_at', 'desc')
-            ->filters([])
+            ->filters([
+                Tables\Filters\SelectFilter::make('status')
+                    ->label('Statut')
+                    ->options([
+                        'pending' => 'En attente',
+                        'accepted' => 'Accepté',
+                        'refused' => 'Refusé',
+                    ]),
+            ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\Action::make('validate')
@@ -61,21 +76,19 @@ class InscriptionResource extends Resource
                         $existingUser = User::where('email', $record->email)->first();
 
                         if ($existingUser) {
-                            $record->delete();
-
                             Notification::make()
                                 ->title('L\'utilisateur existe déjà')
-                                ->body('L\'utilisateur existe déjà. Inscription supprimée.')
+                                ->body('L\'utilisateur existe déjà. Inscription non modifiée.')
                                 ->warning()
                                 ->send();
 
                             return;
                         }
 
-                        $password = $record->firstname.'+123';
+                        $password = $record->firstname . '+123';
 
                         $user = User::create([
-                            'name' => $record->firstname.' '.$record->lastname,
+                            'name' => $record->firstname . ' ' . $record->lastname,
                             'email' => $record->email,
                             'password' => Hash::make($password),
                         ]);
@@ -86,20 +99,25 @@ class InscriptionResource extends Resource
                                 ->text("Bonjour {$record->firstname},\n\nVoici vos informations de connexion :\n\nEmail : {$record->email}\nMot de passe : $password\n\nMerci.");
                         });
 
-                        $record->delete();
+                        $record->update(['status' => 'accepted']);
 
                         Notification::make()
                             ->title('Utilisateur créé')
-                            ->body('L\'utilisateur a été créé avec succès et l\'inscription supprimée.')
+                            ->body('L\'utilisateur a été créé avec succès.')
                             ->success()
                             ->send();
                     }),
-
                 Tables\Actions\Action::make('refuse')
                     ->label('Refuser')
                     ->color('danger')
                     ->action(function ($record) {
-                        $record->delete();
+                        $record->update(['status' => 'refused']);
+
+                        Notification::make()
+                            ->title('Inscription refusée')
+                            ->body('L\'inscription a été refusée avec succès.')
+                            ->danger()
+                            ->send();
                     }),
             ])
             ->bulkActions([]);

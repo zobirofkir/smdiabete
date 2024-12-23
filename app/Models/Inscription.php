@@ -15,5 +15,6 @@ class Inscription extends Model
         'email',
         'adresse',
         'objectif',
+        'status'
     ];
 }
