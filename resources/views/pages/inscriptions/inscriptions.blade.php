@@ -94,9 +94,9 @@
         </form>
     </section>
 
-    <section class="bg-gray-50 p-8 md:mt-12 mt-20">
+    <section class="bg-white p-8 md:mt-12 mt-20">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Master Class 2025 : Diabète et Nouvelles Technologies</h2>
+            <h2 class="text-3xl font-bold text-center mb-8">Master Class 2025 Diabète et Nouvelles Technologies</h2>
             <p class="text-lg text-gray-700 mb-6">
                 Dans le cadre du développement professionnel continu, la Société Marocaine de Diabétologie organise pour l’année 2025 un Master Class intitulé <strong>“Diabète et Nouvelles technologies”</strong> en collaboration avec le CHU de Oujda et l’Hôpital Militaire Avicenne de Marrakech.
             </p>
@@ -152,9 +152,6 @@
             <h3 class="text-xl font-semibold mb-4">Date limite d’inscription</h3>
             <p class="text-gray-700 mb-6">10 janvier 2025</p>
 
-            <p class="text-gray-700">
-                Pour plus de détails, <a href="https://www.smdiabete.org/masterclass" class="text-sky-500 hover:underline">cliquez ici pour vous inscrire</a>.
-            </p>
         </div>
     </section>
 </x-app-layout>
