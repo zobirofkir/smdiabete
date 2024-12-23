@@ -50,6 +50,7 @@ class InscriptionResource extends Resource
                 Tables\Columns\TextColumn::make('adresse')->label('Adresse')->searchable(),
                 Tables\Columns\TextColumn::make('objectif')->label('Objectif')->searchable(),
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([])
             ->actions([
                 Tables\Actions\ViewAction::make(),
