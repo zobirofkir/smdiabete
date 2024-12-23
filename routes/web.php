@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InscriptionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('welcome'); });
@@ -16,4 +17,5 @@ Route::get('/contacts', function () { return view('pages.contacts.contacts'); })
 
 Route::get('/galleries', function () { return view('pages.galleries.galleries'); });
 
-Route::get('/inscriptions', function () { return view('pages.inscriptions.inscriptions'); });
+Route::get('/inscriptions', [InscriptionController::class, 'index'])->name('inscriptions.index');
+Route::post('/inscriptions/store', [InscriptionController::class, 'store'])->name('inscriptions.store');
