@@ -55,44 +55,44 @@ class InscriptionResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\Action::make('validate')
-                ->label('Valider')
-                ->color('success')
-                ->action(function ($record) {
-                    $existingUser = User::where('email', $record->email)->first();
+                    ->label('Valider')
+                    ->color('success')
+                    ->action(function ($record) {
+                        $existingUser = User::where('email', $record->email)->first();
 
-                    if ($existingUser) {
+                        if ($existingUser) {
+                            $record->delete();
+
+                            Notification::make()
+                                ->title('L\'utilisateur existe déjà')
+                                ->body('L\'utilisateur existe déjà. Inscription supprimée.')
+                                ->warning()
+                                ->send();
+
+                            return;
+                        }
+
+                        $password = $record->firstname.'+123';
+
+                        $user = User::create([
+                            'name' => $record->firstname.' '.$record->lastname,
+                            'email' => $record->email,
+                            'password' => Hash::make($password),
+                        ]);
+
+                        Mail::send([], [], function ($message) use ($record, $password) {
+                            $message->to($record->email)
+                                ->subject('Vos informations de connexion')
+                                ->text("Bonjour {$record->firstname},\n\nVoici vos informations de connexion :\n\nEmail : {$record->email}\nMot de passe : $password\n\nMerci.");
+                        });
+
                         $record->delete();
 
                         Notification::make()
-                            ->title('L\'utilisateur existe déjà')
-                            ->body('L\'utilisateur existe déjà. Inscription supprimée.')
-                            ->warning()
+                            ->title('Utilisateur créé')
+                            ->body('L\'utilisateur a été créé avec succès et l\'inscription supprimée.')
+                            ->success()
                             ->send();
-
-                        return;
-                    }
-
-                    $password = $record->firstname . '+123';
-
-                    $user = User::create([
-                        'name' => $record->firstname . ' ' . $record->lastname,
-                        'email' => $record->email,
-                        'password' => Hash::make($password),
-                    ]);
-
-                    Mail::send([], [], function ($message) use ($record, $password) {
-                        $message->to($record->email)
-                            ->subject('Vos informations de connexion')
-                            ->text("Bonjour {$record->firstname},\n\nVoici vos informations de connexion :\n\nEmail : {$record->email}\nMot de passe : $password\n\nMerci.");
-                    });
-
-                    $record->delete();
-
-                    Notification::make()
-                        ->title('Utilisateur créé')
-                        ->body('L\'utilisateur a été créé avec succès et l\'inscription supprimée.')
-                        ->success()
-                        ->send();
                     }),
 
                 Tables\Actions\Action::make('refuse')

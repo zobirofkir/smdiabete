@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -14,8 +13,8 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => "smdiabete",
-            'email' => "smdiabete@gmail.com",
+            'name' => 'smdiabete',
+            'email' => 'smdiabete@gmail.com',
             'password' => 'password123',
         ]);
     }
