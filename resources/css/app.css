@@ -37,3 +37,17 @@ body {
 .fade-in {
     animation: fadeIn 1s ease-out;
 }
+
+
+
+.dropdowninscription-h {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.dropdowninscription-screen {
+    max-height: 100vh; /* Or you can set a specific value */
+    overflow: auto;
+    transition: max-height 0.3s ease-in;
+}

@@ -46,5 +46,6 @@
     <script src="{{asset('assets/js/counter.js')}}"></script>
     <script src="{{asset('assets/js/abouts.js')}}"></script>
     <script src="{{asset('assets/js/galleries.js')}}"></script>
+    <script src="{{asset('assets/js/inscriptions.js')}}"></script>
 </body>
 </html>
