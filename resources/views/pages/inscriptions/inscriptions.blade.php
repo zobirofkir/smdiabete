@@ -1,5 +1,5 @@
 <x-app-layout>
-    <section class="fade-in flex justify-center items-center h-screen mt-[100px]">
+    <section class="fade-in flex justify-center items-center h-screen mt-[150px]">
         <form action="{{ route('inscriptions.store') }}" method="POST" class="bg-white p-8 rounded-lg shadow-lg md:w-[60%] w-full max-w-4xl">
             @csrf
 
@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-10">
                 <div>
                     <label for="phone" class="block text-sm font-medium text-gray-700">Téléphone*</label>
                     <input type="tel" id="phone" name="phone" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre téléphone" value="{{ old('phone') }}">
@@ -102,14 +102,14 @@
             </p>
 
             <h3 class="text-xl font-semibold mb-4">Durée de la formation</h3>
-            <ul class="list-inside list-disc text-gray-700 mb-6">
+            <ul class="list-inside list-disc text-gray-700 mb-6 flex flex-col gap-4">
                 <li><strong>1er séminaire:</strong> 19 avril 2025</li>
                 <li><strong>2ème séminaire:</strong> 12 juillet 2025</li>
                 <li><strong>3ème séminaire:</strong> 11 octobre 2025</li>
             </ul>
 
             <h3 class="text-xl font-semibold mb-4">Coordinateurs du Master Class</h3>
-            <ul class="list-inside list-disc text-gray-700 mb-6">
+            <ul class="list-inside list-disc text-gray-700 mb-6 flex flex-col gap-4">
                 <li>Pr BAÏZRI HICHAM</li>
                 <li>Pr LATRECH HANANE</li>
             </ul>
@@ -117,22 +117,26 @@
             <h3 class="text-xl font-semibold mb-4">Equipe de formateurs</h3>
             <p class="text-gray-700 mb-6">
                 <strong>Hôpital Militaire Avicenne de Marrakech:</strong>
-                <ul class="list-inside list-disc">
+                <ul class="list-inside list-disc flex flex-col gap-4">
                     <li>Pr BAÏZRI HICHAM: Chef de service et Pr de l’Enseignement Supérieur</li>
                     <li>Pr MEFTAH AZZELARAB: Pr Agrégé</li>
                     <li>Pr ABAÏNOU LAHOUSSAÏNE: Pr Assistant</li>
                 </ul>
 
-                <strong>CHU Oujda:</strong>
-                <ul class="list-inside list-disc">
-                    <li>Pr LATRACH HANANE: Chef de service et Pr de l’Enseignement Supérieur</li>
-                    <li>Pr ROUF SIHAM: Pr Agrégé</li>
-                    <li>Pr BOUICHRAT NISRINE: Maître de conférences</li>
-                </ul>
+                <div class="my-10">
+                    <p class="mb-10">
+                        <strong>CHU Oujda:</strong>
+                    </p>
+                    <ul class="list-inside list-disc flex flex-col gap-4">
+                        <li>Pr LATRACH HANANE: Chef de service et Pr de l’Enseignement Supérieur</li>
+                        <li>Pr ROUF SIHAM: Pr Agrégé</li>
+                        <li>Pr BOUICHRAT NISRINE: Maître de conférences</li>
+                    </ul>
+                </div>
             </p>
 
             <h3 class="text-xl font-semibold mb-4">Objectifs pédagogiques</h3>
-            <ul class="list-inside list-disc text-gray-700 mb-6">
+            <ul class="list-inside list-disc text-gray-700 mb-6 flex flex-col gap-4">
                 <li>Maitrise et pratique de l’insulinothérapie fonctionnelle</li>
                 <li>Maitrise des principes de fonctionnement des CGM</li>
                 <li>Mise en place de CGM et interprétation des données des AGP</li>
