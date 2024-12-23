@@ -47,7 +47,7 @@ body {
 }
 
 .dropdowninscription-screen {
-    max-height: 100vh; /* Or you can set a specific value */
+    max-height: 100vh; 
     overflow: auto;
     transition: max-height 0.3s ease-in;
 }
