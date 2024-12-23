@@ -50,6 +50,7 @@
                 </div>
 
                 <li><a href="{{url('/')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Accueil</a></li>
+                <li><a href="{{url('/masterclass')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Masterclass</a></li>
                 <li><a href="{{url('/actualities')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Actualité</a></li>
                 <li><a href="{{url('/abouts')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">À propos</a></li>
                 <li><a href="{{url('/events')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Événements</a></li>

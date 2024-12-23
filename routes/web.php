@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InscriptionController;
+use App\Http\Controllers\MasterclassController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,3 +34,6 @@ Route::get('/galleries', function () {
 
 Route::get('/inscriptions', [InscriptionController::class, 'index'])->name('inscriptions.index');
 Route::post('/inscriptions/store', [InscriptionController::class, 'store'])->name('inscriptions.store');
+
+Route::get('/masterclass', [MasterclassController::class, 'index'])->name('masterclass.index');
+Route::post('/masterclass/store', [MasterclassController::class, 'store'])->name('masterclass.store');
