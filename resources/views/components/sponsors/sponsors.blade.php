@@ -1,7 +1,7 @@
 <section class="px-8 md:px-16">
     <div class="text-center">
         <h1>
-            Les membres de la Société Marocaine du Système Nerveux Autonome remercient les laboratoires pharmaceutiques et les sociétés du matériel médical pour leur soutien moral et financier ainsi qu’à leur confiance. Cette participation a contribué à la réalisation de cette importante rencontre scientifique.
+            Les membres de la {{config('app.name')}} Autonome remercient les laboratoires pharmaceutiques et les sociétés du matériel médical pour leur soutien moral et financier ainsi qu’a leur confiance. Cette participation a contribué à la réalisation de cette importante rencontre scientifique.
         </h1>
     </div>
 

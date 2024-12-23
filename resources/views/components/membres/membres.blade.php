@@ -18,7 +18,7 @@
         </div>
         <div>
             <h3 class="text-xl font-semibold mb-2">Vice Trésorier</h3>
-            <p>Dr My El Hassan EL ALAOUI</p>
+            <p>Dr Moulay El Hassan EL ALAOUI</p>
         </div>
         <div>
             <h3 class="text-xl font-semibold mb-2">Assesseurs</h3>
