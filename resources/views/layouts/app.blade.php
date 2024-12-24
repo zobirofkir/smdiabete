@@ -47,5 +47,6 @@
     <script src="{{asset('assets/js/abouts.js')}}"></script>
     <script src="{{asset('assets/js/galleries.js')}}"></script>
     <script src="{{asset('assets/js/inscriptions.js')}}"></script>
+    <script src="{{asset('assets/js/masterclass.js')}}"></script>
 </body>
 </html>
