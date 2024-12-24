@@ -110,27 +110,27 @@
             </div>
             <div id="toggle-content" class="dropdowninscription-h overflow-hidden transition-all">
                 <div class="mt-4 bg-sky-50 shadow-lg rounded-lg p-6">
-                    <p class="text-sky-800 mb-4">Dans le cadre du développement professionnel continu, la Société Marocaine de Diabétologie organise pour l’année 2025 un Master Class intitulé “Diabète et Nouvelles technologies” en collaboration avec le CHU de Oujda et l’Hôpital Militaire Avicenne de Marrakech.</p>
+                    <p class="text-sky-800 mb-4">Dans le cadre du développement professionnel continu, la Société Marocaine de Diabétologie organise pour l’année 2025 un Master Class intitulé “Diabète et Nouvelles Technologies” en collaboration avec le CHU de Oujda et l’Hôpital Militaire Avicenne de Marrakech.</p>
                     <p class="text-sky-800 mb-4">Durée de la formation : un an réparti en trois séminaires :</p>
                     <ul class="list-disc list-inside text-sky-700 mb-4">
-                        <li>1er séminaire : 19 avril 2025</li>
-                        <li>2ème séminaire : 12 juillet 2025</li>
-                        <li>3ème séminaire : 11 octobre 2025</li>
+                        <li>1er séminaire : 19 Avril 2025</li>
+                        <li>2ème séminaire : 12 Juillet 2025</li>
+                        <li>3ème séminaire : 11 Octobre 2025</li>
                     </ul>
-                    <p class="text-sky-800 mb-4">Coordinateurs du Master Class : Pr ¨BAÏZRI HICHAM – Pr LATRECH HANANE</p>
+                    <p class="text-sky-800 mb-4">Coordinateurs du Master Class : Pr. BAÏZRI HICHAM — Pr. LATRECH HANANE</p>
                     <p class="text-sky-800 mb-4">Equipe de formateurs :</p>
                     <ul class="list-disc list-inside text-sky-700 mb-4">
-                        <li>Hôpital Militaire Avicenne de Marrakech :</li>
-                        <ul class="list-disc list-inside ml-6">
-                            <li>Pr BAÏZRI HICHAM : Chef de service et Pr de l’Enseignement Supérieur</li>
-                            <li>Pr MEFTAH AZZELARAB : Pr Agrégé</li>
-                            <li>Pr ABAÏNOU LAHOUSSAÏNE : Pr Assistant</li>
-                        </ul>
                         <li>CHU Oujda :</li>
                         <ul class="list-disc list-inside ml-6">
-                            <li>Pr LATRACH HANANE : Chef de service et Pr de l’Enseignement Supérieur</li>
-                            <li>Pr ROUF SIHAM : Pr Agrégé</li>
-                            <li>Pr BOUICHRAT NISRINE : Maître de conférences</li>
+                            <li>Pr. LATRACH HANANE : Chef de service et Pr de l’Enseignement Supérieur</li>
+                            <li>Pr. ROUF SIHAM : Pr Agrégé</li>
+                            <li>Pr. BOUICHRAT NISRINE : Maître de conférences</li>
+                        </ul>
+                        <li>Hôpital Militaire Avicenne de Marrakech :</li>
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Pr. BAÏZRI HICHAM : Chef de service et Pr de l’Enseignement Supérieur</li>
+                            <li>Pr. MEFTAH AZZELARAB : Pr Agrégé</li>
+                            <li>Pr. ABAÏNOU LAHOUSSAÏNE : Pr Assistant</li>
                         </ul>
                     </ul>
                     <p class="text-sky-800 mb-4">Les objectifs de cette formation sont la maitrise des principales technologies pouvant améliorer la prise en charge du patient diabétique marocain.</p>
@@ -152,9 +152,9 @@
                     </ul>
                     <p class="text-sky-800 mb-4">Comité d’organisation de la SMD :</p>
                     <ul class="list-disc list-inside text-sky-700 mb-4">
-                        <li>Dr ABAHOU SONIA</li>
-                        <li>Dr CHANA MOUNIA</li>
-                        <li>Dr EL ALAOUI MOULAY EL HASSAN</li>
+                        <li>Dr. ABAHOU SONIA</li>
+                        <li>Dr. CHANA MOUNIA</li>
+                        <li>Dr. EL ALAOUI MOULAY EL HASSAN</li>
                     </ul>
                     <p class="text-sky-800 mb-4">Conditions d’inscription :</p>
                     <ul class="list-disc list-inside text-sky-700 mb-4">
@@ -162,6 +162,7 @@
                         <li>Les intéressés devront remplir le formulaire d’inscription accompagné d’une lettre de motivation et d’un curriculum vitae.</li>
                     </ul>
                     <p class="text-sky-800 mb-4">Tarif d’inscription : 15 000,00 Dhs</p>
+                    <p class="text-sky-800 mb-4">Date limite d’inscription : 05 janvier 2025</p>
                     <p class="text-sky-700 mb-4">Le paiement par virement ou versement au numéro de compte suivant :</p>
                     <p class="text-sky-700 mb-4">Société Marocaine de Diabétologie</p>
                     <p class="text-sky-700 mb-4">RIB : 007 82600026830000305367</p>
