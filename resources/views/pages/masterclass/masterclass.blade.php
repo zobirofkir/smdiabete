@@ -75,6 +75,13 @@
             </div>
 
             <div class="w-full md:w-1/2 md:px-6 px-0">
+
+                <div class="flex justify-center mb-4">
+                    <button id="open-modal" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-20 rounded-full transition-colors duration-300 ease-in-out">
+                        Inscription
+                    </button>
+                </div>
+
                 <div class="dropdowninscription-screen bg-sky-50 shadow-lg rounded-lg p-6 space-y-4">
                     <p class="text-sky-800 text-lg leading-relaxed">
                         Dans le cadre du développement professionnel continu, la Société Marocaine de Diabétologie organise pour l’année 2025 un Master Class intitulé “Diabète et Nouvelles Technologies” en collaboration avec le CHU de Oujda et l’Hôpital Militaire Avicenne de Marrakech.
@@ -170,11 +177,6 @@
                     </p>
                 </div>
 
-                <div class="flex justify-center mt-4">
-                    <button id="open-modal" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-20 rounded-full transition-colors duration-300 ease-in-out">
-                        Inscription
-                    </button>
-                </div>
             </div>
         </div>
     </div>
