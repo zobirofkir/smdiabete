@@ -69,7 +69,7 @@
     </div>
 
         <!-- Main Section -->
-        <div class="relative z-10 w-full max-w-6xl mx-auto bg-white shadow-xl rounded-lg p-8 flex flex-wrap md:flex-nowrap">
+        <div class="relative z-10 w-full container mx-auto bg-white rounded-lg p-8 md:px-0 px-10 flex flex-wrap md:flex-nowrap">
             <div class="w-full md:w-1/2 flex justify-center items-center mb-8 md:mb-0">
                 <img src="{{ asset('assets/images/affiche/affiche-two.jpeg') }}" alt="Master Class" class="w-full max-h-auto object-cover rounded-lg shadow-md">
             </div>
