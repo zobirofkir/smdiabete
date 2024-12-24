@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Masterclass extends Model
 {
     protected $fillable = [
-        "username",
+        "firstname",
+        "lastname",
         "ville",
         "secteur",
         "phone",

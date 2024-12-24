@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('masterclasses', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('ville');
             $table->string('secteur');
             $table->string('phone');

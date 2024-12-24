@@ -22,7 +22,8 @@ class MasterclassRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'username' => 'required|string|max:255',
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
             'ville' => 'required|string|max:255',
             'secteur' => 'required|string|in:public,liberal,chu',
             'phone' => 'required|string|max:15',

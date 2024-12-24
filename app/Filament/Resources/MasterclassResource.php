@@ -30,8 +30,13 @@ class MasterclassResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('username')
-                    ->label('Username')
+                TextInput::make('firstname')
+                    ->label('First Name')
+                    ->required()
+                    ->maxLength(255),
+
+                TextInput::make('lastname')
+                    ->label('Last Name')
                     ->required()
                     ->maxLength(255),
 
