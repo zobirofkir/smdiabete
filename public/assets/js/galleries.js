@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modalPopup.classList.add("opacity-0");
         modalPopup.querySelector('.relative').classList.remove("opacity-100", "scale-100");
         modalPopup.querySelector('.relative').classList.add("opacity-0", "scale-95");
-        setTimeout(() => modalPopup.classList.add("hidden"), 500); // Shorter timeout for smoother transition
+        setTimeout(() => modalPopup.classList.add("hidden"), 500);
     };
 
     const zoomIn = () => {
@@ -71,5 +71,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modalPopup.addEventListener("click", (e) => {
         if (e.target === modalPopup) closeModal();
+    });
+
+    // Dossier Switcher
+    const dossier1Button = document.getElementById('dossier1Button');
+    const dossier2Button = document.getElementById('dossier2Button');
+    const dossier1 = document.getElementById('dossier1');
+    const dossier2 = document.getElementById('dossier2');
+
+    dossier1Button.addEventListener('click', () => {
+        dossier1.classList.remove('hidden');
+        dossier1.classList.add('grid');
+        dossier2.classList.add('hidden');
+        dossier2.classList.remove('grid');
+    });
+
+    dossier2Button.addEventListener('click', () => {
+        dossier2.classList.remove('hidden');
+        dossier2.classList.add('grid');
+        dossier1.classList.add('hidden');
+        dossier1.classList.remove('grid');
     });
 });

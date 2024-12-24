@@ -18,8 +18,8 @@
                     <div class="relative group overflow-hidden rounded-xl shadow-lg transition-all hover:shadow-2xl transform hover:scale-105 duration-500 ease-in-out">
                         <img src="{{ asset('assets/images/album/album-' . $item . '.jpeg') }}"
                              alt="Image {{$item}}"
-                             class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-50 transition duration-300"></div>
+                             class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-110 cursor-pointer"
+                             data-index="{{ $item - 1 }}">
                     </div>
                 @endforeach
             </div>
@@ -30,8 +30,8 @@
                     <div class="relative group overflow-hidden rounded-xl shadow-lg transition-all hover:shadow-2xl transform hover:scale-105 duration-500 ease-in-out">
                         <img src="{{ asset('assets/images/album/album-dosier-two-' . $item . '.jpeg') }}"
                              alt="Image {{$item}}"
-                             class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-50 transition duration-300"></div>
+                             class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-110 cursor-pointer"
+                             data-index="{{ $item - 1 }}">
                     </div>
                 @endforeach
             </div>
@@ -39,39 +39,26 @@
     </div>
 </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const dossier1Button = document.getElementById('dossier1Button');
-        const dossier2Button = document.getElementById('dossier2Button');
-        const dossier1 = document.getElementById('dossier1');
-        const dossier2 = document.getElementById('dossier2');
-
-        dossier1Button.addEventListener('click', () => {
-            dossier1.classList.remove('hidden');
-            dossier1.classList.add('grid');
-
-            dossier2.classList.add('hidden');
-            dossier2.classList.remove('grid');
-
-            dossier1Button.classList.add('bg-sky-600', 'text-white');
-            dossier1Button.classList.remove('bg-sky-200', 'text-sky-600');
-
-            dossier2Button.classList.add('bg-sky-200', 'text-sky-600');
-            dossier2Button.classList.remove('bg-sky-600', 'text-white');
-        });
-
-        dossier2Button.addEventListener('click', () => {
-            dossier2.classList.remove('hidden');
-            dossier2.classList.add('grid');
-
-            dossier1.classList.add('hidden');
-            dossier1.classList.remove('grid');
-
-            dossier2Button.classList.add('bg-sky-600', 'text-white');
-            dossier2Button.classList.remove('bg-sky-200', 'text-sky-600');
-
-            dossier1Button.classList.add('bg-sky-200', 'text-sky-600');
-            dossier1Button.classList.remove('bg-sky-600', 'text-white');
-        });
-    });
-</script>
+<!-- Modal Popup -->
+<div id="modalPopup" class="hidden fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 transition-opacity duration-500 ease-in-out">
+    <div class="relative max-w-4xl w-full mx-4 rounded-lg shadow-lg transform scale-95 opacity-0 transition-all duration-500 ease-in-out">
+        <button id="modalCloseBtn" class="absolute md:top-4 -top-[2.5rem] right-4 text-white rounded-full px-2 text-center text-3xl hover:text-sky-400 transition-colors transform scale-125 ease-in-out focus:outline-none z-[999]">&times;</button>
+        <div class="max-w-md mx-auto mt-6">
+            <img id="modalImage" src="" alt="Popup Image" class="rounded-lg shadow-xl max-w-full max-h-[80vh] transition-transform duration-300 ease-in-out z-[999]">
+        </div>
+        <div class="flex justify-center space-x-4">
+            <button id="zoomInButton" class="bg-white text-sky-600 px-6 py-3 rounded-full shadow-lg hover:bg-sky-100 focus:ring focus:ring-sky-200 transition-all ease-in-out transform hover:scale-110">
+                <i class="fa-solid fa-magnifying-glass-plus text-black"></i>
+            </button>
+            <button id="zoomOutButton" class="bg-white text-sky-600 px-6 py-3 rounded-full shadow-lg hover:bg-sky-100 focus:ring focus:ring-sky-200 transition-all ease-in-out transform hover:scale-110">
+                <i class="fa-solid fa-magnifying-glass-minus text-black"></i>
+            </button>
+        </div>
+        <div class="absolute top-1/2 left-0 transform -translate-y-1/2 pl-4 z-[999]">
+            <button id="prevButton" class="text-white text-3xl bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition-colors">&lt;</button>
+        </div>
+        <div class="absolute top-1/2 right-0 transform -translate-y-1/2 pr-4">
+            <button id="nextButton" class="text-white text-3xl bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition-colors">&gt;</button>
+        </div>
+    </div>
+</div>
