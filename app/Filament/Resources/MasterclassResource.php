@@ -81,7 +81,8 @@ class MasterclassResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('username')->label('Username'),
+                TextColumn::make('firstname')->label('Prénom'),
+                TextColumn::make('lastname')->label('Nom'),
                 TextColumn::make('ville')->label('City'),
                 TextColumn::make('secteur')->label('Sector'),
                 TextColumn::make('phone')->label('Phone'),
