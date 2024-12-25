@@ -3,20 +3,19 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\MasterclassResource\Pages;
+use App\Mail\MasterclassValidated;
 use App\Models\Masterclass;
-use Filament\Forms;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Tables\Actions\Action;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\MasterclassValidated;
-use Filament\Notifications\Notification;
 
 class MasterclassResource extends Resource
 {

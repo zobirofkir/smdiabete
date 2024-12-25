@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MasterclassRequest;
 use App\Models\Masterclass;
-use Illuminate\Http\Request;
 
 class MasterclassController extends Controller
 {

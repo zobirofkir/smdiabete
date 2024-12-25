@@ -16,7 +16,6 @@ class MasterclassValidated extends Mailable
     /**
      * Create a new message instance.
      *
-     * @param  \App\Models\Masterclass  $masterclass
      * @return void
      */
     public function __construct(Masterclass $masterclass)
@@ -32,9 +31,9 @@ class MasterclassValidated extends Mailable
     public function build()
     {
         return $this->subject('Félicitations pour la validation de votre Masterclass!')
-                    ->view('emails.masterclass.validated')
-                    ->with([
-                        'username' => $this->masterclass->username,
-                    ]);
+            ->view('emails.masterclass.validated')
+            ->with([
+                'username' => $this->masterclass->username,
+            ]);
     }
 }

@@ -85,10 +85,10 @@ class InscriptionResource extends Resource
                             return;
                         }
 
-                        $password = $record->firstname . '+123';
+                        $password = $record->firstname.'+123';
 
                         $user = User::create([
-                            'name' => $record->firstname . ' ' . $record->lastname,
+                            'name' => $record->firstname.' '.$record->lastname,
                             'email' => $record->email,
                             'password' => Hash::make($password),
                         ]);
