@@ -14,7 +14,5 @@ openModalBtn.addEventListener('click', () => {
 closeModalBtn.addEventListener('click', () => {
     modalContent.classList.remove('scale-100', 'opacity-100');
     modalContent.classList.add('scale-95', 'opacity-0');
-    setTimeout(() => {
-        modal.classList.add('hidden');
-    }, 500);
+    modal.classList.add('hidden');
 });
