@@ -1,82 +1,81 @@
 <x-app-layout>
     <div class="min-h-screen flex flex-col items-center py-8 relative bg-gray-50">
-<!-- Modal Container -->
-<div id="inscription-modal" class="absolute inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50 z-50 hidden">
-    <div class="bg-white shadow-xl rounded-lg p-6 sm:p-8 w-full max-w-lg sm:max-w-3xl mx-4 transform transition-all duration-500 scale-95 opacity-0 modal-content">
-        <!-- Close Button -->
-        <button id="close-modal" class="absolute top-4 right-4 text-gray-600 text-2xl hover:text-gray-800 focus:outline-none">
-            &times;
-        </button>
 
-        <!-- Modal Title -->
-        <h1 class="text-2xl sm:text-4xl font-bold text-sky-800 mb-6 text-center">Formulaire d’inscription</h1>
+    <div id="inscription-modal" class="md:fixed absolute inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50 z-50 hidden">
+        <div class="bg-white shadow-2xl rounded-xl p-6 sm:p-8 w-full max-w-lg sm:max-w-3xl mx-4 transform transition-transform duration-500 scale-95 opacity-0 modal-content relative">
 
-        <!-- Form -->
-        <form method="POST" action="{{ route('masterclass.store') }}">
-            @csrf
-
-            <!-- Input Fields -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <div>
-                    <label class="block text-sky-700 font-bold mb-2">Nom</label>
-                    <input type="text" name="firstname" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre nom">
-                    @error('firstname') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
-                </div>
-
-                <div>
-                    <label class="block text-sky-700 font-bold mb-2">Prénom</label>
-                    <input type="text" name="lastname" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre prénom">
-                    @error('lastname') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
-                </div>
-
-                <div>
-                    <label class="block text-sky-700 font-bold mb-2">Ville</label>
-                    <input type="text" name="ville" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre ville">
-                    @error('ville') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-sky-700 font-bold mb-2">Secteur</label>
-                <select name="secteur" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600">
-                    <option value="public">Public</option>
-                    <option value="liberal">Libéral</option>
-                    <option value="chu">Chu</option>
-                </select>
-                @error('secteur') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <div>
-                    <label class="block text-sky-700 font-bold mb-2">Tel</label>
-                    <input type="text" name="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre numéro de téléphone">
-                    @error('phone') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
-                </div>
-                <div>
-                    <label class="block text-sky-700 font-bold mb-2">Email</label>
-                    <input type="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre email">
-                    @error('email') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-sky-700 font-bold mb-2">Adresse</label>
-                <input type="text" name="adresse" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre adresse">
-                @error('adresse') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
-            </div>
-
-            <div class="mb-6">
-                <label class="block text-sky-700 font-bold mb-2">Objectifs attendus de la formation</label>
-                <textarea name="objectif" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Vos attentes"></textarea>
-                @error('objectif') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
-            </div>
-
-            <button type="submit" class="w-full bg-sky-600 text-white py-3 rounded-lg font-semibold hover:bg-sky-700 transition duration-300">
-                S’inscrire
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-600 text-2xl hover:text-gray-800 focus:outline-none">
+                &times;
             </button>
-        </form>
+
+
+            <h1 class="text-3xl sm:text-4xl font-bold text-sky-800 mb-6 text-center leading-tight">
+                Formulaire d’inscription
+            </h1>
+
+
+            <form method="POST" action="{{ route('masterclass.store') }}">
+                @csrf
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label class="block text-sky-700 font-medium mb-2">Nom</label>
+                        <input type="text" name="firstname" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre nom">
+                        @error('firstname') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                    </div>
+                    <div>
+                        <label class="block text-sky-700 font-medium mb-2">Prénom</label>
+                        <input type="text" name="lastname" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre prénom">
+                        @error('lastname') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                    </div>
+                    <div>
+                        <label class="block text-sky-700 font-medium mb-2">Ville</label>
+                        <input type="text" name="ville" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre ville">
+                        @error('ville') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sky-700 font-medium mb-2">Secteur</label>
+                    <select name="secteur" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600">
+                        <option value="public">Public</option>
+                        <option value="liberal">Libéral</option>
+                        <option value="chu">Chu</option>
+                    </select>
+                    @error('secteur') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label class="block text-sky-700 font-medium mb-2">Tel</label>
+                        <input type="text" name="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre numéro de téléphone">
+                        @error('phone') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                    </div>
+                    <div>
+                        <label class="block text-sky-700 font-medium mb-2">Email</label>
+                        <input type="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre email">
+                        @error('email') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sky-700 font-medium mb-2">Adresse</label>
+                    <input type="text" name="adresse" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Votre adresse">
+                    @error('adresse') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sky-700 font-medium mb-2">Objectifs attendus de la formation</label>
+                    <textarea name="objectif" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Vos attentes"></textarea>
+                    @error('objectif') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                </div>
+
+                <button type="submit" class="w-full bg-sky-600 text-white py-3 rounded-lg font-semibold hover:bg-sky-700 transition duration-300">
+                    S’inscrire
+                </button>
+            </form>
+        </div>
     </div>
-</div>
 
         <!-- Main Section -->
         <div class="relative z-10 w-full container mx-auto bg-white rounded-lg p-8 md:px-0 px-10 flex flex-wrap md:flex-nowrap">
