@@ -1,18 +1,14 @@
-const openModalBtn = document.getElementById('open-modal');
-const closeModalBtn = document.getElementById('close-modal');
-const modal = document.getElementById('inscription-modal');
-const modalContent = modal.querySelector('.modal-content');
+function toggleForm() {
+    const formSection = document.getElementById('formSection');
 
-openModalBtn.addEventListener('click', () => {
-    modal.classList.remove('hidden');
-    setTimeout(() => {
-        modalContent.classList.remove('scale-95', 'opacity-0');
-        modalContent.classList.add('scale-100', 'opacity-100');
-    }, 100);
-});
-
-closeModalBtn.addEventListener('click', () => {
-    modalContent.classList.remove('scale-100', 'opacity-100');
-    modalContent.classList.add('scale-95', 'opacity-0');
-    modal.classList.add('hidden');
-});
+    if (formSection.classList.contains('hidden')) {
+        formSection.classList.remove('hidden');
+        formSection.style.transition = 'max-height 0.7s ease-in-out';
+        formSection.style.maxHeight = formSection.scrollHeight + "px";
+    } else {
+        formSection.style.maxHeight = '0';
+        setTimeout(() => {
+            formSection.classList.add('hidden');
+        }, 700);
+    }
+}

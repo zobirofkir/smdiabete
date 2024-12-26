@@ -22,6 +22,7 @@
     <meta name="twitter:title" content="{{ config('app.name') }}">
     <meta name="twitter:description" content="{{ config('app.description') }}">
     <meta name="twitter:image" content="{{ asset(config('app.image')) }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Link to your favicon -->
     <link rel="icon" href="{{ asset(config('app.favicon')) }}" type="image/x-icon">
@@ -29,6 +30,8 @@
     <!-- Stylesheets -->
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
 
     <title>{{ config('app.name') }}</title>
 </head>
@@ -48,5 +51,7 @@
     <script src="{{asset('assets/js/galleries.js')}}"></script>
     <script src="{{asset('assets/js/inscriptions.js')}}"></script>
     <script src="{{asset('assets/js/masterclass.js')}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>

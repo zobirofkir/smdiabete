@@ -26,8 +26,8 @@ class MasterclassRequest extends FormRequest
             'lastname' => 'required|string|max:255',
             'ville' => 'required|string|max:255',
             'secteur' => 'required|string|in:public,liberal,chu',
-            'phone' => 'required|string|max:15',
-            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:15|unique:masterclasses',
+            'email' => 'required|email|max:255|unique:masterclasses',
             'adresse' => 'required|string|max:255',
             'objectif' => 'required|string|max:500',
         ];
