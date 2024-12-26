@@ -220,7 +220,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             @foreach ($errors->all() as $error)
                 Toastify({
-                    text: "{{ $error }}",
+                    text: "{!! $error !!}",
                     duration: 5000,
                     close: true,
                     gravity: "top",
@@ -231,5 +231,6 @@
         });
     </script>
 @endif
+
 
 </x-app-layout>
