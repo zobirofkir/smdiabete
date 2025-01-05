@@ -39,10 +39,10 @@
                 Fédérer les efforts des acteurs autour d'une vision commune du traitement et de la prise en charge du diabète.
             </h2>
 
-            <div>
-                <a href="{{url('/sponsors')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-2 py-1 rounded ">Sponsors</a>
-                <a href="{{url('/charts')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-2 py-1 rounded ">Chart</a>
-                <a href="{{url('/members')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-2 py-1 rounded ">Bureau</a>
+            <div class="md:block hidden">
+                <a href="{{url('/sponsors')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-2 px-6 rounded-lg">Sponsors</a>
+                <a href="{{url('/charts')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-2 px-6 rounded-lg">Chart</a>
+                <a href="{{url('/members')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-2 px-6 rounded-lg">Bureau</a>
             </div>
         </div>
 
@@ -90,9 +90,9 @@
     </div>
 
     <div class="md:hidden block">
-        <a href="{{url('/sponsors')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-4 py-2 rounded ">Sponsors</a>
-        <a href="{{url('/charts')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-4 py-2 rounded ">Chart</a>
-        <a href="{{url('/members')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-4 py-2 rounded ">Bureau</a>
+        <a href="{{url('/sponsors')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg ">Sponsors</a>
+        <a href="{{url('/charts')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg ">Chart</a>
+        <a href="{{url('/members')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg ">Bureau</a>
     </div>
 
 </div>
