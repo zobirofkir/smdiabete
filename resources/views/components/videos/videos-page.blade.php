@@ -1,4 +1,8 @@
-<div class="px-8 md:px-16 mt-20">
+<div class="px-8 md:px-16 mt-20 mb-20">
+
+    <div class="flex justify-center items-center ">
+        <h1 class="text-4xl font-extrabold text-sky-600 text-center mb-8 uppercase tracking-wider">Vidéos</h1>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
         @foreach (range(1, 20) as $item)
