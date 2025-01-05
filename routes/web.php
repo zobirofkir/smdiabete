@@ -32,8 +32,25 @@ Route::get('/galleries', function () {
     return view('pages.galleries.galleries');
 });
 
+/**
+ * Inscription Routes
+ */
 Route::get('/inscriptions', [InscriptionController::class, 'index'])->name('inscriptions.index');
+
+/**
+ * Inscription Routes
+ */
 Route::post('/inscriptions/store', [InscriptionController::class, 'store'])->name('inscriptions.store');
 
+/**
+ * Masterclass Routes
+ */
 Route::get('/masterclass', [MasterclassController::class, 'index'])->name('masterclass.index');
+
+/**
+ * Masterclass Routes
+ */
 Route::post('/masterclass/store', [MasterclassController::class, 'store'])->name('masterclass.store');
+
+
+Route::get('/videos', function () {return view('pages.videos.videos');});
