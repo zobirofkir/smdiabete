@@ -1,5 +1,5 @@
 
-<div class=" px-8 md:px-16 ">
+<div class=" px-8 md:px-16">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <!-- Event 1 Card -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
