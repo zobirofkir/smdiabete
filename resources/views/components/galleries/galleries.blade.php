@@ -5,9 +5,9 @@
         <!-- Dossier Switcher -->
         <div class="flex justify-center mb-8">
             <button id="dossier1Button"
-                    class="px-6 py-3 bg-sky-600 text-white rounded-l-lg focus:outline-none hover:bg-sky-700 transition-colors shadow-lg hover:shadow-xl">Dossier 1</button>
+                    class="px-6 py-3 bg-sky-600 text-white rounded-l-lg focus:outline-none hover:bg-sky-700 transition-colors shadow-lg hover:shadow-xl">Journée Mondiale du Diabète</button>
             <button id="dossier2Button"
-                    class="px-6 py-3 bg-sky-200 text-sky-600 rounded-r-lg focus:outline-none hover:bg-sky-300 transition-colors shadow-lg hover:shadow-xl">Dossier 2</button>
+                    class="px-6 py-3 bg-sky-200 text-sky-600 rounded-r-lg focus:outline-none hover:bg-sky-300 transition-colors shadow-lg hover:shadow-xl">1er Congrès National de Diabètologie</button>
         </div>
 
         <!-- Image Gallery -->

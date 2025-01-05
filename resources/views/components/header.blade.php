@@ -54,11 +54,18 @@
                 <li><a href="{{url('/events')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Événements</a></li>
 
                 <li>
-                    <select name="galleries" id="galleries" class="text-gray-700 bg-white  rounded-md -my-2 focus:ring-2 focus:ring-primary focus:outline-none transition-all duration-200">
-                        <option value="{{ url('/galleries') }}" class="text-gray-700">Média Tech</option>
-                        <option value="{{ url('/galleries') }}" class="text-gray-700">Galleries</option>
-                        <option value="{{ url('/videos') }}" class="text-gray-700">Videos</option>
-                    </select>
+                    <form method="GET" action="">
+                        <select
+                            name="galleries"
+                            id="galleries"
+                            class="text-gray-700 bg-white rounded-md -my-2 focus:ring-2 focus:ring-primary focus:outline-none transition-all duration-200"
+                            onchange="this.form.action = this.value; this.form.submit();"
+                        >
+                            <option value="{{ url('/') }}" class="text-gray-700">Média Tech</option>
+                            <option value="{{ url('/galleries') }}" class="text-gray-700">Galleries</option>
+                            <option value="{{ url('/videos') }}" class="text-gray-700">Videos</option>
+                        </select>
+                    </form>
                 </li>
 
                 <li><a href="{{url('/login')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Identification</a></li>
