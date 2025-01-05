@@ -25,7 +25,6 @@
 
 <header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300 ease-in-out" id="main-header">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-
         <a href="{{url('/')}}" class="flex items-center">
             <img src="{{asset('assets/images/logo.png')}}" alt="Logo" class="h-12">
         </a>
@@ -43,20 +42,27 @@
                 </svg>
             </button>
 
-            <ul class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 mt-12 lg:mt-0 px-6 lg:px-0">
-
-                <div class="flex items-center justify-center md:hidden block mb-[50px]">
-                    <img src="{{asset('assets/images/logo.png')}}" alt="Logo" class="h-20 text">
+            <ul class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6 mt-12 lg:mt-0 px-6 lg:px-0">
+                <div class="flex items-center justify-center md:hidden block mb-12">
+                    <img src="{{asset('assets/images/logo.png')}}" alt="Logo" class="h-20">
                 </div>
 
-                <li><a href="{{url('/')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Accueil</a></li>
-                <li><a href="{{url('/masterclass')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Formation</a></li>
-                <li><a href="{{url('/actualities')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Actualité</a></li>
-                <li><a href="{{url('/abouts')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">À propos</a></li>
-                <li><a href="{{url('/events')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Événements</a></li>
-                <li><a href="{{url('/galleries')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Galerie</a></li>
-                <li><a href="{{url('/login')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Identification</a></li>
-                <li><a href="{{url('/contacts')}}" class="text-gray-700 hover:text-gray-900 block focus:outline-none focus:text-gray-900">Contact</a></li>
+                <li><a href="{{url('/')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Accueil</a></li>
+                <li><a href="{{url('/actualities')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Actualité</a></li>
+                <li><a href="{{url('/abouts')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">À propos</a></li>
+                <li><a href="{{url('/masterclass')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Formation</a></li>
+                <li><a href="{{url('/events')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Événements</a></li>
+
+                <li>
+                    <select name="galleries" id="galleries" class="text-gray-700 bg-white  rounded-md -my-2 focus:ring-2 focus:ring-primary focus:outline-none transition-all duration-200">
+                        <option value="{{ url('/galleries') }}" class="text-gray-700">Média Tech</option>
+                        <option value="{{ url('/galleries') }}" class="text-gray-700">Galleries</option>
+                        <option value="{{ url('/videos') }}" class="text-gray-700">Videos</option>
+                    </select>
+                </li>
+
+                <li><a href="{{url('/login')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Identification</a></li>
+                <li><a href="{{url('/contacts')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Contact</a></li>
             </ul>
         </nav>
     </div>
