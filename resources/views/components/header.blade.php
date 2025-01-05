@@ -62,6 +62,7 @@
                 </li>
 
                 <li><a href="{{url('/login')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Identification</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Agenda</a></li>
                 <li><a href="{{url('/contacts')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Contact</a></li>
             </ul>
         </nav>
