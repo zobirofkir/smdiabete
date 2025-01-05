@@ -1,4 +1,4 @@
-<section class="px-8 md:px-16">
+<section class="px-8 md:px-16 mb-20">
     <div class="text-center">
         <h1>
             Les membres de la {{config('app.name')}} remercient les laboratoires pharmaceutiques et les sociétés du matériel médical pour leur soutien moral et financier ainsi qu’a leur confiance. Cette participation a contribué à la réalisation de cette importante rencontre scientifique.
