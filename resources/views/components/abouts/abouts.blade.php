@@ -42,7 +42,7 @@
             <div>
                 <a href="{{url('/sponsors')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-2 py-1 rounded ">Sponsors</a>
                 <a href="{{url('/charts')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-2 py-1 rounded ">Chart</a>
-                <a href="{{url('/offices')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-2 py-1 rounded ">Bureau</a>
+                <a href="{{url('/members')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-2 py-1 rounded ">Bureau</a>
             </div>
         </div>
 
@@ -92,7 +92,7 @@
     <div class="md:hidden block">
         <a href="{{url('/sponsors')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-4 py-2 rounded ">Sponsors</a>
         <a href="{{url('/charts')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-4 py-2 rounded ">Chart</a>
-        <a href="{{url('/offices')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-4 py-2 rounded ">Bureau</a>
+        <a href="{{url('/members')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-4 py-2 rounded ">Bureau</a>
     </div>
 
 </div>

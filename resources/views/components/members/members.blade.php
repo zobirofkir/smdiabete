@@ -1,4 +1,4 @@
-<div class=" px-8 md:px-16 my-12 text-center">
+<div class=" px-8 md:px-16 my-12 text-center h-screen">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div>
             <h3 class="text-xl font-semibold mb-2 text-center">Présidente</h3>
