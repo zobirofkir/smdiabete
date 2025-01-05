@@ -38,6 +38,12 @@
                 <span class="absolute left-0 top-0 text-blue-400 font-bold">5.</span>
                 Fédérer les efforts des acteurs autour d'une vision commune du traitement et de la prise en charge du diabète.
             </h2>
+
+            <div>
+                <a href="{{url('/sponsors')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-2 py-1 rounded ">Sponsors</a>
+                <a href="{{url('/charts')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-2 py-1 rounded ">Chart</a>
+                <a href="{{url('/offices')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-2 py-1 rounded ">Bureau</a>
+            </div>
         </div>
 
 
@@ -82,4 +88,11 @@
     <div class="w-full md:w-1/2 max-w-xl">
         <img src="{{asset('assets/images/affiche/affiche-two.jpeg')}}" alt="SMD Image" class="w-full h-auto md:h-full rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
     </div>
+
+    <div class="md:hidden block">
+        <a href="{{url('/sponsors')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-4 py-2 rounded ">Sponsors</a>
+        <a href="{{url('/charts')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-4 py-2 rounded ">Chart</a>
+        <a href="{{url('/offices')}}" class="text-white hover:text-white transition duration-300 bg-blue-400 hover:bg-blue-500 px-4 py-2 rounded ">Bureau</a>
+    </div>
+
 </div>
