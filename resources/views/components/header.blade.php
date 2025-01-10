@@ -3,7 +3,7 @@
         <span class="mr-4 flex items-center gap-2 whitespace-nowrap">
           <i class="fa-solid fa-envelope"></i>  smdiabete@gmail.com
         </span>
-        <span class="mr-4 flex items-center gap-2 whitespace-nowrap" onclick="window.location.href='tel:+212619920942'">
+        <span class="mr-4 flex items-center gap-2 whitespace-nowrap" onclick="window.location.href='https://wa.me/212619920942'">
             <i class="fa-solid fa-phone"></i>  +212 6 19 92 09 42
         </span>
     </div>

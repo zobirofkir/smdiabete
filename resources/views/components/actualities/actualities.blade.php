@@ -48,7 +48,7 @@
 
                 <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
                     <a href="{{url('/inscriptions')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg">
-                        Create
+                        Inscription
                     </a>
                     <a href="{{url('/programme')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg">
                         Programme
