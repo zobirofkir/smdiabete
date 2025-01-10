@@ -185,9 +185,9 @@
 
                     <p class="text-center mt-6">
                         <a
-                            href="https://www.smdiabete.org/masterclass"
                             target="_blank"
                             class="inline-block text-lg text-blue-800 underline font-medium hover:text-blue-600"
+                            onclick="window.location.href='tel:+212619920942'"
                         >
                             Inscrivez-vous ici
                         </a>

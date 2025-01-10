@@ -3,7 +3,7 @@
         <span class="mr-4 flex items-center gap-2 whitespace-nowrap">
           <i class="fa-solid fa-envelope"></i>  smdiabete@gmail.com
         </span>
-        <span class="mr-4 flex items-center gap-2 whitespace-nowrap">
+        <span class="mr-4 flex items-center gap-2 whitespace-nowrap" onclick="window.location.href='tel:+212619920942'">
             <i class="fa-solid fa-phone"></i>  +212 6 19 92 09 42
         </span>
     </div>
@@ -48,7 +48,7 @@
                 </div>
 
                 <li><a href="{{url('/')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Accueil</a></li>
-                <li><a href="{{url('/actualities')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Actualité</a></li>
+                <li><a href="{{url('/actualities')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Actualités</a></li>
                 <li><a href="{{url('/abouts')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">À propos</a></li>
                 <li><a href="{{url('/masterclass')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Formation</a></li>
                 <li><a href="{{url('/events')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">Événements</a></li>
@@ -61,9 +61,9 @@
                             class="text-gray-700 bg-white rounded-md -my-2 focus:ring-2 focus:ring-primary focus:outline-none transition-all duration-200"
                             onchange="this.form.action = this.value; this.form.submit();"
                         >
-                            <option value="{{ url('/') }}" class="text-gray-700">Média Tech</option>
-                            <option value="{{ url('/galleries') }}" class="text-gray-700">Galleries</option>
-                            <option value="{{ url('/videos') }}" class="text-gray-700">Videos</option>
+                            <option value="{{ url('/') }}" class="text-gray-700">Médiathèque</option>
+                            <option value="{{ url('/galleries') }}" class="text-gray-700">Galeries</option>
+                            <option value="{{ url('/videos') }}" class="text-gray-700">Vidéos</option>
                         </select>
                     </form>
                 </li>

@@ -1,6 +1,6 @@
 <section class="py-10 mb-12">
     <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-extrabold text-sky-600 text-center mb-8 uppercase tracking-wider">Gallery</h1>
+        <h1 class="text-4xl font-extrabold text-sky-600 text-center mb-8 uppercase tracking-wider">Galeries</h1>
 
         <!-- Dossier Switcher -->
         <div class="flex justify-center mb-8">
@@ -14,7 +14,7 @@
         <div id="imageGallery" class="">
             <!-- Dossier 1 Images -->
             <div id="dossier1" class="dossier grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                @foreach (range(1, 31) as $item)
+                @foreach (range(1, 26) as $item)
                     <div class="relative group overflow-hidden rounded-xl shadow-lg transition-all hover:shadow-2xl transform hover:scale-105 duration-500 ease-in-out">
                         <img src="{{ asset('assets/images/album/album-' . $item . '.jpeg') }}"
                              alt="Image {{$item}}"
@@ -26,7 +26,7 @@
 
             <!-- Dossier 2 Images -->
             <div id="dossier2" class="dossier hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                @foreach (range(32, 67) as $item)
+                @foreach (range(32, 68) as $item)
                     <div class="relative group overflow-hidden rounded-xl shadow-lg transition-all hover:shadow-2xl transform hover:scale-105 duration-500 ease-in-out">
                         <img src="{{ asset('assets/images/album/album-dosier-two-' . $item . '.jpeg') }}"
                              alt="Image {{$item}}"
