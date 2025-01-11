@@ -89,10 +89,4 @@
         <img src="{{asset('assets/images/affiche/affiche-two.jpeg')}}" alt="SMD Image" class="w-full h-auto md:h-full rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
     </div>
 
-    <div class="md:hidden block">
-        <a href="{{url('/sponsors')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg ">Sponsors</a>
-        <a href="{{url('/charts')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg ">Chart</a>
-        <a href="{{url('/members')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg ">Bureau</a>
-    </div>
-
 </div>
