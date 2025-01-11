@@ -109,8 +109,9 @@
                             class="text-gray-700 bg-white rounded-md focus:ring-2 focus:ring-primary focus:outline-none transition-all duration-200"
                             onchange="window.location.href = this.value;"
                         >
-                            <option value="{{ url('/abouts') }}">À propos</option>
-                            <option value="{{ url('/sponsors') }}">Sponsors</option>
+                        <option value="{{ url('/abouts') }}" selected disabled >À propos</option>
+                        <option value="{{ url('/abouts') }}" >À propos</option>
+                        <option value="{{ url('/sponsors') }}">Sponsors</option>
                             <option value="{{ url('/charts') }}">Charte</option>
                             <option value="{{ url('/members') }}">Bureau</option>
                         </select>
