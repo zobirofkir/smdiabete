@@ -102,14 +102,13 @@
                     </a>
                 </li>
                 <li>
-                    <form method="GET" id="redirectForm">
+                    <form method="GET" id="redirectForm" class="-mt-[3px]">
                         <select
                             id="abouts"
                             name="abouts"
                             class="text-gray-700 bg-white rounded-md focus:ring-2 focus:ring-primary focus:outline-none transition-all duration-200"
                             onchange="window.location.href = this.value;"
                         >
-                            <option value="" disabled selected>Choose an option</option>
                             <option value="{{ url('/abouts') }}">À propos</option>
                             <option value="{{ url('/sponsors') }}">Sponsors</option>
                             <option value="{{ url('/charts') }}">Charte</option>
