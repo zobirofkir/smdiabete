@@ -28,12 +28,13 @@ class InscriptionResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('firstname')->required(),
                 Forms\Components\TextInput::make('lastname')->required(),
-                Forms\Components\TextInput::make('ville')->required(),
+                Forms\Components\TextInput::make('phone')->required(),
+                Forms\Components\TextInput::make('email')->required(),
                 Forms\Components\TextInput::make('secteur')->required(),
-                Forms\Components\TextInput::make('phone')->required()->tel(),
-                Forms\Components\TextInput::make('email')->required()->email(),
-                Forms\Components\TextInput::make('adresse')->required(),
-                Forms\Components\Textarea::make('objectif')->required(),
+                Forms\Components\TextInput::make('type')->required(),
+                Forms\Components\TextInput::make('specialite')->required(),
+                Forms\Components\TextInput::make('ville')->required(),
+                Forms\Components\Textarea::make('paye')->required(),
             ]);
     }
 
@@ -43,12 +44,13 @@ class InscriptionResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('firstname')->label('Prénom')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('lastname')->label('Nom')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('ville')->label('Ville')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('phone')->label('Téléphone')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('email')->label('Email')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('secteur')->label('Secteur')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('phone')->label('Téléphone')->searchable(),
-                Tables\Columns\TextColumn::make('email')->label('Email')->searchable(),
-                Tables\Columns\TextColumn::make('adresse')->label('Adresse')->searchable(),
-                Tables\Columns\TextColumn::make('objectif')->label('Objectif')->searchable(),
+                Tables\Columns\TextColumn::make('type')->label('Type')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('specialite')->label('Specialité')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('ville')->label('Ville')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('paye')->label('Paye')->sortable()->searchable(),
                 Tables\Columns\BadgeColumn::make('status')
                     ->label('Statut')
                     ->colors([

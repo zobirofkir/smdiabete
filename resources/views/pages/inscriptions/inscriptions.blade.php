@@ -42,12 +42,11 @@
                     @enderror
                 </div>
                 <div>
-                    <label for="secteur" class="block text-sm font-medium text-gray-700">Secteur*</label>
+                    <label for="secteur" class="block text-sm font-medium text-gray-700">Type*</label>
                     <select id="secteur" name="secteur" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
                         <option value="">-</option>
-                        <option value="public" {{ old('secteur') == 'public' ? 'selected' : '' }}>Public</option>
-                        <option value="liberal" {{ old('secteur') == 'liberal' ? 'selected' : '' }}>Libéral</option>
-                        <option value="chu" {{ old('secteur') == 'chu' ? 'selected' : '' }}>Chu</option>
+                        <option value="specialiste" {{ old('secteur') == 'specialiste' ? 'selected' : '' }}>Spécialiste</option>
+                        <option value="residant" {{ old('secteur') == 'residant' ? 'selected' : '' }}>Résidant</option>
                     </select>
                     @error('secteur')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -81,11 +80,29 @@
             </div>
 
             <div>
-                <label for="objectif" class="block text-sm font-medium text-gray-700 mt-6">Objectif attendu de la formation*</label>
-                <textarea id="objectif" name="objectif" rows="4" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Vos objectifs">{{ old('objectif') }}</textarea>
-                @error('objectif')
+                <label for="paye" class="block text-sm font-medium text-gray-700 mt-6">Payé*</label>
+                <input type="text" id="paye" name="paye" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Payé" value="{{ old('paye') }}">
+                @error('paye')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
+            </div>
+
+            {{-- Add missing fields --}}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                <div>
+                    <label for="type" class="block text-sm font-medium text-gray-700">Type*</label>
+                    <input type="text" id="type" name="type" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Type" value="{{ old('type') }}">
+                    @error('type')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div>
+                    <label for="specialite" class="block text-sm font-medium text-gray-700">Spécialité*</label>
+                    <input type="text" id="specialite" name="specialite" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Spécialité" value="{{ old('specialite') }}">
+                    @error('specialite')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
             </div>
 
             <button type="submit" class="mt-6 bg-sky-500 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-md w-full">
