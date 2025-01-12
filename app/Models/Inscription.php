@@ -10,11 +10,12 @@ class Inscription extends Model
         'firstname',
         'lastname',
         'ville',
-        'secteur',
         'phone',
         'email',
-        'adresse',
-        'objectif',
-        'status',
+        'secteur',
+        'type',
+        'specialite',
+        'ville',
+        'paye',
     ];
 }
