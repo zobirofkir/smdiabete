@@ -4,14 +4,13 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\InscriptionResource\Pages;
 use App\Models\Inscription;
-use App\Models\User;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Form;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Support\Facades\Hash;
+use Filament\Tables\Actions\Action;
 use Illuminate\Support\Facades\Mail;
 
 class InscriptionResource extends Resource
@@ -19,22 +18,51 @@ class InscriptionResource extends Resource
     protected static ?string $model = Inscription::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
     protected static ?string $navigationGroup = 'Inscriptions';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('firstname')->required(),
-                Forms\Components\TextInput::make('lastname')->required(),
-                Forms\Components\TextInput::make('phone')->required(),
-                Forms\Components\TextInput::make('email')->required(),
-                Forms\Components\TextInput::make('secteur')->required(),
-                Forms\Components\TextInput::make('type')->required(),
-                Forms\Components\TextInput::make('specialite')->required(),
-                Forms\Components\TextInput::make('ville')->required(),
-                Forms\Components\Textarea::make('paye')->required(),
+                Forms\Components\TextInput::make('firstname')
+                    ->required()
+                    ->label('First Name'),
+                Forms\Components\TextInput::make('lastname')
+                    ->required()
+                    ->label('Last Name'),
+                Forms\Components\TextInput::make('phone')
+                    ->required()
+                    ->label('Phone'),
+                Forms\Components\TextInput::make('email')
+                    ->email()
+                    ->required()
+                    ->label('Email'),
+                Forms\Components\TextInput::make('secteur')
+                    ->label('Secteur'),
+                Forms\Components\TextInput::make('type'),
+                Forms\Components\TextInput::make('specialite')
+                    ->label('Speciality'),
+                Forms\Components\TextInput::make('ville')
+                    ->label('City'),
+                Forms\Components\TextInput::make('paye')
+                    ->label('Country'),
+                Forms\Components\Select::make('sex')
+                    ->options([
+                        'dr' => 'Dr',
+                        'pr' => 'Pr'
+                    ])
+                    ->label('Gender'),
+                Forms\Components\DatePicker::make('arrival_date')
+                    ->label('Arrival Date'),
+                Forms\Components\DatePicker::make('departure_date')
+                    ->label('Departure Date'),
+                Forms\Components\Select::make('payment_method')
+                    ->options([
+                        'laboratoire' => 'Laboratory',
+                        'virement' => 'Virement',
+                        'invite' => 'Invite',
+                    ])
+                    ->label('Payment Method'),
             ]);
     }
 
@@ -42,87 +70,64 @@ class InscriptionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('firstname')->label('Prénom')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('lastname')->label('Nom')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('phone')->label('Téléphone')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('email')->label('Email')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('secteur')->label('Secteur')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('type')->label('Type')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('specialite')->label('Specialité')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('ville')->label('Ville')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('paye')->label('Paye')->sortable()->searchable(),
-                Tables\Columns\BadgeColumn::make('status')
-                    ->label('Statut')
-                    ->colors([
-                        'primary' => 'pending',
-                        'success' => 'accepted',
-                        'danger' => 'refused',
-                    ]),
-            ])
-            ->defaultSort('created_at', 'desc')
-            ->filters([
-                Tables\Filters\SelectFilter::make('status')
-                    ->label('Statut')
-                    ->options([
-                        'pending' => 'En attente',
-                        'accepted' => 'Accepté',
-                        'refused' => 'Refusé',
-                    ]),
+                TextColumn::make('firstname')
+                    ->label('First Name')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('lastname')
+                    ->label('Last Name')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('phone')
+                    ->label('Phone')
+                    ->searchable(),
+                TextColumn::make('email')
+                    ->label('Email')
+                    ->searchable(),
+                TextColumn::make('secteur')
+                    ->label('Secteur'),
+                TextColumn::make('type')
+                    ->label('Type'),
+                TextColumn::make('specialite')
+                    ->label('Speciality'),
+                TextColumn::make('ville')
+                    ->label('City'),
+                TextColumn::make('paye')
+                    ->label('Country'),
+                TextColumn::make('sex')
+                    ->label('Gender'),
+                TextColumn::make('arrival_date')
+                    ->label('Arrival Date'),
+                TextColumn::make('departure_date')
+                    ->label('Departure Date'),
+                TextColumn::make('payment_method')
+                    ->label('Payment Method'),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-                Tables\Actions\Action::make('validate')
-                    ->label('Valider')
-                    ->color('success')
-                    ->action(function ($record) {
-                        $existingUser = User::where('email', $record->email)->first();
+                Action::make('accept')
+                    ->label('Accept')
+                    ->icon('heroicon-o-check')
+                    ->action(function (Inscription $record) {
+                        $record->status = 'accepted';
+                        $record->save();
 
-                        if ($existingUser) {
-                            Notification::make()
-                                ->title('L\'utilisateur existe déjà')
-                                ->body('L\'utilisateur existe déjà. Inscription non modifiée.')
-                                ->warning()
-                                ->send();
-
-                            return;
-                        }
-
-                        $password = $record->firstname.'+123';
-
-                        $user = User::create([
-                            'name' => $record->firstname.' '.$record->lastname,
-                            'email' => $record->email,
-                            'password' => Hash::make($password),
-                        ]);
-
-                        Mail::send([], [], function ($message) use ($record, $password) {
-                            $message->to($record->email)
-                                ->subject('Vos informations de connexion')
-                                ->text("Bonjour {$record->firstname},\n\nVoici vos informations de connexion :\n\nEmail : {$record->email}\nMot de passe : $password\n\nMerci.");
-                        });
-
-                        $record->update(['status' => 'accepted']);
-
-                        Notification::make()
-                            ->title('Utilisateur créé')
-                            ->body('L\'utilisateur a été créé avec succès.')
-                            ->success()
-                            ->send();
-                    }),
-                Tables\Actions\Action::make('refuse')
-                    ->label('Refuser')
-                    ->color('danger')
-                    ->action(function ($record) {
-                        $record->update(['status' => 'refused']);
-
-                        Notification::make()
-                            ->title('Inscription refusée')
-                            ->body('L\'inscription a été refusée avec succès.')
-                            ->danger()
-                            ->send();
-                    }),
-            ])
-            ->bulkActions([]);
+                        Mail::to($record->email)->send(new \App\Mail\InscriptionAccepted($record));
+                    })
+                    ->requiresConfirmation()
+                    ->color('success'),
+                Action::make('reject')
+                    ->label('Reject')
+                    ->icon('heroicon-o-x-circle')
+                    ->action(function (Inscription $record) {
+                        Mail::to($record->email)->send(new \App\Mail\InscriptionRejected($record));
+                    })
+                    ->requiresConfirmation()
+                    ->color('danger'),
+                    ])
+            ->bulkActions([
+                Tables\Actions\DeleteBulkAction::make(),
+            ]);
     }
 
     public static function getRelations(): array
