@@ -31,6 +31,11 @@ class InscriptionRequest extends FormRequest
             'specialite' => 'required|string|max:255',
             'ville' => 'required|string|max:255',
             'paye' => 'required|string|max:255',
+
+            'sex' => 'required|string|in:dr,pr',
+            'arrival_date' => 'required|date',
+            'departure_date' => 'required|date',
+            'payment_method' => 'required|string|in:laboratoire,virement,invite',
         ];
     }
 }

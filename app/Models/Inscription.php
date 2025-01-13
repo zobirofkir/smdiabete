@@ -16,5 +16,10 @@ class Inscription extends Model
         'specialite',
         'ville',
         'paye',
+
+        'sex',
+        'arrival_date',
+        'departure_date',
+        'payment_method',
     ];
 }

@@ -35,27 +35,6 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
                 <div>
-                    <label for="ville" class="block text-sm font-medium text-gray-700">Ville*</label>
-                    <input type="text" id="ville" name="ville" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre ville" value="{{ old('ville') }}">
-                    @error('ville')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div>
-                    <label for="secteur" class="block text-sm font-medium text-gray-700">Type*</label>
-                    <select id="secteur" name="secteur" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        <option value="">-</option>
-                        <option value="specialiste" {{ old('secteur') == 'specialiste' ? 'selected' : '' }}>Spécialiste</option>
-                        <option value="residant" {{ old('secteur') == 'residant' ? 'selected' : '' }}>Résidant</option>
-                    </select>
-                    @error('secteur')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-10">
-                <div>
                     <label for="phone" class="block text-sm font-medium text-gray-700">Téléphone*</label>
                     <input type="tel" id="phone" name="phone" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre téléphone" value="{{ old('phone') }}">
                     @error('phone')
@@ -71,24 +50,18 @@
                 </div>
             </div>
 
-            <div>
-                <label for="adresse" class="block text-sm font-medium text-gray-700 mt-6">Adresse*</label>
-                <textarea id="adresse" name="adresse" rows="3" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre adresse">{{ old('adresse') }}</textarea>
-                @error('adresse')
-                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
-            </div>
-
-            <div>
-                <label for="paye" class="block text-sm font-medium text-gray-700 mt-6">Payé*</label>
-                <input type="text" id="paye" name="paye" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Payé" value="{{ old('paye') }}">
-                @error('paye')
-                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
-            </div>
-
-            {{-- Add missing fields --}}
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                <div>
+                    <label for="secteur" class="block text-sm font-medium text-gray-700">Secteur*</label>
+                    <select id="secteur" name="secteur" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">-</option>
+                        <option value="specialiste" {{ old('secteur') == 'specialiste' ? 'selected' : '' }}>Spécialiste</option>
+                        <option value="residant" {{ old('secteur') == 'residant' ? 'selected' : '' }}>Résidant</option>
+                    </select>
+                    @error('secteur')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
                 <div>
                     <label for="type" class="block text-sm font-medium text-gray-700">Type*</label>
                     <input type="text" id="type" name="type" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Type" value="{{ old('type') }}">
@@ -96,6 +69,9 @@
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
                 <div>
                     <label for="specialite" class="block text-sm font-medium text-gray-700">Spécialité*</label>
                     <input type="text" id="specialite" name="specialite" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Spécialité" value="{{ old('specialite') }}">
@@ -103,11 +79,105 @@
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
+                <div>
+                    <label for="ville" class="block text-sm font-medium text-gray-700">Ville*</label>
+                    <input type="text" id="ville" name="ville" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre ville" value="{{ old('ville') }}">
+                    @error('ville')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
             </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                <div>
+                    <label for="sex" class="block text-sm font-medium text-gray-700">Sexe*</label>
+                    <select id="sex" name="sex" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">-</option>
+                        <option value="dr" {{ old('sex') == 'dr' ? 'selected' : '' }}>Dr</option>
+                        <option value="pr" {{ old('sex') == 'pr' ? 'selected' : '' }}>Pr</option>
+                    </select>
+                    @error('sex')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div>
+                    <label for="paye" class="block text-sm font-medium text-gray-700">Payé*</label>
+                    <input type="text" id="paye" name="paye" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Payé" value="{{ old('paye') }}">
+                    @error('paye')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                <div>
+                    <label for="arrival_date" class="block text-sm font-medium text-gray-700">Date d'arrivée*</label>
+                    <input type="date" id="arrival_date" name="arrival_date" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" value="{{ old('arrival_date') }}">
+                    @error('arrival_date')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div>
+                    <label for="departure_date" class="block text-sm font-medium text-gray-700">Date de départ*</label>
+                    <input type="date" id="departure_date" name="departure_date" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" value="{{ old('departure_date') }}">
+                    @error('departure_date')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+
+
+                {{-- Payment Method --}}
+                <div class="mt-6">
+                    <label for="payment_method" class="block text-sm font-medium text-gray-700">Mode de paiement*</label>
+                    <select id="payment_method" name="payment_method" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">-</option>
+                        <option value="laboratoire" {{ old('payment_method') == 'laboratoire' ? 'selected' : '' }}>Laboratoire</option>
+                        <option value="virement" {{ old('payment_method') == 'virement' ? 'selected' : '' }}>
+                            Paiement par virement (RIB : 225 640 039 600 025 651 011 169)
+                        </option>
+                        <option value="invite" {{ old('payment_method') == 'invite' ? 'selected' : '' }}>Sur place invité(e)</option>
+                    </select>
+                    @error('payment_method')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                {{-- List of Laboratories (hidden by default) --}}
+                <div id="laboratoire_list" class="mt-6 hidden">
+                    <label for="laboratoire" class="block text-sm font-medium text-gray-700">Choisissez un laboratoire*</label>
+                    <select id="laboratoire" name="laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">-</option>
+                        <option value="laboratoire_1" {{ old('laboratoire') == 'laboratoire_1' ? 'selected' : '' }}>Laboratoire 1</option>
+                        <option value="laboratoire_2" {{ old('laboratoire') == 'laboratoire_2' ? 'selected' : '' }}>Laboratoire 2</option>
+                        <option value="laboratoire_3" {{ old('laboratoire') == 'laboratoire_3' ? 'selected' : '' }}>Laboratoire 3</option>
+                    </select>
+                    @error('laboratoire')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
 
             <button type="submit" class="mt-6 bg-sky-500 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-md w-full">
                 VALIDER
             </button>
         </form>
+
+
     </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const paymentMethod = document.getElementById('payment_method');
+                const laboratoireList = document.getElementById('laboratoire_list');
+
+                paymentMethod.addEventListener('change', function () {
+                    if (this.value === 'laboratoire') {
+                        laboratoireList.classList.remove('hidden');
+                    } else {
+                        laboratoireList.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
 </x-app-layout>
