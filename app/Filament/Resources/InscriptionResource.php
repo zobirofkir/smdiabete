@@ -12,6 +12,8 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Filament\Tables\Actions\Action;
 use Illuminate\Support\Facades\Mail;
+use Filament\Notifications\Notification;
+use Illuminate\Support\Facades\Log;
 
 class InscriptionResource extends Resource
 {
@@ -26,43 +28,44 @@ class InscriptionResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('firstname')
                     ->required()
-                    ->label('First Name'),
+                    ->label('Prénom'),
                 Forms\Components\TextInput::make('lastname')
                     ->required()
-                    ->label('Last Name'),
+                    ->label('Nom'),
                 Forms\Components\TextInput::make('phone')
                     ->required()
-                    ->label('Phone'),
+                    ->label('Téléphone'),
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->required()
                     ->label('Email'),
                 Forms\Components\TextInput::make('secteur')
                     ->label('Secteur'),
-                Forms\Components\TextInput::make('type'),
+                Forms\Components\TextInput::make('type')
+                    ->label('Type'),
                 Forms\Components\TextInput::make('specialite')
-                    ->label('Speciality'),
+                    ->label('Spécialité'),
                 Forms\Components\TextInput::make('ville')
-                    ->label('City'),
+                    ->label('Ville'),
                 Forms\Components\TextInput::make('paye')
-                    ->label('Country'),
+                    ->label('Pays'),
                 Forms\Components\Select::make('sex')
                     ->options([
                         'dr' => 'Dr',
                         'pr' => 'Pr'
                     ])
-                    ->label('Gender'),
+                    ->label('Genre'),
                 Forms\Components\DatePicker::make('arrival_date')
-                    ->label('Arrival Date'),
+                    ->label('Date d\'arrivée'),
                 Forms\Components\DatePicker::make('departure_date')
-                    ->label('Departure Date'),
+                    ->label('Date de départ'),
                 Forms\Components\Select::make('payment_method')
                     ->options([
-                        'laboratoire' => 'Laboratory',
+                        'laboratoire' => 'Laboratoire',
                         'virement' => 'Virement',
-                        'invite' => 'Invite',
+                        'invite' => 'Invité',
                     ])
-                    ->label('Payment Method'),
+                    ->label('Méthode de paiement'),
             ]);
     }
 
@@ -71,15 +74,15 @@ class InscriptionResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('firstname')
-                    ->label('First Name')
+                    ->label('Prénom')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('lastname')
-                    ->label('Last Name')
+                    ->label('Nom')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('phone')
-                    ->label('Phone')
+                    ->label('Téléphone')
                     ->searchable(),
                 TextColumn::make('email')
                     ->label('Email')
@@ -89,42 +92,77 @@ class InscriptionResource extends Resource
                 TextColumn::make('type')
                     ->label('Type'),
                 TextColumn::make('specialite')
-                    ->label('Speciality'),
+                    ->label('Spécialité'),
                 TextColumn::make('ville')
-                    ->label('City'),
+                    ->label('Ville'),
                 TextColumn::make('paye')
-                    ->label('Country'),
+                    ->label('Pays'),
                 TextColumn::make('sex')
-                    ->label('Gender'),
+                    ->label('Genre'),
                 TextColumn::make('arrival_date')
-                    ->label('Arrival Date'),
+                    ->label('Date d\'arrivée'),
                 TextColumn::make('departure_date')
-                    ->label('Departure Date'),
+                    ->label('Date de départ'),
                 TextColumn::make('payment_method')
-                    ->label('Payment Method'),
+                    ->label('Méthode de paiement'),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Action::make('accept')
-                    ->label('Accept')
+                    ->label('Accepter')
                     ->icon('heroicon-o-check')
                     ->action(function (Inscription $record) {
-                        $record->status = 'accepted';
-                        $record->save();
+                        try {
+                            $record->status = 'acceptée';
+                            $record->save();
 
-                        Mail::to($record->email)->send(new \App\Mail\InscriptionAccepted($record));
+                            Mail::to($record->email)->send(new \App\Mail\InscriptionAccepted($record));
+
+                            Notification::make()
+                                ->title('Succès')
+                                ->body('L\'inscription a été acceptée avec succès.')
+                                ->success()
+                                ->send();
+                        } catch (\Exception $e) {
+                            Log::error('Erreur lors de l\'acceptation de l\'inscription : ' . $e->getMessage());
+
+                            Notification::make()
+                                ->title('Erreur')
+                                ->body('Échec de l\'acceptation de l\'inscription.')
+                                ->danger()
+                                ->send();
+                        }
                     })
                     ->requiresConfirmation()
                     ->color('success'),
                 Action::make('reject')
-                    ->label('Reject')
+                    ->label('Rejeter')
                     ->icon('heroicon-o-x-circle')
                     ->action(function (Inscription $record) {
-                        Mail::to($record->email)->send(new \App\Mail\InscriptionRejected($record));
+                        try {
+                            $record->status = 'rejetée';
+                            $record->save();
+
+                            Mail::to($record->email)->send(new \App\Mail\InscriptionRejected($record));
+
+                            Notification::make()
+                                ->title('Succès')
+                                ->body('L\'inscription a été rejetée avec succès.')
+                                ->success()
+                                ->send();
+                        } catch (\Exception $e) {
+                            Log::error('Erreur lors du rejet de l\'inscription : ' . $e->getMessage());
+
+                            Notification::make()
+                                ->title('Erreur')
+                                ->body('Échec du rejet de l\'inscription.')
+                                ->danger()
+                                ->send();
+                        }
                     })
                     ->requiresConfirmation()
                     ->color('danger'),
-                    ])
+            ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
