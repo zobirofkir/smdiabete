@@ -12,8 +12,8 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Filament\Tables\Actions\Action;
 use Illuminate\Support\Facades\Mail;
-use Filament\Notifications\Notification;
-use Illuminate\Support\Facades\Log;
+use App\Mail\InscriptionAccepted;
+use App\Mail\InscriptionRejected;
 
 class InscriptionResource extends Resource
 {
@@ -52,20 +52,30 @@ class InscriptionResource extends Resource
                 Forms\Components\Select::make('sex')
                     ->options([
                         'dr' => 'Dr',
-                        'pr' => 'Pr'
+                        'pr' => 'Pr',
                     ])
                     ->label('Genre'),
                 Forms\Components\DatePicker::make('arrival_date')
+                    ->required()
                     ->label('Date d\'arrivée'),
                 Forms\Components\DatePicker::make('departure_date')
+                    ->required()
                     ->label('Date de départ'),
                 Forms\Components\Select::make('payment_method')
                     ->options([
                         'laboratoire' => 'Laboratoire',
                         'virement' => 'Virement',
-                        'invite' => 'Invité',
+                        'invite' => 'Invite',
                     ])
                     ->label('Méthode de paiement'),
+                Forms\Components\Select::make('status')
+                    ->options([
+                        'pending' => 'En attente',
+                        'accepted' => 'Accepté',
+                        'rejected' => 'Rejeté',
+                    ])
+                    ->default('pending')
+                    ->label('Statut'),
             ]);
     }
 
@@ -106,32 +116,17 @@ class InscriptionResource extends Resource
                 TextColumn::make('payment_method')
                     ->label('Méthode de paiement'),
             ])
+            ->defaultSort('created_at', 'desc')
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Action::make('accept')
                     ->label('Accepter')
                     ->icon('heroicon-o-check')
                     ->action(function (Inscription $record) {
-                        try {
-                            $record->status = 'acceptée';
-                            $record->save();
+                        $record->status = 'accepted';
+                        $record->save();
 
-                            Mail::to($record->email)->send(new \App\Mail\InscriptionAccepted($record));
-
-                            Notification::make()
-                                ->title('Succès')
-                                ->body('L\'inscription a été acceptée avec succès.')
-                                ->success()
-                                ->send();
-                        } catch (\Exception $e) {
-                            Log::error('Erreur lors de l\'acceptation de l\'inscription : ' . $e->getMessage());
-
-                            Notification::make()
-                                ->title('Erreur')
-                                ->body('Échec de l\'acceptation de l\'inscription.')
-                                ->danger()
-                                ->send();
-                        }
+                        Mail::to($record->email)->send(new InscriptionAccepted($record));
                     })
                     ->requiresConfirmation()
                     ->color('success'),
@@ -139,26 +134,10 @@ class InscriptionResource extends Resource
                     ->label('Rejeter')
                     ->icon('heroicon-o-x-circle')
                     ->action(function (Inscription $record) {
-                        try {
-                            $record->status = 'rejetée';
-                            $record->save();
+                        $record->status = 'rejected';
+                        $record->save();
 
-                            Mail::to($record->email)->send(new \App\Mail\InscriptionRejected($record));
-
-                            Notification::make()
-                                ->title('Succès')
-                                ->body('L\'inscription a été rejetée avec succès.')
-                                ->success()
-                                ->send();
-                        } catch (\Exception $e) {
-                            Log::error('Erreur lors du rejet de l\'inscription : ' . $e->getMessage());
-
-                            Notification::make()
-                                ->title('Erreur')
-                                ->body('Échec du rejet de l\'inscription.')
-                                ->danger()
-                                ->send();
-                        }
+                        Mail::to($record->email)->send(new InscriptionRejected($record));
                     })
                     ->requiresConfirmation()
                     ->color('danger'),
