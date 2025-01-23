@@ -21,5 +21,6 @@ class Inscription extends Model
         'arrival_date',
         'departure_date',
         'payment_method',
+        'rib_pdf_path'
     ];
 }

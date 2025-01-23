@@ -1,6 +1,6 @@
 <x-app-layout>
     <section class="fade-in flex justify-center items-center h-screen mt-[150px] mb-[150px]">
-        <form action="{{ route('inscriptions.store') }}" method="POST" class="bg-white p-8 rounded-lg shadow-lg md:w-[60%] w-full max-w-4xl">
+        <form action="{{ route('inscriptions.store') }}" method="POST" class="bg-white p-8 rounded-lg shadow-lg md:w-[60%] w-full max-w-4xl" enctype="multipart/form-data">
             @csrf
 
             {{-- Success and Error Messages --}}
@@ -18,19 +18,21 @@
             {{-- Form Fields --}}
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                    <label for="firstname" class="block text-sm font-medium text-gray-700">Prénom*</label>
-                    <input type="text" id="firstname" name="firstname" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre prénom" value="{{ old('firstname') }}">
-                    @error('firstname')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div>
                     <label for="lastname" class="block text-sm font-medium text-gray-700">Nom*</label>
                     <input type="text" id="lastname" name="lastname" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre nom" value="{{ old('lastname') }}">
                     @error('lastname')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
+
+                <div>
+                    <label for="firstname" class="block text-sm font-medium text-gray-700">Prénom*</label>
+                    <input type="text" id="firstname" name="firstname" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre prénom" value="{{ old('firstname') }}">
+                    @error('firstname')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
@@ -42,7 +44,7 @@
                     @enderror
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email*</label>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                     <input type="email" id="email" name="email" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre email" value="{{ old('email') }}">
                     @error('email')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -55,8 +57,8 @@
                     <label for="secteur" class="block text-sm font-medium text-gray-700">Secteur*</label>
                     <select id="secteur" name="secteur" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
                         <option value="">-</option>
-                        <option value="specialiste" {{ old('secteur') == 'specialiste' ? 'selected' : '' }}>Spécialiste</option>
-                        <option value="residant" {{ old('secteur') == 'residant' ? 'selected' : '' }}>Résidant</option>
+                        <option value="public" {{ old('secteur') == 'public' ? 'selected' : '' }}>Public</option>
+                        <option value="private" {{ old('secteur') == 'private' ? 'selected' : '' }}>Privé</option>
                     </select>
                     @error('secteur')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -64,7 +66,12 @@
                 </div>
                 <div>
                     <label for="type" class="block text-sm font-medium text-gray-700">Type*</label>
-                    <input type="text" id="type" name="type" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Type" value="{{ old('type') }}">
+                    <select id="type" name="type" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">-</option>
+                        <option value="specialiste" {{ old('type') == 'specialiste' ? 'selected' : '' }}>Spécialiste</option>
+                        <option value="residant" {{ old('type') == 'residant' ? 'selected' : '' }}>Résidant</option>
+                    </select>
+
                     @error('type')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
@@ -128,21 +135,29 @@
 
 
 
-                {{-- Payment Method --}}
-                <div class="mt-6">
-                    <label for="payment_method" class="block text-sm font-medium text-gray-700">Mode de paiement*</label>
-                    <select id="payment_method" name="payment_method" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        <option value="">-</option>
-                        <option value="laboratoire" {{ old('payment_method') == 'laboratoire' ? 'selected' : '' }}>Laboratoire</option>
-                        <option value="virement" {{ old('payment_method') == 'virement' ? 'selected' : '' }}>
-                            Paiement par virement (RIB : 225 640 039 600 025 651 011 169)
-                        </option>
-                        <option value="invite" {{ old('payment_method') == 'invite' ? 'selected' : '' }}>Sur place invité(e)</option>
-                    </select>
-                    @error('payment_method')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
+            <div class="mt-6">
+                <label for="payment_method" class="block text-sm font-medium text-gray-700">Mode de paiement*</label>
+                <select id="payment_method" name="payment_method" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                    <option value="">-</option>
+                    <option value="laboratoire" {{ old('payment_method') == 'laboratoire' ? 'selected' : '' }}>Laboratoire</option>
+                    <option value="virement" {{ old('payment_method') == 'virement' ? 'selected' : '' }}>
+                        Paiement par virement (RIB : 007 82600026830000305367)
+                    </option>
+                    <option value="invite" {{ old('payment_method') == 'invite' ? 'selected' : '' }}>Sur place invité(e)</option>
+                </select>
+                @error('payment_method')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
+            </div>
+
+            {{-- Upload PDF Section (Hidden by Default) --}}
+            <div id="rib_pdf_upload" class="mt-6 hidden">
+                <label for="rib_pdf" class="block text-sm font-medium text-gray-700">Téléchargez le RIB en PDF*</label>
+                <input type="file" id="rib_pdf" name="rib_pdf" accept="application/pdf" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                @error('rib_pdf')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
+            </div>
 
                 {{-- List of Laboratories (hidden by default) --}}
                 <div id="laboratoire_list" class="mt-6 hidden">
@@ -176,6 +191,30 @@
                         laboratoireList.classList.remove('hidden');
                     } else {
                         laboratoireList.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const paymentMethod = document.getElementById('payment_method');
+                const laboratoireList = document.getElementById('laboratoire_list');
+                const ribPdfUpload = document.getElementById('rib_pdf_upload');
+
+                paymentMethod.addEventListener('change', function () {
+                    // Show/hide laboratoire list
+                    if (this.value === 'laboratoire') {
+                        laboratoireList.classList.remove('hidden');
+                    } else {
+                        laboratoireList.classList.add('hidden');
+                    }
+
+                    // Show/hide RIB PDF upload
+                    if (this.value === 'virement') {
+                        ribPdfUpload.classList.remove('hidden');
+                    } else {
+                        ribPdfUpload.classList.add('hidden');
                     }
                 });
             });
