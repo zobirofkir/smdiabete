@@ -141,7 +141,7 @@
                     <option value="">-</option>
                     <option value="laboratoire" {{ old('payment_method') == 'laboratoire' ? 'selected' : '' }}>Laboratoire</option>
                     <option value="virement" {{ old('payment_method') == 'virement' ? 'selected' : '' }}>
-                        Paiement par virement (RIB : 007 82600026830000305367)
+                        Paiement par virement (RIB : 007 8260002683000305367 78)
                     </option>
                     <option value="invite" {{ old('payment_method') == 'invite' ? 'selected' : '' }}>Sur place invité(e)</option>
                 </select>
