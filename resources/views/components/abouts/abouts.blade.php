@@ -38,12 +38,6 @@
                 <span class="absolute left-0 top-0 text-blue-400 font-bold">5.</span>
                 Fédérer les efforts des acteurs autour d'une vision commune du traitement et de la prise en charge du diabète.
             </h2>
-
-            <div class="md:block hidden">
-                <a href="{{url('/sponsors')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-2 px-6 rounded-lg">Sponsors</a>
-                <a href="{{url('/charts')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-2 px-6 rounded-lg">Chart</a>
-                <a href="{{url('/members')}}" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-2 px-6 rounded-lg">Bureau</a>
-            </div>
         </div>
 
 
