@@ -143,7 +143,6 @@
                     <option value="virement" {{ old('payment_method') == 'virement' ? 'selected' : '' }}>
                         Paiement par virement (RIB : 007 8260002683000305367 78)
                     </option>
-                    <option value="invite" {{ old('payment_method') == 'invite' ? 'selected' : '' }}>Sur place invité(e)</option>
                 </select>
                 @error('payment_method')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -172,6 +171,18 @@
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
+
+            <div class="my-6">
+                <label>
+                    <input type="radio" name="status" value="sur-place">
+                    Sur place
+                </label><br>
+
+                <label>
+                    <input type="radio" name="status" value="invite">
+                    Invité(e)
+                </label>
+            </div>
 
             <button type="submit" class="mt-6 bg-sky-500 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-md w-full">
                 VALIDER
