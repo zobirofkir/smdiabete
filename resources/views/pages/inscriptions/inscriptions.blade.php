@@ -108,7 +108,7 @@
                     @enderror
                 </div>
                 <div>
-                    <label for="paye" class="block text-sm font-medium text-gray-700">Payé*</label>
+                    <label for="paye" class="block text-sm font-medium text-gray-700">Pays*</label>
                     <input type="text" id="paye" name="paye" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Payé" value="{{ old('paye') }}">
                     @error('paye')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
