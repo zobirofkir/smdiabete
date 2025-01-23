@@ -115,6 +115,19 @@ class InscriptionResource extends Resource
                     ->label('Date de départ'),
                 TextColumn::make('payment_method')
                     ->label('Méthode de paiement'),
+
+                TextColumn::make('rib_pdf_path')
+                    ->label('Télécharger le RIB')
+                    ->formatStateUsing(function ($state) {
+                        if ($state) {
+                            return '<a href="' . asset('storage/' . $state) . '" target="_blank" class="text-indigo-600 hover:text-indigo-900">Télécharger</a>';
+                        }
+                        return '<span class="text-gray-500">Aucun fichier</span>';
+                    })
+                    ->html()
+                    ->sortable()
+                    ->searchable(),
+
             ])
             ->defaultSort('created_at', 'desc')
             ->actions([
