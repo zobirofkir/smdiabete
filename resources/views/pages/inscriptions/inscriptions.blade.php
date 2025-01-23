@@ -1,5 +1,5 @@
 <x-app-layout>
-    <section class="fade-in flex justify-center items-center h-screen mt-[150px] mb-[150px]">
+    <section class="fade-in flex justify-center items-center mt-[150px] mb-[150px]">
         <form action="{{ route('inscriptions.store') }}" method="POST" class="bg-white p-8 rounded-lg shadow-lg md:w-[60%] w-full max-w-4xl" enctype="multipart/form-data">
             @csrf
 
