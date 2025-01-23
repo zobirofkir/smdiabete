@@ -187,7 +187,7 @@
                         <a
                             target="_blank"
                             class="inline-block text-lg text-blue-800 underline font-medium hover:text-blue-600"
-                            onclick="window.location.href='https://wa.me/212619920942'"
+                            onclick="window.location.href='https://wa.me/212662630559'"
                             >
                             Inscrivez-vous ici
                         </a>
