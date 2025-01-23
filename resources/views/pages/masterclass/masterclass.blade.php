@@ -12,7 +12,11 @@
             <!-- Dropdown Form Section -->
             <div class="max-w-4xl mx-auto mb-12">
                 <!-- Header Section -->
-                <div class="bg-blue-800 text-white rounded-lg shadow-lg p-6 cursor-pointer transition-transform transform hover:scale-105" onclick="toggleForm()">
+                {{-- <div class="bg-blue-800 text-white rounded-lg shadow-lg p-6 cursor-pointer transition-transform transform hover:scale-105" onclick="toggleForm()">
+                    <h3 class="text-xl font-bold text-center">Inscription au Master Class 2025</h3>
+                </div> --}}
+
+                <div class="bg-blue-800 text-white rounded-lg shadow-lg p-6 cursor-pointer transition-transform transform hover:scale-105" onclick="window.location.href='https://wa.me/212662630559'">
                     <h3 class="text-xl font-bold text-center">Inscription au Master Class 2025</h3>
                 </div>
 
