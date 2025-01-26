@@ -175,6 +175,7 @@
             </div>
 
             <div class="my-6">
+                <h1>RGPD</h1>
                 <label>
                     <input type="radio" name="status" value="sur-place" required>
                     J'accepte de recevoir les emails du congrès et les nouveautés des événements. Voir notre politique de confidentialité
@@ -182,7 +183,7 @@
             </div>
 
             <button type="submit" class="mt-6 bg-sky-500 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-md w-full">
-                VALIDER
+                SOUMETTRE
             </button>
         </form>
 
