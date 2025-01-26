@@ -30,7 +30,6 @@ class InscriptionRequest extends FormRequest
             'type' => 'required|string|in:specialiste,resident',
             'specialite' => 'required|string|max:255',
             'ville' => 'required|string|max:255',
-            'sex' => 'required|string|in:dr,pr',
             'departure_date' => 'required|date',
             'payment_method' => 'required|string|in:laboratoire,virement,invite',
         ];
@@ -62,7 +61,6 @@ class InscriptionRequest extends FormRequest
             'type.required' => 'Le type est requis.',
             'specialite.required' => 'La specialité est requise.',
             'ville.required' => 'La ville est requise.',
-            'sex.required' => 'Le sexe est requis.',
             'departure_date.required' => 'La date de sortie est requise.',
             'payment_method.required' => 'Le moyen de paiement est requis.',
             'payment_method.in' => 'Le moyen de paiement doit être "laboratoire", "virement" ou "invite".',

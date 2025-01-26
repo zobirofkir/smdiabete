@@ -49,12 +49,6 @@ class InscriptionResource extends Resource
                     ->label('Ville'),
                 Forms\Components\TextInput::make('paye')
                     ->label('Pays'),
-                Forms\Components\Select::make('sex')
-                    ->options([
-                        'dr' => 'Dr',
-                        'pr' => 'Pr',
-                    ])
-                    ->label('Genre'),
                 Forms\Components\DatePicker::make('arrival_date')
                     ->required()
                     ->label('Date d\'arrivée'),
@@ -107,8 +101,6 @@ class InscriptionResource extends Resource
                     ->label('Ville'),
                 TextColumn::make('paye')
                     ->label('Pays'),
-                TextColumn::make('sex')
-                    ->label('Genre'),
                 TextColumn::make('arrival_date')
                     ->label('Date d\'arrivée'),
                 TextColumn::make('departure_date')

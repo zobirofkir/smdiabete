@@ -97,18 +97,6 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
                 <div>
-                    <label for="sex" class="block text-sm font-medium text-gray-700">Vous êtes un*</label>
-                    <select id="sex" name="sex" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        <option value="">-</option>
-                        <option value="dr" {{ old('sex') == 'dr' ? 'selected' : '' }}>Dr</option>
-                        <option value="pr" {{ old('sex') == 'pr' ? 'selected' : '' }}>Pr</option>
-                    </select>
-                    @error('sex')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <div>
                     <label for="departure_date" class="block text-sm font-medium text-gray-700">Date de départ*</label>
                     <input type="date" id="departure_date" name="departure_date" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" value="{{ old('departure_date') }}">
                     @error('departure_date')

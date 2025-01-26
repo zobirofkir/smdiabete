@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('specialite');
             $table->string('ville');
 
-            $table->string('sex');
             $table->string('departure_date');
             $table->enum('payment_method', ['laboratoire', 'virement', 'invite'])->nullable(false);
             $table->timestamps();
