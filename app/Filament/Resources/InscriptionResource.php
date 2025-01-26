@@ -47,11 +47,6 @@ class InscriptionResource extends Resource
                     ->label('Spécialité'),
                 Forms\Components\TextInput::make('ville')
                     ->label('Ville'),
-                Forms\Components\TextInput::make('paye')
-                    ->label('Pays'),
-                Forms\Components\DatePicker::make('arrival_date')
-                    ->required()
-                    ->label('Date d\'arrivée'),
                 Forms\Components\DatePicker::make('departure_date')
                     ->required()
                     ->label('Date de départ'),
@@ -99,10 +94,6 @@ class InscriptionResource extends Resource
                     ->label('Spécialité'),
                 TextColumn::make('ville')
                     ->label('Ville'),
-                TextColumn::make('paye')
-                    ->label('Pays'),
-                TextColumn::make('arrival_date')
-                    ->label('Date d\'arrivée'),
                 TextColumn::make('departure_date')
                     ->label('Date de départ'),
                 TextColumn::make('payment_method')

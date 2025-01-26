@@ -140,15 +140,24 @@
             </div>
 
             {{-- List of Laboratories (hidden by default) --}}
-            <div id="laboratoire_list" class="mt-6 hidden">
-                <label for="laboratoire" class="block text-sm font-medium text-gray-700">Choisissez un laboratoire*</label>
-                <select id="laboratoire" name="laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+            <div id="laboratoire_list" class="mt-6">
+                <label for="laboratoire" class="block text-sm font-medium text-gray-700">اختر المختبر*</label>
+                <select id="laboratoire" name="laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" onchange="toggleOtherLaboratoireInput(this)">
                     <option value="">-</option>
-                    <option value="laboratoire_1" {{ old('laboratoire') == 'laboratoire_1' ? 'selected' : '' }}>Laboratoire 1</option>
-                    <option value="laboratoire_2" {{ old('laboratoire') == 'laboratoire_2' ? 'selected' : '' }}>Laboratoire 2</option>
-                    <option value="laboratoire_3" {{ old('laboratoire') == 'laboratoire_3' ? 'selected' : '' }}>Laboratoire 3</option>
+                    <option value="laboratoire_1" {{ old('laboratoire') == 'laboratoire_1' ? 'selected' : '' }}>مختبر 1</option>
+                    <option value="laboratoire_2" {{ old('laboratoire') == 'laboratoire_2' ? 'selected' : '' }}>مختبر 2</option>
+                    <option value="laboratoire_3" {{ old('laboratoire') == 'laboratoire_3' ? 'selected' : '' }}>مختبر 3</option>
+                    <option value="other">آخر</option>
                 </select>
                 @error('laboratoire')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div id="other_laboratoire_input" class="mt-4 hidden">
+                <label for="other_laboratoire" class="block text-sm font-medium text-gray-700">أدخل اسم المختبر</label>
+                <input type="text" id="other_laboratoire" name="other_laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                @error('other_laboratoire')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
@@ -173,6 +182,20 @@
 
     </section>
 
+
+    <script>
+        function toggleOtherLaboratoireInput(select) {
+            const otherInputDiv = document.getElementById('other_laboratoire_input');
+            if (select.value === 'other') {
+                otherInputDiv.classList.remove('hidden');
+            } else {
+                otherInputDiv.classList.add('hidden');
+                // Clear the input value if it's hidden
+                document.getElementById('other_laboratoire').value = '';
+            }
+        }
+    </script>
+    
     <script>
         function togglePaymentFields(method) {
             const ribPdfUpload = document.getElementById('rib_pdf_upload');
