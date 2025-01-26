@@ -155,7 +155,7 @@
             </div>
 
             <div id="other_laboratoire_input" class="mt-4 hidden">
-                <label for="other_laboratoire" class="block text-sm font-medium text-gray-700">أدخل اسم المختبر</label>
+                <label for="other_laboratoire" class="block text-sm font-medium text-gray-700">Entrez le nom du laboratoire</label>
                 <input type="text" id="other_laboratoire" name="other_laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
                 @error('other_laboratoire')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -174,11 +174,17 @@
                 </label>
             </div>
 
+            <div class="my-6">
+                <label>
+                    <input type="radio" name="status" value="sur-place" required>
+                    J'accepte de recevoir les emails du congrès et les nouveautés des événements. Voir notre politique de confidentialité
+                </label>
+            </div>
+
             <button type="submit" class="mt-6 bg-sky-500 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-md w-full">
                 VALIDER
             </button>
         </form>
-
 
     </section>
 
