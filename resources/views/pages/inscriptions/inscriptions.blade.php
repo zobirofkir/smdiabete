@@ -120,14 +120,23 @@
 
 
             <div class="mt-6">
-                <label for="payment_method" class="block text-sm font-medium text-gray-700">Mode de paiement*</label>
-                <select id="payment_method" name="payment_method" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                    <option value="">-</option>
-                    <option value="laboratoire" {{ old('payment_method') == 'laboratoire' ? 'selected' : '' }}>Laboratoire</option>
-                    <option value="virement" {{ old('payment_method') == 'virement' ? 'selected' : '' }}>
-                        Paiement par virement (RIB : 007 8260002683000305367 78)
-                    </option>
-                </select>
+                <label class="block text-sm font-medium text-gray-700">Mode de paiement*</label>
+                <div class="mt-2">
+                    <div>
+                        <input type="radio" id="laboratoire_payment" name="payment_method" value="laboratoire"
+                            {{ old('payment_method') == 'laboratoire' ? 'checked' : '' }}
+                            onclick="togglePaymentFields('laboratoire')" required>
+                        <label for="laboratoire_payment" class="ml-2 text-sm font-medium text-gray-700">Laboratoire</label>
+                    </div>
+                    <div class="mt-2">
+                        <input type="radio" id="virement_payment" name="payment_method" value="virement"
+                            {{ old('payment_method') == 'virement' ? 'checked' : '' }}
+                            onclick="togglePaymentFields('virement')">
+                        <label for="virement_payment" class="ml-2 text-sm font-medium text-gray-700">
+                            Paiement par virement (RIB : 007 8260002683000305367 78)
+                        </label>
+                    </div>
+                </div>
                 @error('payment_method')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
@@ -142,19 +151,19 @@
                 @enderror
             </div>
 
-                {{-- List of Laboratories (hidden by default) --}}
-                <div id="laboratoire_list" class="mt-6 hidden">
-                    <label for="laboratoire" class="block text-sm font-medium text-gray-700">Choisissez un laboratoire*</label>
-                    <select id="laboratoire" name="laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        <option value="">-</option>
-                        <option value="laboratoire_1" {{ old('laboratoire') == 'laboratoire_1' ? 'selected' : '' }}>Laboratoire 1</option>
-                        <option value="laboratoire_2" {{ old('laboratoire') == 'laboratoire_2' ? 'selected' : '' }}>Laboratoire 2</option>
-                        <option value="laboratoire_3" {{ old('laboratoire') == 'laboratoire_3' ? 'selected' : '' }}>Laboratoire 3</option>
-                    </select>
-                    @error('laboratoire')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
+            {{-- List of Laboratories (hidden by default) --}}
+            <div id="laboratoire_list" class="mt-6 hidden">
+                <label for="laboratoire" class="block text-sm font-medium text-gray-700">Choisissez un laboratoire*</label>
+                <select id="laboratoire" name="laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                    <option value="">-</option>
+                    <option value="laboratoire_1" {{ old('laboratoire') == 'laboratoire_1' ? 'selected' : '' }}>Laboratoire 1</option>
+                    <option value="laboratoire_2" {{ old('laboratoire') == 'laboratoire_2' ? 'selected' : '' }}>Laboratoire 2</option>
+                    <option value="laboratoire_3" {{ old('laboratoire') == 'laboratoire_3' ? 'selected' : '' }}>Laboratoire 3</option>
+                </select>
+                @error('laboratoire')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
+            </div>
 
             <div class="my-6">
                 <label>
@@ -176,42 +185,27 @@
 
     </section>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const paymentMethod = document.getElementById('payment_method');
-                const laboratoireList = document.getElementById('laboratoire_list');
+    <script>
+        function togglePaymentFields(method) {
+            const ribPdfUpload = document.getElementById('rib_pdf_upload');
+            const laboratoireList = document.getElementById('laboratoire_list');
 
-                paymentMethod.addEventListener('change', function () {
-                    if (this.value === 'laboratoire') {
-                        laboratoireList.classList.remove('hidden');
-                    } else {
-                        laboratoireList.classList.add('hidden');
-                    }
-                });
-            });
-        </script>
+            if (method === 'laboratoire') {
+                laboratoireList.classList.remove('hidden');
+                ribPdfUpload.classList.add('hidden');
+            } else if (method === 'virement') {
+                ribPdfUpload.classList.remove('hidden');
+                laboratoireList.classList.add('hidden');
+            }
+        }
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const paymentMethod = document.getElementById('payment_method');
-                const laboratoireList = document.getElementById('laboratoire_list');
-                const ribPdfUpload = document.getElementById('rib_pdf_upload');
+        // لتعيين الحقول بناءً على القيم القديمة عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function () {
+            const selectedMethod = "{{ old('payment_method') }}";
+            if (selectedMethod) {
+                togglePaymentFields(selectedMethod);
+            }
+        });
+    </script>
 
-                paymentMethod.addEventListener('change', function () {
-                    // Show/hide laboratoire list
-                    if (this.value === 'laboratoire') {
-                        laboratoireList.classList.remove('hidden');
-                    } else {
-                        laboratoireList.classList.add('hidden');
-                    }
-
-                    // Show/hide RIB PDF upload
-                    if (this.value === 'virement') {
-                        ribPdfUpload.classList.remove('hidden');
-                    } else {
-                        ribPdfUpload.classList.add('hidden');
-                    }
-                });
-            });
-        </script>
 </x-app-layout>
