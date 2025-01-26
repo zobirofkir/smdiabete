@@ -15,10 +15,8 @@ class Inscription extends Model
         'type',
         'specialite',
         'ville',
-        'paye',
 
         'sex',
-        'arrival_date',
         'departure_date',
         'payment_method',
         'rib_pdf_path'
