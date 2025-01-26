@@ -141,13 +141,13 @@
 
             {{-- List of Laboratories (hidden by default) --}}
             <div id="laboratoire_list" class="mt-6">
-                <label for="laboratoire" class="block text-sm font-medium text-gray-700">اختر المختبر*</label>
+                <label for="laboratoire" class="block text-sm font-medium text-gray-700">Choisissez le laboratoire*</label>
                 <select id="laboratoire" name="laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" onchange="toggleOtherLaboratoireInput(this)">
                     <option value="">-</option>
-                    <option value="laboratoire_1" {{ old('laboratoire') == 'laboratoire_1' ? 'selected' : '' }}>مختبر 1</option>
-                    <option value="laboratoire_2" {{ old('laboratoire') == 'laboratoire_2' ? 'selected' : '' }}>مختبر 2</option>
-                    <option value="laboratoire_3" {{ old('laboratoire') == 'laboratoire_3' ? 'selected' : '' }}>مختبر 3</option>
-                    <option value="other">آخر</option>
+                    <option value="laboratoire_1" {{ old('laboratoire') == 'laboratoire_1' ? 'selected' : '' }}>Laboratoire 1</option>
+                    <option value="laboratoire_2" {{ old('laboratoire') == 'laboratoire_2' ? 'selected' : '' }}>Laboratoire 2</option>
+                    <option value="laboratoire_3" {{ old('laboratoire') == 'laboratoire_3' ? 'selected' : '' }}>Laboratoire 3</option>
+                    <option value="other">Autre</option>
                 </select>
                 @error('laboratoire')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -195,7 +195,7 @@
             }
         }
     </script>
-    
+
     <script>
         function togglePaymentFields(method) {
             const ribPdfUpload = document.getElementById('rib_pdf_upload');
