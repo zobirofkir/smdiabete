@@ -1,5 +1,8 @@
 <x-app-layout>
-    <section class="fade-in flex justify-center items-center mt-[150px] mb-[150px]">
+    <div class="flex justify-center mt-20">
+        <h1 class="text-sky-500 text-3xl font-bold">INSCRIPTION</h1>
+    </div>
+    <section class="fade-in flex justify-center items-center mt-[100px] mb-[150px]">
         <form action="{{ route('inscriptions.store') }}" method="POST" class="bg-white p-8 rounded-lg shadow-lg md:w-[60%] w-full max-w-4xl" enctype="multipart/form-data">
             @csrf
 
@@ -178,7 +181,7 @@
                 <h1>RGPD</h1>
                 <label>
                     <input type="radio" name="status" value="sur-place" required>
-                    J'accepte de recevoir les emails du congrès et les nouveautés des événements. Voir notre politique de confidentialité
+                    J'accepte de recevoir les emails du congrès et les nouveautés des événements.
                 </label>
             </div>
 
