@@ -14,7 +14,7 @@
         <div id="imageGallery" class="">
             <!-- Dossier 1 Images -->
             <div id="dossier1" class="dossier grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                @foreach (range(1, 24) as $item)
+                @foreach (range(1, 13) as $item)
                     <div class="relative group overflow-hidden rounded-xl shadow-lg transition-all hover:shadow-2xl transform hover:scale-105 duration-500 ease-in-out">
                         <img src="{{ asset('assets/images/album/album-' . $item . '.jpeg') }}"
                              alt="Image {{$item}}"
