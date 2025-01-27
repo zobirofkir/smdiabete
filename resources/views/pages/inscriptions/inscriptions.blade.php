@@ -196,21 +196,22 @@
 
             <div class="my-6">
                 <label>
-                    <input type="radio" name="status" value="sur-place">
+                    <input type="radio" name="attendance_status" value="sur-place" required>
                     Sur place
                 </label><br>
 
                 <label>
-                    <input type="radio" name="status" value="invite">
+                    <input type="radio" name="attendance_status" value="invite">
                     Invité(e)
                 </label>
             </div>
 
             <div class="my-6">
-                <h1>RGPD</h1>
+                <h1 class="text-lg font-bold mb-2">RGPD</h1>
                 <label>
-                    <input type="radio" name="status" value="sur-place" required>
-                    J'accepte de recevoir les emails du congrès et les nouveautés des événements. Voir <a href="{{ route('declaration') }}" class="text-blue-500">Declaration RGPD</a>
+                    <input type="radio" name="rgpd_consent" value="accepted" required>
+                    J'accepte de recevoir les emails du congrès et les nouveautés des événements. Voir
+                    <a href="{{ route('declaration') }}" class="text-blue-500 hover:underline">Déclaration RGPD</a>
                 </label>
             </div>
 
