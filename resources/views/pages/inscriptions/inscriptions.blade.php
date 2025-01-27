@@ -204,7 +204,7 @@
                 <h1>RGPD</h1>
                 <label>
                     <input type="radio" name="status" value="sur-place" required>
-                    J'accepte de recevoir les emails du congrès et les nouveautés des événements.
+                    J'accepte de recevoir les emails du congrès et les nouveautés des événements. Voir <a href="{{ route('declaration') }}" class="text-blue-500">Declaration RGPD</a>
                 </label>
             </div>
 

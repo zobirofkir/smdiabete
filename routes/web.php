@@ -64,3 +64,6 @@ Route::get('/sponsors', function ()  {return view('pages.sponsors.sponsors');});
 
 
 Route::get('/members', function () {return view('pages.members.members');});
+
+
+Route::get('/declaration', function() {return view('pages.declaration.declaration');})->name('declaration');
