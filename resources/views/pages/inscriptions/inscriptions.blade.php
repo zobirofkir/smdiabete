@@ -100,13 +100,19 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
                 <div>
+                    <label for="arrival_date" class="block text-sm font-medium text-gray-700">Date d'arrivée*</label>
+                    <input type="date" id="arrival_date" name="arrival_date" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" value="{{ old('arrival_date') }}">
+                    @error('arrival_date')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div>
                     <label for="departure_date" class="block text-sm font-medium text-gray-700">Date de départ*</label>
                     <input type="date" id="departure_date" name="departure_date" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" value="{{ old('departure_date') }}">
                     @error('departure_date')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
-
             </div>
 
 

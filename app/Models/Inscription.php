@@ -18,6 +18,7 @@ class Inscription extends Model
 
         'sex',
         'departure_date',
+        'arrival_date',
         'payment_method',
         'rib_pdf_path'
     ];

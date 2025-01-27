@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('ville');
 
             $table->string('departure_date');
+            $table->string('arrival_date');
             $table->enum('payment_method', ['laboratoire', 'virement', 'invite'])->nullable(false);
             $table->timestamps();
         });
