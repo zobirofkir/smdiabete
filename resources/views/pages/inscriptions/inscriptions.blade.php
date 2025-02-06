@@ -259,4 +259,18 @@
         });
     </script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const lastnameInput = document.getElementById("lastname");
+            const firstnameInput = document.getElementById("firstname");
+
+            lastnameInput.addEventListener("input", function () {
+                this.value = this.value.toUpperCase();
+            });
+
+            firstnameInput.addEventListener("input", function () {
+                this.value = this.value.toUpperCase();
+            });
+        });
+    </script>
 </x-app-layout>
