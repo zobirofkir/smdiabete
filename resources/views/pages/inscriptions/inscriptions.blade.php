@@ -205,18 +205,16 @@
             </div>
 
             <div class="my-6">
-
                 <label>
-                    <input type="radio" name="attendance_status" value="invite">
-                    Invité(e)
-                </label>
+                    <input type="radio" name="attendance_status" value="sur-place" required>
+                    Sur place
+                </label><br>
             </div>
 
             <div class="my-6">
                 <label>
                     <input type="radio" name="rgpd_consent" value="accepted" required>
                     J'accepte de recevoir les emails du congrès et les nouveautés des événements.
-                    {{-- <a href="{{ route('declaration') }}" class="text-blue-500 hover:underline">Déclaration RGPD</a> --}}
                 </label>
             </div>
 
