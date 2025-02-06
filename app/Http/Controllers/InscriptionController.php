@@ -17,7 +17,7 @@ class InscriptionController extends Controller
     {
         $ribPdfPath = null;
         if ($request->hasFile('rib_pdf') && $request->file('rib_pdf')->isValid()) {
-            $ribPdfPath = $request->file('rib_pdf')->store('rib_pdfs', 'public'); 
+            $ribPdfPath = $request->file('rib_pdf')->store('rib_pdfs', 'public');
         }
 
         $inscription = Inscription::create(array_merge(
@@ -27,6 +27,6 @@ class InscriptionController extends Controller
 
         return redirect()
             ->route('inscriptions.index')
-            ->with('success', 'Inscription enregistrée avec succès.');
+            ->with('success', 'Votre inscription a été envoyé avec succès.');
     }
 }
