@@ -84,11 +84,21 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
                 <div>
                     <label for="specialite" class="block text-sm font-medium text-gray-700">Spécialité*</label>
-                    <input type="text" id="specialite" name="specialite" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Spécialité" value="{{ old('specialite') }}">
+                    <select id="specialite" name="specialite" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="Endocrinologie">Endocrinologie</option>
+                        <option value="Cardiologie">Cardiologie</option>
+                        <option value="Néphrologie">Néphrologie</option>
+                        <option value="Médecin Généraliste">Médecin Généraliste</option>
+                        <option value="Autres">Autres</option>
+                    </select>
+
+                    <input type="text" id="otherSpecialite" name="other_specialite" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 hidden" placeholder="Votre spécialité" value="{{ old('other_specialite') }}">
+
                     @error('specialite')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
+
                 <div>
                     <label for="ville" class="block text-sm font-medium text-gray-700">Ville*</label>
                     <input type="text" id="ville" name="ville" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre ville" value="{{ old('ville') }}">
@@ -273,4 +283,23 @@
             });
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const specialiteSelect = document.getElementById("specialite");
+            const otherSpecialiteInput = document.getElementById("otherSpecialite");
+
+            specialiteSelect.addEventListener("change", function () {
+                if (this.value === "Autres") {
+                    otherSpecialiteInput.classList.remove("hidden");
+                    otherSpecialiteInput.setAttribute("required", "true");
+                } else {
+                    otherSpecialiteInput.classList.add("hidden");
+                    otherSpecialiteInput.removeAttribute("required");
+                    otherSpecialiteInput.value = ""; // مسح القيمة عند عدم الحاجة إليها
+                }
+            });
+        });
+    </script>
+
 </x-app-layout>

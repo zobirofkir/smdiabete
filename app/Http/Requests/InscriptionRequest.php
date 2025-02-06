@@ -28,7 +28,17 @@ class InscriptionRequest extends FormRequest
             'email' => 'nullable|email|max:255|unique:inscriptions',
             'secteur' => 'required|string|in:public,private',
             'type' => 'required|string|in:specialiste,resident',
-            'specialite' => 'required|string|max:255',
+            'specialite' => [
+                'required',
+                'string',
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    if ($value === 'Autres' && empty(request('other_specialite'))) {
+                        $fail('Veuillez entrer votre spécialité si vous sélectionnez "Autres".');
+                    }
+                },
+            ],
+            'other_specialite' => 'nullable|string|max:255',
             'ville' => 'required|string|max:255',
             'arrival_date' => 'required|date',
             'departure_date' => 'required|date',
