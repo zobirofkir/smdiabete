@@ -1,4 +1,5 @@
 <x-app-layout>
+
     <div class="px-4 sm:px-6 lg:px-8">
         <!-- Image Section -->
         <div class="max-w-4xl mx-auto mb-8">
@@ -189,6 +190,6 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>
 
 </x-app-layout>
