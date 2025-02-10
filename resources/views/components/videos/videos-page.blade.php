@@ -17,7 +17,7 @@
         <button onclick="filterVideos('folder3')" class="px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">2e Congrès National de Diabètologie (2025)</button>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="videoContainer">
+    <div>
         @php
         $videoFolders = [
             'folder1' => [
@@ -50,36 +50,39 @@
         ];
     @endphp
 
-        @foreach ($videoFolders as $folder => $videos)
-            @foreach ($videos as $index => $video)
-            <div class="video-item {{ $folder }} bg-white shadow-lg rounded-lg overflow-hidden">
-                <div class="max-h-[300px] overflow-hidden">
-                    @if(isset($video['image']))
-                        <img src="{{ asset($video['image']) }}" alt="Event Image" class="w-full h-full object-cover">
-                    @else
-                        <img src="{{ asset('assets/images/events/last-event-1.jpeg') }}" alt="Event Image" class="w-full h-full object-cover">
-                    @endif
-                </div>
-                <div class="p-4">
-                    <h3 class="md:text-2xl text-xl font-semibold">{{ $video['title'] }}</h3>
-                    <div class="flex space-x-4 mt-3">
-                        <button onclick="openModal('video{{ $index + 1 }}')" class="text-3xl text-gray-600 hover:text-gray-800">
-                            <i class="fas fa-play-circle w-12 h-12"></i>
-                        </button>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="videoContainer">
+            @foreach ($videoFolders as $folder => $videos)
+                @foreach ($videos as $index => $video)
+                <div class="video-item {{ $folder }} bg-white shadow-lg rounded-lg overflow-hidden">
+                    <div class="max-h-[300px] overflow-hidden">
+                        @if(isset($video['image']))
+                            <img src="{{ asset($video['image']) }}" alt="Event Image" class="w-full h-full object-cover">
+                        @else
+                            <img src="{{ asset('assets/images/events/last-event-1.jpeg') }}" alt="Event Image" class="w-full h-full object-cover">
+                        @endif
+                    </div>
+                    <div class="p-4">
+                        <h3 class="md:text-2xl text-xl font-semibold">{{ $video['title'] }}</h3>
+                        <div class="flex space-x-4 mt-3">
+                            <button onclick="openModal('{{ $folder }}', '{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" class="text-3xl text-gray-600 hover:text-gray-800">
+                                <i class="fas fa-play-circle w-12 h-12"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+                @endforeach
             @endforeach
-        @endforeach
+        </div>
+
     </div>
 </div>
 
 @foreach ($videoFolders as $folder => $videos)
     @foreach ($videos as $index => $video)
-        <div id="videoModal{{ $index + 1 }}" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden transition-all duration-500 ease-in-out transform scale-0 z-[999]">
+        <div id="videoModal{{ $folder }}" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden transition-all duration-500 ease-in-out transform scale-0 z-[999]">
             <div class="bg-white p-4 rounded-lg w-11/12 md:w-1/2">
-                <button onclick="closeModal('video{{ $index + 1 }}')" class="absolute top-0 right-0 p-2 text-white bg-red-600 rounded-full mt-4 mx-4">X</button>
-                <iframe id="video{{ $index + 1 }}" class="w-full h-64" src="https://www.youtube.com/embed/{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}" frameborder="0" allowfullscreen></iframe>
+                <button onclick="closeModal('{{ $folder }}')" class="absolute top-0 right-0 p-2 text-white bg-red-600 rounded-full mt-4 mx-4">X</button>
+                <iframe class="w-full h-64" src="" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     @endforeach
