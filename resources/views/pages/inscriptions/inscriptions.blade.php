@@ -40,7 +40,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
                 <div>
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Téléphone*</label>
+                    <label for="phone" class="block text-sm font-medium text-gray-700">Téléphone Mobile *</label>
                     <input type="tel" id="phone" name="phone" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre téléphone" value="{{ old('phone') }}">
                     @error('phone')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -88,7 +88,7 @@
                         <option value="Endocrinologie">Endocrinologie</option>
                         <option value="Cardiologie">Cardiologie</option>
                         <option value="Néphrologie">Néphrologie</option>
-                        <option value="Médecin Généraliste">Médecin Généraliste</option>
+                        <option value="Médecin Généraliste">Généraliste</option>
                         <option value="Autres">Autres</option>
                     </select>
 
