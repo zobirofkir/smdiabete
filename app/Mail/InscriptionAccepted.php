@@ -31,10 +31,10 @@ class InscriptionAccepted extends Mailable
     public function build()
     {
         return $this->subject('Your Inscription is Accepted')
-                    ->view('emails.inscriptions.accepted')
-                    ->with([
-                        'firstname' => $this->inscription->firstname,
-                        'lastname' => $this->inscription->lastname,
-                    ]);
+            ->view('emails.inscriptions.accepted')
+            ->with([
+                'firstname' => $this->inscription->firstname,
+                'lastname' => $this->inscription->lastname,
+            ]);
     }
 }

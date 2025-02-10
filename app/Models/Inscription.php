@@ -20,6 +20,6 @@ class Inscription extends Model
         'departure_date',
         'arrival_date',
         'payment_method',
-        'rib_pdf_path'
+        'rib_pdf_path',
     ];
 }

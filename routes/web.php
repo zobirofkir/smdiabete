@@ -55,15 +55,21 @@ Route::post('/masterclass/store', [MasterclassController::class, 'store'])->name
 /**
  * Videos Routes
  */
-Route::get('/videos', function () {return view('pages.videos.videos');});
+Route::get('/videos', function () {
+    return view('pages.videos.videos');
+});
 
 /**
  * Sponsors Routes
  */
-Route::get('/sponsors', function ()  {return view('pages.sponsors.sponsors');});
+Route::get('/sponsors', function () {
+    return view('pages.sponsors.sponsors');
+});
 
+Route::get('/members', function () {
+    return view('pages.members.members');
+});
 
-Route::get('/members', function () {return view('pages.members.members');});
-
-
-Route::get('/declaration', function() {return view('pages.declaration.declaration');})->name('declaration');
+Route::get('/declaration', function () {
+    return view('pages.declaration.declaration');
+})->name('declaration');

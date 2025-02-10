@@ -31,10 +31,10 @@ class InscriptionRejected extends Mailable
     public function build()
     {
         return $this->subject('Your Inscription is Rejected')
-                    ->view('emails.inscriptions.rejected')
-                    ->with([
-                        'firstname' => $this->inscription->firstname,
-                        'lastname' => $this->inscription->lastname,
-                    ]);
+            ->view('emails.inscriptions.rejected')
+            ->with([
+                'firstname' => $this->inscription->firstname,
+                'lastname' => $this->inscription->lastname,
+            ]);
     }
 }

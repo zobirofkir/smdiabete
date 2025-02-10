@@ -3,23 +3,24 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\InscriptionResource\Pages;
-use App\Models\Inscription;
-use Filament\Forms;
-use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Forms\Form;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
-use Filament\Tables\Actions\Action;
-use Illuminate\Support\Facades\Mail;
 use App\Mail\InscriptionAccepted;
 use App\Mail\InscriptionRejected;
+use App\Models\Inscription;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Actions\Action;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
+use Illuminate\Support\Facades\Mail;
 
 class InscriptionResource extends Resource
 {
     protected static ?string $model = Inscription::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     protected static ?string $navigationGroup = 'Inscriptions';
 
     public static function form(Form $form): Form
@@ -103,8 +104,9 @@ class InscriptionResource extends Resource
                     ->label('Télécharger le RIB')
                     ->formatStateUsing(function ($state) {
                         if ($state) {
-                            return '<a href="' . asset('storage/' . $state) . '" target="_blank" class="text-indigo-600 hover:text-indigo-900">Télécharger</a>';
+                            return '<a href="'.asset('storage/'.$state).'" target="_blank" class="text-indigo-600 hover:text-indigo-900">Télécharger</a>';
                         }
+
                         return '<span class="text-gray-500">Aucun fichier</span>';
                     })
                     ->html()

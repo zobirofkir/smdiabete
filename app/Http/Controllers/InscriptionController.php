@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\InscriptionRequest;
 use App\Models\Inscription;
-use Illuminate\Support\Facades\Storage;
 
 class InscriptionController extends Controller
 {
