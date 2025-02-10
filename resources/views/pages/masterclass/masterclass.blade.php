@@ -186,16 +186,6 @@
                             0002683000305367 78
                         </li>
                     </ul>
-
-                    <p class="text-center mt-6">
-                        <a
-                            target="_blank"
-                            class="inline-block text-lg text-blue-800 underline font-medium hover:text-blue-600"
-                            onclick="window.location.href='https://wa.me/212662630559'"
-                            >
-                            Inscrivez-vous ici
-                        </a>
-                    </p>
                 </div>
             </div>
         </div>

@@ -110,9 +110,9 @@
                             onchange="if (this.value) { window.location.href = this.value; }"
                         >
                             <option value="{{ url('/abouts') }}" {{ request()->is('abouts') ? 'selected' : '' }}>À propos</option>
-                            <option value="#" {{ request()->is('charts') ? 'selected' : '' }}>Charte</option>
+                            <option value="{{ url('/abouts') }}" {{ request()->is('charts') ? 'selected' : '' }}>Charte</option>
                             <option value="{{ url('/members') }}" {{ request()->is('members') ? 'selected' : '' }}>Bureau</option>
-                            <option value="{{ url('/sponsors') }}" {{ request()->is('sponsors') ? 'selected' : '' }}>Sponsors</option>
+                            <option value="#" {{ request()->is('sponsors') ? 'selected' : '' }}>Sponsors</option>
                         </select>
                     </form>
                 </li>
