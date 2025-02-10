@@ -73,3 +73,28 @@
         });
     }
 </script>
+
+@foreach ($videoFolders as $folder => $videos)
+    @foreach ($videos as $index => $video)
+        <div id="videoModal{{ $index + 1 }}" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden transition-all duration-500 ease-in-out transform scale-0 z-[999]">
+            <div class="bg-white p-4 rounded-lg w-11/12 md:w-1/2">
+                <button onclick="closeModal('video{{ $index + 1 }}')" class="absolute top-0 right-0 p-2 text-white bg-red-600 rounded-full mt-4 mx-4">X</button>
+                <iframe id="video{{ $index + 1 }}" class="w-full h-64" src="https://www.youtube.com/embed/{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    @endforeach
+@endforeach
+
+<script>
+    function openModal(videoId) {
+        const modal = document.getElementById('videoModal' + videoId.replace('video', ''));
+        modal.classList.remove('hidden');
+        modal.classList.add('scale-100');
+    }
+
+    function closeModal(videoId) {
+        const modal = document.getElementById('videoModal' + videoId.replace('video', ''));
+        modal.classList.remove('scale-100');
+        modal.classList.add('scale-0');
+    }
+</script>
