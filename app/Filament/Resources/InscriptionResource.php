@@ -144,7 +144,18 @@ class InscriptionResource extends Resource
             ])
             ->defaultSort('created_at', 'desc')
             ->actions([
-                Tables\Actions\ViewAction::make(),
+                Tables\Actions\ViewAction::make()
+                ->label('Voir')
+                ->icon('heroicon-o-eye')
+                ->color('primary')
+                ->tooltip('Voir les détails')
+                ->size('sm')
+                ->extraAttributes([
+                    'class' => 'font-semibold text-white hover:text-gray-800 hover:bg-primary-600 border border-transparent rounded-md shadow-sm transition-all duration-200'
+                ])
+                ->requiresConfirmation(),
+
+
                 Action::make('accept')
                     ->label('Accepter')
                     ->icon('heroicon-o-check')
