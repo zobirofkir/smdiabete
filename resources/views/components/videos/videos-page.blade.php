@@ -63,17 +63,6 @@
     </div>
 </div>
 
-<script>
-    function filterVideos(folder) {
-        document.querySelectorAll('.video-item').forEach(item => {
-            item.style.display = 'none';
-        });
-        document.querySelectorAll('.' + folder).forEach(item => {
-            item.style.display = 'block';
-        });
-    }
-</script>
-
 @foreach ($videoFolders as $folder => $videos)
     @foreach ($videos as $index => $video)
         <div id="videoModal{{ $index + 1 }}" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden transition-all duration-500 ease-in-out transform scale-0 z-[999]">
@@ -85,16 +74,4 @@
     @endforeach
 @endforeach
 
-<script>
-    function openModal(videoId) {
-        const modal = document.getElementById('videoModal' + videoId.replace('video', ''));
-        modal.classList.remove('hidden');
-        modal.classList.add('scale-100');
-    }
-
-    function closeModal(videoId) {
-        const modal = document.getElementById('videoModal' + videoId.replace('video', ''));
-        modal.classList.remove('scale-100');
-        modal.classList.add('scale-0');
-    }
-</script>
+<script src="{{asset('assets/js/videos-page.js')}}"></script>
