@@ -191,40 +191,4 @@
         </div>
 </div>
 
-
-<!-- Toastify Success Notification -->
-@if (session('success'))
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            Toastify({
-                text: "{{ session('success') }}",
-                duration: 3000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                backgroundColor: "green",
-            }).showToast();
-        });
-    </script>
-@endif
-
-<!-- Toastify Error Notification for Validation Errors -->
-@if ($errors->any())
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            @foreach ($errors->all() as $error)
-                Toastify({
-                    text: "{!! $error !!}",
-                    duration: 5000,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    backgroundColor: "red",
-                }).showToast();
-            @endforeach
-        });
-    </script>
-@endif
-
-
 </x-app-layout>
