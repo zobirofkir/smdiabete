@@ -4,7 +4,7 @@
     </div>
 
     <!-- Buttons for filtering -->
-    <div class="flex justify-center mb-8 space-x-4">
+    <div class="flex md:flex-row flex-col justify-center mb-8 gap-4">
         <button onclick="filterVideos('folder1')" class="px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">Journée Mondiale du Diabète</button>
         <button onclick="filterVideos('folder2')" class="px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">1er Congrès National de Diabètologie</button>
         <button onclick="filterVideos('folder3')" class="px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">2e Congrès National de Diabètologie</button>
