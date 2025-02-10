@@ -21,7 +21,7 @@
         @php
         $videoFolders = [
             'folder1' => [
-                ['url' => 'https://youtu.be/aBtaq1r8TM4', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => 'Journée Mondiale du Diabète'],
+                ['url' => 'https://youtu.be/aBtaq1r8TM4', 'image' => 'assets/images/events/last-event-1.jpeg', 'title' => 'Journée Mondiale du Diabète'],
             ],
             'folder2' => [
                 ['url' => 'https://youtu.be/24UhIt3vTiY?si=sWlPNhbtDQys4_h7', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => 'Annonce Congrès SMD 2024'],
@@ -45,7 +45,7 @@
                 ['url' => 'https://youtu.be/W3mtrXZ8Lk4?si=6SIkLs45YFZ_Zok4', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => 'Place des nouvelles insulines dans la prise en charge du Diabète du type 2 Pr INES KHOCHTALI'],
             ],
             'folder3' => [
-                ['url' => 'https://youtu.be/uXvQ2DL-OSg?si=I5ibsCc_JKhaSZVS', 'title' => 'Annonce Congrès National de Diabétologie 2025'],
+                ['url' => 'https://youtu.be/uXvQ2DL-OSg?si=I5ibsCc_JKhaSZVS', 'image' => 'assets/images/events/last-event-3.jpeg', 'title' => 'Annonce Congrès National de Diabétologie 2025'],
             ],
         ];
     @endphp
