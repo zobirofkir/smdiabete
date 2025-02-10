@@ -113,6 +113,34 @@ class InscriptionResource extends Resource
                     ->sortable()
                     ->searchable(),
 
+                    TextColumn::make('status')
+                    ->label('Statut')
+                    ->formatStateUsing(function ($state) {
+                        switch ($state) {
+                            case 'pending':
+                                return 'En attente';
+                            case 'accepted':
+                                return 'Accepté';
+                            case 'refused':
+                                return 'Rejeté';
+                            default:
+                                return 'Inconnu';
+                        }
+                    })
+                    ->color(function ($state) {
+                        switch ($state) {
+                            case 'pending':
+                                return 'warning';
+                            case 'accepted':
+                                return 'success';
+                            case 'refused':
+                                return 'danger';
+                            default:
+                                return 'muted';
+                        }
+                    })
+                    ->sortable()
+                    ->searchable(),
             ])
             ->defaultSort('created_at', 'desc')
             ->actions([
@@ -128,18 +156,18 @@ class InscriptionResource extends Resource
                     })
                     ->requiresConfirmation()
                     ->color('success'),
-                Action::make('reject')
+                    Action::make('reject')
                     ->label('Rejeter')
                     ->icon('heroicon-o-x-circle')
                     ->action(function (Inscription $record) {
-                        $record->status = 'rejected';
+                        $record->status = 'refused';
                         $record->save();
 
                         Mail::to($record->email)->send(new InscriptionRejected($record));
                     })
                     ->requiresConfirmation()
                     ->color('danger'),
-            ])
+                ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);

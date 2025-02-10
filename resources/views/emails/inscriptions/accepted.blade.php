@@ -5,7 +5,7 @@
 </head>
 <body>
     <p>Cher/Chère {{ $firstname }} {{ $lastname }},</p>
-    <p>Nous regrettons de vous informer que votre inscription a été refusée.</p>
-    <p>Merci de votre compréhension.</p>
+    <p>Nous vous confirmons votre inscription à la 2 ème Congrès National de Diabètologie , qui aura lieu le 29 Mai 2025, à L'hôtel ROYAL TULIP CITY CENTER TANGER.</p>
+    <p>Equipe SMD.</p>
 </body>
 </html>
