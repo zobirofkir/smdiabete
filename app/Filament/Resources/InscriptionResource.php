@@ -7,6 +7,7 @@ use App\Mail\InscriptionAccepted;
 use App\Mail\InscriptionRejected;
 use App\Models\Inscription;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -58,6 +59,8 @@ class InscriptionResource extends Resource
                         'invite' => 'Invite',
                     ])
                     ->label('Méthode de paiement'),
+                TextInput::make('attendance_status')
+                        ->label('Sur place'),
                 Forms\Components\Select::make('status')
                     ->options([
                         'pending' => 'En attente',
@@ -99,7 +102,8 @@ class InscriptionResource extends Resource
                     ->label('Date de départ'),
                 TextColumn::make('payment_method')
                     ->label('Méthode de paiement'),
-
+                TextColumn::make('attendance_status')
+                    ->label('Sur place'),
                 TextColumn::make('rib_pdf_path')
                     ->label('Télécharger le RIB')
                     ->formatStateUsing(function ($state) {

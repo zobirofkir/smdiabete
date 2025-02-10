@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('type');
             $table->string('specialite');
             $table->string('ville');
+            $table->string('attendance_status');
 
             $table->string('departure_date');
             $table->string('arrival_date');

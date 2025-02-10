@@ -22,6 +22,7 @@ class InscriptionRequest extends FormRequest
     public function rules(): array
     {
         $rules = [
+            'attendance_status' => 'required|string|in:sur-place,en-ligne',
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
             'phone' => 'required|string|max:15',
@@ -58,6 +59,10 @@ class InscriptionRequest extends FormRequest
     public function messages(): array
     {
         return [
+            'attendance_status.required' => 'Le statut d\'attestation est requis.',
+            'attendance_status.string' => 'Le statut d\'attestation doit être une chaîne de caractères.',
+            'attendance_status.in' => 'Le statut d\'attestation doit être sur-place ou en-ligne.',
+
             'firstname.required' => 'Le prénom est requis.',
             'firstname.string' => 'Le prénom doit être une chaîne de caractères.',
             'firstname.max' => 'Le prénom ne peut pas dépasser 255 caractères.',
