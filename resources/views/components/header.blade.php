@@ -8,6 +8,9 @@
         </span>
     </div>
     <div class="flex items-center space-x-4 md:block hidden">
+        <a href="https://www.youtube.com/@SMD81023" class="text-white hover:text-gray-200">
+            <i class="fab fa-youtube"></i>
+        </a>
         <a href="https://web.facebook.com/profile.php?id=61553634816576" class="text-white hover:text-gray-200">
             <i class="fab fa-facebook-f"></i>
         </a>

@@ -1,13 +1,6 @@
 <div class="px-8 md:px-16 mt-20 mb-20">
     <div class="flex flex-col gap-4 mb-8 justify-center items-center">
         <h1 class="text-4xl font-extrabold text-sky-600 text-center uppercase tracking-wider">Vidéos</h1>
-
-        <a href="https://www.youtube.com/@SMD81023" class="text-center">
-            <i class="fa-brands fa-youtube fa-2xl" style="color: #ed333b;"></i>
-            <p class="font-bold text-xl ">
-                Société Marocaine de Diabètologie (SMD)
-            </p>
-        </a>
     </div>
 
     <!-- Buttons for filtering -->
