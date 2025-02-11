@@ -223,7 +223,7 @@
             <div class="mt-6 mb-2 text-center">
                 <div>
                     <input type="radio" name="rgpd_consent" value="accepted" required>
-                    <label for="surplace_payment" class="ml-2 text-md font-medium text-gray-700">
+                    <label for="surplace_payment" class="ml-2 text-md font-medium text-gray-400">
                         J'accepte de recevoir les emails du congrès et les nouveautés des événements.
                     </label>
                 </div>
