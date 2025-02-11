@@ -232,10 +232,18 @@ class InscriptionResource extends Resource
             ->inlineLabel()
             ->html();
 
+        $statusStyle = match ($record->status) {
+            'pending' => 'warning',
+            'accepted' => 'success',
+            'refused' => 'danger',
+            default => 'secondary',
+        };
+
         $schema[] = TextEntry::make('Statut:')
             ->default($record->status)
             ->inlineLabel()
-            ->badge();
+            ->badge()
+            ->color($statusStyle);
 
         return $infolist->schema($schema);
     }
