@@ -220,14 +220,16 @@
                 @enderror
             </div>
 
-            <div class="my-6">
-                <label>
+            <div class="mt-6 mb-2 text-center">
+                <div>
                     <input type="radio" name="rgpd_consent" value="accepted" required>
-                    J'accepte de recevoir les emails du congrès et les nouveautés des événements.
-                </label>
+                    <label for="surplace_payment" class="ml-2 text-md font-medium text-gray-700">
+                        J'accepte de recevoir les emails du congrès et les nouveautés des événements.
+                    </label>
+                </div>
             </div>
 
-            <button type="submit" class="mt-6 bg-sky-500 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-md w-full">
+            <button type="submit" class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-md w-full">
                 SOUMETTRE
             </button>
         </form>
