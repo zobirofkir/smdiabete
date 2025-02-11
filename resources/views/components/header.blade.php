@@ -141,6 +141,7 @@
                             <option value="{{ url('/') }}">Médiathèque</option>
                             <option value="{{ url('/galleries') }}">Galeries</option>
                             <option value="{{ url('/videos') }}">Vidéos</option>
+                            <option value="#">Presse</option>
                         </select>
                     </form>
                 </li>
