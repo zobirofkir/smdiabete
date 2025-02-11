@@ -24,6 +24,7 @@ class Inscription extends Model
         'rib_pdf_path',
         'status',
         'laboratoire',
-        'other_laboratoire'
+        'other_laboratoire',
+        'other_specialite'
     ];
 }

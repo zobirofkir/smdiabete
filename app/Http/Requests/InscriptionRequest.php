@@ -29,6 +29,7 @@ class InscriptionRequest extends FormRequest
             'phone' => 'required|string|max:15',
             'email' => 'nullable|email|max:255|unique:inscriptions',
             'other_laboratoire' => 'nullable|string|max:255',
+            'other_specialite' => 'nullable|string|max:255',
             'secteur' => 'required|string|in:public,private',
             'type' => 'required|string|in:specialiste,resident',
             'specialite' => [

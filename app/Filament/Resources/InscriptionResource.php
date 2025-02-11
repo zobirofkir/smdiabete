@@ -47,6 +47,8 @@ class InscriptionResource extends Resource
                     ->label('Type'),
                 Forms\Components\TextInput::make('specialite')
                     ->label('Spécialité'),
+                TextInput::make('other_specialite')
+                    ->label('Autre Specialité'),
                 Forms\Components\TextInput::make('ville')
                     ->label('Ville'),
                 Forms\Components\DatePicker::make('departure_date')
@@ -101,6 +103,8 @@ class InscriptionResource extends Resource
                     ->label('Type'),
                 TextColumn::make('specialite')
                     ->label('Spécialité'),
+                TextColumn::make('other_specialite')
+                    ->label('Autre Specialité'),
                 TextColumn::make('ville')
                     ->label('Ville'),
                 TextColumn::make('departure_date')

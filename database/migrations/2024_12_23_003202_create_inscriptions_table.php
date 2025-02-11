@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('departure_date');
             $table->string('arrival_date');
             $table->string('other_laboratoire')->nullable();
+            $table->string('other_specialite')->nullable();
             $table->enum('payment_method', ['laboratoire', 'virement', 'invite','sur-place'])->nullable();
             $table->enum('status', ['pending', 'accepted', 'refused'])->default('pending')->change();
             $table->timestamps();
