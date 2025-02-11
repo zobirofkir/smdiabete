@@ -141,11 +141,11 @@
                         </select>
                     </form>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ url('/login') }}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
                         Identification
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="{{asset('assets/pdf/Le calendrier 2024.pdf')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
                         Agenda
