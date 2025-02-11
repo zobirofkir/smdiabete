@@ -64,6 +64,8 @@ class InscriptionResource extends Resource
                     ->label('Laboratoire'),
                 TextInput::make('laboratoire_status')
                     ->label('Statut du laboratoire'),
+                TextInput::make('other_laboratoire')
+                    ->label('Autre Aboratoire'),
                 Forms\Components\Select::make('status')
                     ->options([
                         'pending' => 'En attente',
@@ -107,6 +109,8 @@ class InscriptionResource extends Resource
                     ->label('Méthode de paiement'),
                 TextColumn::make('laboratoire')
                     ->label('Laboratoire'),
+                TextColumn::make('other_laboratoire')
+                    ->label('Autre Aboratoire'),
                 TextColumn::make('laboratoire_status')
                     ->label('Statut du laboratoire'),
                 TextColumn::make('rib_pdf_path')

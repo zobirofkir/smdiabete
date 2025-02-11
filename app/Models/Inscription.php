@@ -23,6 +23,7 @@ class Inscription extends Model
         'payment_method',
         'rib_pdf_path',
         'status',
-        'laboratoire'
+        'laboratoire',
+        'other_laboratoire'
     ];
 }
