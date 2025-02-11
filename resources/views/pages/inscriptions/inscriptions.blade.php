@@ -88,7 +88,7 @@
                         <option value="Endocrinologie">Endocrinologie</option>
                         <option value="Cardiologie">Cardiologie</option>
                         <option value="Néphrologie">Néphrologie</option>
-                        <option value="Médecin Généraliste">Généraliste</option>
+                        <option value="Médecin Généraliste">Medecine Generale</option>
                         <option value="Autres">Autres</option>
                     </select>
 
