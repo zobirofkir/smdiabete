@@ -22,6 +22,7 @@ class Inscription extends Model
         'arrival_date',
         'payment_method',
         'rib_pdf_path',
-        'status'
+        'status',
+        'laboratoire'
     ];
 }

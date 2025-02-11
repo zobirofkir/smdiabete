@@ -140,35 +140,42 @@
                         <label for="laboratoire" class="block text-sm font-medium text-gray-700">Choisissez le laboratoire*</label>
                         <select id="laboratoire" name="laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" onchange="toggleOtherLaboratoireInput(this)">
                             <option value="">-</option>
-                            <option value="laboratoire_1" {{ old('laboratoire') == 'laboratoire_1' ? 'selected' : '' }}>Sanofi</option>
-                            <option value="laboratoire_2" {{ old('laboratoire') == 'laboratoire_2' ? 'selected' : '' }}>Novo Nordisk</option>
-                            <option value="laboratoire_3" {{ old('laboratoire') == 'laboratoire_3' ? 'selected' : '' }}>Novartis</option>
-                            <option value="laboratoire_4" {{ old('laboratoire') == 'laboratoire_4' ? 'selected' : '' }}>Amea</option>
-                            <option value="laboratoire_5" {{ old('laboratoire') == 'laboratoire_5' ? 'selected' : '' }}>Pharmacare</option>
-                            <option value="laboratoire_6" {{ old('laboratoire') == 'laboratoire_6' ? 'selected' : '' }}>AtlasPharm</option>
-                            <option value="laboratoire_7" {{ old('laboratoire') == 'laboratoire_7' ? 'selected' : '' }}>Abbott</option>
-                            <option value="laboratoire_8" {{ old('laboratoire') == 'laboratoire_8' ? 'selected' : '' }}>Galderma</option>
-                            <option value="laboratoire_9" {{ old('laboratoire') == 'laboratoire_9' ? 'selected' : '' }}>Zénith Pharma</option>
-                            <option value="laboratoire_10" {{ old('laboratoire') == 'laboratoire_10' ? 'selected' : '' }}>Servier</option>
-                            <option value="laboratoire_11" {{ old('laboratoire') == 'laboratoire_11' ? 'selected' : '' }}>AstraZeneca</option>
-                            <option value="laboratoire_12" {{ old('laboratoire') == 'laboratoire_12' ? 'selected' : '' }}>Dislog</option>
-                            <option value="laboratoire_13" {{ old('laboratoire') == 'laboratoire_13' ? 'selected' : '' }}>Afric-Phar</option>
-                            <option value="laboratoire_14" {{ old('laboratoire') == 'laboratoire_14' ? 'selected' : '' }}>SunPharma</option>
-                            <option value="laboratoire_15" {{ old('laboratoire') == 'laboratoire_15' ? 'selected' : '' }}>Bottu</option>
-                            <option value="laboratoire_16" {{ old('laboratoire') == 'laboratoire_16' ? 'selected' : '' }}>Lilly</option>
-                            <option value="laboratoire_17" {{ old('laboratoire') == 'laboratoire_17' ? 'selected' : '' }}>Boehringer Ingelheim</option>
-                            <option value="laboratoire_18" {{ old('laboratoire') == 'laboratoire_18' ? 'selected' : '' }}>Gylmed</option>
-                            <option value="laboratoire_19" {{ old('laboratoire') == 'laboratoire_19' ? 'selected' : '' }}>Medavi</option>
-                            <option value="laboratoire_20" {{ old('laboratoire') == 'laboratoire_20' ? 'selected' : '' }}>Merck</option>
-                            <option value="laboratoire_21" {{ old('laboratoire') == 'laboratoire_21' ? 'selected' : '' }}>McPharma</option>
-                            <option value="laboratoire_22" {{ old('laboratoire') == 'laboratoire_22' ? 'selected' : '' }}>Eramedic</option>
-                            <option value="laboratoire_23" {{ old('laboratoire') == 'laboratoire_23' ? 'selected' : '' }}>Hikma</option>
-                            <option value="laboratoire_24" {{ old('laboratoire') == 'laboratoire_24' ? 'selected' : '' }}>Phi</option>
+                            <option value="Sanofi" {{ old('laboratoire') == 'Sanofi' ? 'selected' : '' }}>Sanofi</option>
+                            <option value="Novo Nordisk" {{ old('laboratoire') == 'Novo Nordisk' ? 'selected' : '' }}>Novo Nordisk</option>
+                            <option value="Novartis" {{ old('laboratoire') == 'Novartis' ? 'selected' : '' }}>Novartis</option>
+                            <option value="Amea" {{ old('laboratoire') == 'Amea' ? 'selected' : '' }}>Amea</option>
+                            <option value="Pharmacare" {{ old('laboratoire') == 'Pharmacare' ? 'selected' : '' }}>Pharmacare</option>
+                            <option value="AtlasPharm" {{ old('laboratoire') == 'AtlasPharm' ? 'selected' : '' }}>AtlasPharm</option>
+                            <option value="Abbott" {{ old('laboratoire') == 'Abbott' ? 'selected' : '' }}>Abbott</option>
+                            <option value="Galderma" {{ old('laboratoire') == 'Galderma' ? 'selected' : '' }}>Galderma</option>
+                            <option value="Zénith Pharma" {{ old('laboratoire') == 'Zénith Pharma' ? 'selected' : '' }}>Zénith Pharma</option>
+                            <option value="Servier" {{ old('laboratoire') == 'Servier' ? 'selected' : '' }}>Servier</option>
+                            <option value="AstraZeneca" {{ old('laboratoire') == 'AstraZeneca' ? 'selected' : '' }}>AstraZeneca</option>
+                            <option value="Dislog" {{ old('laboratoire') == 'Dislog' ? 'selected' : '' }}>Dislog</option>
+                            <option value="Afric-Phar" {{ old('laboratoire') == 'Afric-Phar' ? 'selected' : '' }}>Afric-Phar</option>
+                            <option value="SunPharma" {{ old('laboratoire') == 'SunPharma' ? 'selected' : '' }}>SunPharma</option>
+                            <option value="Bottu" {{ old('laboratoire') == 'Bottu' ? 'selected' : '' }}>Bottu</option>
+                            <option value="Lilly" {{ old('laboratoire') == 'Lilly' ? 'selected' : '' }}>Lilly</option>
+                            <option value="Boehringer Ingelheim" {{ old('laboratoire') == 'Boehringer Ingelheim' ? 'selected' : '' }}>Boehringer Ingelheim</option>
+                            <option value="Gylmed" {{ old('laboratoire') == 'Gylmed' ? 'selected' : '' }}>Gylmed</option>
+                            <option value="Medavi" {{ old('laboratoire') == 'Medavi' ? 'selected' : '' }}>Medavi</option>
+                            <option value="Merck" {{ old('laboratoire') == 'Merck' ? 'selected' : '' }}>Merck</option>
+                            <option value="McPharma" {{ old('laboratoire') == 'McPharma' ? 'selected' : '' }}>McPharma</option>
+                            <option value="Eramedic" {{ old('laboratoire') == 'Eramedic' ? 'selected' : '' }}>Eramedic</option>
+                            <option value="Hikma" {{ old('laboratoire') == 'Hikma' ? 'selected' : '' }}>Hikma</option>
+                            <option value="Phi" {{ old('laboratoire') == 'Phi' ? 'selected' : '' }}>Phi</option>
                             <option value="other">Autre</option>
                         </select>
 
-
                         @error('laboratoire')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div id="other_laboratoire_input" class="mt-4 hidden">
+                        <label for="other_laboratoire" class="block text-sm font-medium text-gray-700">Entrez le nom du laboratoire</label>
+                        <input type="text" id="other_laboratoire" name="other_laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        @error('other_laboratoire')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
                     </div>
@@ -209,14 +216,6 @@
 
                 </div>
                 @error('payment_method')
-                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
-            </div>
-
-            <div id="other_laboratoire_input" class="mt-4 hidden">
-                <label for="other_laboratoire" class="block text-sm font-medium text-gray-700">Entrez le nom du laboratoire</label>
-                <input type="text" id="other_laboratoire" name="other_laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                @error('other_laboratoire')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>

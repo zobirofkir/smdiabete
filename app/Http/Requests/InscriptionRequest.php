@@ -25,6 +25,7 @@ class InscriptionRequest extends FormRequest
             'laboratoire_status' => 'nullable|string|in:encours,confirme',
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
+            'laboratoire' => 'nullable|string|max:255',
             'phone' => 'required|string|max:15',
             'email' => 'nullable|email|max:255|unique:inscriptions',
             'secteur' => 'required|string|in:public,private',

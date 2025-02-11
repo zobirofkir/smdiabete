@@ -60,6 +60,10 @@ class InscriptionResource extends Resource
                         'sur-place' => 'Sur place',
                     ])
                     ->label('Méthode de paiement'),
+                TextInput::make('laboratoire')
+                    ->label('Laboratoire'),
+                TextInput::make('laboratoire_status')
+                    ->label('Statut du laboratoire'),
                 Forms\Components\Select::make('status')
                     ->options([
                         'pending' => 'En attente',
@@ -101,6 +105,10 @@ class InscriptionResource extends Resource
                     ->label('Date de départ'),
                 TextColumn::make('payment_method')
                     ->label('Méthode de paiement'),
+                TextColumn::make('laboratoire')
+                    ->label('Laboratoire'),
+                TextColumn::make('laboratoire_status')
+                    ->label('Statut du laboratoire'),
                 TextColumn::make('rib_pdf_path')
                     ->label('Télécharger le RIB')
                     ->formatStateUsing(function ($state) {
