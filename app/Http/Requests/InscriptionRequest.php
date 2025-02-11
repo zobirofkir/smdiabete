@@ -43,11 +43,11 @@ class InscriptionRequest extends FormRequest
             'ville' => 'required|string|max:255',
             'arrival_date' => 'required|date',
             'departure_date' => 'required|date',
-            'payment_method' => 'required|string|in:laboratoire,virement,invite',
+            'payment_method' => 'nullable|string|in:laboratoire,virement,invite',
         ];
 
         if ($this->input('payment_method') === 'virement') {
-            $rules['rib_pdf'] = 'required|file|mimes:pdf';
+            $rules['rib_pdf'] = 'nullable|file|mimes:pdf';
         }
 
         return $rules;

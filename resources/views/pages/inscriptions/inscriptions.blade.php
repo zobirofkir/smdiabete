@@ -131,7 +131,7 @@
                     <div>
                         <input type="radio" id="laboratoire_payment" name="payment_method" value="laboratoire"
                             {{ old('payment_method') == 'laboratoire' ? 'checked' : '' }}
-                            onclick="togglePaymentFields('laboratoire')" required>
+                            onclick="togglePaymentFields('laboratoire')">
                         <label for="laboratoire_payment" class="ml-2 text-sm font-medium text-gray-700">Laboratoire</label>
                     </div>
 
