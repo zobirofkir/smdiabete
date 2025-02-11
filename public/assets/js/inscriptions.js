@@ -11,8 +11,6 @@ function toggleOtherLaboratoireInput(select) {
     }
 }
 
-
-
 /**
  * Toggle Payment Fields
  */
@@ -26,6 +24,9 @@ function togglePaymentFields(method) {
     } else if (method === 'virement') {
         ribPdfUpload.classList.remove('hidden');
         laboratoireList.classList.add('hidden');
+    } else if (method === 'sur-place') {
+        laboratoireList.classList.add('hidden');
+        ribPdfUpload.classList.add('hidden');
     }
 }
 
@@ -68,7 +69,20 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             otherSpecialiteInput.classList.add("hidden");
             otherSpecialiteInput.removeAttribute("required");
-            otherSpecialiteInput.value = ""; // مسح القيمة عند عدم الحاجة إليها
+            otherSpecialiteInput.value = "";
         }
     });
+});
+
+
+/**
+ * Toggle Status Select
+ */
+document.getElementById('laboratoire').addEventListener('change', function() {
+    let statusSelect = document.getElementById('status_select');
+    if (this.value) {
+        statusSelect.classList.remove('hidden');
+    } else {
+        statusSelect.classList.add('hidden');
+    }
 });

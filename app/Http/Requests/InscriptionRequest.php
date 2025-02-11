@@ -22,7 +22,7 @@ class InscriptionRequest extends FormRequest
     public function rules(): array
     {
         $rules = [
-            'attendance_status' => 'required|string|in:sur-place,en-ligne',
+            'laboratoire_status' => 'nullable|string|in:encours,confirme',
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
             'phone' => 'required|string|max:15',
@@ -43,7 +43,7 @@ class InscriptionRequest extends FormRequest
             'ville' => 'required|string|max:255',
             'arrival_date' => 'required|date',
             'departure_date' => 'required|date',
-            'payment_method' => 'nullable|string|in:laboratoire,virement,invite',
+            'payment_method' => 'nullable|string|in:laboratoire,virement,invite,sur-place',
         ];
 
         if ($this->input('payment_method') === 'virement') {

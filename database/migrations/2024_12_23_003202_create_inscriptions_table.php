@@ -21,11 +21,11 @@ return new class extends Migration
             $table->string('type');
             $table->string('specialite');
             $table->string('ville');
-            $table->string('attendance_status');
+            $table->string('attendance_status')->nullable();
 
             $table->string('departure_date');
             $table->string('arrival_date');
-            $table->enum('payment_method', ['laboratoire', 'virement', 'invite'])->nullable(false);
+            $table->enum('payment_method', ['laboratoire', 'virement', 'invite','sur-place'])->nullable();
             $table->enum('status', ['pending', 'accepted', 'refused'])->default('pending')->change();
             $table->timestamps();
         });

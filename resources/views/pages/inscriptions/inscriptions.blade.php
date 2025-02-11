@@ -173,6 +173,14 @@
                         @enderror
                     </div>
 
+                    <div id="status_select" class="mt-4 hidden">
+                        <label for="status" class="block text-sm font-medium text-gray-700">Statut du paiement</label>
+                        <select id="status" name="laboratoire_status" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="encours">Encours</option>
+                            <option value="confirme">Confirmé</option>
+                        </select>
+                    </div>
+
                     <div class="mt-2">
                         <input type="radio" id="virement_payment" name="payment_method" value="virement"
                             {{ old('payment_method') == 'virement' ? 'checked' : '' }}
@@ -181,17 +189,26 @@
                             Paiement par virement (RIB : 007 8260002683000305367 78)
                         </label>
                     </div>
+
+                    {{-- Upload PDF Section (Hidden by Default) --}}
+                    <div id="rib_pdf_upload" class="mt-6 hidden">
+                        <label for="rib_pdf" class="block text-sm font-medium text-gray-700">Téléchargez le RIB en PDF*</label>
+                        <input type="file" id="rib_pdf" name="rib_pdf" accept="application/pdf" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        @error('rib_pdf')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+
+                    <div class="mt-2">
+                        <input type="radio" id="surplace_payment" name="payment_method" value="sur-place"
+                            {{ old('payment_method') == 'sur-place' ? 'checked' : '' }}
+                            onclick="togglePaymentFields('sur-place')">
+                        <label for="surplace_payment" class="ml-2 text-sm font-medium text-gray-700">Sur place</label>
+                    </div>
+
                 </div>
                 @error('payment_method')
-                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
-            </div>
-
-            {{-- Upload PDF Section (Hidden by Default) --}}
-            <div id="rib_pdf_upload" class="mt-6 hidden">
-                <label for="rib_pdf" class="block text-sm font-medium text-gray-700">Téléchargez le RIB en PDF*</label>
-                <input type="file" id="rib_pdf" name="rib_pdf" accept="application/pdf" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                @error('rib_pdf')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
             </div>
@@ -202,13 +219,6 @@
                 @error('other_laboratoire')
                     <span class="text-red-500 text-sm">{{ $message }}</span>
                 @enderror
-            </div>
-
-            <div class="my-6">
-                <label>
-                    <input type="radio" name="attendance_status" value="sur-place" required>
-                    Sur place
-                </label><br>
             </div>
 
             <div class="my-6">

@@ -16,7 +16,7 @@ class Inscription extends Model
         'specialite',
         'ville',
         'attendance_status',
-
+        'laboratoire_status',
         'sex',
         'departure_date',
         'arrival_date',
