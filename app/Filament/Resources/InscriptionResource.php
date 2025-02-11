@@ -7,8 +7,11 @@ use App\Mail\InscriptionAccepted;
 use App\Mail\InscriptionRejected;
 use App\Models\Inscription;
 use Filament\Forms;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Actions\Action;
@@ -28,54 +31,7 @@ class InscriptionResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('firstname')
-                    ->required()
-                    ->label('Prénom'),
-                Forms\Components\TextInput::make('lastname')
-                    ->required()
-                    ->label('Nom'),
-                Forms\Components\TextInput::make('phone')
-                    ->required()
-                    ->label('Téléphone'),
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required()
-                    ->label('Email'),
-                Forms\Components\TextInput::make('secteur')
-                    ->label('Secteur'),
-                Forms\Components\TextInput::make('type')
-                    ->label('Type'),
-                Forms\Components\TextInput::make('specialite')
-                    ->label('Spécialité'),
-                TextInput::make('other_specialite')
-                    ->label('Autre Specialité'),
-                Forms\Components\TextInput::make('ville')
-                    ->label('Ville'),
-                Forms\Components\DatePicker::make('departure_date')
-                    ->required()
-                    ->label('Date de départ'),
-                Forms\Components\Select::make('payment_method')
-                    ->options([
-                        'laboratoire' => 'Laboratoire',
-                        'virement' => 'Virement',
-                        'invite' => 'Invite',
-                        'sur-place' => 'Sur place',
-                    ])
-                    ->label('Méthode de paiement'),
-                TextInput::make('laboratoire')
-                    ->label('Laboratoire'),
-                TextInput::make('laboratoire_status')
-                    ->label('Statut du laboratoire'),
-                TextInput::make('other_laboratoire')
-                    ->label('Autre Aboratoire'),
-                Forms\Components\Select::make('status')
-                    ->options([
-                        'pending' => 'En attente',
-                        'accepted' => 'Accepté',
-                        'rejected' => 'Rejeté',
-                    ])
-                    ->default('pending')
-                    ->label('Statut'),
+                //
             ]);
     }
 
@@ -184,7 +140,7 @@ class InscriptionResource extends Resource
                     })
                     ->requiresConfirmation()
                     ->color('success'),
-                    Action::make('reject')
+                Action::make('reject')
                     ->label('Rejeter')
                     ->icon('heroicon-o-x-circle')
                     ->action(function (Inscription $record) {
@@ -201,6 +157,89 @@ class InscriptionResource extends Resource
             ]);
     }
 
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        $schema = [];
+        $record = $infolist->record;
+
+        $schema[] = TextEntry::make('Prénom:')
+            ->default($record->firstname)
+            ->inlineLabel()
+            ->badge();
+
+        $schema[] = TextEntry::make('Nom:')
+            ->default($record->lastname)
+            ->inlineLabel()
+            ->badge();
+
+        $schema[] = TextEntry::make('Téléphone:')
+            ->default($record->phone)
+            ->inlineLabel()
+            ->badge();
+
+        $schema[] = TextEntry::make('Email:')
+            ->default($record->email)
+            ->inlineLabel()
+            ->badge();
+
+        $schema[] = TextEntry::make('Secteur:')
+            ->default($record->secteur)
+            ->inlineLabel()
+            ->badge();
+
+        $schema[] = TextEntry::make('Type:')
+            ->default($record->type)
+            ->inlineLabel()
+            ->badge();
+
+        $schema[] = TextEntry::make('Spécialité:')
+            ->default($record->specialite)
+            ->inlineLabel();
+
+        $schema[] = TextEntry::make('Autre Spécialité:')
+            ->default($record->other_specialite)
+            ->inlineLabel();
+
+        $schema[] = TextEntry::make('Ville:')
+            ->default($record->ville)
+            ->inlineLabel();
+
+        $schema[] = TextEntry::make('Date de départ:')
+            ->default($record->departure_date)
+            ->inlineLabel()
+            ->badge();
+
+        $schema[] = TextEntry::make('Méthode de paiement:')
+            ->default($record->payment_method)
+            ->inlineLabel()
+            ->badge();
+
+        $schema[] = TextEntry::make('Laboratoire:')
+            ->default($record->laboratoire)
+            ->inlineLabel();
+
+        $schema[] = TextEntry::make('Autre Laboratoire:')
+            ->default($record->other_laboratoire)
+            ->inlineLabel();
+
+        $schema[] = TextEntry::make('Statut du laboratoire:')
+            ->default($record->laboratoire_status)
+            ->inlineLabel()
+            ->badge();
+
+        $schema[] = TextEntry::make('Télécharger le RIB')
+            ->default($record->rib_pdf_path ? '<a href="' . asset('storage/' . $record->rib_pdf_path) . '" target="_blank" class="text-primary-600 hover:text-primary-900">Télécharger</a>' : 'Aucun fichier')
+            ->inlineLabel()
+            ->html();
+
+        $schema[] = TextEntry::make('Statut:')
+            ->default($record->status)
+            ->inlineLabel()
+            ->badge();
+
+        return $infolist->schema($schema);
+    }
+
     public static function getRelations(): array
     {
         return [];
@@ -210,6 +249,7 @@ class InscriptionResource extends Resource
     {
         return [
             'index' => Pages\ListInscriptions::route('/'),
+            'view' => Pages\ViewInscription::route('/{record}'),
         ];
     }
 }
