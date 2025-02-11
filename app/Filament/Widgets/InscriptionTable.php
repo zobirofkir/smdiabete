@@ -6,6 +6,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget as BaseWidget;
 use App\Models\Inscription;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 
 class InscriptionTable extends BaseWidget
@@ -14,6 +15,8 @@ class InscriptionTable extends BaseWidget
 
     public function table(Table $table): Table
     {
+        $inscriptionCount = Inscription::count();
+
         return $table
             ->query(Inscription::query())
             ->columns([
@@ -61,6 +64,27 @@ class InscriptionTable extends BaseWidget
                     })
                     ->sortable()
                     ->searchable(),
+            ])
+            ->headerActions([
+                Tables\Actions\ViewAction::make()
+                    ->label("Accueil")
+                    ->url('/')
+                    ->icon('heroicon-s-home')
+                    ->extraAttributes(['style' => 'background-color: #4ae900;'])
+                    ->color('success'),
+
+                Tables\Actions\ViewAction::make()
+                    ->label("Les inscriptions ($inscriptionCount)")
+                    ->url('/admin/inscriptions')
+                    ->icon('heroicon-s-user-group')
+                    ->extraAttributes(['style' => 'background-color: #00c6bd;'])
+                    ->color('success'),
+
+                Action::make('car_count')
+                    ->label("Total inscriptions: $inscriptionCount")
+                    ->icon('heroicon-s-chart-bar')
+                    ->extraAttributes(['style' => 'background-color: #cfaa00;']),
+
             ])
             ->defaultSort('created_at', 'desc');
     }
