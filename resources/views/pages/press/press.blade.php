@@ -24,13 +24,11 @@
                                 <img src="{{ asset('assets/images/events/last-event-1.jpeg') }}" alt="Event Image" class="w-full h-full object-cover">
                             @endif
                         </div>
-                        <div class="p-4">
+                        <div class="p-4 flex items-center justify-center gap-4">
+                            <button onclick="openModal('{{ $folder }}', '{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" class="text-3xl text-gray-600 hover:text-gray-800">
+                                <i class="fas fa-play-circle"></i>
+                            </button>
                             <h3 class="md:text-2xl text-xl font-semibold">{{ $video['title'] }}</h3>
-                            <div class="flex space-x-4 mt-3">
-                                <button onclick="openModal('{{ $folder }}', '{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" class="text-3xl text-gray-600 hover:text-gray-800">
-                                    <i class="fas fa-play-circle w-12 h-12"></i>
-                                </button>
-                            </div>
                         </div>
                     </div>
                     @endforeach
