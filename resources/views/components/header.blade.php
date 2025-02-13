@@ -9,19 +9,19 @@
     </div>
     <div class="flex items-center space-x-4 md:block hidden">
         <a href="https://www.youtube.com/@SMD81023" class="text-white hover:text-gray-200">
-            <i class="fab fa-youtube"></i>
+            <i class="fab fa-youtube text-white bg-red-500 py-1 px-2 rounded-full"></i>
         </a>
         <a href="https://web.facebook.com/profile.php?id=61553634816576" class="text-white hover:text-gray-200">
-            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-facebook-f text-white bg-blue-500 py-1 px-2 rounded-full"></i>
         </a>
         <a href="#" class="text-white hover:text-gray-200">
-            <i class="fab fa-twitter"></i>
+            <i class="fa-brands fa-x-twitter text-white bg-black py-1 px-2 rounded-full"></i>
         </a>
         <a href="#" class="text-white hover:text-gray-200">
-            <i class="fab fa-linkedin-in"></i>
+            <i class="fab fa-linkedin-in text-white bg-blue-800 py-1 px-2 rounded-full"></i>
         </a>
         <a href="#" class="text-white hover:text-gray-200">
-            <i class="fab fa-instagram"></i>
+            <i class="fab fa-instagram text-white bg-purple-500 py-1 px-2 rounded-full"></i>
         </a>
     </div>
 </div>
