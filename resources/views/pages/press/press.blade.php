@@ -9,6 +9,8 @@
             $videoFolders = [
                 'folder' => [
                     ['url' => 'https://youtu.be/q29UyojVhJE?si=mGMnKghTtnxKPldm', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => 'الأخبار الظهيرة الأولى Journée Mondiale de Diabète'],
+                    ['url' => 'https://youtu.be/mh1DFmEbqNc?si=Do1u7xPCnWI_p4ed', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => ' الأخبار الظهيرة الأولى 18/05/2024'],
+                    ['url' => 'https://youtu.be/016KvU7E8So?si=hqy4e2VMn6OpTt3p', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => ' مرض السكري والغدد الصماء.. آش قال الطبيب يستضيف د صونيا أباحو للتحدث عن هذه الأمراض وعلاجها '],
                 ],
             ];
         @endphp
