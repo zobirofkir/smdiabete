@@ -72,7 +72,7 @@
                     <select id="type" name="type" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
                         <option value="">-</option>
                         <option value="specialiste" {{ old('type') == 'specialiste' ? 'selected' : '' }}>Spécialiste</option>
-                        <option value="residant" {{ old('type') == 'residant' ? 'selected' : '' }}>Résidant</option>
+                        <option value="resident" {{ old('type') == 'resident' ? 'selected' : '' }}>Résidant</option>
                     </select>
 
                     @error('type')
@@ -111,14 +111,25 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
                 <div>
                     <label for="arrival_date" class="block text-sm font-medium text-gray-700">Date d'arrivée*</label>
-                    <input type="date" id="arrival_date" name="arrival_date" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" value="{{ old('arrival_date') }}">
+                    <select id="arrival_date" name="arrival_date" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="" disabled selected>Choisissez une date</option>
+                        <option value="2025-05-29" {{ old('arrival_date') == '2025-05-29' ? 'selected' : '' }}>29/05/2025</option>
+                        <option value="2025-05-30" {{ old('arrival_date') == '2025-05-30' ? 'selected' : '' }}>30/05/2025</option>
+                        <option value="2025-05-31" {{ old('arrival_date') == '2025-05-31' ? 'selected' : '' }}>31/05/2025</option>
+                    </select>
                     @error('arrival_date')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
+
                 <div>
                     <label for="departure_date" class="block text-sm font-medium text-gray-700">Date de départ*</label>
-                    <input type="date" id="departure_date" name="departure_date" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" value="{{ old('departure_date') }}">
+                    <select id="departure_date" name="departure_date" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="" disabled selected>Choisissez une date</option>
+                        <option value="2025-05-30" {{ old('departure_date') == '2025-05-30' ? 'selected' : '' }}>30/05/2025</option>
+                        <option value="2025-05-31" {{ old('departure_date') == '2025-05-31' ? 'selected' : '' }}>31/05/2025</option>
+                        <option value="2025-06-01" {{ old('departure_date') == '2025-06-01' ? 'selected' : '' }}>01/06/2025</option>
+                    </select>
                     @error('departure_date')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror

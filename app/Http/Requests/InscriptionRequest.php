@@ -44,8 +44,8 @@ class InscriptionRequest extends FormRequest
             ],
             'other_specialite' => 'nullable|string|max:255',
             'ville' => 'required|string|max:255',
-            'arrival_date' => 'required|date',
-            'departure_date' => 'required|date',
+            'arrival_date' => 'required', 'date', 'in:2025-05-29,2025-05-30,2025-05-31',
+            'departure_date' => 'required', 'date', 'in:2025-05-30,2025-05-31,2025-06-01',
             'payment_method' => 'nullable|string|in:laboratoire,virement,invite,sur-place',
         ];
 

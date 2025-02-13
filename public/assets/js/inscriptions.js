@@ -86,3 +86,35 @@ document.getElementById('laboratoire').addEventListener('change', function() {
         statusSelect.classList.add('hidden');
     }
 });
+
+/**
+ * Toggle Arrival And Departure Date
+ */
+document.addEventListener("DOMContentLoaded", function () {
+    const arrivalSelect = document.getElementById("arrival_date");
+    const departureSelect = document.getElementById("departure_date");
+
+    arrivalSelect.addEventListener("change", function () {
+        const selectedArrivalDate = new Date(this.value);
+
+        Array.from(departureSelect.options).forEach(option => {
+            option.disabled = false;
+        });
+
+        let validOptions = false;
+        Array.from(departureSelect.options).forEach(option => {
+            if (option.value) {
+                const optionDate = new Date(option.value);
+                if (optionDate <= selectedArrivalDate) {
+                    option.disabled = true;
+                } else {
+                    validOptions = true;
+                }
+            }
+        });
+
+        if (!validOptions || (departureSelect.value && new Date(departureSelect.value) <= selectedArrivalDate)) {
+            departureSelect.value = "";
+        }
+    });
+});
