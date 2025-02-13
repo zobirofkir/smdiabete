@@ -66,10 +66,20 @@ Route::get('/sponsors', function () {
     return view('pages.sponsors.sponsors');
 });
 
+/**
+ * Members Routes
+ */
 Route::get('/members', function () {
     return view('pages.members.members');
 });
 
+/**
+ * Declaration Routes
+ */
 Route::get('/declaration', function () {
     return view('pages.declaration.declaration');
 })->name('declaration');
+
+Route::get('/press', function() {
+    return view('pages.press.press');
+});

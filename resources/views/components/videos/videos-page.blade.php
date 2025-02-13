@@ -19,7 +19,6 @@
             'folder2' => [
                 ['url' => 'https://youtu.be/24UhIt3vTiY?si=sWlPNhbtDQys4_h7', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => 'Annonce Congrès SMD 2024'],
                 ['url' => 'https://youtu.be/yDnhS1QNtg4?si=xcydYx2p0U2J8qKC', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => 'Congrès National de Diabétologie Mai 2024 Best of SMD 2024'],
-                ['url' => 'https://youtu.be/q29UyojVhJE?si=mGMnKghTtnxKPldm', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => 'الأخبار الظهيرة الأولى 17112024 Journée Mondiale de Diabète'],
                 ['url' => 'https://youtu.be/EXTTBPPOrRA?si=sfOHAaIWyxSDTLkN', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => 'Comment protéger le cœur de nos diabétiques Pr Mohammed Alami'],
                 ['url' => 'https://youtu.be/5G1Rv8Gjf_c?si=cFA_ruuao-jrHph_', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => "Isglt au cœur de la prise en charge du rien diabétique Point de vue de l'endocrinologue"],
                 ['url' => 'https://youtu.be/lI2-Bu3CJBM?si=ebgE15qUOFmaFQWC', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => "Isglt au cœur de la prise en charge du rien diabétique Point de vue du néphrologue"],

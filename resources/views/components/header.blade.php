@@ -141,15 +141,14 @@
                             <option value="{{ url('/') }}">Médiathèque</option>
                             <option value="{{ url('/galleries') }}">Galeries</option>
                             <option value="{{ url('/videos') }}">Vidéos</option>
-                            <option value="#">Presse</option>
                         </select>
                     </form>
                 </li>
-                {{-- <li>
-                    <a href="{{ url('/login') }}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
-                        Identification
+                <li>
+                    <a href="{{ url('/press') }}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
+                        Presse
                     </a>
-                </li> --}}
+                </li>
                 <li>
                     <a href="{{asset('assets/pdf/Le calendrier 2024.pdf')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
                         Agenda
