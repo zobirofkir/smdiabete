@@ -8,9 +8,8 @@
             @php
             $videoFolders = [
                 'folder' => [
-                    ['url' => 'https://youtu.be/q29UyojVhJE?si=mGMnKghTtnxKPldm', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => 'الأخبار الظهيرة الأولى Journée Mondiale de Diabète'],
+                    ['url' => 'https://youtu.be/q29UyojVhJE?si=mGMnKghTtnxKPldm', 'image' => 'assets/images/events/last-event-1.jpeg', 'title' => 'الأخبار الظهيرة الأولى Journée Mondiale de Diabète'],
                     ['url' => 'https://youtu.be/mh1DFmEbqNc?si=Do1u7xPCnWI_p4ed', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => ' الأخبار الظهيرة الأولى 18/05/2024'],
-                    ['url' => 'https://youtu.be/016KvU7E8So?si=hqy4e2VMn6OpTt3p', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => ' مرض السكري والغدد الصماء.. آش قال الطبيب يستضيف د صونيا أباحو للتحدث عن هذه الأمراض وعلاجها '],
                 ],
             ];
         @endphp
@@ -20,11 +19,7 @@
                     @foreach ($videos as $index => $video)
                     <div class="video-item {{ $folder }} bg-white shadow-lg rounded-lg overflow-hidden">
                         <div class="max-h-[300px] overflow-hidden">
-                            @if(isset($video['image']))
-                                <img src="{{ asset($video['image']) }}" alt="Event Image" class="w-full h-full object-cover">
-                            @else
-                                <img src="{{ asset('assets/images/events/last-event-1.jpeg') }}" alt="Event Image" class="w-full h-full object-cover">
-                            @endif
+                            <img src="{{ asset($video['image']) }}" alt="Event Image" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4 flex items-center justify-center gap-4">
                             <button onclick="openModal('{{ $folder }}', '{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" class="text-3xl text-gray-600 hover:text-gray-800">

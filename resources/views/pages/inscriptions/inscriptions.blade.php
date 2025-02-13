@@ -181,9 +181,9 @@
                     </div>
 
                     <div id="status_select" class="mt-4 hidden">
-                        <label for="status" class="block text-sm font-medium text-gray-700">Statut du paiement</label>
+                        <label for="status" class="block text-sm font-medium text-gray-700">Statut du paiement *</label>
                         <select id="status" name="laboratoire_status" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                            <option value="encours">Encours</option>
+                            <option value="encours">En Cours</option>
                             <option value="confirme">Confirmé</option>
                         </select>
                     </div>
@@ -207,12 +207,12 @@
                     </div>
 
 
-                    <div class="mt-2">
+                    {{-- <div class="mt-2">
                         <input type="radio" id="surplace_payment" name="payment_method" value="sur-place"
                             {{ old('payment_method') == 'sur-place' ? 'checked' : '' }}
                             onclick="togglePaymentFields('sur-place')">
                         <label for="surplace_payment" class="ml-2 text-sm font-medium text-gray-700">Sur place</label>
-                    </div>
+                    </div> --}}
 
                 </div>
                 @error('payment_method')
