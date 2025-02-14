@@ -240,7 +240,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="bg-sky-500 text-white font-bold py-3 px-6 rounded-md w-full" disabled>
+            <button type="submit" class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-md w-full">
                 SOUMETTRE
             </button>
         </form>
