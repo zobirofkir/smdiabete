@@ -2,7 +2,7 @@
     <div class="flex flex-col justify-center items-center md:px-0 px-10">
         <h1 class="text-2xl font-bold mb-4 text-center">{{ config('app.name') }}</h1>
         <p class="text-center">Copyright &copy; <script>document.write(new Date().getFullYear());</script> {{ config('app.name') }}. Tous droits réservés.</p>
-        <div class="flex items-center space-x-4 md:block hidden mt-4">
+        <div class="flex items-center space-x-4 block  mt-4">
             <a href="https://www.youtube.com/@SMD81023" class="text-white hover:text-gray-200">
                 <i class="fab fa-youtube text-white bg-red-500 py-1 px-2 rounded-full"></i>
             </a>
