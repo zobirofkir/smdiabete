@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 to-purple-50 p-6">
+    <div class="min-h-screen flex md:flex-row flex-col items-center justify-center bg-gradient-to-r from-blue-50 to-purple-50 p-6">
         @if (session('success'))
             <div class="fixed top-6 right-6 flex items-center gap-3 bg-green-500 text-white text-sm font-semibold px-6 py-3 rounded-lg shadow-xl transform animate-slide-in z-[999]">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
@@ -90,7 +90,7 @@
             </div>
 
             <!-- Right Side: Image -->
-            <div class="hidden md:block relative animate-fade-in-right">
+            <div class="block overflow-hidden relative animate-fade-in-right">
                 <img src="{{ asset('assets/images/affiche/affiche.jpeg') }}" alt="Affichage"
                     class="w-full h-full object-cover rounded-r-lg transition-transform duration-500 hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 rounded-r-lg"></div>
