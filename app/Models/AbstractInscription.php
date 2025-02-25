@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class AbstractInscription extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         "firstname",
         "lastname",
         "email",
-        "email"
+        "file"
     ];
 }
