@@ -24,8 +24,16 @@ class AbstractInscriptionController extends Controller
      */
     public function store(AbstractInscriptionRequest $request): RedirectResponse
     {
-        AbstractInscription::create($request->validated());
+        $data = $request->validated();
+
+        if ($request->hasFile('file')) {
+            $filePath = $request->file('file')->store('abstracts', 'public');
+            $data['file'] = $filePath;
+        }
+
+        AbstractInscription::create($data);
 
         return redirect()->route('abstract.index')->with('success', 'Votre abstract a été envoyé avec succès.');
     }
+
 }
