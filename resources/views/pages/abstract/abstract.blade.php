@@ -79,6 +79,12 @@
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
 
+                    <div class="flex justify-center items-center">
+                        <p class="text-gray-800 text-center font-bold">
+                            Merci de nous transmettre votre communication affichée, au format PDF en orientation portrait avant le 15 Mai 2025 à minuit
+                        </p>
+                    </div>
+
                     <!-- Submit Button -->
                     <div class="animate-fade-in-up delay-400">
                         <button type="submit"
