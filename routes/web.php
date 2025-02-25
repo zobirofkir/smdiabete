@@ -83,3 +83,8 @@ Route::get('/declaration', function () {
 Route::get('/press', function() {
     return view('pages.press.press');
 });
+
+
+Route::get('/abstract', function() {
+    return view('pages.abstract.abstract');
+});
