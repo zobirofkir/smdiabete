@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbstractInscriptionController;
 use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\MasterclassController;
 use Illuminate\Support\Facades\Route;
@@ -83,3 +84,13 @@ Route::get('/declaration', function () {
 Route::get('/press', function() {
     return view('pages.press.press');
 });
+
+/**
+ * Abstract Page
+ */
+Route::get('/abstract', [AbstractInscriptionController::class, 'index'])->name('abstract.index');
+
+/**
+ * Post Abstract
+ */
+Route::post('/abstract/inscription', [AbstractInscriptionController::class, 'store'])->name('abstract.store');
