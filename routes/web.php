@@ -81,6 +81,9 @@ Route::get('/declaration', function () {
     return view('pages.declaration.declaration');
 })->name('declaration');
 
+/**
+ * press
+ */
 Route::get('/press', function() {
     return view('pages.press.press');
 });
@@ -94,3 +97,10 @@ Route::get('/abstract', [AbstractInscriptionController::class, 'index'])->name('
  * Post Abstract
  */
 Route::post('/abstract/inscription', [AbstractInscriptionController::class, 'store'])->name('abstract.store');
+
+/**
+ * Abstract Sended Successfully
+ */
+Route::get('/abstract/success', function() {
+    return view('pages.success.success');
+})->name('abstract.success');
