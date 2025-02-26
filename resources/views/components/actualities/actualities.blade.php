@@ -57,7 +57,7 @@
                 </div>
 
                 {{-- Modal --}}
-                <div id="popup" class="fixed inset-0 flex items-center justify-center hidden z-[1000]">
+                <div id="popup" class="fixed inset-0 empflex items-center justify-center hidden z-[1000]">
                     <div class="bg-white p-6 rounded-lg shadow-lg w-96 text-center">
                         <p class="text-gray-800 text-lg">L'inscription est actuellement en attente. Nous vous informerons dès qu'elle sera ouverte.</p>
                         <button id="closeModal" class="mt-4 bg-red-600 hover:bg-red-800 text-white py-2 px-4 rounded-lg">
