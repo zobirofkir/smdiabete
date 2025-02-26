@@ -33,7 +33,7 @@
             <!-- Left Side: Form -->
             <div class="p-8 flex flex-col justify-center relative">
 
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 animate-fade-in-down">Soumission des abstracts</h2>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 animate-fade-in-down">Soumission Des Apstract</h2>
                 <form class="space-y-6" action="{{ route('abstract.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <!-- Last Name -->
