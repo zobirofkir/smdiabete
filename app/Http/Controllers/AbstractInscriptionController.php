@@ -33,7 +33,7 @@ class AbstractInscriptionController extends Controller
 
         AbstractInscription::create($data);
 
-        return redirect()->route('abstract.index')->with('success', 'Votre abstract a été envoyé avec succès.');
+        return redirect()->route('abstract.success');
     }
 
 }

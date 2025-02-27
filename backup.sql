@@ -16,6 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `abstract_inscriptions`
+--
+
+DROP TABLE IF EXISTS `abstract_inscriptions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `abstract_inscriptions` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `abstract_inscriptions_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `abstract_inscriptions`
+--
+
+LOCK TABLES `abstract_inscriptions` WRITE;
+/*!40000 ALTER TABLE `abstract_inscriptions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `abstract_inscriptions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `cache`
 --
 
@@ -239,7 +268,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -248,7 +277,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1),(2,'0001_01_01_000001_create_cache_table',1),(3,'0001_01_01_000002_create_jobs_table',1),(4,'2024_12_23_003202_create_inscriptions_table',1),(5,'2024_12_23_182543_add_status_to_inscriptions_table',1),(6,'2024_12_23_233223_create_masterclasses_table',1),(7,'2024_12_23_234938_add_validated_to_masterclasses_table',1),(8,'2025_01_23_024056_add_rib_pdf_path_to_inscriptions_table',1),(9,'2025_02_11_084635_add_status_to_inscriptions',1),(10,'2025_02_11_092141_add_laboratoire_to_inscriptions_table',1);
+INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1),(2,'0001_01_01_000001_create_cache_table',1),(3,'0001_01_01_000002_create_jobs_table',1),(4,'2024_12_23_003202_create_inscriptions_table',1),(5,'2024_12_23_182543_add_status_to_inscriptions_table',1),(6,'2024_12_23_233223_create_masterclasses_table',1),(7,'2024_12_23_234938_add_validated_to_masterclasses_table',1),(8,'2025_01_23_024056_add_rib_pdf_path_to_inscriptions_table',1),(9,'2025_02_11_084635_add_status_to_inscriptions',1),(10,'2025_02_11_092141_add_laboratoire_to_inscriptions_table',1),(11,'2025_02_25_173723_create_abstract_inscriptions_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -332,7 +361,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'smdiabete','smdiabete@gmail.com',NULL,'$2y$12$3VvTCZA3p2IL8xbkOo97M.np9bjVH0rinaEubZbZa31Mw9EYMMFj6',NULL,'2025-02-15 14:24:39','2025-02-15 14:24:39');
+INSERT INTO `users` VALUES (1,'smdiabete','smdiabete@gmail.com',NULL,'$2y$12$6kn2ftPWBk48bqoCz3.0OuMboftgjrl9OhBuABdjn7/C5r6mRIcie',NULL,'2025-02-26 09:41:55','2025-02-26 09:41:55');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -345,4 +374,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-02-15 14:25:39
+-- Dump completed on 2025-02-26  9:42:17

@@ -33,9 +33,20 @@
             <!-- Left Side: Form -->
             <div class="p-8 flex flex-col justify-center relative">
 
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 animate-fade-in-down">Formulaire de Contact</h2>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 animate-fade-in-down">Soumission Des Apstract</h2>
                 <form class="space-y-6" action="{{ route('abstract.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    <!-- Last Name -->
+                    <div class="animate-fade-in-left delay-100">
+                        <label for="lastname" class="block text-sm font-medium text-gray-700">Nom</label>
+                        <input type="text" id="lastname" name="lastname" required
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
+                            placeholder="Entrez votre nom de famille">
+                    </div>
+                    @error('lastname')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
+
                     <!-- First Name -->
                     <div class="animate-fade-in-left">
                         <label for="firstname" class="block text-sm font-medium text-gray-700">Prénom</label>
@@ -44,17 +55,6 @@
                             placeholder="Entrez votre prénom">
                     </div>
                     @error('firstname')
-                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                    @enderror
-
-                    <!-- Last Name -->
-                    <div class="animate-fade-in-left delay-100">
-                        <label for="lastname" class="block text-sm font-medium text-gray-700">Nom de famille</label>
-                        <input type="text" id="lastname" name="lastname" required
-                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
-                            placeholder="Entrez votre nom de famille">
-                    </div>
-                    @error('lastname')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
 
