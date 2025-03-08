@@ -33,7 +33,7 @@
             <!-- Left Side: Form -->
             <div class="p-8 flex flex-col justify-center relative">
 
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 animate-fade-in-down">Soumission Des Apstract</h2>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 animate-fade-in-down">Soumission Des Abstracts</h2>
                 <form class="space-y-6" action="{{ route('abstract.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <!-- Last Name -->
@@ -81,7 +81,7 @@
 
                     <div class="flex justify-center items-center">
                         <p class="text-gray-800 text-center font-bold">
-                            Merci de nous transmettre votre communication affichée, au format PDF en orientation portrait avant le 15 Mai 2025 à minuit
+                            Merci de nous transmettre votre communication affichée, au format PDF en orientation portrait avant le 1er Mai 2025 à minuit
                         </p>
                     </div>
 
@@ -97,7 +97,7 @@
 
             <!-- Right Side: Image -->
             <div class="block overflow-hidden relative animate-fade-in-right">
-                <img src="{{ asset('assets/images/affiche/affiche.jpeg') }}" alt="Affichage"
+                <img src="{{ asset('assets/images/affiche/abstract-inscription.jpeg') }}" alt="Affichage"
                     class="w-full h-full object-cover rounded-r-lg transition-transform duration-500 hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 rounded-r-lg"></div>
             </div>
