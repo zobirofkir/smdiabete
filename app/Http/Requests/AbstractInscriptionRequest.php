@@ -16,7 +16,7 @@ class AbstractInscriptionRequest extends FormRequest
         return [
             'firstname' => 'required|string|min:5|max:8',
             'lastname' => 'required|string|min:5|max:8',
-            'email' => 'required|email|unique:abstract_inscriptions,email',
+            'email' => 'required|email',
             'file' => 'required|file|mimes:pdf|max:2048',
         ];
     }
