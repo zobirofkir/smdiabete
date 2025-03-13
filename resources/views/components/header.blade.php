@@ -149,6 +149,11 @@
                         Presse
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('/abstract') }}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
+                        Abstracts
+                    </a>
+                </li>
                 {{-- <li>
                     <a href="{{asset('assets/pdf/Le calendrier 2024.pdf')}}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
                         Agenda

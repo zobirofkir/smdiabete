@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AbstractInscriptionRequest;
+use App\Mail\AbstractSubmissionConfirmation;
 use App\Models\AbstractInscription;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Mail;
 
 class AbstractInscriptionController extends Controller
 {
@@ -31,7 +33,12 @@ class AbstractInscriptionController extends Controller
             $data['file'] = $filePath;
         }
 
-        AbstractInscription::create($data);
+        $abstract = AbstractInscription::create($data);
+
+        // Send confirmation email
+        Mail::to('zobirofkir19@gmail.com')->send(
+            new AbstractSubmissionConfirmation($abstract->firstname, $abstract->lastname)
+        );
 
         return redirect()->route('abstract.success');
     }
