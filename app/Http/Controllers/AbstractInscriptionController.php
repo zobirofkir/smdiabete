@@ -35,10 +35,13 @@ class AbstractInscriptionController extends Controller
 
         $abstract = AbstractInscription::create($data);
 
-        // Send confirmation email
-        Mail::to('zobirofkir19@gmail.com')->send(
-            new AbstractSubmissionConfirmation($abstract->firstname, $abstract->lastname)
-        );
+        $recipients = ['abstract@smdiabete.org', $abstract->email];
+
+        foreach ($recipients as $recipient) {
+            Mail::to($recipient)->send(
+                new AbstractSubmissionConfirmation($abstract->firstname, $abstract->lastname)
+            );
+        }
 
         return redirect()->route('abstract.success');
     }
