@@ -17,7 +17,7 @@ class AbstractInscriptionRequest extends FormRequest
             'firstname' => 'required|string|min:5|max:8',
             'lastname' => 'required|string|min:5|max:8',
             'email' => 'required|email',
-            'file' => 'required|file|mimes:pdf|max:2048',
+            'file' => 'required|file|mimes:pdf|max:10240',
         ];
     }
 
