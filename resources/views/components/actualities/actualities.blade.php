@@ -47,7 +47,7 @@
                 </p>
 
                 <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
-                    <a href="#" id="openModal" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg">
+                    <a href="{{url('/inscriptions')}}" id="openModal" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg">
                         Inscription
                     </a>
 
@@ -56,31 +56,10 @@
                     </a>
                 </div>
 
-                {{-- Modal --}}
-                <div id="popup" class="fixed inset-0 empflex items-center justify-center hidden z-[1000]">
-                    <div class="bg-white p-6 rounded-lg shadow-lg w-96 text-center">
-                        <p class="text-gray-800 text-lg">L'inscription est actuellement en attente. Nous vous informerons dès qu'elle sera ouverte.</p>
-                        <button id="closeModal" class="mt-4 bg-red-600 hover:bg-red-800 text-white py-2 px-4 rounded-lg">
-                            Fermer
-                        </button>
-                    </div>
-                </div>
-
             </div>
 
         </div>
     </div>
-
-    <script>
-        document.getElementById("openModal").addEventListener("click", function(event) {
-            event.preventDefault();
-            document.getElementById("popup").classList.remove("hidden");
-        });
-
-        document.getElementById("closeModal").addEventListener("click", function() {
-            document.getElementById("popup").classList.add("hidden");
-        });
-    </script>
 </section>
 
 
