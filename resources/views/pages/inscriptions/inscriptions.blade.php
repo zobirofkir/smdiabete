@@ -47,7 +47,7 @@
                     @enderror
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email *</label>
                     <input type="email" id="email" name="email" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Votre email" value="{{ old('email') }}">
                     @error('email')
                         <span class="text-red-500 text-sm">{{ $message }}</span>

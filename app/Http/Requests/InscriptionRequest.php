@@ -27,7 +27,7 @@ class InscriptionRequest extends FormRequest
             'lastname' => 'required|string|max:255',
             'laboratoire' => 'nullable|string|max:255',
             'phone' => 'required|string|max:15',
-            'email' => 'nullable|email|max:255|unique:inscriptions',
+            'email' => 'required|email|max:255|unique:inscriptions',
             'other_laboratoire' => 'nullable|string|max:255',
             'other_specialite' => 'nullable|string|max:255',
             'secteur' => 'required|string|in:public,private',
