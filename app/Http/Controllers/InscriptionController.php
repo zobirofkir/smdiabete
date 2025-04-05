@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\InscriptionRequest;
 use App\Models\Inscription;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\InscriptionConfirmationMail;
 
 class InscriptionController extends Controller
 {
@@ -25,6 +27,8 @@ class InscriptionController extends Controller
             'rib_pdf_path' => $ribPdfPath,
             ...$request->validated(),
         ]);
+
+        Mail::to($inscription->email)->send(new InscriptionConfirmationMail($inscription));
 
         return redirect()
             ->route('inscriptions.index')
