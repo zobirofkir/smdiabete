@@ -204,11 +204,6 @@ class InscriptionResource extends Resource
             ->default($record->ville)
             ->inlineLabel();
 
-        $schema[] = TextEntry::make('Date de départ:')
-            ->default($record->departure_date)
-            ->inlineLabel()
-            ->badge();
-
         $schema[] = TextEntry::make('Méthode de paiement:')
             ->default($record->payment_method)
             ->inlineLabel()
@@ -231,6 +226,15 @@ class InscriptionResource extends Resource
             ->default($record->rib_pdf_path ? '<a href="' . asset('storage/' . $record->rib_pdf_path) . '" target="_blank" class="text-primary-600 hover:text-primary-900">Télécharger</a>' : 'Aucun fichier')
             ->inlineLabel()
             ->html();
+            $schema[] = TextEntry::make('Date de départ:')
+            ->default($record->departure_date)
+            ->inlineLabel()
+            ->badge();
+
+        $schema[] = TextEntry::make("Date d 'arrivée:")
+            ->default($record->arrival_date)
+            ->inlineLabel()
+            ->badge();
 
         $statusStyle = match ($record->status) {
             'pending' => 'warning',
