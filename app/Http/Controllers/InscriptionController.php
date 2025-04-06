@@ -28,7 +28,9 @@ class InscriptionController extends Controller
             ...$request->validated(),
         ]);
 
-        Mail::to($inscription->email)->send(new InscriptionConfirmationMail($inscription));
+        Mail::mailer('smtp')
+            ->to($inscription->email)
+            ->send(new InscriptionConfirmationMail($inscription, 'contact@smdiabete.org'));
 
         return redirect()
             ->route('inscriptions.index')
