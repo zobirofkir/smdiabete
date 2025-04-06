@@ -27,7 +27,7 @@ class InscriptionRequest extends FormRequest
             'lastname' => 'required|string|max:255',
             'laboratoire' => 'nullable|string|max:255',
             'phone' => 'required|string|max:15',
-            'email' => 'nullable|email|max:255|unique:inscriptions',
+            'email' => 'required|email|max:255|unique:inscriptions',
             'other_laboratoire' => 'nullable|string|max:255',
             'other_specialite' => 'nullable|string|max:255',
             'secteur' => 'required|string|in:public,private',
@@ -44,8 +44,9 @@ class InscriptionRequest extends FormRequest
             ],
             'other_specialite' => 'nullable|string|max:255',
             'ville' => 'required|string|max:255',
-            'arrival_date' => 'required', 'date', 'in:2025-05-29,2025-05-30,2025-05-31',
-            'departure_date' => 'required', 'date', 'in:2025-05-30,2025-05-31,2025-06-01',
+            'inscription_type' => 'required|string|in:seule,hebergement',
+            'arrival_date' => 'nullable|date|in:2025-05-29,2025-05-30,2025-05-31',
+            'departure_date' => 'nullable|date|in:2025-05-30,2025-05-31,2025-06-01',
             'payment_method' => 'nullable|string|in:laboratoire,virement,invite,sur-place',
         ];
 
@@ -102,11 +103,15 @@ class InscriptionRequest extends FormRequest
             'ville.string' => 'La ville doit être une chaîne de caractères.',
             'ville.max' => 'La ville ne peut pas dépasser 255 caractères.',
 
-            'arrival_date.required' => 'La date d\'arrivée est requise.',
-            'arrival_date.date' => 'La date d\'arrivée doit être une date valide.',
+            'inscription_type.required' => 'Le type d\'inscription est requis.',
+            'inscription_type.string' => 'Le type d\'inscription doit être une chaîne de caractères.',
+            'inscription_type.in' => 'Le type d\'inscription doit être "seule" ou "hebergement".',
 
-            'departure_date.required' => 'La date de départ est requise.',
+            'arrival_date.date' => 'La date d\'arrivée doit être une date valide.',
+            'arrival_date.in' => 'La date d\'arrivée doit être l\'une des dates suivantes : 2025-05-29, 2025-05-30, 2025-05-31.',
+
             'departure_date.date' => 'La date de départ doit être une date valide.',
+            'departure_date.in' => 'La date de départ doit être l\'une des dates suivantes : 2025-05-30, 2025-05-31, 2025-06-01.',
 
             'payment_method.required' => 'Le mode de paiement est requis.',
             'payment_method.string' => 'Le mode de paiement doit être une chaîne de caractères.',

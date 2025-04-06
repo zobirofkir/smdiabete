@@ -1,4 +1,5 @@
 <x-app-layout>
+    <link rel="stylesheet" href="{{ asset('assets/css/animations.css') }}">
     <div class="min-h-screen flex md:flex-row flex-col items-center justify-center bg-gradient-to-r from-blue-50 to-purple-50 p-6">
         @if (session('success'))
             <div class="fixed top-6 right-6 flex items-center gap-3 bg-green-500 text-white text-sm font-semibold px-6 py-3 rounded-lg shadow-xl transform animate-slide-in z-[999]">
@@ -11,22 +12,6 @@
                     &times;
                 </button>
             </div>
-
-            <style>
-                @keyframes slide-in {
-                    from {
-                        transform: translateX(50px);
-                        opacity: 0;
-                    }
-                    to {
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
-                .animate-slide-in {
-                    animation: slide-in 0.5s ease-out;
-                }
-            </style>
         @endif
 
         <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-2xl overflow-hidden transition-transform duration-500 hover:scale-105">

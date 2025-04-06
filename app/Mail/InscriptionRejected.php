@@ -12,15 +12,17 @@ class InscriptionRejected extends Mailable
     use Queueable, SerializesModels;
 
     public $inscription;
+    public $fromEmail;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Inscription $inscription)
+    public function __construct(Inscription $inscription, string $fromEmail)
     {
         $this->inscription = $inscription;
+        $this->fromEmail = $fromEmail;
     }
 
     /**
@@ -30,7 +32,8 @@ class InscriptionRejected extends Mailable
      */
     public function build()
     {
-        return $this->subject('Your Inscription is Rejected')
+        return $this->from($this->fromEmail)
+            ->subject('Your Inscription is Rejected')
             ->view('emails.inscriptions.rejected')
             ->with([
                 'firstname' => $this->inscription->firstname,

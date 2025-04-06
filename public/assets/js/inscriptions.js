@@ -2,12 +2,12 @@
  * Toggle Other Laboratoire Input
  */
 function toggleOtherLaboratoireInput(select) {
-    const otherInputDiv = document.getElementById('other_laboratoire_input');
-    if (select.value === 'other') {
-        otherInputDiv.classList.remove('hidden');
+    const otherInputDiv = document.getElementById("other_laboratoire_input");
+    if (select.value === "other") {
+        otherInputDiv.classList.remove("hidden");
     } else {
-        otherInputDiv.classList.add('hidden');
-        document.getElementById('other_laboratoire').value = '';
+        otherInputDiv.classList.add("hidden");
+        document.getElementById("other_laboratoire").value = "";
     }
 }
 
@@ -15,28 +15,27 @@ function toggleOtherLaboratoireInput(select) {
  * Toggle Payment Fields
  */
 function togglePaymentFields(method) {
-    const ribPdfUpload = document.getElementById('rib_pdf_upload');
-    const laboratoireList = document.getElementById('laboratoire_list');
+    const ribPdfUpload = document.getElementById("rib_pdf_upload");
+    const laboratoireList = document.getElementById("laboratoire_list");
 
-    if (method === 'laboratoire') {
-        laboratoireList.classList.remove('hidden');
-        ribPdfUpload.classList.add('hidden');
-    } else if (method === 'virement') {
-        ribPdfUpload.classList.remove('hidden');
-        laboratoireList.classList.add('hidden');
-    } else if (method === 'sur-place') {
-        laboratoireList.classList.add('hidden');
-        ribPdfUpload.classList.add('hidden');
+    if (method === "laboratoire") {
+        laboratoireList.classList.remove("hidden");
+        ribPdfUpload.classList.add("hidden");
+    } else if (method === "virement") {
+        ribPdfUpload.classList.remove("hidden");
+        laboratoireList.classList.add("hidden");
+    } else if (method === "sur-place") {
+        laboratoireList.classList.add("hidden");
+        ribPdfUpload.classList.add("hidden");
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     const selectedMethod = "{{ old('payment_method') }}";
     if (selectedMethod) {
         togglePaymentFields(selectedMethod);
     }
 });
-
 
 /**
  * Username and Lastname Uppercase
@@ -53,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
         this.value = this.value.toUpperCase();
     });
 });
-
 
 /**
  * Specialite Autocomplete
@@ -74,16 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 /**
  * Toggle Status Select
  */
-document.getElementById('laboratoire').addEventListener('change', function() {
-    let statusSelect = document.getElementById('status_select');
+document.getElementById("laboratoire").addEventListener("change", function () {
+    let statusSelect = document.getElementById("status_select");
     if (this.value) {
-        statusSelect.classList.remove('hidden');
+        statusSelect.classList.remove("hidden");
     } else {
-        statusSelect.classList.add('hidden');
+        statusSelect.classList.add("hidden");
     }
 });
 
@@ -97,12 +94,12 @@ document.addEventListener("DOMContentLoaded", function () {
     arrivalSelect.addEventListener("change", function () {
         const selectedArrivalDate = new Date(this.value);
 
-        Array.from(departureSelect.options).forEach(option => {
+        Array.from(departureSelect.options).forEach((option) => {
             option.disabled = false;
         });
 
         let validOptions = false;
-        Array.from(departureSelect.options).forEach(option => {
+        Array.from(departureSelect.options).forEach((option) => {
             if (option.value) {
                 const optionDate = new Date(option.value);
                 if (optionDate <= selectedArrivalDate) {
@@ -113,8 +110,52 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        if (!validOptions || (departureSelect.value && new Date(departureSelect.value) <= selectedArrivalDate)) {
+        if (
+            !validOptions ||
+            (departureSelect.value &&
+                new Date(departureSelect.value) <= selectedArrivalDate)
+        ) {
             departureSelect.value = "";
         }
     });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const inscriptionTypeRadios = document.querySelectorAll(
+        'input[name="inscription_type"]'
+    );
+    const arrivalDate = document.getElementById("arrival_date");
+    const departureDate = document.getElementById("departure_date");
+
+    // Function to handle inscription type change
+    function handleInscriptionTypeChange() {
+        const selectedType = document.querySelector(
+            'input[name="inscription_type"]:checked'
+        )?.value;
+
+        if (selectedType === "hebergement") {
+            arrivalDate.disabled = false;
+            departureDate.disabled = false;
+            // Set default values if not already set
+            if (!arrivalDate.value) {
+                arrivalDate.value = "2025-05-29";
+            }
+            if (!departureDate.value) {
+                departureDate.value = "2025-05-30";
+            }
+        } else if (selectedType === "seule") {
+            arrivalDate.disabled = true;
+            departureDate.disabled = true;
+            arrivalDate.value = "";
+            departureDate.value = "";
+        }
+    }
+
+    // Add event listeners for radio button changes
+    inscriptionTypeRadios.forEach((radio) => {
+        radio.addEventListener("change", handleInscriptionTypeChange);
+    });
+
+    // Initialize the state based on the current selection
+    handleInscriptionTypeChange();
 });

@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\InscriptionRequest;
-use App\Models\Inscription;
+use App\Services\InscriptionService;
 
 class InscriptionController extends Controller
 {
+    protected $inscriptionService;
+
+    public function __construct(InscriptionService $inscriptionService)
+    {
+        $this->inscriptionService = $inscriptionService;
+    }
+
     public function index()
     {
         return view('pages.inscriptions.inscriptions');
@@ -20,11 +27,8 @@ class InscriptionController extends Controller
             $ribPdfPath = $request->file('rib_pdf')->store('rib_pdfs', 'public');
         }
 
-        $inscription = Inscription::create([
-            'laboratoire' => $request->input('laboratoire'),
-            'rib_pdf_path' => $ribPdfPath,
-            ...$request->validated(),
-        ]);
+        $validatedData = $request->validated();
+        $this->inscriptionService->handleInscription($validatedData, $ribPdfPath);
 
         return redirect()
             ->route('inscriptions.index')
