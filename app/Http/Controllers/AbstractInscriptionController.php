@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AbstractInscriptionRequest;
-use App\Mail\AbstractSubmissionConfirmation;
-use App\Models\AbstractInscription;
+use App\Services\AbstractService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Mail;
 
 class AbstractInscriptionController extends Controller
 {
+    private AbstractService $abstractService;
+
+    public function __construct(AbstractService $abstractService)
+    {
+        $this->abstractService = $abstractService;
+    }
+
     /**
      * Abstract Page
      */
@@ -26,24 +31,11 @@ class AbstractInscriptionController extends Controller
      */
     public function store(AbstractInscriptionRequest $request): RedirectResponse
     {
-        $data = $request->validated();
-
-        if ($request->hasFile('file')) {
-            $filePath = $request->file('file')->store('abstracts', 'public');
-            $data['file'] = $filePath;
-        }
-
-        $abstract = AbstractInscription::create($data);
-
-        $recipients = ['abstract@smdiabete.org', $abstract->email];
-
-        foreach ($recipients as $recipient) {
-            Mail::to($recipient)->send(
-                new AbstractSubmissionConfirmation($abstract->firstname, $abstract->lastname)
-            );
-        }
+        $this->abstractService->storeAbstract(
+            $request->validated(),
+            $request->file('file')
+        );
 
         return redirect()->route('abstract.success');
     }
-
 }
