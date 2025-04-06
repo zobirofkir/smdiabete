@@ -110,8 +110,22 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
                 <div>
+                    <label for="inscription_type" class="block text-sm font-medium text-gray-700">Type d'inscription*</label>
+                    <select id="inscription_type" name="inscription_type" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">-</option>
+                        <option value="seule" {{ old('inscription_type') == 'seule' ? 'selected' : '' }}>Inscription Seule</option>
+                        <option value="hebergement" {{ old('inscription_type') == 'hebergement' ? 'selected' : '' }}>Inscription + Hébergement</option>
+                    </select>
+                    @error('inscription_type')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                <div>
                     <label for="arrival_date" class="block text-sm font-medium text-gray-700">Date d'arrivée*</label>
-                    <select id="arrival_date" name="arrival_date" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                    <select id="arrival_date" name="arrival_date" required disabled class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
                         <option value="" disabled selected>Choisissez une date</option>
                         <option value="2025-05-29" {{ old('arrival_date') == '2025-05-29' ? 'selected' : '' }}>29/05/2025</option>
                         <option value="2025-05-30" {{ old('arrival_date') == '2025-05-30' ? 'selected' : '' }}>30/05/2025</option>
@@ -124,7 +138,7 @@
 
                 <div>
                     <label for="departure_date" class="block text-sm font-medium text-gray-700">Date de départ*</label>
-                    <select id="departure_date" name="departure_date" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                    <select id="departure_date" name="departure_date" required disabled class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
                         <option value="" disabled selected>Choisissez une date</option>
                         <option value="2025-05-30" {{ old('departure_date') == '2025-05-30' ? 'selected' : '' }}>30/05/2025</option>
                         <option value="2025-05-31" {{ old('departure_date') == '2025-05-31' ? 'selected' : '' }}>31/05/2025</option>
