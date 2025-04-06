@@ -22,10 +22,20 @@ class InscriptionController extends Controller
             $ribPdfPath = $request->file('rib_pdf')->store('rib_pdfs', 'public');
         }
 
+        $validatedData = $request->validated();
+
+        if (!isset($validatedData['departure_date'])) {
+            $validatedData['departure_date'] = '0000-00-00';
+        }
+
+        if (!isset($validatedData['arrival_date'])) {
+            $validatedData['arrival_date'] = '0000-00-00';
+        }
+
         $inscription = Inscription::create([
             'laboratoire' => $request->input('laboratoire'),
             'rib_pdf_path' => $ribPdfPath,
-            ...$request->validated(),
+            ...$validatedData,
         ]);
 
         Mail::mailer('smtp')

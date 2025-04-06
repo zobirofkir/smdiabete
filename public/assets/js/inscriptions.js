@@ -121,31 +121,40 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const inscriptionType = document.getElementById("inscription_type");
+    const inscriptionTypeRadios = document.querySelectorAll(
+        'input[name="inscription_type"]'
+    );
     const arrivalDate = document.getElementById("arrival_date");
     const departureDate = document.getElementById("departure_date");
 
     // Function to handle inscription type change
     function handleInscriptionTypeChange() {
-        const selectedType = inscriptionType.value;
+        const selectedType = document.querySelector(
+            'input[name="inscription_type"]:checked'
+        )?.value;
 
         if (selectedType === "hebergement") {
             arrivalDate.disabled = false;
             departureDate.disabled = false;
-            arrivalDate.required = true;
-            departureDate.required = true;
+            // Set default values if not already set
+            if (!arrivalDate.value) {
+                arrivalDate.value = "2025-05-29";
+            }
+            if (!departureDate.value) {
+                departureDate.value = "2025-05-30";
+            }
         } else if (selectedType === "seule") {
             arrivalDate.disabled = true;
             departureDate.disabled = true;
-            arrivalDate.required = false;
-            departureDate.required = false;
             arrivalDate.value = "";
             departureDate.value = "";
         }
     }
 
-    // Add event listener for inscription type change
-    inscriptionType.addEventListener("change", handleInscriptionTypeChange);
+    // Add event listeners for radio button changes
+    inscriptionTypeRadios.forEach((radio) => {
+        radio.addEventListener("change", handleInscriptionTypeChange);
+    });
 
     // Initialize the state based on the current selection
     handleInscriptionTypeChange();

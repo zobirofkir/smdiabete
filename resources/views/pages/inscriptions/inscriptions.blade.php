@@ -108,25 +108,32 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-                <div>
-                    <label for="inscription_type" class="block text-sm font-medium text-gray-700">Type d'inscription*</label>
-                    <select id="inscription_type" name="inscription_type" required class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        <option value="">-</option>
-                        <option value="seule" {{ old('inscription_type') == 'seule' ? 'selected' : '' }}>Inscription Seule</option>
-                        <option value="hebergement" {{ old('inscription_type') == 'hebergement' ? 'selected' : '' }}>Inscription + Hébergement</option>
-                    </select>
-                    @error('inscription_type')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
+            <div class="mt-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Type d'inscription*</label>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex items-center">
+                        <input type="radio" id="inscription_seule" name="inscription_type" value="seule" required
+                            class="h-4 w-4 text-sky-600 focus:ring-sky-500 border-gray-300"
+                            {{ old('inscription_type') == 'seule' ? 'checked' : '' }}>
+                        <label for="inscription_seule" class="ml-2 block text-sm text-gray-700">Inscription Seule</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="inscription_hebergement" name="inscription_type" value="hebergement"
+                            class="h-4 w-4 text-sky-600 focus:ring-sky-500 border-gray-300"
+                            {{ old('inscription_type') == 'hebergement' ? 'checked' : '' }}>
+                        <label for="inscription_hebergement" class="ml-2 block text-sm text-gray-700">Inscription + Hébergement</label>
+                    </div>
                 </div>
+                @error('inscription_type')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
                 <div>
                     <label for="arrival_date" class="block text-sm font-medium text-gray-700">Date d'arrivée*</label>
-                    <select id="arrival_date" name="arrival_date" required disabled class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        <option value="" disabled selected>Choisissez une date</option>
+                    <select id="arrival_date" name="arrival_date" disabled class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">-</option>
                         <option value="2025-05-29" {{ old('arrival_date') == '2025-05-29' ? 'selected' : '' }}>29/05/2025</option>
                         <option value="2025-05-30" {{ old('arrival_date') == '2025-05-30' ? 'selected' : '' }}>30/05/2025</option>
                         <option value="2025-05-31" {{ old('arrival_date') == '2025-05-31' ? 'selected' : '' }}>31/05/2025</option>
@@ -138,8 +145,8 @@
 
                 <div>
                     <label for="departure_date" class="block text-sm font-medium text-gray-700">Date de départ*</label>
-                    <select id="departure_date" name="departure_date" required disabled class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        <option value="" disabled selected>Choisissez une date</option>
+                    <select id="departure_date" name="departure_date" disabled class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="">-</option>
                         <option value="2025-05-30" {{ old('departure_date') == '2025-05-30' ? 'selected' : '' }}>30/05/2025</option>
                         <option value="2025-05-31" {{ old('departure_date') == '2025-05-31' ? 'selected' : '' }}>31/05/2025</option>
                         <option value="2025-06-01" {{ old('departure_date') == '2025-06-01' ? 'selected' : '' }}>01/06/2025</option>
