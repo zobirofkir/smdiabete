@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\InscriptionRequest;
-use App\Models\Inscription;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\InscriptionConfirmationMail;
+use App\Services\InscriptionService;
 
 class InscriptionController extends Controller
 {
+    protected $inscriptionService;
+
+    public function __construct(InscriptionService $inscriptionService)
+    {
+        $this->inscriptionService = $inscriptionService;
+    }
+
     public function index()
     {
         return view('pages.inscriptions.inscriptions');
@@ -23,24 +28,7 @@ class InscriptionController extends Controller
         }
 
         $validatedData = $request->validated();
-
-        if (!isset($validatedData['departure_date'])) {
-            $validatedData['departure_date'] = '0000-00-00';
-        }
-
-        if (!isset($validatedData['arrival_date'])) {
-            $validatedData['arrival_date'] = '0000-00-00';
-        }
-
-        $inscription = Inscription::create([
-            'laboratoire' => $request->input('laboratoire'),
-            'rib_pdf_path' => $ribPdfPath,
-            ...$validatedData,
-        ]);
-
-        Mail::mailer('smtp')
-            ->to($inscription->email)
-            ->send(new InscriptionConfirmationMail($inscription, 'contact@smdiabete.org'));
+        $this->inscriptionService->handleInscription($validatedData, $ribPdfPath);
 
         return redirect()
             ->route('inscriptions.index')
