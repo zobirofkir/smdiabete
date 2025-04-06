@@ -13,10 +13,12 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Infolists\Infolist;
 use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\Actions;
+use Filament\Infolists\Components\Actions\Action;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Infolists\Components\Actions\Action;
-use Filament\Infolists\Components\Actions;
 
 class AbstractInscriptionResource extends Resource
 {
@@ -28,10 +30,7 @@ class AbstractInscriptionResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                //
-            ]);
+        return $form->schema([]);
     }
 
     public static function table(Table $table): Table
@@ -39,23 +38,33 @@ class AbstractInscriptionResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('firstname')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable()
+                    ->label('Prénom'),
+
                 Tables\Columns\TextColumn::make('lastname')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable()
+                    ->label('Nom de famille'),
+
                 Tables\Columns\TextColumn::make('email')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable()
+                    ->label('E-mail'),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label('Date de création'),
+
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label('Date de mise à jour'),
             ])
-            ->filters([
-                //
-            ])
+            ->filters([])
             ->actions([
                 Tables\Actions\ViewAction::make(),
             ])
@@ -70,26 +79,35 @@ class AbstractInscriptionResource extends Resource
     {
         return $infolist
             ->schema([
-                TextEntry::make('firstname')->label('Prénom'),
-                TextEntry::make('lastname')->label('Nom de famille'),
-                TextEntry::make('email')->label('E-mail'),
+                TextEntry::make('firstname')
+                    ->label('Prénom'),
+
+                TextEntry::make('lastname')
+                    ->label('Nom de famille'),
+
+                TextEntry::make('email')
+                    ->label('E-mail'),
+
                 TextEntry::make('created_at')
                     ->label('Date de création')
                     ->dateTime(),
+
                 TextEntry::make('updated_at')
                     ->label('Date de mise à jour')
                     ->dateTime(),
+
                 Actions::make([
                     Action::make('downloadFile')
                         ->label('Télécharger le fichier')
                         ->color('primary')
-                        ->action(function ($record) {
-                            $filePath = storage_path('app/public/' . $record->file);
-                            if (file_exists($filePath)) {
-                                return response()->download($filePath);
-                            } else {
+                        ->action(function (AbstractInscription $record): \Symfony\Component\HttpFoundation\BinaryFileResponse {
+                            $filePath = Storage::disk('public')->path($record->file);
+
+                            if (!file_exists($filePath)) {
                                 return back()->withError('Fichier non trouvé');
                             }
+
+                            return response()->download($filePath);
                         }),
                 ]),
             ]);
@@ -97,9 +115,7 @@ class AbstractInscriptionResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array
