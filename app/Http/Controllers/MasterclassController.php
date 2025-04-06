@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MasterclassRequest;
-use App\Models\Masterclass;
+use App\Services\MasterclassService;
 
 class MasterclassController extends Controller
 {
+    protected $masterclassService;
+
+    public function __construct(MasterclassService $masterclassService)
+    {
+        $this->masterclassService = $masterclassService;
+    }
+
     public function index()
     {
         return view('pages.masterclass.masterclass');
@@ -14,7 +21,7 @@ class MasterclassController extends Controller
 
     public function store(MasterclassRequest $request)
     {
-        $masterclass = Masterclass::create($request->validated());
+        $this->masterclassService->storeMasterclass($request->validated());
 
         return redirect()
             ->route('masterclass.index')
