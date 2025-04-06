@@ -28,7 +28,7 @@ class InscriptionConfirmationMail extends Mailable
 
     public function build()
     {
-        $mail = $this->subject('Confirmation de votre inscription')
+        $mail = $this->subject('Confirmation de votre inscription au 2 ème congrès de la SMD 2025')
             ->view('emails.inscriptions.confirmation');
 
         if ($this->fromAddress) {

@@ -4,7 +4,6 @@
     <title>Confirmation d'inscription</title>
 </head>
 <body>
-    <h2>Objet : Demande d'inscription au 2<sup>ème</sup> congrès de la SMD 2025</h2>
 
     <p>Bonjour {{ $inscription->firstname }},</p>
 
