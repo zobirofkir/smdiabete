@@ -185,7 +185,9 @@ class InscriptionResource extends Resource
             ->action(function (Inscription $record) {
                 $record->status = 'accepted';
                 $record->save();
-                Mail::to($record->email)->send(new InscriptionAccepted($record));
+                Mail::mailer('smtp')
+                    ->to($record->email)
+                    ->send(new InscriptionAccepted($record, 'contact@smdiabete.org'));
             })
             ->requiresConfirmation()
             ->color('success');
@@ -199,7 +201,9 @@ class InscriptionResource extends Resource
             ->action(function (Inscription $record) {
                 $record->status = 'refused';
                 $record->save();
-                Mail::to($record->email)->send(new InscriptionRejected($record));
+                Mail::mailer('smtp')
+                    ->to($record->email)
+                    ->send(new InscriptionRejected($record, 'contact@smdiabete.org'));
             })
             ->requiresConfirmation()
             ->color('danger');
