@@ -24,7 +24,7 @@ class ViewInscription extends ViewRecord
                     $record->status = 'accepted';
                     $record->save();
 
-                    Mail::to($record->email)->send(new InscriptionAccepted($record));
+                    Mail::to($record->email)->send(new InscriptionAccepted($record, 'contact@smdiabete.org'));
                 })
                 ->requiresConfirmation()
                 ->color('success')
@@ -39,7 +39,7 @@ class ViewInscription extends ViewRecord
                     $record->status = 'refused';
                     $record->save();
 
-                    Mail::to($record->email)->send(new InscriptionRejected($record));
+                    Mail::to($record->email)->send(new InscriptionRejected($record, 'contact@smdiabete.org'));
                 })
                 ->requiresConfirmation()
                 ->color('danger')
