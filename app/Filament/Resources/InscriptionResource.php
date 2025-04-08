@@ -52,7 +52,6 @@ class InscriptionResource extends Resource
 
                 // Payment Information
                 self::createTextColumn('payment_method', 'Méthode de paiement'),
-                self::createRibColumn(),
 
                 // Dates
                 self::createTextColumn('departure_date', 'Date de départ'),
@@ -96,7 +95,6 @@ class InscriptionResource extends Resource
 
             // Payment Information
             self::createTextEntry('Méthode de paiement:', $record->payment_method),
-            self::createRibEntry($record),
 
             // Dates
             self::createTextEntry('Date de départ:', $record->departure_date),
@@ -125,19 +123,6 @@ class InscriptionResource extends Resource
     {
         return TextColumn::make($name)
             ->label($label)
-            ->sortable()
-            ->searchable();
-    }
-
-    private static function createRibColumn(): TextColumn
-    {
-        return TextColumn::make('rib_pdf_path')
-            ->label('Télécharger le RIB')
-            ->formatStateUsing(fn ($state) => $state
-                ? '<a href="'.asset('storage/'.$state).'" target="_blank" class="text-indigo-600 hover:text-indigo-900">Télécharger</a>'
-                : '<span class="text-gray-500">Aucun fichier</span>'
-            )
-            ->html()
             ->sortable()
             ->searchable();
     }
@@ -209,24 +194,12 @@ class InscriptionResource extends Resource
             ->color('danger');
     }
 
-    // Helper methods for infolist entries
     private static function createTextEntry(string $label, mixed $value): TextEntry
     {
         return TextEntry::make($label)
             ->default($value)
             ->inlineLabel()
             ->badge();
-    }
-
-    private static function createRibEntry(Inscription $record): TextEntry
-    {
-        return TextEntry::make('Télécharger le RIB')
-            ->default($record->rib_pdf_path
-                ? '<a href="' . asset('storage/' . $record->rib_pdf_path) . '" target="_blank" class="text-primary-600 hover:text-primary-900">Télécharger</a>'
-                : 'Aucun fichier'
-            )
-            ->inlineLabel()
-            ->html();
     }
 
     private static function createStatusEntry(Inscription $record): TextEntry

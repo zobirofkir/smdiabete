@@ -47,12 +47,8 @@ class InscriptionRequest extends FormRequest
             'inscription_type' => 'required|string|in:seule,hebergement',
             'arrival_date' => 'nullable|date|in:2025-05-29,2025-05-30,2025-05-31',
             'departure_date' => 'nullable|date|in:2025-05-30,2025-05-31,2025-06-01',
-            'payment_method' => 'nullable|string|in:laboratoire,virement,invite,sur-place',
+            'payment_method' => 'nullable|string',
         ];
-
-        if ($this->input('payment_method') === 'virement') {
-            $rules['rib_pdf'] = 'nullable|file|mimes:pdf';
-        }
 
         return $rules;
     }

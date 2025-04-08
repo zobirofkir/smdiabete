@@ -159,3 +159,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize the state based on the current selection
     handleInscriptionTypeChange();
 });
+
+function handlePaymentChoice(choice) {
+    const paymentFields = document.getElementById("payment_fields");
+    const contactMessage = document.getElementById("contact_message");
+
+    if (choice === "yes") {
+        paymentFields.classList.remove("hidden");
+        contactMessage.classList.add("hidden");
+    } else {
+        paymentFields.classList.add("hidden");
+        contactMessage.classList.remove("hidden");
+    }
+}
