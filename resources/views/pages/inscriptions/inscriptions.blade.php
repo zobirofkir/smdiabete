@@ -110,8 +110,12 @@
 
             <div class="mt-6">
                 <label class="block text-sm font-medium text-gray-700 mb-2">Type d'inscription*</label>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <div class="flex items-center">
+                <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
+                    <div class="flex items-center justify-between">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Prise en charge par laboratoire * :</label>
+                    </div>
+
+                    <div class="flex items-center justify-between">
                         <input type="radio" id="inscription_seule" name="inscription_type" value="seule" required
                             class="h-4 w-4 text-sky-600 focus:ring-sky-500 border-gray-300"
                             {{ old('inscription_type') == 'seule' ? 'checked' : '' }}>
@@ -158,98 +162,87 @@
             </div>
 
             <div class="mt-6">
-                <label class="block text-sm font-medium text-gray-700">Mode de paiement*</label>
+                <label class="block text-sm font-medium text-gray-700">Type de paiement*</label>
                 <div class="mt-2">
-                    <div>
-                        <input type="radio" id="laboratoire_payment" name="payment_method" value="laboratoire"
-                            {{ old('payment_method') == 'laboratoire' ? 'checked' : '' }}
-                            onclick="togglePaymentFields('laboratoire')">
-                        <label for="laboratoire_payment" class="ml-2 text-sm font-medium text-gray-700">Laboratoire</label>
+                    <div class="flex gap-4 mb-4">
+                        <div>
+                            <input type="radio" id="payment_yes" name="payment_choice" value="yes"
+                                onclick="handlePaymentChoice('yes')">
+                            <label for="payment_yes" class="ml-2 text-sm font-medium text-gray-700">Oui</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="payment_no" name="payment_choice" value="no"
+                                onclick="handlePaymentChoice('no')">
+                            <label for="payment_no" class="ml-2 text-sm font-medium text-gray-700">Non</label>
+                        </div>
                     </div>
 
-                    {{-- List of Laboratories (hidden by default) --}}
-                    <div id="laboratoire_list" class="mt-6">
-                        <label for="laboratoire" class="block text-sm font-medium text-gray-700">Choisissez le laboratoire*</label>
-                        <select id="laboratoire" name="laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" onchange="toggleOtherLaboratoireInput(this)">
-                            <option value="">-</option>
-                            <option value="Sanofi" {{ old('laboratoire') == 'Sanofi' ? 'selected' : '' }}>Sanofi</option>
-                            <option value="Novo Nordisk" {{ old('laboratoire') == 'Novo Nordisk' ? 'selected' : '' }}>Novo Nordisk</option>
-                            <option value="Novartis" {{ old('laboratoire') == 'Novartis' ? 'selected' : '' }}>Novartis</option>
-                            <option value="Amea" {{ old('laboratoire') == 'Amea' ? 'selected' : '' }}>Amea</option>
-                            <option value="Pharmacare" {{ old('laboratoire') == 'Pharmacare' ? 'selected' : '' }}>Pharmacare</option>
-                            <option value="AtlasPharm" {{ old('laboratoire') == 'AtlasPharm' ? 'selected' : '' }}>AtlasPharm</option>
-                            <option value="Abbott" {{ old('laboratoire') == 'Abbott' ? 'selected' : '' }}>Abbott</option>
-                            <option value="Galderma" {{ old('laboratoire') == 'Galderma' ? 'selected' : '' }}>Galderma</option>
-                            <option value="Zénith Pharma" {{ old('laboratoire') == 'Zénith Pharma' ? 'selected' : '' }}>Zénith Pharma</option>
-                            <option value="Servier" {{ old('laboratoire') == 'Servier' ? 'selected' : '' }}>Servier</option>
-                            <option value="AstraZeneca" {{ old('laboratoire') == 'AstraZeneca' ? 'selected' : '' }}>AstraZeneca</option>
-                            <option value="Dislog" {{ old('laboratoire') == 'Dislog' ? 'selected' : '' }}>Dislog</option>
-                            <option value="Afric-Phar" {{ old('laboratoire') == 'Afric-Phar' ? 'selected' : '' }}>Afric-Phar</option>
-                            <option value="SunPharma" {{ old('laboratoire') == 'SunPharma' ? 'selected' : '' }}>SunPharma</option>
-                            <option value="Bottu" {{ old('laboratoire') == 'Bottu' ? 'selected' : '' }}>Bottu</option>
-                            <option value="Lilly" {{ old('laboratoire') == 'Lilly' ? 'selected' : '' }}>Lilly</option>
-                            <option value="Boehringer Ingelheim" {{ old('laboratoire') == 'Boehringer Ingelheim' ? 'selected' : '' }}>Boehringer Ingelheim</option>
-                            <option value="Gylmed" {{ old('laboratoire') == 'Gylmed' ? 'selected' : '' }}>Gylmed</option>
-                            <option value="Medavi" {{ old('laboratoire') == 'Medavi' ? 'selected' : '' }}>Medavi</option>
-                            <option value="Merck" {{ old('laboratoire') == 'Merck' ? 'selected' : '' }}>Merck</option>
-                            <option value="McPharma" {{ old('laboratoire') == 'McPharma' ? 'selected' : '' }}>McPharma</option>
-                            <option value="Eramedic" {{ old('laboratoire') == 'Eramedic' ? 'selected' : '' }}>Eramedic</option>
-                            <option value="Hikma" {{ old('laboratoire') == 'Hikma' ? 'selected' : '' }}>Hikma</option>
-                            <option value="Phi" {{ old('laboratoire') == 'Phi' ? 'selected' : '' }}>Phi</option>
-                            <option value="other">Autre</option>
-                        </select>
+                    <div id="contact_message" class="hidden mt-4 p-4 bg-blue-50 text-blue-700 rounded-md">
+                        Veuillez contacter la comité d'organisation de la SMD 2025 sur le numéro : 0762011226
+                    </div>
 
-                        @error('laboratoire')
+                    <div id="payment_fields" class="hidden">
+                        <div class="mt-2">
+                            {{-- List of Laboratories (hidden by default) --}}
+                            <div id="laboratoire_list" class="mt-6">
+                                <label for="laboratoire" class="block text-sm font-medium text-gray-700">Choisissez le laboratoire*</label>
+                                <select id="laboratoire" name="laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" onchange="toggleOtherLaboratoireInput(this)">
+                                    <option value="">-</option>
+                                    <option value="Sanofi" {{ old('laboratoire') == 'Sanofi' ? 'selected' : '' }}>Sanofi</option>
+                                    <option value="Novo Nordisk" {{ old('laboratoire') == 'Novo Nordisk' ? 'selected' : '' }}>Novo Nordisk</option>
+                                    <option value="Novartis" {{ old('laboratoire') == 'Novartis' ? 'selected' : '' }}>Novartis</option>
+                                    <option value="Amea" {{ old('laboratoire') == 'Amea' ? 'selected' : '' }}>Amea</option>
+                                    <option value="Pharmacare" {{ old('laboratoire') == 'Pharmacare' ? 'selected' : '' }}>Pharmacare</option>
+                                    <option value="AtlasPharm" {{ old('laboratoire') == 'AtlasPharm' ? 'selected' : '' }}>AtlasPharm</option>
+                                    <option value="Abbott" {{ old('laboratoire') == 'Abbott' ? 'selected' : '' }}>Abbott</option>
+                                    <option value="Galderma" {{ old('laboratoire') == 'Galderma' ? 'selected' : '' }}>Galderma</option>
+                                    <option value="Zénith Pharma" {{ old('laboratoire') == 'Zénith Pharma' ? 'selected' : '' }}>Zénith Pharma</option>
+                                    <option value="Servier" {{ old('laboratoire') == 'Servier' ? 'selected' : '' }}>Servier</option>
+                                    <option value="AstraZeneca" {{ old('laboratoire') == 'AstraZeneca' ? 'selected' : '' }}>AstraZeneca</option>
+                                    <option value="Dislog" {{ old('laboratoire') == 'Dislog' ? 'selected' : '' }}>Dislog</option>
+                                    <option value="Afric-Phar" {{ old('laboratoire') == 'Afric-Phar' ? 'selected' : '' }}>Afric-Phar</option>
+                                    <option value="SunPharma" {{ old('laboratoire') == 'SunPharma' ? 'selected' : '' }}>SunPharma</option>
+                                    <option value="Bottu" {{ old('laboratoire') == 'Bottu' ? 'selected' : '' }}>Bottu</option>
+                                    <option value="Lilly" {{ old('laboratoire') == 'Lilly' ? 'selected' : '' }}>Lilly</option>
+                                    <option value="Boehringer Ingelheim" {{ old('laboratoire') == 'Boehringer Ingelheim' ? 'selected' : '' }}>Boehringer Ingelheim</option>
+                                    <option value="Gylmed" {{ old('laboratoire') == 'Gylmed' ? 'selected' : '' }}>Gylmed</option>
+                                    <option value="Medavi" {{ old('laboratoire') == 'Medavi' ? 'selected' : '' }}>Medavi</option>
+                                    <option value="Merck" {{ old('laboratoire') == 'Merck' ? 'selected' : '' }}>Merck</option>
+                                    <option value="McPharma" {{ old('laboratoire') == 'McPharma' ? 'selected' : '' }}>McPharma</option>
+                                    <option value="Eramedic" {{ old('laboratoire') == 'Eramedic' ? 'selected' : '' }}>Eramedic</option>
+                                    <option value="Hikma" {{ old('laboratoire') == 'Hikma' ? 'selected' : '' }}>Hikma</option>
+                                    <option value="Phi" {{ old('laboratoire') == 'Phi' ? 'selected' : '' }}>Phi</option>
+                                    <option value="other">Autre</option>
+                                </select>
+
+                                @error('laboratoire')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div id="other_laboratoire_input" class="mt-4 hidden">
+                                <label for="other_laboratoire" class="block text-sm font-medium text-gray-700">Entrez le nom du laboratoire</label>
+                                <input type="text" id="other_laboratoire" name="other_laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                @error('other_laboratoire')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div id="status_select" class="mt-4 hidden">
+                                <label for="status" class="block text-sm font-medium text-gray-700">Statut du paiement *</label>
+                                <select id="status" name="laboratoire_status" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                                    <option value="encours">En Cours</option>
+                                    <option value="confirme">Confirmé</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        @error('payment_method')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
                     </div>
-
-                    <div id="other_laboratoire_input" class="mt-4 hidden">
-                        <label for="other_laboratoire" class="block text-sm font-medium text-gray-700">Entrez le nom du laboratoire</label>
-                        <input type="text" id="other_laboratoire" name="other_laboratoire" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        @error('other_laboratoire')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <div id="status_select" class="mt-4 hidden">
-                        <label for="status" class="block text-sm font-medium text-gray-700">Statut du paiement *</label>
-                        <select id="status" name="laboratoire_status" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                            <option value="encours">En Cours</option>
-                            <option value="confirme">Confirmé</option>
-                        </select>
-                    </div>
-
-                    <div class="mt-2">
-                        <input type="radio" id="virement_payment" name="payment_method" value="virement"
-                            {{ old('payment_method') == 'virement' ? 'checked' : '' }}
-                            onclick="togglePaymentFields('virement')">
-                        <label for="virement_payment" class="ml-2 text-sm font-medium text-gray-700">
-                            Paiement par virement (RIB : 007 8260002683000305367 78)
-                        </label>
-                    </div>
-
-                    {{-- Upload PDF Section (Hidden by Default) --}}
-                    <div id="rib_pdf_upload" class="mt-6 hidden">
-                        <label for="rib_pdf" class="block text-sm font-medium text-gray-700">Téléchargez le RIB en PDF*</label>
-                        <input type="file" id="rib_pdf" name="rib_pdf" accept="application/pdf" class="mt-2 p-3 w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        @error('rib_pdf')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-
-                    {{-- <div class="mt-2">
-                        <input type="radio" id="surplace_payment" name="payment_method" value="sur-place"
-                            {{ old('payment_method') == 'sur-place' ? 'checked' : '' }}
-                            onclick="togglePaymentFields('sur-place')">
-                        <label for="surplace_payment" class="ml-2 text-sm font-medium text-gray-700">Sur place</label>
-                    </div> --}}
 
                 </div>
-                @error('payment_method')
-                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                @enderror
             </div>
 
             <div class="mt-6 mb-2 text-center">

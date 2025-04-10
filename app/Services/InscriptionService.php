@@ -8,7 +8,7 @@ use App\Mail\InscriptionConfirmationMail;
 
 class InscriptionService
 {
-    public function handleInscription(array $validatedData, $ribPdfPath = null): Inscription
+    public function handleInscription(array $validatedData): Inscription
     {
         /**
          * Set default dates if not provided
@@ -21,12 +21,15 @@ class InscriptionService
             $validatedData['arrival_date'] = '0000-00-00';
         }
 
+        if (!isset($validatedData['payment_method'])) {
+            $validatedData['payment_method'] = 'L’utilisateur vous contactera à ce numéro (0762011226)';
+        }
+
         /**
          * Create the inscription
          */
         $inscription = Inscription::create([
             'laboratoire' => $validatedData['laboratoire'],
-            'rib_pdf_path' => $ribPdfPath,
             ...$validatedData,
         ]);
 
