@@ -110,8 +110,12 @@
 
             <div class="mt-6">
                 <label class="block text-sm font-medium text-gray-700 mb-2">Type d'inscription*</label>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <div class="flex items-center">
+                <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
+                    <div class="flex items-center justify-between">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Prise en charge par laboratoire * :</label>
+                    </div>
+
+                    <div class="flex items-center justify-between">
                         <input type="radio" id="inscription_seule" name="inscription_type" value="seule" required
                             class="h-4 w-4 text-sky-600 focus:ring-sky-500 border-gray-300"
                             {{ old('inscription_type') == 'seule' ? 'checked' : '' }}>
