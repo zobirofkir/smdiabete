@@ -111,9 +111,6 @@
             <div class="mt-6">
                 <label class="block text-sm font-medium text-gray-700 mb-2">Type d'inscription*</label>
                 <div class="flex flex-col sm:flex-row justify-between items-center w-full gap-4">
-                    <div class="flex items-center justify-between">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Prise en charge par laboratoire * :</label>
-                    </div>
 
                     <div class="flex items-center justify-between">
                         <input type="radio" id="inscription_seule" name="inscription_type" value="seule" required
@@ -163,6 +160,8 @@
 
             <div class="mt-6">
                 <label class="block text-sm font-medium text-gray-700">Type de paiement*</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Prise en charge par laboratoire * :</label>
+
                 <div class="mt-2">
                     <div class="flex gap-4 mb-4">
                         <div>
