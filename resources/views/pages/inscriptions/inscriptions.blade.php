@@ -176,10 +176,6 @@
                         </div>
                     </div>
 
-                    <div id="contact_message" class="hidden mt-4 p-4 bg-blue-50 text-blue-700 rounded-md">
-                        Veuillez contacter la comité d'organisation de la SMD 2025 sur le numéro : 0762011226
-                    </div>
-
                     <div id="payment_fields" class="hidden">
                         <div class="mt-2">
                             {{-- List of Laboratories (hidden by default) --}}
