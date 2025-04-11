@@ -21,15 +21,18 @@ class InscriptionService
             $validatedData['arrival_date'] = '0000-00-00';
         }
 
-        if (!isset($validatedData['payment_method'])) {
-            $validatedData['payment_method'] = 'L’utilisateur vous contactera à ce numéro (0762011226)';
+        /**
+         * Set payment method message only if payment_choice is 'no'
+         */
+        if (!isset($validatedData['payment_method']) && isset($validatedData['payment_choice']) && $validatedData['payment_choice'] === 'no') {
+            $validatedData['payment_method'] = 'L\'utilisateur vous contactera à ce numéro (0762011226)';
         }
 
         /**
          * Create the inscription
          */
         $inscription = Inscription::create([
-            'laboratoire' => $validatedData['laboratoire'],
+            'laboratoire' => $validatedData['laboratoire'] ?? null,
             ...$validatedData,
         ]);
 

@@ -48,6 +48,7 @@ class InscriptionRequest extends FormRequest
             'arrival_date' => 'nullable|date|in:2025-05-29,2025-05-30,2025-05-31',
             'departure_date' => 'nullable|date|in:2025-05-30,2025-05-31,2025-06-01',
             'payment_method' => 'nullable|string',
+            'payment_choice' => 'required|string|in:yes,no',
         ];
 
         return $rules;
