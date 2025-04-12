@@ -104,7 +104,7 @@ class AbstractInscriptionResource extends Resource
                             $filePath = Storage::disk('public')->path($record->file);
 
                             if (!file_exists($filePath)) {
-                                return back()->withError('Fichier non trouvé');
+                                throw new \Exception('File not found');
                             }
 
                             return response()->download($filePath);
