@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Inscription;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\InscriptionConfirmationMail;
+use App\Mail\InscriptionRejectedMail;
 
 class InscriptionService
 {
@@ -37,9 +38,13 @@ class InscriptionService
         ]);
 
         /**
-         * Send confirmation email
+         * Send appropriate email based on payment choice
          */
-        $this->sendConfirmationEmail($inscription);
+        if (isset($validatedData['payment_choice']) && $validatedData['payment_choice'] === 'no') {
+            $this->sendRejectedEmail($inscription);
+        } else {
+            $this->sendConfirmationEmail($inscription);
+        }
 
         return $inscription;
     }
@@ -55,5 +60,18 @@ class InscriptionService
         Mail::mailer('smtp')
             ->to($inscription->email)
             ->send(new InscriptionConfirmationMail($inscription, 'contact@smdiabete.org'));
+    }
+
+    /**
+     * Send rejected email
+     *
+     * @param Inscription $inscription
+     * @return void
+     */
+    private function sendRejectedEmail(Inscription $inscription): void
+    {
+        Mail::mailer('smtp')
+            ->to($inscription->email)
+            ->send(new InscriptionRejectedMail($inscription, 'contact@smdiabete.org'));
     }
 }
