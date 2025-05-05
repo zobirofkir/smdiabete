@@ -16,6 +16,7 @@ use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Mail;
+use Filament\Tables\Filters\SelectFilter;
 
 class InscriptionResource extends Resource
 {
@@ -37,29 +38,40 @@ class InscriptionResource extends Resource
                 self::createTextColumn('lastname', 'Nom'),
                 self::createTextColumn('phone', 'Téléphone'),
                 self::createTextColumn('email', 'Email'),
-
+    
                 // Professional Information
                 self::createTextColumn('secteur', 'Secteur'),
                 self::createTextColumn('type', 'Type'),
                 self::createTextColumn('specialite', 'Spécialité'),
                 self::createTextColumn('other_specialite', 'Autre Specialité'),
                 self::createTextColumn('ville', 'Ville'),
-
+    
                 // Laboratory Information
                 self::createTextColumn('laboratoire', 'Laboratoire'),
                 self::createTextColumn('other_laboratoire', 'Autre Laboratoire'),
                 self::createTextColumn('laboratoire_status', 'Statut du laboratoire'),
-
+    
                 // Payment Information
                 self::createTextColumn('payment_method', 'Méthode de paiement'),
-
+    
                 // Dates
                 self::createTextColumn('departure_date', 'Date de départ'),
-
+    
                 // Status
                 self::createStatusColumn(),
             ])
             ->defaultSort('created_at', 'desc')
+            ->filters([
+                SelectFilter::make('ville')
+                    ->label('Filtrer par ville')
+                    ->options(fn () => Inscription::query()
+                        ->select('ville')
+                        ->distinct()
+                        ->orderBy('ville')
+                        ->pluck('ville', 'ville')
+                        ->filter() // Remove empty/null values
+                    ),
+            ])
             ->actions([
                 self::createViewAction(),
                 self::createAcceptAction(),
