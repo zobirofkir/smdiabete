@@ -33,31 +33,24 @@ class InscriptionResource extends Resource
     {
         return $table
             ->columns([
-                // Personal Information
                 self::createTextColumn('firstname', 'Prénom'),
                 self::createTextColumn('lastname', 'Nom'),
                 self::createTextColumn('phone', 'Téléphone'),
                 self::createTextColumn('email', 'Email'),
-    
-                // Professional Information
                 self::createTextColumn('secteur', 'Secteur'),
                 self::createTextColumn('type', 'Type'),
                 self::createTextColumn('specialite', 'Spécialité'),
-                self::createTextColumn('other_specialite', 'Autre Specialité'),
+                self::createTextColumn('other_specialite', 'Autre Spécialité'),
                 self::createTextColumn('ville', 'Ville'),
-    
-                // Laboratory Information
+                self::createTextColumn('attendance_status', 'Statut de présence'),
                 self::createTextColumn('laboratoire', 'Laboratoire'),
                 self::createTextColumn('other_laboratoire', 'Autre Laboratoire'),
                 self::createTextColumn('laboratoire_status', 'Statut du laboratoire'),
-    
-                // Payment Information
-                self::createTextColumn('payment_method', 'Méthode de paiement'),
-    
-                // Dates
+                self::createTextColumn('sex', 'Sexe'),
                 self::createTextColumn('departure_date', 'Date de départ'),
-    
-                // Status
+                self::createTextColumn('arrival_date', "Date d'arrivée"),
+                self::createTextColumn('payment_method', 'Méthode de paiement'),
+                self::createTextColumn('rib_pdf_path', 'RIB PDF'),
                 self::createStatusColumn(),
             ])
             ->defaultSort('created_at', 'desc')
@@ -69,7 +62,7 @@ class InscriptionResource extends Resource
                         ->distinct()
                         ->orderBy('ville')
                         ->pluck('ville', 'ville')
-                        ->filter() // Remove empty/null values
+                        ->filter()
                     ),
             ])
             ->actions([
@@ -87,32 +80,24 @@ class InscriptionResource extends Resource
         $record = $infolist->record;
 
         return $infolist->schema([
-            // Personal Information
             self::createTextEntry('Prénom:', $record->firstname),
             self::createTextEntry('Nom:', $record->lastname),
             self::createTextEntry('Téléphone:', $record->phone),
             self::createTextEntry('Email:', $record->email),
-
-            // Professional Information
             self::createTextEntry('Secteur:', $record->secteur),
             self::createTextEntry('Type:', $record->type),
             self::createTextEntry('Spécialité:', $record->specialite),
             self::createTextEntry('Autre Spécialité:', $record->other_specialite),
             self::createTextEntry('Ville:', $record->ville),
-
-            // Laboratory Information
+            self::createTextEntry('Statut de présence:', $record->attendance_status),
             self::createTextEntry('Laboratoire:', $record->laboratoire),
             self::createTextEntry('Autre Laboratoire:', $record->other_laboratoire),
             self::createTextEntry('Statut du laboratoire:', $record->laboratoire_status),
-
-            // Payment Information
-            self::createTextEntry('Méthode de paiement:', $record->payment_method),
-
-            // Dates
+            self::createTextEntry('Sexe:', $record->sex),
             self::createTextEntry('Date de départ:', $record->departure_date),
             self::createTextEntry("Date d'arrivée:", $record->arrival_date),
-
-            // Status
+            self::createTextEntry('Méthode de paiement:', $record->payment_method),
+            self::createTextEntry('RIB PDF:', $record->rib_pdf_path),
             self::createStatusEntry($record),
         ]);
     }
