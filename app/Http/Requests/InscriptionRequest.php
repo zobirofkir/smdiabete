@@ -27,7 +27,22 @@ class InscriptionRequest extends FormRequest
             'lastname' => 'required|string|max:255',
             'laboratoire' => 'nullable|string|max:255',
             'phone' => 'required|string|max:15',
-            'email' => 'required|email|max:255|unique:inscriptions',
+            'email' => [
+                'required',
+                'email',
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    $allowedEmails = [
+                        'Cabinet.drelalaoui@gmail.com',
+                        'dm.rabie@gmail.com',
+                        'zobirofkir19@gmail.com',
+                        'sonabahou@yahoo.fr',
+                    ];
+                    if (!in_array($value, $allowedEmails) && \App\Models\Inscription::where('email', $value)->exists()) {
+                        $fail('Cet email a déjà été utilisé pour une inscription.');
+                    }
+                },
+            ],
             'other_laboratoire' => 'nullable|string|max:255',
             'other_specialite' => 'nullable|string|max:255',
             'secteur' => 'required|string|in:public,private',
