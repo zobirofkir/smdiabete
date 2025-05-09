@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use AlperenErsoy\FilamentExport\Actions\FilamentExportHeaderAction;
 use App\Filament\Resources\InscriptionResource\Pages;
 use App\Mail\InscriptionAccepted;
 use App\Mail\InscriptionRejected;
@@ -72,8 +73,32 @@ class InscriptionResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
+                \AlperenErsoy\FilamentExport\Actions\FilamentExportBulkAction::make('export')
+                    ->label('Exporter les sélectionnés')
+                    ->fileName('inscriptions_selectionnées')
+                    ->withColumns([
+                        TextColumn::make('firstname')->label('Prénom'),
+                        TextColumn::make('lastname')->label('Nom'),
+                        TextColumn::make('phone')->label('Téléphone'),
+                        TextColumn::make('email')->label('Email'),
+                        TextColumn::make('secteur')->label('Secteur'),
+                        TextColumn::make('type')->label('Type'),
+                        TextColumn::make('specialite')->label('Spécialité'),
+                        TextColumn::make('other_specialite')->label('Autre Spécialité'),
+                        TextColumn::make('ville')->label('Ville'),
+                        TextColumn::make('attendance_status')->label('Statut de présence'),
+                        TextColumn::make('laboratoire')->label('Laboratoire'),
+                        TextColumn::make('other_laboratoire')->label('Autre Laboratoire'),
+                        TextColumn::make('laboratoire_status')->label('Statut du laboratoire'),
+                        TextColumn::make('sex')->label('Sexe'),
+                        TextColumn::make('departure_date')->label('Date de départ'),
+                        TextColumn::make('arrival_date')->label("Date d'arrivée"),
+                        TextColumn::make('payment_method')->label('Méthode de paiement'),
+                        TextColumn::make('rib_pdf_path')->label('RIB PDF'),
+                        TextColumn::make('status')->label('Statut'),
+                    ]),
             ]);
-    }
+        }
 
     public static function infolist(Infolist $infolist): Infolist
     {
