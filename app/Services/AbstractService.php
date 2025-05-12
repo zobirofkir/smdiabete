@@ -24,7 +24,7 @@ class AbstractService
         }
 
         $abstract = AbstractInscription::create($data);
-        // $this->sendConfirmationEmails($abstract);
+        $this->sendConfirmationEmails($abstract);
 
         return $abstract;
     }
@@ -35,14 +35,14 @@ class AbstractService
      * @param AbstractInscription $abstract
      * @return void
      */
-    // private function sendConfirmationEmails(AbstractInscription $abstract): void
-    // {
-    //     $recipients = ['abstract@smdiabete.org', $abstract->email];
+    private function sendConfirmationEmails(AbstractInscription $abstract): void
+    {
+        $recipients = ['abstract@smdiabete.org', $abstract->email];
 
-    //     foreach ($recipients as $recipient) {
-    //         Mail::to($recipient)->send(
-    //             new AbstractSubmissionConfirmation($abstract->firstname, $abstract->lastname)
-    //         );
-    //     }
-    // }
+        foreach ($recipients as $recipient) {
+            Mail::to($recipient)->send(
+                new AbstractSubmissionConfirmation($abstract->firstname, $abstract->lastname)
+            );
+        }
+    }
 }

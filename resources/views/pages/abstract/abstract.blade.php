@@ -45,10 +45,10 @@
 
                     <!-- medcin_responsable -->
                     <div class="animate-fade-in-left delay-200">
-                        <label for="email" class="block text-sm font-medium text-gray-700">Nom du Médecin Responsable</label>
-                        <input type="text" id="email" name="email" required
+                        <label for="email" class="block text-sm font-medium text-gray-700">email</label>
+                        <input type="email" id="email" name="email" required
                             class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
-                            placeholder="Nom du Médecin Responsable">
+                            placeholder="email">
                     </div>
                     @error('email')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -82,7 +82,7 @@
 
             <!-- Right Side: Image -->
             <div class="block overflow-hidden relative animate-fade-in-right">
-                <img src="{{ asset('assets/images/affiche/abstract-inscription.jpeg') }}" alt="Affichage"
+                <img src="{{ asset('assets/images/affiche/communication-inscription.jpeg') }}" alt="Affichage"
                     class="w-full h-full object-cover rounded-r-lg transition-transform duration-500 hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 rounded-r-lg"></div>
             </div>
