@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AbstractInscriptionRequest;
-use App\Services\AbstractService;
+use App\Services\CommunicationService;
 use Illuminate\Http\RedirectResponse;
 
-class AbstractInscriptionController extends Controller
+class CommunicationController extends Controller
 {
-    private AbstractService $abstractService;
+    private CommunicationService $communicationService;
 
-    public function __construct(AbstractService $abstractService)
+    public function __construct(CommunicationService $communicationService)
     {
-        $this->abstractService = $abstractService;
+        $this->communicationService = $communicationService;
     }
 
     /**
@@ -31,7 +31,7 @@ class AbstractInscriptionController extends Controller
      */
     public function store(AbstractInscriptionRequest $request): RedirectResponse
     {
-        $this->abstractService->storeAbstract(
+        $this->communicationService->storeAbstract(
             $request->validated(),
             $request->file('file')
         );

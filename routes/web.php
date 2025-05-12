@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AbstractInscriptionController;
+use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\MasterclassController;
 use Illuminate\Support\Facades\Route;
@@ -91,12 +91,12 @@ Route::get('/press', function() {
 /**
  * Abstract Page
  */
-Route::get('/communications', [AbstractInscriptionController::class, 'index'])->name('communications.index');
+Route::get('/communications', [CommunicationController::class, 'index'])->name('communications.index');
 
 /**
  * Post Abstract
  */
-Route::post('/communications/inscription', [AbstractInscriptionController::class, 'store'])->name('communications.store');
+Route::post('/communications/inscription', [CommunicationController::class, 'store'])->name('communications.store');
 
 /**
  * Abstract Sended Successfully

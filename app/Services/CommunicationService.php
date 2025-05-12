@@ -7,7 +7,7 @@ use App\Mail\AbstractSubmissionConfirmation;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\UploadedFile;
 
-class AbstractService
+class CommunicationService
 {
     /**
      * Store a new abstract submission
