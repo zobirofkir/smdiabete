@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AbstractInscriptionRequest;
+use App\Http\Requests\CommunicationRequest;
 use App\Services\CommunicationService;
 use Illuminate\Http\RedirectResponse;
 
@@ -26,10 +26,10 @@ class CommunicationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param AbstractInscriptionRequest $request
+     * @param CommunicationRequest $request
      * @return RedirectResponse
      */
-    public function store(AbstractInscriptionRequest $request): RedirectResponse
+    public function store(CommunicationRequest $request): RedirectResponse
     {
         $this->communicationService->storeAbstract(
             $request->validated(),
