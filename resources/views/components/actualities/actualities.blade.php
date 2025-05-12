@@ -47,7 +47,7 @@
                 </p>
 
                 <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
-                    <a href="{{url('/inscriptions')}}" id="openModal" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg">
+                    <a href="javascript:void(0)" id="openModal" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-3 px-6 rounded-lg">
                         Inscription
                     </a>
 
@@ -61,5 +61,29 @@
         </div>
     </div>
 </section>
+
+<!-- Modal -->
+<div id="inscriptionModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h3 class="text-xl font-semibold mb-4">Informations d'inscription</h3>
+        <p class="text-gray-700 mb-6">
+            Veuillez contacter la comité d’organisation sur le numéro WhatsApp suivant :
+            <span class="font-bold">+212 7 62 01 12 26</span>
+        </p>
+        <button id="closeModal" class="bg-sky-700 hover:bg-sky-900 text-white font-medium py-2 px-4 rounded-lg">
+            Fermer
+        </button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('openModal').addEventListener('click', function () {
+        document.getElementById('inscriptionModal').classList.remove('hidden');
+    });
+
+    document.getElementById('closeModal').addEventListener('click', function () {
+        document.getElementById('inscriptionModal').classList.add('hidden');
+    });
+</script>
 
 
