@@ -101,6 +101,6 @@ Route::post('/communications/inscription', [AbstractInscriptionController::class
 /**
  * Abstract Sended Successfully
  */
-Route::get('/abstract/success', function() {
+Route::get('/communications/success', function() {
     return view('pages.success.success');
-})->name('abstract.success');
+})->name('communications.success');

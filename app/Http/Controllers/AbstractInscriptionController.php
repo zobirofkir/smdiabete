@@ -36,6 +36,6 @@ class AbstractInscriptionController extends Controller
             $request->file('file')
         );
 
-        return redirect()->route('abstract.success');
+        return redirect()->route('communications.success');
     }
 }

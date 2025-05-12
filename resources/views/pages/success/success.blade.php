@@ -16,10 +16,9 @@
         </div>
         <h1 class="text-2xl font-bold">Message success</h1>
         <p class="mt-2 text-gray-200">
-            Votre dépôt d'<span class="text-red-300">apstract</span> a ét passé avec succès.<br>
-            Pour déposer un autre abstract, cliquez sur Retour.
+            Pour déposer un autre communications, cliquez sur Retour.
         </p>
-        <a href="{{url('/abstract')}}" class="mt-6 inline-block bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition">
+        <a href="{{url('/communications')}}" class="mt-6 inline-block bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition">
             Retour
         </a>
     </div>
