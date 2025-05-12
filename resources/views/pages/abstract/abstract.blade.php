@@ -66,7 +66,7 @@
 
                     <div class="flex justify-center items-center">
                         <p class="text-gray-800 text-center font-bold">
-                            Merci de nous transmettre votre communication affichée, au format PDF en orientation portrait avant le 1er Mai 2025 à minuit
+                            Merci de nous transmettre votre communication affichée, au format PDF en orientation portrait avant le 20 Mai 2025 à minuit
                         </p>
                     </div>
 
