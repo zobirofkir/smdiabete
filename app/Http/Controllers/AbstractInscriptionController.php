@@ -20,7 +20,7 @@ class AbstractInscriptionController extends Controller
      */
     public function index()
     {
-        return view('pages.abstract.abstract');
+        return view('pages.communications.communication');
     }
 
     /**
