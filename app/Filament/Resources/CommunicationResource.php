@@ -2,8 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AbstractInscriptionResource\Pages;
-use App\Filament\Resources\AbstractInscriptionResource\RelationManagers;
+use App\Filament\Resources\CommunicationResource\Pages\ListCommunications;
+use App\Filament\Resources\CommunicationResource\Pages;
+use App\Filament\Resources\CommunicationResource\RelationManagers;
 use App\Models\AbstractInscription;
 use Filament\Actions\ViewAction;
 use Filament\Forms;
@@ -20,13 +21,17 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AbstractInscriptionResource extends Resource
+class CommunicationResource extends Resource
 {
     protected static ?string $model = AbstractInscription::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Abstracts';
+    protected static ?string $navigationGroup = 'Communications';
+
+    protected static ?string $modelLabel = 'Communication';
+
+    protected static ?string $pluralModelLabel = 'Communications';
 
     public static function form(Form $form): Form
     {
@@ -121,7 +126,7 @@ class AbstractInscriptionResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAbstractInscriptions::route('/'),
+            'index' => ListCommunications::route('/'),
         ];
     }
 }
