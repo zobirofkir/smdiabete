@@ -36,12 +36,12 @@ Route::get('/galleries', function () {
 /**
  * Inscription Routes
  */
-Route::get('/inscriptions', [InscriptionController::class, 'index'])->name('inscriptions.index');
+// Route::get('/inscriptions', [InscriptionController::class, 'index'])->name('inscriptions.index');
 
 /**
  * Inscription Routes
  */
-Route::post('/inscriptions/store', [InscriptionController::class, 'store'])->name('inscriptions.store');
+// Route::post('/inscriptions/store', [InscriptionController::class, 'store'])->name('inscriptions.store');
 
 /**
  * Masterclass Routes
