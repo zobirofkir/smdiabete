@@ -150,8 +150,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('/abstract') }}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
-                        Abstracts
+                    <a href="{{ url('/communications') }}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
+                        Communications
                     </a>
                 </li>
                 {{-- <li>

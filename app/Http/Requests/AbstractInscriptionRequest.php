@@ -14,9 +14,9 @@ class AbstractInscriptionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'firstname' => 'required|string|min:5|max:8',
-            'lastname' => 'required|string|min:5|max:8',
-            'email' => 'required|email',
+            'firstname' => 'required|string|min:5|max:255',
+            'lastname' => 'required|string|min:5|max:255',
+            'email' => 'required|string|min:3|max:255',
             'file' => 'required|file|mimes:pdf|max:10240',
         ];
     }
@@ -26,11 +26,13 @@ class AbstractInscriptionRequest extends FormRequest
         return [
             'firstname.required' => 'Le prénom est obligatoire.',
             'lastname.required' => 'Le nom de famille est obligatoire.',
-            'email.required' => 'L\'adresse email est obligatoire.',
-            'email.unique' => 'Cette adresse email est déjà utilisée.',
             'file.required' => 'Le fichier est obligatoire.',
             'file.mimes' => 'Le fichier doit être au format PDF.',
             'file.max' => 'Le fichier ne doit pas dépasser :max kilo-octets.',
+            'email.required' => 'Le médecin responsable est obligatoire.',
+            'email.string' => 'Le médecin responsable doit être une chaîne de caractères.',
+            'email.min' => 'Le médecin responsable doit contenir au moins :min caractères.',
+            'email.max' => 'Le médecin responsable ne doit pas dépasser :max caractères.',
         ];
     }
 }

@@ -91,12 +91,12 @@ Route::get('/press', function() {
 /**
  * Abstract Page
  */
-Route::get('/abstract', [AbstractInscriptionController::class, 'index'])->name('abstract.index');
+Route::get('/communications', [AbstractInscriptionController::class, 'index'])->name('communications.index');
 
 /**
  * Post Abstract
  */
-Route::post('/abstract/inscription', [AbstractInscriptionController::class, 'store'])->name('abstract.store');
+Route::post('/communications/inscription', [AbstractInscriptionController::class, 'store'])->name('communications.store');
 
 /**
  * Abstract Sended Successfully

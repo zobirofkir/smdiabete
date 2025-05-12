@@ -18,15 +18,15 @@
             <!-- Left Side: Form -->
             <div class="p-8 flex flex-col justify-center relative">
 
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 animate-fade-in-down">Soumission Des Abstracts</h2>
-                <form class="space-y-6" action="{{ route('abstract.store') }}" method="POST" enctype="multipart/form-data">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 animate-fade-in-down">Soumission Des Communications</h2>
+                <form class="space-y-6" action="{{ route('communications.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <!-- Last Name -->
                     <div class="animate-fade-in-left delay-100">
-                        <label for="lastname" class="block text-sm font-medium text-gray-700">Nom</label>
+                        <label for="lastname" class="block text-sm font-medium text-gray-700">Nom & Prénom</label>
                         <input type="text" id="lastname" name="lastname" required
                             class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
-                            placeholder="Entrez votre nom de famille">
+                            placeholder="Entrez Votre Nom & Prénom">
                     </div>
                     @error('lastname')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -34,21 +34,21 @@
 
                     <!-- First Name -->
                     <div class="animate-fade-in-left">
-                        <label for="firstname" class="block text-sm font-medium text-gray-700">Prénom</label>
+                        <label for="firstname" class="block text-sm font-medium text-gray-700">Titre de communication</label>
                         <input type="text" id="firstname" name="firstname" required
                             class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
-                            placeholder="Entrez votre prénom">
+                            placeholder="Titre de communication">
                     </div>
                     @error('firstname')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
 
-                    <!-- Email -->
+                    <!-- medcin_responsable -->
                     <div class="animate-fade-in-left delay-200">
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" id="email" name="email" required
+                        <label for="email" class="block text-sm font-medium text-gray-700">Nom du Médecin Responsable</label>
+                        <input type="text" id="email" name="email" required
                             class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
-                            placeholder="Entrez votre email">
+                            placeholder="Nom du Médecin Responsable">
                     </div>
                     @error('email')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
