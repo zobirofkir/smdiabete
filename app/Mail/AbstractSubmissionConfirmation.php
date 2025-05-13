@@ -21,7 +21,7 @@ class AbstractSubmissionConfirmation extends Mailable
 
     public function build()
     {
-        return $this->subject('Confirmation de réception de votre résumé')
+        return $this->subject('Confirmation de réception de votre Communication')
             ->view('emails.abstract-confirmation');
     }
 }

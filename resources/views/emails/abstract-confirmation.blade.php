@@ -46,22 +46,19 @@
 </head>
 <body>
     <div class="container">
-        <h2>Notification de réception de résumé scientifique</h2>
+        <h2>Confirmation de réception de votre Communication</h2>
         <p>Cher <span class="highlight">{{ $firstname }} {{ $lastname }}</span>,</p>
 
-        <p>Nous vous informons que nous avons bien reçu votre résumé scientifique pour le prochain Congrès National de Diabétologie, Tanger 2025, et nous tenons à vous remercier pour votre contribution.</p>
+        <p>
+            Nous vous informons que nous avons bien reçu votre Communication, intitulé: {{ $lastname }}
+        </p>
 
-        <p>La décision concernant l'acceptation de votre travail scientifique sera communiquée d'ici le <span class="highlight">08 Mai 2025</span>.</p>
+        <p>pour le prochain Congrès National de Diabétologie, <span class="highlight"> Tanger 2025 </span> et nous tenons à vous remercier pour votre contribution .</p>
 
-        <p>En cas d'acceptation de votre travail, veuillez envoyer votre poster avant le <span class="highlight">15 Mai 2025</span> (date limite).</p>
 
         <p>Cordialement,</p>
 
-        <p class="signature">Secrétariat de la Société Marocaine de Diabétologie</p>
-
-        <div class="footer">
-            <p>Merci de votre participation.</p>
-        </div>
+        <p class="signature">Comité d'organisation du Congrès National de Diabétologie</p>
     </div>
 </body>
 </html>
