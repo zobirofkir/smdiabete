@@ -3,6 +3,7 @@
 use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\MasterclassController;
+use App\Http\Controllers\ParamedicalController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -97,6 +98,16 @@ Route::get('/communications', [CommunicationController::class, 'index'])->name('
  * Post Abstract
  */
 Route::post('/communications/inscription', [CommunicationController::class, 'store'])->name('communications.store');
+
+/**
+ * para medical
+ */
+Route::get('/smdparamedical', [ParamedicalController::class, 'index'])->name('paramedical.index');
+
+/**
+ * store medical
+ */
+Route::post('/smdparamedical', [ParamedicalController::class, 'store'])->name('paramedical.store');
 
 /**
  * Abstract Sended Successfully
