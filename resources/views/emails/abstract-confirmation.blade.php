@@ -47,10 +47,10 @@
 <body>
     <div class="container">
         <h2>Confirmation de réception de votre Communication</h2>
-        <p>Cher <span class="highlight">{{ $firstname }} {{ $lastname }}</span>,</p>
+        <p>Cher <span class="highlight">{{ $lastname }}</span>,</p>
 
         <p>
-            Nous vous informons que nous avons bien reçu votre Communication, intitulé: {{ $lastname }}
+            Nous vous informons que nous avons bien reçu votre Communication, intitulé: {{ $firstname }}
         </p>
 
         <p>pour le prochain Congrès National de Diabétologie, <span class="highlight"> Tanger 2025 </span> et nous tenons à vous remercier pour votre contribution .</p>
