@@ -10,4 +10,6 @@ class AttestationController extends Controller
     {
         return view('pages.attestations.index');
     }
+
+    
 }
