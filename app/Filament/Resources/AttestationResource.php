@@ -84,8 +84,6 @@ class AttestationResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -105,8 +103,6 @@ class AttestationResource extends Resource
     {
         return [
             'index' => Pages\ListAttestations::route('/'),
-            'create' => Pages\CreateAttestation::route('/create'),
-            'edit' => Pages\EditAttestation::route('/{record}/edit'),
         ];
     }
 }
