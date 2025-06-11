@@ -2,7 +2,7 @@
     <div class="max-w-2xl mx-auto py-12 px-6">
         <h2 class="text-3xl font-bold text-blue-700 mb-8 text-center">Demande d’attestation</h2>
 
-        <form method="POST" action="#" 
+        <form method="POST" action="{{ route('attestation.store') }}" 
               class="bg-white p-8 rounded-2xl shadow-xl space-y-6 border border-blue-100">
             @csrf
 

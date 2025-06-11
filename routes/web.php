@@ -120,4 +120,5 @@ Route::get('/communications/success', function() {
 /**
  * Attestation Routes
  */
-Route::resource('attestations', AttestationController::class);
+Route::get('/attestations', [AttestationController::class, 'index'])->name("attestation.index");
+Route::post('/attestations/store', [AttestationController::class, 'store'])->name("attestation.store");
