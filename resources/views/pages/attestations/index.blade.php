@@ -10,21 +10,21 @@
             <div>
                 <label for="nom" class="block text-sm font-semibold text-blue-700">Nom</label>
                 <input type="text" id="nom" name="nom" required
-                    class="mt-1 w-full rounded-xl border border-blue-300 bg-white text-blue-800 placeholder-blue-400 shadow-sm focus:border-blue-500 focus:ring-blue-200 focus:ring-2">
+                    class="mt-1 w-full rounded-xl border border-blue-300 bg-white text-blue-800 placeholder-blue-400 shadow-sm focus:border-blue-500 focus:ring-blue-200 focus:ring-2 p-2">
             </div>
 
             {{-- Prénom --}}
             <div>
                 <label for="prenom" class="block text-sm font-semibold text-blue-700">Prénom</label>
                 <input type="text" id="prenom" name="prenom" required
-                    class="mt-1 w-full rounded-xl border border-blue-300 bg-white text-blue-800 placeholder-blue-400 shadow-sm focus:border-blue-500 focus:ring-blue-200 focus:ring-2">
+                    class="mt-1 w-full rounded-xl border border-blue-300 bg-white text-blue-800 placeholder-blue-400 shadow-sm focus:border-blue-500 focus:ring-blue-200 focus:ring-2 p-2">
             </div>
 
             {{-- Email --}}
             <div>
                 <label for="email" class="block text-sm font-semibold text-blue-700">Email</label>
                 <input type="email" id="email" name="email" required
-                    class="mt-1 w-full rounded-xl border border-blue-300 bg-white text-blue-800 placeholder-blue-400 shadow-sm focus:border-blue-500 focus:ring-blue-200 focus:ring-2">
+                    class="mt-1 w-full rounded-xl border border-blue-300 bg-white text-blue-800 placeholder-blue-400 shadow-sm focus:border-blue-500 focus:ring-blue-200 focus:ring-2 p-2">
             </div>
 
             {{-- Type d’attestation --}}
