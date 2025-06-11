@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\AttestationResource\Pages;
-use App\Filament\Resources\AttestationResource\RelationManagers;
 use App\Models\Attestation;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Resources\Resource;
 
 class AttestationResource extends Resource
 {
@@ -25,12 +22,34 @@ class AttestationResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Attestations';
 
-
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('nom')
+                    ->label('Nom')
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\TextInput::make('prenom')
+                    ->label('Prénom')
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\TextInput::make('email')
+                    ->label('Email')
+                    ->email()
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\Select::make('attestation')
+                    ->label('Type d’attestation')
+                    ->required()
+                    ->options([
+                        'presence' => 'Attestation de présence',
+                        'affichee' => 'Attestation de communication affichée',
+                        'orale' => 'Attestation de communication orale',
+                    ]),
             ]);
     }
 
@@ -38,13 +57,35 @@ class AttestationResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('nom')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('prenom')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('email')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('attestation')
+                    ->label('Type')
+                    ->sortable()
+                    ->badge()
+                    ->colors([
+                        'primary' => 'presence',
+                        'warning' => 'affichee',
+                        'success' => 'orale',
+                    ])
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
+                        'presence' => 'Présence',
+                        'affichee' => 'Communication affichée',
+                        'orale' => 'Communication orale',
+                        default => $state,
+                    }),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Date de création')
+                    ->dateTime('d/m/Y H:i'),
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
