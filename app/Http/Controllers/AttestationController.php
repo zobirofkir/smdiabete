@@ -8,11 +8,17 @@ use Illuminate\Http\Request;
 
 class AttestationController extends Controller
 {
+    /**
+     * Attestation View
+     */
     public function index()
     {
         return view('pages.attestations.index');
     }
 
+    /**
+     * Store Attestation
+     */
     public function store(AttestationRequest $request)
     {
         Attestation::create($request->validated());
