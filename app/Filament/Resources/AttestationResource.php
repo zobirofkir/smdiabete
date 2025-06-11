@@ -6,9 +6,11 @@ use App\Filament\Resources\AttestationResource\Pages;
 use App\Models\Attestation;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
+use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Filament\Resources\Resource;
 
 class AttestationResource extends Resource
 {
@@ -90,6 +92,59 @@ class AttestationResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
+    }
+
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        $record = $infolist->record;
+
+        // Map attestation code to human-readable label & badge color
+        $attestationLabels = [
+            'presence' => 'Attestation de présence',
+            'affichee' => 'Attestation de communication affichée',
+            'orale' => 'Attestation de communication orale',
+        ];
+
+        $attestationColors = [
+            'presence' => 'primary',
+            'affichee' => 'warning',
+            'orale' => 'success',
+        ];
+
+        $attestationLabel = $attestationLabels[$record->attestation] ?? $record->attestation;
+        $attestationColor = $attestationColors[$record->attestation] ?? 'secondary';
+
+        return $infolist->schema([
+            TextEntry::make('Nom')
+                ->default($record->nom)
+                ->inlineLabel()
+                ->badge()
+                ->color('primary'),
+
+            TextEntry::make('Prénom')
+                ->default($record->prenom)
+                ->inlineLabel()
+                ->badge()
+                ->color('primary'),
+
+            TextEntry::make('Email')
+                ->default($record->email)
+                ->inlineLabel()
+                ->badge()
+                ->color('secondary'),
+
+            TextEntry::make('Type d’attestation')
+                ->default($attestationLabel)
+                ->inlineLabel()
+                ->badge()
+                ->color($attestationColor),
+
+            TextEntry::make('Date de création')
+                ->default($record->created_at?->format('d/m/Y H:i'))
+                ->inlineLabel()
+                ->badge()
+                ->color('secondary'),
+        ]);
     }
 
     public static function getRelations(): array
