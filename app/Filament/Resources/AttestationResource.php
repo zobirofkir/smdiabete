@@ -94,15 +94,14 @@ class AttestationResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListAttestations::route('/'),
+            'view' => Pages\ViewAttestation::route('/{record}'),
         ];
     }
 }
