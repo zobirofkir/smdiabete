@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttestationController;
 use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\MasterclassController;
@@ -115,3 +116,8 @@ Route::post('/smdparamedical', [ParamedicalController::class, 'store'])->name('p
 Route::get('/communications/success', function() {
     return view('pages.success.success');
 })->name('communications.success');
+
+/**
+ * Attestation Routes
+ */
+Route::resource('attestations', AttestationController::class);
