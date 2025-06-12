@@ -11,5 +11,6 @@ class Attestation extends Model
         'prenom',
         'email',
         'attestation',
+        'status'
     ];
 }

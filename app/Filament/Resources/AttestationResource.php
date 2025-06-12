@@ -3,7 +3,10 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\AttestationResource\Pages;
+use App\Mail\AttestationCertificateMail;
 use App\Models\Attestation;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Filament\Actions\Action;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\TextEntry;
@@ -11,6 +14,7 @@ use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Mail;
 
 class AttestationResource extends Resource
 {
@@ -67,9 +71,9 @@ class AttestationResource extends Resource
                     ->sortable()
                     ->badge()
                     ->colors([
-                        'primary' => 'presence',
-                        'warning' => 'affichee',
-                        'success' => 'orale',
+                        'presence' => 'primary',
+                        'affichee' => 'warning',
+                        'orale' => 'success',
                     ])
                     ->formatStateUsing(fn (string $state): string => match ($state) {
                         'presence' => 'Présence',
@@ -80,12 +84,48 @@ class AttestationResource extends Resource
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Date de création')
                     ->dateTime('d/m/Y H:i'),
+
+                Tables\Columns\TextColumn::make('status')
+                    ->label('Status')
+                    ->sortable()
+                    ->badge()
+                    ->colors([
+                        'pending' => 'secondary',
+                        'validated' => 'success',
+                        'not_validated' => 'danger',
+                    ]),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
+
+                Tables\Actions\Action::make('validate')
+                    ->label('Validate')
+                    ->color('success')
+                    ->icon('heroicon-o-check-circle')
+                    ->requiresConfirmation()
+                    ->action(function (Attestation $record) {
+                        $record->status = 'validated';
+                        $record->save();
+
+                        $pdf = Pdf::loadView('attestation.certificate', ['attestation' => $record]);
+
+                        $pdfContent = $pdf->output();
+
+                        Mail::to($record->email)->send(new AttestationCertificateMail($record, $pdfContent));
+                    }),
+
+                Tables\Actions\Action::make('not_validate')
+                    ->label('Not Validate')
+                    ->color('danger')
+                    ->icon('heroicon-o-x-circle')
+                    ->requiresConfirmation()
+                    ->action(function (Attestation $record) {
+                        $record->status = 'not_validated';
+                        $record->save();
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
