@@ -98,7 +98,9 @@ class AttestationResource extends Resource
     {
         $record = $infolist->record;
 
-        // Map attestation code to human-readable label & badge color
+        /**
+         * Map attestation code to human-readable label & badge color
+         */
         $attestationLabels = [
             'presence' => 'Attestation de présence',
             'affichee' => 'Attestation de communication affichée',
