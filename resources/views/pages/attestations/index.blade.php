@@ -39,6 +39,13 @@
                 </select>
             </div>
 
+            {{-- Titre (affiché conditionnellement) --}}
+            <div id="title-container" class="hidden">
+                <label for="title" class="block text-sm font-semibold text-blue-700">Titre</label>
+                <input type="text" id="title" name="title"
+                    class="mt-1 w-full rounded-xl border border-blue-300 bg-white text-blue-800 placeholder-blue-400 shadow-sm focus:border-blue-500 focus:ring-blue-200 focus:ring-2 p-2">
+            </div>
+
             {{-- Bouton d'envoi --}}
             <div class="text-center pt-4">
                 <button type="submit"
@@ -48,4 +55,23 @@
             </div>
         </form>
     </div>
+
+    {{-- Script to show/hide title input --}}
+    <script>
+        const attestationSelect = document.getElementById('attestation');
+        const titleContainer = document.getElementById('title-container');
+
+        attestationSelect.addEventListener('change', function () {
+            const value = this.value;
+            if (value === 'affichee' || value === 'orale') {
+                titleContainer.classList.remove('hidden');
+                // Optionally add required attribute when shown
+                document.getElementById('title').setAttribute('required', 'required');
+            } else {
+                titleContainer.classList.add('hidden');
+                document.getElementById('title').removeAttribute('required');
+                document.getElementById('title').value = ''; // clear input if hidden
+            }
+        });
+    </script>
 </x-app-layout>
