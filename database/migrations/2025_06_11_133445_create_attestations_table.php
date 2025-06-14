@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('attestations', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->string('title')->nullable();
             $table->string('prenom');
             $table->string('email');
             $table->enum('attestation', ['presence', 'affichee', 'orale']);

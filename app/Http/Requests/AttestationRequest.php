@@ -23,6 +23,7 @@ class AttestationRequest extends FormRequest
     {
         return [
             'nom' => 'required|string|max:255',
+            'title' => 'nullable|string|max:255',
             'prenom' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'attestation' => 'required|in:presence,affichee,orale',

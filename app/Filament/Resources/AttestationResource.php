@@ -64,6 +64,7 @@ class AttestationResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nom')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('title')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('prenom')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('email')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('attestation')
@@ -159,6 +160,12 @@ class AttestationResource extends Resource
         return $infolist->schema([
             TextEntry::make('Nom')
                 ->default($record->nom)
+                ->inlineLabel()
+                ->badge()
+                ->color('primary'),
+
+            TextEntry::make('Titre')
+                ->default($record->title)
                 ->inlineLabel()
                 ->badge()
                 ->color('primary'),
