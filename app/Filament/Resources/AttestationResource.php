@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\AttestationResource\Pages;
 use App\Mail\AttestationCertificateMail;
 use App\Models\Attestation;
+use App\Services\PdfGenerator;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Filament\Actions\Action;
 use Filament\Forms;
@@ -111,13 +112,15 @@ class AttestationResource extends Resource
                         $record->status = 'validated';
                         $record->save();
 
-                        $pdf = Pdf::loadView('attestation.certificate', ['attestation' => $record]);
-
-                        $pdfContent = $pdf->output();
+                        $pdfPath = PdfGenerator::generate($record);
+                        $pdfContent = file_get_contents($pdfPath);
 
                         Mail::to($record->email)->send(new AttestationCertificateMail($record, $pdfContent));
-                    }),
 
+                        if (file_exists($pdfPath)) {
+                            unlink($pdfPath); 
+                        }
+                    }),
                 Tables\Actions\Action::make('not_validate')
                     ->label('Not Validate')
                     ->color('danger')
