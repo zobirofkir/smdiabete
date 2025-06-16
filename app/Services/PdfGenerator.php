@@ -21,11 +21,11 @@ class PdfGenerator
         $pdf->SetFont('Helvetica', '', 12);
         $pdf->SetTextColor(0, 0, 0);
 
-        $pdf->SetXY(65, 90);
-        $pdf->Cell(0, 10, 'Dr. ' . $attestation->nom . ' ' . $attestation->prenom, 0, 1);
+        $pdf->SetXY(80, 105);
+        $pdf->Cell(0, 10, $attestation->nom . ' ' . $attestation->prenom, 0, 1);
 
         if ($attestation->title) {
-            $pdf->SetXY(75, 110);
+            $pdf->SetXY(60, 125);
             $pdf->MultiCell(120, 10, $attestation->title, 0);
         }
 
