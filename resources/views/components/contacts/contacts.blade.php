@@ -124,7 +124,7 @@
                                 <h3 class="font-semibold text-gray-800 mb-2">Téléphone</h3>
                                 <p class="text-gray-600 text-sm">
                                     +212 6 62 63 05 59<br>
-                                    +212 6XX-XXXXXX
+                                    +212 762-011226
                                 </p>
                             </div>
                         </div>

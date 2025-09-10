@@ -42,14 +42,6 @@
                             +212 6 62 63 05 59
                         </a>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 bg-purple-600/20 rounded-lg flex items-center justify-center">
-                            <i class="fa-solid fa-map-marker-alt text-purple-400 text-sm"></i>
-                        </div>
-                        <span class="text-gray-300">
-                            Casablanca, Maroc
-                        </span>
-                    </div>
                 </div>
             </div>
 
