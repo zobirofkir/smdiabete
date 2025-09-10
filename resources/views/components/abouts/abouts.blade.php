@@ -94,11 +94,6 @@
                             <div class="space-y-4">
                                 <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
                                     <h3 class="font-semibold text-gray-800 mb-1">Secrétaire Générale</h3>
-                                    <p class="text-gray-600">Dr Zineb AL HOUARI</p>
-                                </div>
-                                
-                                <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
-                                    <h3 class="font-semibold text-gray-800 mb-1">Secrétaire Générale Adjointe</h3>
                                     <p class="text-gray-600">Dr Yousra AOUINATI</p>
                                 </div>
                                 
