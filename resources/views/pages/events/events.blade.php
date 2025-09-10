@@ -1,5 +1,5 @@
 <x-app-layout>
-    <section class="fade-in flex justify-center items-center h-screen">
+    <section class="fade-in">
         @include('components.events.events')
     </section>
 </x-app-layout>
