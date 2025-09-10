@@ -77,12 +77,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const dossier1Button = document.getElementById('dossier1Button');
     const dossier2Button = document.getElementById('dossier2Button');
     const dossier3Button = document.getElementById('dossier3Button');
+    const dossier4Button = document.getElementById('dossier4Button');
     const dossier1 = document.getElementById('dossier1');
     const dossier2 = document.getElementById('dossier2');
     const dossier3 = document.getElementById('dossier3');
+    const dossier4 = document.getElementById('dossier4');
 
     const setActiveButton = (activeButton) => {
-        [dossier1Button, dossier2Button, dossier3Button].forEach(btn => {
+        [dossier1Button, dossier2Button, dossier3Button, dossier4Button].forEach(btn => {
             btn.classList.remove('bg-sky-600', 'text-white');
             btn.classList.add('bg-sky-200', 'text-sky-600');
         });
@@ -91,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const showDossier = (targetDossier) => {
-        [dossier1, dossier2, dossier3].forEach(dossier => {
+        [dossier1, dossier2, dossier3, dossier4].forEach(dossier => {
             dossier.classList.add('hidden');
             dossier.classList.remove('grid');
         });
@@ -112,5 +114,10 @@ document.addEventListener("DOMContentLoaded", () => {
     dossier3Button.addEventListener('click', () => {
         showDossier(dossier3);
         setActiveButton(dossier3Button);
+    });
+
+    dossier4Button.addEventListener('click', () => {
+        showDossier(dossier4);
+        setActiveButton(dossier4Button);
     });
 });

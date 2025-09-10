@@ -10,6 +10,8 @@
                     class="px-6 py-3 bg-sky-200 text-sky-600 rounded-lg focus:outline-none hover:bg-sky-300 transition-colors shadow-lg hover:shadow-xl">1 er Congrès National de Diabètologie</button>
             <button id="dossier3Button"
                     class="px-6 py-3 bg-sky-200 text-sky-600 rounded-lg focus:outline-none hover:bg-sky-300 transition-colors shadow-lg hover:shadow-xl">2 éme Congrès National de Diabètologie</button>
+            <button id="dossier4Button"
+                    class="px-6 py-3 bg-sky-200 text-sky-600 rounded-lg focus:outline-none hover:bg-sky-300 transition-colors shadow-lg hover:shadow-xl">Autre</button>
         </div>
 
         <!-- Image Gallery -->
@@ -43,6 +45,18 @@
                 @foreach (range(1, 51) as $item)
                     <div class="relative group overflow-hidden rounded-xl shadow-lg transition-all hover:shadow-2xl transform hover:scale-105 duration-500 ease-in-out">
                         <img src="{{ asset('assets/images/album/album-two/album-' . $item . '.jpeg') }}"
+                             alt="Image {{$item}}"
+                             class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-110 cursor-pointer"
+                             data-index="{{ $item - 1 }}">
+                    </div>
+                @endforeach
+            </div>
+
+            <!-- Dossier 4 Images (Autre) -->
+            <div id="dossier4" class="dossier hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                @foreach (range(1, 4) as $item)
+                    <div class="relative group overflow-hidden rounded-xl shadow-lg transition-all hover:shadow-2xl transform hover:scale-105 duration-500 ease-in-out">
+                        <img src="{{ asset('assets/images/album/autre/autre-' . $item . '.jpeg') }}"
                              alt="Image {{$item}}"
                              class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-110 cursor-pointer"
                              data-index="{{ $item - 1 }}">

@@ -255,14 +255,7 @@
                                     </svg>
                                     <span class="text-gray-700">Formation ouverte aux médecins spécialistes</span>
                                 </div>
-                                
-                                <div class="flex items-center space-x-3">
-                                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span class="text-gray-700">Date limite: <span class="font-bold text-red-600">10 Janvier 2025</span></span>
-                                </div>
-                                
+                                                                
                                 <div class="flex items-center space-x-3">
                                     <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
