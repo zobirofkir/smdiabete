@@ -77,109 +77,69 @@
             </div>
         </div>
 
-                <!-- Form Section -->
-                <div id="formSection" class="overflow-hidden max-h-0 transition-all duration-700 ease-in-out mt-6 bg-white p-8 rounded-lg shadow-lg hidden">
-                    <form id="masterclassForm" action="{{ route('masterclass.store') }}" method="POST" class="space-y-6">
+        <!-- Program Details Section -->
+        <div class="bg-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Programme de Formation</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Une formation d'excellence en collaboration avec le CHU de Oujda et l'Hôpital Militaire Avicenne de Marrakech</p>
+                </div>
 
-                        @csrf
-
-                    <!-- First Name -->
-                    <div class="flex flex-col gap-1">
-                        <label for="firstname" class="text-sm font-medium text-gray-700">Prénom</label>
-                        <input type="text" id="firstname" name="firstname" class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm py-2 px-4 text-md" placeholder="Votre prénom" value="{{ old('firstname') }}" required />
-                        @error('firstname')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
+                <!-- Timeline -->
+                <div class="mb-16">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center group">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 group-hover:bg-blue-200 transition-colors">
+                                <span class="text-2xl font-bold text-blue-600">1</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">1er Séminaire</h3>
+                            <p class="text-blue-600 font-semibold text-lg">19 Avril 2025</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 group-hover:bg-blue-200 transition-colors">
+                                <span class="text-2xl font-bold text-blue-600">2</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">2ème Séminaire</h3>
+                            <p class="text-blue-600 font-semibold text-lg">12 Juillet 2025</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 group-hover:bg-blue-200 transition-colors">
+                                <span class="text-2xl font-bold text-blue-600">3</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">3ème Séminaire</h3>
+                            <p class="text-blue-600 font-semibold text-lg">11 Octobre 2025</p>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Last Name -->
-                    <div class="flex flex-col gap-1">
-                        <label for="lastname" class="text-sm font-medium text-gray-700">Nom</label>
-                        <input type="text" id="lastname" name="lastname" class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm py-2 px-4 text-md" placeholder="Votre nom" value="{{ old('lastname') }}" required />
-                        @error('lastname')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
+                <!-- Coordinators -->
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-8 mb-16">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Coordinateurs du Master Class</h3>
                     </div>
-
-                    <!-- Ville -->
-                    <div class="flex flex-col gap-1">
-                        <label for="ville" class="text-sm font-medium text-gray-700">Ville</label>
-                        <input type="text" id="ville" name="ville" class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm py-2 px-4 text-md" placeholder="Votre ville" value="{{ old('ville') }}" required />
-                        @error('ville')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <div class="bg-white rounded-2xl p-6 shadow-lg">
+                                <div class="w-20 h-20 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                    <svg class="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="text-xl font-semibold text-gray-900">Pr. BAÏZRI HICHAM</h4>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-white rounded-2xl p-6 shadow-lg">
+                                <div class="w-20 h-20 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                    <svg class="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="text-xl font-semibold text-gray-900">Pr. LATRECH HANANE</h4>
+                            </div>
+                        </div>
                     </div>
-
-                    <!-- Secteur -->
-                    <div class="flex flex-col gap-1">
-                        <label for="secteur" class="text-sm font-medium text-gray-700">Secteur</label>
-                        <select id="secteur" name="secteur" class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm py-2 px-4 text-md" required>
-                            <option value="" disabled selected>Choisissez un secteur</option>
-                            <option value="public" {{ old('secteur') == 'public' ? 'selected' : '' }}>Public</option>
-                            <option value="liberal" {{ old('secteur') == 'liberal' ? 'selected' : '' }}>Liberal</option>
-                            <option value="chu" {{ old('secteur') == 'chu' ? 'selected' : '' }}>CHU</option>
-                        </select>
-                        @error('secteur')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <!-- Adresse -->
-                    <div class="flex flex-col gap-1">
-                        <label for="adresse" class="text-sm font-medium text-gray-700">Adresse</label>
-                        <input type="text" id="adresse" name="adresse" class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm py-2 px-4 text-md" placeholder="Votre adresse" value="{{ old('adresse') }}" required />
-                        @error('adresse')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <!-- Objectif -->
-                    <div class="flex flex-col gap-1">
-                        <label for="objectif" class="text-sm font-medium text-gray-700">Objectif</label>
-                        <textarea id="objectif" name="objectif" class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm py-2 px-4 text-md" placeholder="Votre objectif" rows="4" required>{{ old('objectif') }}</textarea>
-                        @error('objectif')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <!-- Email -->
-                    <div class="flex flex-col gap-1">
-                        <label for="email" class="text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" id="email" name="email" class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm py-2 px-4 text-md" placeholder="Votre adresse email" value="{{ old('email') }}" required />
-                        @error('email')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <!-- Phone -->
-                    <div class="flex flex-col gap-1">
-                        <label for="phone" class="text-sm font-medium text-gray-700">Téléphone</label>
-                        <input type="tel" id="phone" name="phone" class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm py-2 px-4 text-md" placeholder="Votre numéro de téléphone" value="{{ old('phone') }}" required />
-                        @error('phone')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <!-- Participation Mode -->
-                    <div class="flex flex-col gap-1">
-                        <label for="participation_mode" class="text-sm font-medium text-gray-700">Mode de participation</label>
-                        <select id="participation_mode" name="participation_mode" class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm py-2 px-4 text-md" required>
-                            <option value="" disabled selected>Choisissez un mode</option>
-                            <option value="presentiel" {{ old('participation_mode') == 'presentiel' ? 'selected' : '' }}>En présentiel</option>
-                            <option value="virtuel" {{ old('participation_mode') == 'virtuel' ? 'selected' : '' }}>Virtuel</option>
-                        </select>
-                        @error('participation_mode')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="text-center">
-                        <button type="submit" class="w-full py-3 bg-blue-800 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors">
-                            Soumettre
-                        </button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
 
