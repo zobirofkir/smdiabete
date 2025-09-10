@@ -50,7 +50,7 @@
         </button>
 
         <!-- Navigation Menu -->
-        <nav id="menu" role="navigation" class="fixed top-0 right-0 h-full w-80 bg-white/95 backdrop-blur-lg shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 lg:shadow-none lg:bg-transparent lg:flex lg:flex-row lg:items-center lg:space-x-8 lg:h-auto lg:w-auto z-[9999]">
+        <nav id="menu" role="navigation" class="fixed top-0 right-0 h-screen lg:h-auto w-80 bg-white/95 backdrop-blur-lg shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 lg:shadow-none lg:bg-transparent lg:flex lg:flex-row lg:items-center lg:space-x-8 lg:w-auto z-[9999]">
             <!-- Close Button (Mobile) -->
             <button id="close-menu" class="absolute top-6 right-6 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200 lg:hidden" aria-label="Close Menu">
                 <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
