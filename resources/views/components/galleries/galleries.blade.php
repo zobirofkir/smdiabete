@@ -7,9 +7,9 @@
             <button id="dossier1Button"
                     class="px-6 py-3 bg-sky-600 text-white rounded-lg focus:outline-none hover:bg-sky-700 transition-colors shadow-lg hover:shadow-xl">Journée Mondiale du Diabète</button>
             <button id="dossier2Button"
-                    class="px-6 py-3 bg-sky-200 text-sky-600 rounded-lg focus:outline-none hover:bg-sky-300 transition-colors shadow-lg hover:shadow-xl">1er Congrès National de Diabètologie</button>
+                    class="px-6 py-3 bg-sky-200 text-sky-600 rounded-lg focus:outline-none hover:bg-sky-300 transition-colors shadow-lg hover:shadow-xl">1 er Congrès National de Diabètologie</button>
             <button id="dossier3Button"
-                    class="px-6 py-3 bg-sky-200 text-sky-600 rounded-lg focus:outline-none hover:bg-sky-300 transition-colors shadow-lg hover:shadow-xl">2 Congrès</button>
+                    class="px-6 py-3 bg-sky-200 text-sky-600 rounded-lg focus:outline-none hover:bg-sky-300 transition-colors shadow-lg hover:shadow-xl">2 éme Congrès National de Diabètologie</button>
         </div>
 
         <!-- Image Gallery -->
