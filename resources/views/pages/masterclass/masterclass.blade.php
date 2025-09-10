@@ -143,69 +143,157 @@
             </div>
         </div>
 
-        <!-- Text Section -->
-        <div class="max-w-4xl mx-auto px-4 py-12 text-gray-800">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-blue-900 mb-6">
-                Société Marocaine de Diabétologie
-            </h1>
-            <h2 class="text-3xl sm:text-4xl font-semibold text-center text-gray-700 mb-6">
-                Master Class 2025: Diabète et Nouvelles Technologies
-            </h2>
-            <p class="text-justify leading-relaxed mb-8 text-lg sm:text-xl">
-                Dans le cadre du développement professionnel continu, la Société Marocaine de Diabétologie organise pour l'année 2025 un Master Class intitulé "Diabète et Nouvelles Technologies" en collaboration avec le CHU de Oujda et l'Hôpital Militaire Avicenne de Marrakech.
-            </p>
-
-            <div class="grid gap-8 md:grid-cols-2">
-                <!-- Left Section -->
-                <div>
-                    <h3 class="font-bold text-lg text-blue-800 mb-4">Durée de la formation</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-8">
-                        <li>1<sup>er</sup> séminaire : 19 Avril 2025</li>
-                        <li>2<sup>ème</sup> séminaire : 12 Juillet 2025</li>
-                        <li>3<sup>ème</sup> séminaire : 11 Octobre 2025</li>
-                    </ul>
-
-                    <h3 class="font-bold text-lg text-blue-800 mb-4">Coordinateurs du Master Class</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-8">
-                        <li>Pr. BAÏZRI HICHAM</li>
-                        <li>Pr. LATRECH HANANE</li>
-                    </ul>
-
-                    <h3 class="font-bold text-lg text-blue-800 mb-4">Objectifs pédagogiques</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Maîtrise et pratique de l'insulinothérapie fonctionnelle</li>
-                        <li>Maîtrise des principes de fonctionnement des CGM</li>
-                        <li>Mise en place de CGM et interprétation des données des AGP</li>
-                        <li>Maîtrise des pompes à insuline externe</li>
-                        <li>Mise en place et réglage des pompes à insuline externe</li>
-                        <li>Gestion des patients diabétiques sous pompe à insuline externe</li>
-                    </ul>
+        <!-- Objectives Section -->
+        <div class="bg-gray-50 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Objectifs Pédagogiques</h2>
+                    <p class="text-xl text-gray-600">Maîtrisez les technologies de pointe en diabétologie</p>
                 </div>
-
-                <!-- Right Section -->
-                <div>
-                    <h3 class="font-bold text-lg text-blue-800 mb-4">Cette formation comportera :</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-8">
-                        <li>Un test de prérequis</li>
-                        <li>Des exposés théoriques (avec des supports pédagogiques PDF)</li>
-                        <li>Ateliers pratiques et interactions avec patients</li>
-                        <li>Examen final certifiant</li>
-                    </ul>
-
-                    <h3 class="font-bold text-lg text-blue-800 mb-4">Conditions d'inscription :</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-8">
-                        <li>Formation ouverte aux médecins titulaires d'un diplôme de spécialité</li>
-                        <li>Date limite d'inscription : <span class="font-semibold text-red-600">10 Janvier 2025</span></li>
-                        <li>Tarifs d'inscription : <span class="font-semibold">15,000 Dhs</span></li>
-                        <li>Le paiement peut être effectué par virement au compte suivant :</li>
-                        <li>
-                            <span class="font-semibold">Société Marocaine de Diabétologie</span> - RIB : 007 826
-                            0002683000305367 78
-                        </li>
-                    </ul>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Insulinothérapie Fonctionnelle</h3>
+                        <p class="text-gray-600">Maîtrise et pratique de l'insulinothérapie fonctionnelle</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">CGM & AGP</h3>
+                        <p class="text-gray-600">Maîtrise des CGM et interprétation des données AGP</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Pompes à Insuline</h3>
+                        <p class="text-gray-600">Mise en place et gestion des pompes à insuline externe</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
+        <!-- Program Structure -->
+        <div class="bg-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <!-- Formation Content -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8">Contenu de la Formation</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Test de Prérequis</h3>
+                                    <p class="text-gray-600">Evaluation initiale des connaissances</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Exposés Théoriques</h3>
+                                    <p class="text-gray-600">Supports pédagogiques PDF inclus</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Ateliers Pratiques</h3>
+                                    <p class="text-gray-600">Interactions directes avec patients</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Examen Final Certifiant</h3>
+                                    <p class="text-gray-600">Certification officielle</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Registration Info -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8">Conditions d'Inscription</h2>
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8">
+                            <div class="space-y-6">
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Formation ouverte aux médecins spécialistes</span>
+                                </div>
+                                
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Date limite: <span class="font-bold text-red-600">10 Janvier 2025</span></span>
+                                </div>
+                                
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Tarif: <span class="font-bold text-green-600">15,000 Dhs</span></span>
+                                </div>
+                                
+                                <div class="mt-8 p-4 bg-white rounded-xl border border-gray-200">
+                                    <h4 class="font-semibold text-gray-900 mb-2">Informations de Paiement</h4>
+                                    <p class="text-sm text-gray-600 mb-2">Virement bancaire au compte:</p>
+                                    <p class="text-sm font-mono bg-gray-50 p-2 rounded text-gray-800">
+                                        Société Marocaine de Diabétologie<br>
+                                        RIB: 007 826 0002683000305367 78
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="bg-gradient-to-r from-blue-900 to-indigo-900 py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-white mb-6">Formation d'Excellence</h2>
+                <p class="text-xl text-blue-100 leading-relaxed">
+                    Dans le cadre du développement professionnel continu, la Société Marocaine de Diabétologie organise pour l'année 2025 un Master Class intitulé "Diabète et Nouvelles Technologies" en collaboration avec le CHU de Oujda et l'Hôpital Militaire Avicenne de Marrakech.
+                </p>
+            </div>
+        </div>
+    </div>
 </x-app-layout>
