@@ -79,7 +79,7 @@
                                             2026
                                         </div>
                                         <div class="text-blue-200 text-lg">
-                                            Casablanca, Maroc
+                                            Tanger, Maroc
                                         </div>
                                     </div>
 
