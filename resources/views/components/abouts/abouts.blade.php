@@ -111,7 +111,6 @@
                                 <h3 class="font-semibold text-emerald-800 mb-3 text-center">Assesseurs</h3>
                                 <div class="space-y-2 text-sm text-gray-700">
                                     <p class="text-center">Dr Imane KHALDOUNI</p>
-                                    <p class="text-center">Dr Jade ISSOUANI</p>
                                     <p class="text-center">Dr Nadia BOUIZMAN</p>
                                     <p class="text-center">Dr Siham DRISSI ABOULAHJOUL</p>
                                 </div>
