@@ -5,7 +5,7 @@
 
     @include('components.abouts.abouts')
 
-    <div class="text-center mt-20">
+    {{-- <div class="text-center mt-20">
         <h1 class="text-3xl md:text-4xl font-extrabold text-sky-900 mb-4 transition-all duration-300 transform hover:text-sky-600 hover:scale-105">
             Événements
         </h1>
@@ -17,6 +17,6 @@
             Vidéos
         </h1>
     </div>
-    @include('components.videos.videos')
+    @include('components.videos.videos') --}}
 
 </x-app-layout>
