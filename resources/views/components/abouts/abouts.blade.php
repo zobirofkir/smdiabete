@@ -67,9 +67,9 @@
                 </button>
             </div>
 
-            <!-- Members Section -->
-            <div class="order-1 lg:order-2">
-                <div class="bg-white rounded-2xl shadow-xl p-6 lg:p-8 border border-gray-100">
+            <!-- Members Section - Hidden on mobile, visible on large screens -->
+            <div class="order-1 lg:order-2 hidden lg:block">
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
                     <div class="text-center mb-8">
                         <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Notre Bureau</h2>
                         <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-emerald-600 mx-auto rounded-full"></div>
