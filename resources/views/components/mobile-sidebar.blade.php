@@ -136,7 +136,7 @@ function toggleMobileDropdown(type) {
     const icon = document.getElementById(type + '-icon');
     
     // Close other dropdowns
-    const allDropdowns = ['about', 'media'];
+    const allDropdowns = ['media'];
     allDropdowns.forEach(dropdownType => {
         if (dropdownType !== type) {
             const otherDropdown = document.getElementById(dropdownType + '-dropdown');
@@ -159,8 +159,8 @@ function toggleMobileDropdown(type) {
 }
 
 function closeAllDropdowns() {
-    const dropdowns = ['about-dropdown', 'media-dropdown'];
-    const icons = ['about-icon', 'media-icon'];
+    const dropdowns = ['media-dropdown'];
+    const icons = ['media-icon'];
     
     dropdowns.forEach((dropdownId, index) => {
         const dropdown = document.getElementById(dropdownId);
