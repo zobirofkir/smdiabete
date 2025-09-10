@@ -32,7 +32,7 @@
 </div>
 
 <!-- Main Header -->
-<header id="main-header" class="bg-white/95 backdrop-blur-lg shadow-lg sticky top-0 z-[100] transition-all duration-300 ease-in-out border-b border-gray-100">
+<header id="main-header" class="bg-white/95 backdrop-blur-lg shadow-lg sticky top-0 z-[700] transition-all duration-300 ease-in-out border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <!-- Logo -->
         <a href="{{ url('/') }}" class="flex items-center group">

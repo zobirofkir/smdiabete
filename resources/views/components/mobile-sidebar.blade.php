@@ -1,5 +1,5 @@
 <!-- Mobile Sidebar -->
-<div id="mobile-sidebar" class="fixed inset-0 z-[200] lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+<div id="mobile-sidebar" class="fixed inset-0 z-[900] lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
     <!-- Backdrop -->
     <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeMobileSidebar()" aria-label="Close menu"></div>
     
