@@ -61,17 +61,10 @@
                 <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
             </a>
             
-            <div class="relative group">
-                <button class="text-gray-700 hover:text-blue-600 font-medium flex items-center gap-1 transition-colors duration-200 relative">
-                    À propos
-                    <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
-                </button>
-                <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    <a href="{{ url('/abouts') }}" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 rounded-t-lg">Charte</a>
-                    <a href="{{ url('/members') }}" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 rounded-b-lg">Bureau</a>
-                </div>
-            </div>
+            <a href="{{ url('/abouts') }}" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">
+                À propos
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
+            </a>
             
             <a href="{{ url('/masterclass') }}" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">
                 Formation
