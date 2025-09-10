@@ -76,20 +76,41 @@ document.addEventListener("DOMContentLoaded", () => {
     // Dossier Switcher
     const dossier1Button = document.getElementById('dossier1Button');
     const dossier2Button = document.getElementById('dossier2Button');
+    const dossier3Button = document.getElementById('dossier3Button');
     const dossier1 = document.getElementById('dossier1');
     const dossier2 = document.getElementById('dossier2');
+    const dossier3 = document.getElementById('dossier3');
+
+    const setActiveButton = (activeButton) => {
+        [dossier1Button, dossier2Button, dossier3Button].forEach(btn => {
+            btn.classList.remove('bg-sky-600', 'text-white');
+            btn.classList.add('bg-sky-200', 'text-sky-600');
+        });
+        activeButton.classList.remove('bg-sky-200', 'text-sky-600');
+        activeButton.classList.add('bg-sky-600', 'text-white');
+    };
+
+    const showDossier = (targetDossier) => {
+        [dossier1, dossier2, dossier3].forEach(dossier => {
+            dossier.classList.add('hidden');
+            dossier.classList.remove('grid');
+        });
+        targetDossier.classList.remove('hidden');
+        targetDossier.classList.add('grid');
+    };
 
     dossier1Button.addEventListener('click', () => {
-        dossier1.classList.remove('hidden');
-        dossier1.classList.add('grid');
-        dossier2.classList.add('hidden');
-        dossier2.classList.remove('grid');
+        showDossier(dossier1);
+        setActiveButton(dossier1Button);
     });
 
     dossier2Button.addEventListener('click', () => {
-        dossier2.classList.remove('hidden');
-        dossier2.classList.add('grid');
-        dossier1.classList.add('hidden');
-        dossier1.classList.remove('grid');
+        showDossier(dossier2);
+        setActiveButton(dossier2Button);
+    });
+
+    dossier3Button.addEventListener('click', () => {
+        showDossier(dossier3);
+        setActiveButton(dossier3Button);
     });
 });
