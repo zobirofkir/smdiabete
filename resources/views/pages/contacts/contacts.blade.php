@@ -106,7 +106,7 @@
                                     <h3 class="font-semibold text-gray-800 mb-2">Adresse</h3>
                                     <p class="text-gray-600 text-sm leading-relaxed">
                                         123 Avenue de la Santé<br>
-                                        Casablanca, Maroc<br>
+                                        Tanger, Maroc<br>
                                         20000
                                     </p>
                                 </div>
