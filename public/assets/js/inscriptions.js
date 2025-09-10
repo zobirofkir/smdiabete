@@ -44,13 +44,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const lastnameInput = document.getElementById("lastname");
     const firstnameInput = document.getElementById("firstname");
 
-    lastnameInput.addEventListener("input", function () {
-        this.value = this.value.toUpperCase();
-    });
+    if (lastnameInput) {
+        lastnameInput.addEventListener("input", function () {
+            this.value = this.value.toUpperCase();
+        });
+    }
 
-    firstnameInput.addEventListener("input", function () {
-        this.value = this.value.toUpperCase();
-    });
+    if (firstnameInput) {
+        firstnameInput.addEventListener("input", function () {
+            this.value = this.value.toUpperCase();
+        });
+    }
 });
 
 /**
@@ -98,7 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const arrivalSelect = document.getElementById("arrival_date");
     const departureSelect = document.getElementById("departure_date");
 
-    arrivalSelect.addEventListener("change", function () {
+    if (arrivalSelect && departureSelect) {
+        arrivalSelect.addEventListener("change", function () {
         const selectedArrivalDate = new Date(this.value);
 
         Array.from(departureSelect.options).forEach((option) => {
@@ -124,7 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
         ) {
             departureSelect.value = "";
         }
-    });
+        });
+    }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -133,6 +139,8 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     const arrivalDate = document.getElementById("arrival_date");
     const departureDate = document.getElementById("departure_date");
+
+    if (inscriptionTypeRadios.length > 0 && arrivalDate && departureDate) {
 
     // Function to handle inscription type change
     function handleInscriptionTypeChange() {
@@ -163,8 +171,9 @@ document.addEventListener("DOMContentLoaded", function () {
         radio.addEventListener("change", handleInscriptionTypeChange);
     });
 
-    // Initialize the state based on the current selection
-    handleInscriptionTypeChange();
+        // Initialize the state based on the current selection
+        handleInscriptionTypeChange();
+    }
 });
 
 function handlePaymentChoice(choice) {
