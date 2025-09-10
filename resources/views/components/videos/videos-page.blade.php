@@ -1,14 +1,37 @@
-<div class="px-8 md:px-16 mt-20 mb-20">
-    <div class="flex flex-col gap-4 mb-8 justify-center items-center">
-        <h1 class="text-4xl font-extrabold text-sky-600 text-center uppercase tracking-wider">Vidéos</h1>
+<!-- Hero Section -->
+<div class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 py-24 px-4 sm:px-6 lg:px-8">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+            Video <span class="text-blue-400">Gallery</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Explore our comprehensive collection of medical conferences and educational content
+        </p>
     </div>
+</div>
 
-    <!-- Buttons for filtering -->
-    <div class="flex md:flex-row flex-col justify-center mb-8 gap-4">
-        <button onclick="filterVideos('folder1')" class="px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">Journée Mondiale du Diabète</button>
-        <button onclick="filterVideos('folder2')" class="px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">1er Congrès National de Diabètologie (2024)</button>
-        <button onclick="filterVideos('folder3')" class="px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">2e Congrès National de Diabètologie (2025)</button>
+<!-- Filter Navigation -->
+<div class="bg-white shadow-lg sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex flex-wrap justify-center gap-3">
+            <button onclick="filterVideos('all')" class="filter-btn active px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-blue-600 text-white hover:bg-blue-700 shadow-lg">
+                All Videos
+            </button>
+            <button onclick="filterVideos('folder1')" class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+                World Diabetes Day
+            </button>
+            <button onclick="filterVideos('folder2')" class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+                Congress 2024
+            </button>
+            <button onclick="filterVideos('folder3')" class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+                Congress 2025
+            </button>
+        </div>
     </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
     <div>
         @php
@@ -40,40 +63,67 @@
         ];
     @endphp
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="videoContainer">
-            @foreach ($videoFolders as $folder => $videos)
-                @foreach ($videos as $index => $video)
-                <div class="video-item {{ $folder }} bg-white shadow-lg rounded-lg overflow-hidden">
-                    <div class="max-h-[300px] overflow-hidden">
-                        @if(isset($video['image']))
-                            <img src="{{ asset($video['image']) }}" alt="Event Image" class="w-full h-full object-cover">
-                        @else
-                            <img src="{{ asset('assets/images/events/last-event-1.jpeg') }}" alt="Event Image" class="w-full h-full object-cover">
-                        @endif
-                    </div>
-                    <div class="p-4 flex items-center justify-center gap-4">
-                        <button onclick="openModal('{{ $folder }}', '{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" class="text-3xl text-gray-600 hover:text-gray-800">
-                            <i class="fas fa-play-circle"></i>
+    <!-- Video Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8" id="videoContainer">
+        @foreach ($videoFolders as $folder => $videos)
+            @foreach ($videos as $index => $video)
+            <div class="video-item {{ $folder }} group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+                <div class="relative aspect-video overflow-hidden">
+                    @if(isset($video['image']))
+                        <img src="{{ asset($video['image']) }}" alt="{{ $video['title'] }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    @else
+                        <img src="{{ asset('assets/images/events/last-event-1.jpeg') }}" alt="{{ $video['title'] }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    @endif
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                    <button onclick="openModal('{{ $folder }}', '{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" 
+                            class="absolute inset-0 flex items-center justify-center text-white hover:text-blue-400 transition-colors duration-300">
+                        <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
+                            <i class="fas fa-play text-3xl ml-1"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
+                        {{ $video['title'] }}
+                    </h3>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500 font-medium">
+                            @if($folder == 'folder1') World Diabetes Day
+                            @elseif($folder == 'folder2') Congress 2024
+                            @else Congress 2025
+                            @endif
+                        </span>
+                        <button onclick="openModal('{{ $folder }}', '{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" 
+                                class="text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-300">
+                            Watch Now →
                         </button>
-                        <h3 class="md:text-2xl text-xl font-semibold">{{ $video['title'] }}</h3>
                     </div>
                 </div>
-                @endforeach
+            </div>
             @endforeach
-        </div>
+        @endforeach
+    </div>
+</div>
 
     </div>
 </div>
 
+<!-- Video Modals -->
 @foreach ($videoFolders as $folder => $videos)
-    @foreach ($videos as $index => $video)
-        <div id="videoModal{{ $folder }}" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden transition-all duration-500 ease-in-out transform scale-0 z-[999]">
-            <div class="bg-white p-4 rounded-lg w-11/12 md:w-1/2">
-                <button onclick="closeModal('{{ $folder }}')" class="absolute top-0 right-0 p-2 text-white bg-red-600 rounded-full mt-4 mx-4">X</button>
-                <iframe class="w-full h-64" src="" frameborder="0" allowfullscreen></iframe>
+    <div id="videoModal{{ $folder }}" class="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden transition-all duration-300 ease-out transform scale-95 opacity-0 z-[999]">
+        <div class="bg-white rounded-2xl w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 max-w-6xl mx-4 overflow-hidden shadow-2xl">
+            <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900">Video Player</h3>
+                <button onclick="closeModal('{{ $folder }}')" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-red-100 text-gray-600 hover:text-red-600 transition-colors duration-200">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+            <div class="aspect-video">
+                <iframe class="w-full h-full" src="" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             </div>
         </div>
-    @endforeach
+    </div>
 @endforeach
 
+<link rel="stylesheet" href="{{asset('assets/css/videos.css')}}">
 <script src="{{asset('assets/js/videos-page.js')}}"></script>
