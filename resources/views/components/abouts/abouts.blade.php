@@ -67,11 +67,52 @@
                 </button>
             </div>
 
-            <!-- Image Section -->
+            <!-- Members Section -->
             <div class="order-1 lg:order-2">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-emerald-600/20 rounded-2xl transform rotate-3"></div>
-                    <img src="{{asset('assets/images/affiche/affiche-two.jpeg')}}" alt="SMD - Société Marocaine de Diabétologie" class="relative w-full h-auto rounded-2xl shadow-xl object-cover">
+                <div class="bg-white rounded-2xl shadow-xl p-6 lg:p-8 border border-gray-100">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Notre Bureau</h2>
+                        <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-emerald-600 mx-auto rounded-full"></div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="text-center p-4 bg-gradient-to-r from-blue-50 to-emerald-50 rounded-xl border border-blue-100">
+                            <h3 class="text-lg font-semibold text-blue-800 mb-1">Présidente</h3>
+                            <p class="text-gray-700 font-medium">Dr Sonia ABAHOU</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                            <div class="text-center p-4 bg-gray-50 rounded-xl">
+                                <h3 class="text-base font-semibold text-gray-800 mb-1">Secrétaire Générale</h3>
+                                <p class="text-gray-600">Dr Zineb AL HOUARI</p>
+                            </div>
+                            
+                            <div class="text-center p-4 bg-gray-50 rounded-xl">
+                                <h3 class="text-base font-semibold text-gray-800 mb-1">Secrétaire Générale Adjointe</h3>
+                                <p class="text-gray-600">Dr Yousra AOUINATI</p>
+                            </div>
+                            
+                            <div class="text-center p-4 bg-gray-50 rounded-xl">
+                                <h3 class="text-base font-semibold text-gray-800 mb-1">Trésorière</h3>
+                                <p class="text-gray-600">Dr Mounia CHANA</p>
+                            </div>
+                            
+                            <div class="text-center p-4 bg-gray-50 rounded-xl">
+                                <h3 class="text-base font-semibold text-gray-800 mb-1">Vice Trésorier</h3>
+                                <p class="text-gray-600">Dr Moulay El Hassan EL ALAOUI</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center p-4 bg-gradient-to-r from-emerald-50 to-blue-50 rounded-xl border border-emerald-100">
+                            <h3 class="text-base font-semibold text-emerald-800 mb-2">Assesseurs</h3>
+                            <div class="space-y-1 text-sm text-gray-600">
+                                <p>Dr Imane KHALDOUNI</p>
+                                <p>Dr Jade ISSOUANI</p>
+                                <p>Dr Nadia BOUIZMAN</p>
+                                <p>Dr Siham DRISSI ABOULAHJOUL</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
