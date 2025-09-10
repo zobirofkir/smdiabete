@@ -55,7 +55,7 @@ $videoFolders = [
                 ['url' => 'https://youtu.be/W3mtrXZ8Lk4?si=6SIkLs45YFZ_Zok4', 'image' => 'assets/images/events/last-event-2.jpeg', 'title' => 'Place des nouvelles insulines dans la prise en charge du Diabète du type 2 Pr INES KHOCHTALI'],
             ],
             'folder3' => [
-                ['url' => 'https://youtu.be/uXvQ2DL-OSg?si=I5ibsCc_JKhaSZVS', 'image' => 'assets/images/events/last-event-3.jpeg', 'title' => 'Annonce Congrès National de Diabétologie 2025'],
+                ['url' => 'assets/videos/2eme-congré.mp4', 'image' => 'assets/images/events/last-event-3.jpeg', 'title' => 'Annonce Congrès National de Diabétologie 2025', 'type' => 'local'],
             ],
         ];
 @endphp
@@ -94,7 +94,7 @@ $videoFolders = [
                         <img src="{{ asset('assets/images/events/last-event-1.jpeg') }}" alt="{{ $video['title'] }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     @endif
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                    <button onclick="openModal('{{ $folder }}', '{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" 
+                    <button onclick="openModal('{{ $folder }}', '{{ isset($video['type']) && $video['type'] == 'local' ? $video['url'] : last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" 
                             class="absolute inset-0 flex items-center justify-center text-white hover:text-blue-400 transition-colors duration-300">
                         <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all duration-300">
                             <i class="fas fa-play text-3xl ml-1"></i>
@@ -112,7 +112,7 @@ $videoFolders = [
                             @else Congrès 2025
                             @endif
                         </span>
-                        <button onclick="openModal('{{ $folder }}', '{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" 
+                        <button onclick="openModal('{{ $folder }}', '{{ isset($video['type']) && $video['type'] == 'local' ? $video['url'] : last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" 
                                 class="text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-300">
                             Regarder →
                         </button>

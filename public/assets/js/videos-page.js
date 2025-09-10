@@ -39,8 +39,18 @@ function openModal(folder, videoUrl) {
     const modal = document.getElementById('videoModal' + folder);
     const iframe = modal.querySelector('iframe');
     
-    // Set video source
-    iframe.src = `https://www.youtube.com/embed/${videoUrl}?autoplay=1&rel=0&modestbranding=1`;
+    // Check if it's a local video file
+    if (videoUrl.includes('.mp4') || videoUrl.includes('assets/videos/')) {
+        // For local videos, replace iframe with video element
+        const videoContainer = iframe.parentElement;
+        videoContainer.innerHTML = `<video class="w-full h-full" controls autoplay>
+            <source src="/${videoUrl}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>`;
+    } else {
+        // For YouTube videos
+        iframe.src = `https://www.youtube.com/embed/${videoUrl}?autoplay=1&rel=0&modestbranding=1`;
+    }
     
     // Show modal with animation
     modal.classList.remove('hidden');
@@ -58,6 +68,7 @@ function openModal(folder, videoUrl) {
 function closeModal(folder) {
     const modal = document.getElementById('videoModal' + folder);
     const iframe = modal.querySelector('iframe');
+    const video = modal.querySelector('video');
     
     // Hide modal with animation
     modal.classList.remove('scale-100', 'opacity-100');
@@ -65,7 +76,13 @@ function closeModal(folder) {
     
     setTimeout(() => {
         modal.classList.add('hidden');
-        iframe.src = ''; // Stop video
+        if (iframe) {
+            iframe.src = ''; // Stop YouTube video
+        }
+        if (video) {
+            video.pause(); // Stop local video
+            video.currentTime = 0;
+        }
         document.body.style.overflow = 'auto';
     }, 300);
 }
