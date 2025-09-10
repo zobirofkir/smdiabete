@@ -23,20 +23,18 @@
                     <p class="mb-4">
                         La Société Marocaine de Diabétologie (SMD) est une association à but non lucratif, dédiée aux médecins spécialistes en diabétologie ou intéressés par cette discipline distinguée.
                     </p>
-                    <div id="expandable-content" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out md:max-h-none">
-                        <p class="mb-4">
-                            Fondée pour promouvoir une meilleure compréhension et gestion du diabète, la SMD joue un rôle crucial dans la formation continue des professionnels de la santé, notamment au Maroc.
-                        </p>
-                        <p>
-                            Notre association s'engage à offrir des ressources éducatives de qualité, y compris des conférences, des séminaires et des ateliers pratiques.
-                        </p>
-                    </div>
+                    <p class="mb-4">
+                        Fondée pour promouvoir une meilleure compréhension et gestion du diabète, la SMD joue un rôle crucial dans la formation continue des professionnels de la santé, notamment au Maroc.
+                    </p>
+                    <p class="mb-4">
+                        Notre association s'engage à offrir des ressources éducatives de qualité, y compris des conférences, des séminaires et des ateliers pratiques.
+                    </p>
                 </div>
 
                 <!-- Objectives -->
                 <div class="space-y-4">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4">Nos Objectifs</h3>
-                    <div id="objectives-list" class="space-y-3 max-h-0 overflow-hidden transition-all duration-500 ease-in-out md:max-h-none">
+                    <div class="space-y-3">
                         <div class="flex items-start space-x-3 p-3 rounded-lg bg-white shadow-sm border border-gray-100">
                             <div class="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold">1</div>
                             <p class="text-gray-700">Assurer une formation continue et mise à jour pour les professionnels de la santé.</p>
@@ -59,12 +57,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Read More Button -->
-                <button id="toggle-btn" onclick="toggleContent()" class="md:hidden inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
-                    <span id="btn-text">Lire la suite</span>
-                    <i id="btn-icon" class="fas fa-chevron-down ml-2 transition-transform duration-200"></i>
-                </button>
             </div>
 
             <!-- Members Section - Hidden on mobile, visible on large screens -->
@@ -119,25 +111,3 @@
     </div>
 </section>
 
-<script>
-function toggleContent() {
-    const content = document.getElementById('expandable-content');
-    const objectives = document.getElementById('objectives-list');
-    const btnText = document.getElementById('btn-text');
-    const btnIcon = document.getElementById('btn-icon');
-    
-    const isExpanded = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
-    
-    if (isExpanded) {
-        content.style.maxHeight = '0px';
-        objectives.style.maxHeight = '0px';
-        btnText.textContent = 'Lire la suite';
-        btnIcon.classList.remove('rotate-180');
-    } else {
-        content.style.maxHeight = content.scrollHeight + 'px';
-        objectives.style.maxHeight = objectives.scrollHeight + 'px';
-        btnText.textContent = 'Réduire';
-        btnIcon.classList.add('rotate-180');
-    }
-}
-</script>
