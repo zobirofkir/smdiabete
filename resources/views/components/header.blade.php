@@ -50,7 +50,7 @@
         </button>
 
         <!-- Navigation Menu -->
-        <nav id="menu" role="navigation" class="fixed top-0 right-0 h-screen lg:h-auto w-80 bg-white/95 backdrop-blur-lg shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 lg:shadow-none lg:bg-transparent lg:flex lg:flex-row lg:items-center lg:space-x-8 lg:w-auto z-[9999]">
+        <nav id="menu" role="navigation" class="fixed top-0 right-0 h-screen lg:h-auto w-80 bg-white/95 backdrop-blur-lg shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 lg:shadow-none lg:bg-transparent lg:flex lg:flex-row lg:items-center lg:space-x-8 lg:w-auto z-[9999]"
             <!-- Close Button (Mobile) -->
             <button id="close-menu" class="absolute top-6 right-6 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200 lg:hidden" aria-label="Close Menu">
                 <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,12 +79,12 @@
                     </a>
                 </li>
                 <li class="relative group">
-                    <button class="text-gray-700 hover:text-blue-600 font-medium py-2 lg:py-0 flex items-center gap-1 transition-colors duration-200 whitespace-nowrap relative">
+                    <button onclick="toggleDropdown(this)" class="text-gray-700 hover:text-blue-600 font-medium py-2 lg:py-0 flex items-center gap-1 transition-colors duration-200 whitespace-nowrap relative w-full text-left">
                         À propos
-                        <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                        <i class="fas fa-chevron-down text-xs group-hover:rotate-180 lg:group-hover:rotate-180 transition-transform duration-200"></i>
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
                     </button>
-                    <div class="lg:absolute lg:top-full lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:rounded-lg lg:shadow-xl lg:border lg:border-gray-100 lg:opacity-0 lg:invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 lg:z-50">
+                    <div class="hidden lg:absolute lg:top-full lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:rounded-lg lg:shadow-xl lg:border lg:border-gray-100 lg:opacity-0 lg:invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 lg:z-50 lg:block">
                         <a href="{{ url('/abouts') }}" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 lg:rounded-t-lg">Charte</a>
                         <a href="{{ url('/members') }}" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 lg:rounded-b-lg">Bureau</a>
                     </div>
@@ -103,12 +103,12 @@
                     </a>
                 </li>
                 <li class="relative group">
-                    <button class="text-gray-700 hover:text-blue-600 font-medium py-2 lg:py-0 flex items-center gap-1 transition-colors duration-200 relative">
+                    <button onclick="toggleDropdown(this)" class="text-gray-700 hover:text-blue-600 font-medium py-2 lg:py-0 flex items-center gap-1 transition-colors duration-200 relative w-full text-left">
                         Médiathèque
-                        <i class="fas fa-chevron-down text-xs group-hover:rotate-180 transition-transform duration-200"></i>
+                        <i class="fas fa-chevron-down text-xs group-hover:rotate-180 lg:group-hover:rotate-180 transition-transform duration-200"></i>
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-emerald-600 group-hover:w-full transition-all duration-300"></span>
                     </button>
-                    <div class="lg:absolute lg:top-full lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:rounded-lg lg:shadow-xl lg:border lg:border-gray-100 lg:opacity-0 lg:invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 lg:z-50">
+                    <div class="hidden lg:absolute lg:top-full lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:rounded-lg lg:shadow-xl lg:border lg:border-gray-100 lg:opacity-0 lg:invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 lg:z-50 lg:block">
                         <a href="{{ url('/galleries') }}" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 lg:rounded-t-lg">Galeries</a>
                         <a href="{{ url('/videos') }}" class="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 lg:rounded-b-lg">Vidéos</a>
                     </div>
@@ -135,6 +135,23 @@
                     <a href="{{ url('/contacts') }}" class="px-6 py-2 bg-gradient-to-r from-blue-600 to-emerald-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-emerald-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
                         Contact
                     </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+    function toggleDropdown(button) {
+        if (window.innerWidth < 1024) {
+            const dropdown = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            dropdown.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+    }
+</script>
                 </li>
             </ul>
         </nav>
