@@ -3,10 +3,10 @@
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="relative max-w-7xl mx-auto text-center">
         <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-            Video <span class="text-blue-400">Gallery</span>
+            Galerie <span class="text-blue-400">Vidéo</span>
         </h1>
         <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Explore our comprehensive collection of medical conferences and educational content
+            Explorez notre collection complète de conférences médicales et de contenu éducatif
         </p>
     </div>
 </div>
@@ -16,16 +16,16 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex flex-wrap justify-center gap-3">
             <button onclick="filterVideos('all')" class="filter-btn active px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-blue-600 text-white hover:bg-blue-700 shadow-lg">
-                All Videos
+                Toutes les Vidéos
             </button>
             <button onclick="filterVideos('folder1')" class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-                World Diabetes Day
+                Journée Mondiale du Diabète
             </button>
             <button onclick="filterVideos('folder2')" class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-                Congress 2024
+                Congrès 2024
             </button>
             <button onclick="filterVideos('folder3')" class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-                Congress 2025
+                Congrès 2025
             </button>
         </div>
     </div>
@@ -66,15 +66,15 @@ $videoFolders = [
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div class="bg-white rounded-xl p-8 shadow-lg">
                 <div class="text-4xl font-bold text-blue-600 mb-2">{{ count($videoFolders['folder1']) + count($videoFolders['folder2']) + count($videoFolders['folder3']) }}+</div>
-                <div class="text-gray-600 font-semibold">Educational Videos</div>
+                <div class="text-gray-600 font-semibold">Vidéos Éducatives</div>
             </div>
             <div class="bg-white rounded-xl p-8 shadow-lg">
                 <div class="text-4xl font-bold text-blue-600 mb-2">3</div>
-                <div class="text-gray-600 font-semibold">Event Categories</div>
+                <div class="text-gray-600 font-semibold">Catégories d'Événements</div>
             </div>
             <div class="bg-white rounded-xl p-8 shadow-lg">
                 <div class="text-4xl font-bold text-blue-600 mb-2">HD</div>
-                <div class="text-gray-600 font-semibold">Quality Content</div>
+                <div class="text-gray-600 font-semibold">Contenu de Qualité</div>
             </div>
         </div>
     </div>
@@ -107,14 +107,14 @@ $videoFolders = [
                     </h3>
                     <div class="flex items-center justify-between">
                         <span class="text-sm text-gray-500 font-medium">
-                            @if($folder == 'folder1') World Diabetes Day
-                            @elseif($folder == 'folder2') Congress 2024
-                            @else Congress 2025
+                            @if($folder == 'folder1') Journée Mondiale du Diabète
+                            @elseif($folder == 'folder2') Congrès 2024
+                            @else Congrès 2025
                             @endif
                         </span>
                         <button onclick="openModal('{{ $folder }}', '{{ last(explode('/', parse_url($video['url'], PHP_URL_PATH))) }}')" 
                                 class="text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-300">
-                            Watch Now →
+                            Regarder →
                         </button>
                     </div>
                 </div>
@@ -132,7 +132,7 @@ $videoFolders = [
     <div id="videoModal{{ $folder }}" class="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden transition-all duration-300 ease-out transform scale-95 opacity-0 z-[999]">
         <div class="bg-white rounded-2xl w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 max-w-6xl mx-4 overflow-hidden shadow-2xl">
             <div class="flex items-center justify-between p-6 border-b border-gray-200">
-                <h3 class="text-xl font-bold text-gray-900">Video Player</h3>
+                <h3 class="text-xl font-bold text-gray-900">Lecteur Vidéo</h3>
                 <button onclick="closeModal('{{ $folder }}')" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-red-100 text-gray-600 hover:text-red-600 transition-colors duration-200">
                     <i class="fas fa-times text-lg"></i>
                 </button>
