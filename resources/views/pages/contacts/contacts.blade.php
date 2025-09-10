@@ -25,7 +25,13 @@
                         <p class="text-gray-600">Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
                     </div>
 
-                    <form action="#" method="POST" class="space-y-6">
+                    @if(session('success'))
+                        <div class="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    <form action="{{ route('contacts.store') }}" method="POST" class="space-y-6">
                         @csrf
                         <!-- Name Field -->
                         <div class="space-y-2">

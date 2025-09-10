@@ -31,6 +31,8 @@ Route::get('/contacts', function () {
     return view('pages.contacts.contacts');
 });
 
+Route::post('/contacts', [\App\Http\Controllers\ContactController::class, 'store'])->name('contacts.store');
+
 Route::get('/galleries', function () {
     return view('pages.galleries.galleries');
 });
