@@ -31,6 +31,26 @@
     </div>
 </div>
 
+<!-- Stats Section -->
+<div class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="bg-white rounded-xl p-8 shadow-lg">
+                <div class="text-4xl font-bold text-blue-600 mb-2">{{ count($videoFolders['folder1']) + count($videoFolders['folder2']) + count($videoFolders['folder3']) }}+</div>
+                <div class="text-gray-600 font-semibold">Educational Videos</div>
+            </div>
+            <div class="bg-white rounded-xl p-8 shadow-lg">
+                <div class="text-4xl font-bold text-blue-600 mb-2">3</div>
+                <div class="text-gray-600 font-semibold">Event Categories</div>
+            </div>
+            <div class="bg-white rounded-xl p-8 shadow-lg">
+                <div class="text-4xl font-bold text-blue-600 mb-2">HD</div>
+                <div class="text-gray-600 font-semibold">Quality Content</div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
     <div>
