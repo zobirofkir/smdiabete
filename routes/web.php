@@ -70,13 +70,6 @@ Route::get('/sponsors', function () {
 });
 
 /**
- * Members Routes
- */
-Route::get('/members', function () {
-    return view('pages.members.members');
-});
-
-/**
  * Declaration Routes
  */
 Route::get('/declaration', function () {
