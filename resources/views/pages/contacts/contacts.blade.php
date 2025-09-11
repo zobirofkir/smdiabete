@@ -143,8 +143,8 @@
                                 <div>
                                     <h3 class="font-semibold text-gray-800 mb-2">Email</h3>
                                     <p class="text-gray-600 text-sm">
-                                        contact@smdiabete.ma<br>
-                                        info@smdiabete.ma
+                                        smdiabete@gmail.com<br>
+                                        smdiabete@gmail.com
                                     </p>
                                 </div>
                             </div>
