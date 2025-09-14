@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ asset('assets/css/slider.css') }}">
+
 <section class="relative w-full min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-10">

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ asset('assets/css/actualities.css') }}">
+
 <section class="py-20 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5">
@@ -148,41 +150,4 @@
         </div>
     </div>
 
-    <style>
-        @keyframes pulse-slow {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.1); opacity: 0.5; }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(3deg); }
-        }
-        
-        @keyframes bounce-slow {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-        
-        @keyframes bounce-delayed {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-        
-        .animate-pulse-slow {
-            animation: pulse-slow 4s ease-in-out infinite;
-        }
-        
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .animate-bounce-slow {
-            animation: bounce-slow 3s ease-in-out infinite;
-        }
-        
-        .animate-bounce-delayed {
-            animation: bounce-delayed 3s ease-in-out infinite 1.5s;
-        }
-    </style>
 </section>
