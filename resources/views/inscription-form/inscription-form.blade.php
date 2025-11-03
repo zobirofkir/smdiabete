@@ -68,13 +68,12 @@
                             </div>
 
                             <div class="group">
-                                <label class="block text-sm font-semibold text-gray-800 mb-2 group-focus-within:text-blue-600 transition-colors">Statut</label>
-                                <select id="statut-select" name="statut" class="w-full px-4 py-3 border-2 @error('statut') border-red-300 @else border-gray-200 @enderror rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-gray-50/50 hover:bg-white" onchange="toggleCustomStatus()">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Profession</label>
+                                <select id="statut-select" name="statut" required class="mt-1 block w-full rounded-xl border @error('statut') border-red-300 @else border-gray-300 @enderror bg-white px-4 py-3 text-gray-900 shadow-md focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-all duration-200" onchange="toggleCustomStatus()">
                                     <option value="">Sélectionnez votre statut</option>
-                                    <option value="Médecin" {{ old('statut') == 'Médecin' ? 'selected' : '' }}>Médecin</option>
-                                    <option value="Infirmier(ère)" {{ old('statut') == 'Infirmier(ère)' ? 'selected' : '' }}>Infirmier(ère)</option>
-                                    <option value="Pharmacien(ne)" {{ old('statut') == 'Pharmacien(ne)' ? 'selected' : '' }}>Pharmacien(ne)</option>
-                                    <option value="Étudiant(e)" {{ old('statut') == 'Étudiant(e)' ? 'selected' : '' }}>Étudiant(e)</option>
+                                    <option value="medecian_specialiste" {{ old('statut') == 'medecian_specialiste' ? 'selected' : '' }}>Médecin spécialiste</option>
+                                    <option value="medecin_generale" {{ old('statut') == 'medecin_generale' ? 'selected' : '' }}>Médecin généraliste</option>
+                                    <option value="paramedical" {{ old('statut') == 'paramedical' ? 'selected' : '' }}>Paramédical</option>
                                     <option value="autre" {{ old('statut') == 'autre' ? 'selected' : '' }}>Autre</option>
                                 </select>
                                 <div id="custom-status" class="{{ old('statut') == 'autre' ? '' : 'hidden' }} mt-3">
