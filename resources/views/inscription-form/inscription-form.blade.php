@@ -1,6 +1,13 @@
 <x-app-layout>
     <section class="min-h-screen bg-gradient-to-br from-blue-100 via-blue-50 to-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main Title -->
+            <div class="text-center mb-12">
+                <h1 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4 tracking-tight">
+                    Journée Mondiale du Diabète
+                </h1>
+                <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-4"></div>
+            </div>
 
             <div class="grid lg:grid-cols-2 gap-12 items-start">
                 <!-- Left Side - Form -->
