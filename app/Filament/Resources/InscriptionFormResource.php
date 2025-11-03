@@ -23,7 +23,22 @@ class InscriptionFormResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('nom')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('prenom')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('mail')
+                    ->email()
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('telephone')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('statut')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -31,7 +46,19 @@ class InscriptionFormResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('nom')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('prenom')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('mail')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('telephone')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('statut')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable(),
             ])
             ->filters([
                 //
