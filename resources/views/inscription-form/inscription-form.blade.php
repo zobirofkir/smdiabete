@@ -14,7 +14,6 @@
                 <div class="order-2 lg:order-1">
                     <div class="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl border border-blue-200/30 p-8 hover:shadow-3xl transition-all duration-300">
                         <div class="mb-8 text-center">
-                            <h2 class="text-3xl font-bold text-gray-800 mb-3">Formulaire d'Inscription</h2>
                             <div class="bg-blue-50/80 rounded-xl p-4 mb-4">
                                 <h3 class="text-xl font-bold text-blue-800 mb-2">Journée Mondiale du Diabète</h3>
                                 <p class="text-green-600 font-semibold mb-2">Inscription gratuite MAIS obligatoire</p>
