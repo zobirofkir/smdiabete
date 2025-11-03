@@ -1,0 +1,68 @@
+/* Advanced Form Animations */
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+.bg-grid-pattern {
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Enhanced Focus States */
+.group:focus-within .group-focus-within\:text-blue-500 {
+    color: rgb(59 130 246);
+}
+
+.group:focus-within .group-focus-within\:text-emerald-500 {
+    color: rgb(16 185 129);
+}
+
+.group:focus-within .group-focus-within\:text-purple-500 {
+    color: rgb(168 85 247);
+}
+
+/* Custom Radio Button Animations */
+input[type="radio"]:checked + div {
+    transform: scale(1.02);
+}
+
+/* Smooth Transitions */
+* {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Loading Animation */
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.33);
+    }
+    40%, 50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+
+.pulse-ring {
+    animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
