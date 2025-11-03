@@ -12,12 +12,14 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use AlperenErsoy\FilamentExport\Actions\FilamentExportHeaderAction;
 
 class InscriptionFormResource extends Resource
 {
     protected static ?string $model = InscriptionForm::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Inscription Resource';
 
     public static function form(Form $form): Form
     {
@@ -63,8 +65,13 @@ class InscriptionFormResource extends Resource
             ->filters([
                 //
             ])
+            ->headerActions([
+                FilamentExportHeaderAction::make('export')
+                    ->label('Exporter')
+                    ->color('success')
+            ])
             ->actions([
-                //
+                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
