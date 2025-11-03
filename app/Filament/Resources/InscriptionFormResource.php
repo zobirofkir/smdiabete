@@ -64,7 +64,7 @@ class InscriptionFormResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                //
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -83,9 +83,7 @@ class InscriptionFormResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListInscriptionForms::route('/'),
-            'create' => Pages\CreateInscriptionForm::route('/create'),
-            'edit' => Pages\EditInscriptionForm::route('/{record}/edit'),
+            'index' => Pages\ListInscriptionForms::route('/')
         ];
     }
 }
