@@ -3,6 +3,7 @@
 use App\Http\Controllers\AttestationController;
 use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\InscriptionController;
+use App\Http\Controllers\InscriptionFormController;
 use App\Http\Controllers\MasterclassController;
 use App\Http\Controllers\ParamedicalController;
 use Illuminate\Support\Facades\Route;
@@ -121,4 +122,13 @@ Route::get('/communications/success', function() {
  * Attestation Routes
  */
 Route::get('/attestations', [AttestationController::class, 'index'])->name("attestation.index");
+
+/**
+ * Store Abstract
+ */
 Route::post('/attestations/store', [AttestationController::class, 'store'])->name("attestation.store");
+
+/**
+ * Inscription Form
+ */
+Route::get('journée_Mondiale_du_Diabète_2025', [InscriptionFormController::class, 'index']);
