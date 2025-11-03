@@ -24,9 +24,10 @@ class InscriptionFormRequest extends FormRequest
         return [
             'nom' => 'required|string|max:255',
             'prenom' => 'required|string|max:255',
-            'mail' => 'required|string|max:255',
+            'mail' => 'required|email|max:255',
             'telephone' => 'required|string|max:255',
             'statut' => 'required|string|max:255',
+            'custom_status' => 'nullable|string|max:255',
         ];
     }
 
@@ -45,7 +46,7 @@ class InscriptionFormRequest extends FormRequest
             'prenom.string' => 'Le prénom doit être une chaîne de caractères.',
             'prenom.max' => 'Le prénom ne doit pas dépasser 255 caractères.',
             'mail.required' => 'L\'adresse mail est obligatoire.',
-            'mail.string' => 'L\'adresse mail doit être une chaîne de caractères.',
+            'mail.email' => 'L\'adresse mail doit être valide.',
             'mail.max' => 'L\'adresse mail ne doit pas dépasser 255 caractères.',
             'telephone.required' => 'Le téléphone est obligatoire.',
             'telephone.string' => 'Le téléphone doit être une chaîne de caractères.',

@@ -15,15 +15,28 @@
                             <p class="text-gray-600 text-lg">Rejoignez notre communauté professionnelle</p>
                         </div>
 
-                        <form class="space-y-6">
+                        @if(session('success'))
+                            <div class="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl">
+                                <p class="text-green-800 font-medium">{{ session('success') }}</p>
+                            </div>
+                        @endif
+
+                        <form class="space-y-6" method="POST" action="{{ route('inscription-form.store') }}">
+                            @csrf
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="group">
                                     <label class="block text-sm font-semibold text-gray-800 mb-2 group-focus-within:text-blue-600 transition-colors">Nom</label>
-                                    <input type="text" name="nom" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-gray-50/50 hover:bg-white" placeholder="Votre nom">
+                                    <input type="text" name="nom" value="{{ old('nom') }}" class="w-full px-4 py-3 border-2 @error('nom') border-red-300 @else border-gray-200 @enderror rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-gray-50/50 hover:bg-white" placeholder="Votre nom">
+                                    @error('nom')
+                                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <div class="group">
                                     <label class="block text-sm font-semibold text-gray-800 mb-2 group-focus-within:text-blue-600 transition-colors">Prénom</label>
-                                    <input type="text" name="prenom" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-gray-50/50 hover:bg-white" placeholder="Votre prénom">
+                                    <input type="text" name="prenom" value="{{ old('prenom') }}" class="w-full px-4 py-3 border-2 @error('prenom') border-red-300 @else border-gray-200 @enderror rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-gray-50/50 hover:bg-white" placeholder="Votre prénom">
+                                    @error('prenom')
+                                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -31,36 +44,45 @@
                                 <div class="group">
                                     <label class="block text-sm font-semibold text-gray-800 mb-2 group-focus-within:text-blue-600 transition-colors">Mail</label>
                                     <div class="relative">
-                                        <input type="email" name="mail" class="w-full px-4 py-3 pl-12 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-gray-50/50 hover:bg-white" placeholder="votre@email.com">
+                                        <input type="email" name="mail" value="{{ old('mail') }}" class="w-full px-4 py-3 pl-12 border-2 @error('mail') border-red-300 @else border-gray-200 @enderror rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-gray-50/50 hover:bg-white" placeholder="votre@email.com">
                                         <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path>
                                         </svg>
                                     </div>
+                                    @error('mail')
+                                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <div class="group">
                                     <label class="block text-sm font-semibold text-gray-800 mb-2 group-focus-within:text-blue-600 transition-colors">Téléphone</label>
                                     <div class="relative">
-                                        <input type="tel" name="telephone" class="w-full px-4 py-3 pl-12 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-gray-50/50 hover:bg-white" placeholder="06 12 34 56 78">
+                                        <input type="tel" name="telephone" value="{{ old('telephone') }}" class="w-full px-4 py-3 pl-12 border-2 @error('telephone') border-red-300 @else border-gray-200 @enderror rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-gray-50/50 hover:bg-white" placeholder="06 12 34 56 78">
                                         <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                                         </svg>
                                     </div>
+                                    @error('telephone')
+                                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="group">
                                 <label class="block text-sm font-semibold text-gray-800 mb-2 group-focus-within:text-blue-600 transition-colors">Statut</label>
-                                <select id="statut-select" name="statut" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-gray-50/50 hover:bg-white" onchange="toggleCustomStatus()">
+                                <select id="statut-select" name="statut" class="w-full px-4 py-3 border-2 @error('statut') border-red-300 @else border-gray-200 @enderror rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-gray-50/50 hover:bg-white" onchange="toggleCustomStatus()">
                                     <option value="">Sélectionnez votre statut</option>
-                                    <option value="Médecin">Médecin</option>
-                                    <option value="Infirmier(ère)">Infirmier(ère)</option>
-                                    <option value="Pharmacien(ne)">Pharmacien(ne)</option>
-                                    <option value="Étudiant(e)">Étudiant(e)</option>
-                                    <option value="autre">Autre</option>
+                                    <option value="Médecin" {{ old('statut') == 'Médecin' ? 'selected' : '' }}>Médecin</option>
+                                    <option value="Infirmier(ère)" {{ old('statut') == 'Infirmier(ère)' ? 'selected' : '' }}>Infirmier(ère)</option>
+                                    <option value="Pharmacien(ne)" {{ old('statut') == 'Pharmacien(ne)' ? 'selected' : '' }}>Pharmacien(ne)</option>
+                                    <option value="Étudiant(e)" {{ old('statut') == 'Étudiant(e)' ? 'selected' : '' }}>Étudiant(e)</option>
+                                    <option value="autre" {{ old('statut') == 'autre' ? 'selected' : '' }}>Autre</option>
                                 </select>
-                                <div id="custom-status" class="hidden mt-3">
-                                    <input type="text" id="custom-status-input" name="custom_status" class="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-blue-50/50" placeholder="Précisez votre statut...">
+                                <div id="custom-status" class="{{ old('statut') == 'autre' ? '' : 'hidden' }} mt-3">
+                                    <input type="text" id="custom-status-input" name="custom_status" value="{{ old('custom_status') }}" class="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 bg-blue-50/50" placeholder="Précisez votre statut...">
                                 </div>
+                                @error('statut')
+                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition-all duration-200 focus:ring-4 focus:ring-indigo-400/50">

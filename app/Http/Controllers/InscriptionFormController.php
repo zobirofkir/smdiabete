@@ -21,7 +21,18 @@ class InscriptionFormController extends Controller
      */
     public function store(InscriptionFormRequest $request)
     {
-        InscriptionForm::create($request->validated());
+        $data = $request->validated();
+        
+        // Handle custom status
+        if ($data['statut'] === 'autre' && !empty($data['custom_status'])) {
+            $data['statut'] = $data['custom_status'];
+        }
+        
+        // Remove custom_status from data as it's not in the database
+        unset($data['custom_status']);
+        
+        InscriptionForm::create($data);
+        
         return redirect()->back()->with('success', 'Inscription enregistrée avec succès.');
     }
 
