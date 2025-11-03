@@ -1,18 +1,51 @@
 <x-app-layout>
-    <section class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-16">
+    <section class="min-h-screen bg-gradient-to-br from-blue-100 via-blue-50 to-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Header Section -->
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-6 shadow-lg">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </div>
+                <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-800 to-indigo-800 bg-clip-text text-transparent mb-4">
+                    Journée Mondiale du Diabète
+                </h1>
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-blue-200/50 p-6 max-w-2xl mx-auto">
+                    <p class="text-xl font-semibold text-green-600 mb-2">Inscription gratuite MAIS obligatoire</p>
+                    <div class="space-y-2 text-gray-700">
+                        <p class="text-lg font-medium flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            Le samedi 15 Novembre 2025
+                        </p>
+                        <p class="text-lg font-medium flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Hôtel Al Massira - Laayoune
+                        </p>
+                    </div>
+                    <div class="mt-6">
+                        <a href="{{ asset('assets/pdf/inscription_form/PREPROGRAMME SMD 2025.pdf') }}" target="_blank" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Voir le Programme
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
                 <!-- Left Side - Form -->
                 <div class="order-2 lg:order-1">
-                    <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-10 hover:shadow-3xl transition-all duration-300">
-                        <div class="mb-10 text-center">
-                            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-4">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                </svg>
-                            </div>
-                            <h1 class="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-3">Formulaire d'Inscription</h1>
-                            <p class="text-gray-600 text-lg">Rejoignez notre communauté professionnelle</p>
+                    <div class="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl border border-blue-200/30 p-8 hover:shadow-3xl transition-all duration-300">
+                        <div class="mb-8 text-center">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-2">Formulaire d'Inscription</h2>
+                            <p class="text-gray-600">Rejoignez notre communauté professionnelle</p>
                         </div>
 
                         @if(session('success'))
@@ -96,28 +129,23 @@
                     </div>
                 </div>
 
-                <!-- Right Side - Image -->
+                <!-- Right Side - Affiche -->
                 <div class="order-1 lg:order-2">
-                    <div class="relative group">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
-                        <img src="{{ asset('assets/images/inscription_form/affiche.jpeg') }}" 
-                             alt="Inscription Affiche" 
-                             class="relative w-full rounded-3xl shadow-2xl transform group-hover:scale-105 transition-transform duration-300">
+                    <div class="sticky top-8">
+                        <div class="relative group">
+                            <div class="absolute -inset-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-all duration-500"></div>
+                            <div class="relative bg-white/10 backdrop-blur-sm rounded-3xl p-4 border border-white/20">
+                                <img src="{{ asset('assets/images/inscription_form/affiche.jpeg') }}" 
+                                     alt="Affiche Journée Mondiale du Diabète" 
+                                     class="w-full rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bottom Image -->
-    <section class="py-16 bg-gradient-to-r from-gray-50 to-blue-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="relative group">
-                <div class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl blur opacity-10 group-hover:opacity-20 transition duration-300"></div>
-                <img src="{{ asset('assets/images/inscription_form/affiche_two.jpeg') }}" 
-                     alt="Affiche Two" 
-                     class="relative w-full rounded-3xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300">
-            </div>
         </div>
     </section>
 
