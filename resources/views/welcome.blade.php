@@ -3,8 +3,6 @@
 
     @include('components.inscription-form.inscription-form')
 
-    {{-- @include('components.actualities.actualities') --}}
-
     @include('components.abouts.abouts')
 
     <div class="text-center mt-20">

@@ -12,10 +12,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/actualities', function () {
-//     return view('pages.actualities.actualities');
-// });
-
 Route::get('/abouts', function () {
     return view('pages.abouts.abouts');
 });
