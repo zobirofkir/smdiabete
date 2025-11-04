@@ -9,14 +9,6 @@ use Illuminate\Http\Request;
 class InscriptionFormController extends Controller
 {
     /**
-     * Inscription Form
-     */
-    public function index()
-    {
-        return view('inscription-form.inscription-form');
-    }
-
-    /**
      * Store a new inscription
      */
     public function store(InscriptionFormRequest $request)

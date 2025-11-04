@@ -166,11 +166,6 @@
                 </li>
 
                 <li>
-                    <a href="{{ url('/journée_Mondiale_du_Diabète_2025') }}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
-                        JMD 2025
-                    </a>
-                </li>
-                <li>
                     <a href="{{ url('/contacts') }}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
                         Contact
                     </a>
