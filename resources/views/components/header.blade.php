@@ -99,11 +99,11 @@
                         Accueil
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ url('/actualities') }}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
                         Actualités
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <form method="GET" id="redirectForm" class="-mt-[3px]">
                         <select

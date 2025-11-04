@@ -3,7 +3,7 @@
 
     @include('components.inscription-form.inscription-form')
 
-    @include('components.actualities.actualities')
+    {{-- @include('components.actualities.actualities') --}}
 
     @include('components.abouts.abouts')
 
