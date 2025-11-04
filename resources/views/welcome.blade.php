@@ -1,6 +1,8 @@
 <x-app-layout>
     @include('components.slider.slider')
 
+    @include('components.inscription-form.inscription-form')
+
     @include('components.actualities.actualities')
 
     @include('components.abouts.abouts')
