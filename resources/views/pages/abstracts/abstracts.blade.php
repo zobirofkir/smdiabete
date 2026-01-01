@@ -1,19 +1,9 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Soumission d'Abstract - 3ème Congrès National de Diabétologie 2026
-        </h2>
-    </x-slot>
 
     <div class="py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- En-tête du congrès -->
-            <div class="text-center mb-10">
-                <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">FORMULAIRE DE SOUMISSION D'ABSTRACTS</h1>
-                <div class="bg-gradient-to-r from-blue-600 to-teal-500 h-1 w-24 mx-auto mb-4"></div>
-                <h2 class="text-2xl font-bold text-gray-800">3ème Congrès National de Diabétologie 2026</h2>
-                <p class="text-gray-600 mt-2">Soumettez votre abstract avant le 15 septembre 2026</p>
-            </div>
+            @include('components.abstracts.abstract-header')
 
             <!-- Formulaire principal -->
             <form id="abstractForm" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
