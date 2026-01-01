@@ -1,4 +1,5 @@
-<form id="abstractForm" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+<form id="abstractForm" action="{{ route('abstracts.store') }}" method="POST" enctype="multipart/form-data" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+    @csrf
     <!-- 1. Informations personnelles -->
     <div class="p-6 border-b border-gray-200">
         <div class="flex items-center mb-6">
@@ -32,19 +33,19 @@
                 <label class="block text-gray-700 font-medium mb-3">Titre</label>
                 <div class="flex flex-wrap gap-4">
                     <label class="inline-flex items-center">
-                        <input type="radio" name="titre" value="dr" class="h-5 w-5 text-blue-600">
+                        <input type="radio" name="titre" value="Dr" class="h-5 w-5 text-blue-600">
                         <span class="ml-2 text-gray-700">Dr</span>
                     </label>
                     <label class="inline-flex items-center">
-                        <input type="radio" name="titre" value="pr" class="h-5 w-5 text-blue-600">
+                        <input type="radio" name="titre" value="Pr" class="h-5 w-5 text-blue-600">
                         <span class="ml-2 text-gray-700">Pr</span>
                     </label>
                     <label class="inline-flex items-center">
-                        <input type="radio" name="titre" value="mr" class="h-5 w-5 text-blue-600">
+                        <input type="radio" name="titre" value="M." class="h-5 w-5 text-blue-600">
                         <span class="ml-2 text-gray-700">M.</span>
                     </label>
                     <label class="inline-flex items-center">
-                        <input type="radio" name="titre" value="mme" class="h-5 w-5 text-blue-600">
+                        <input type="radio" name="titre" value="Mme" class="h-5 w-5 text-blue-600">
                         <span class="ml-2 text-gray-700">Mme</span>
                     </label>
                 </div>
