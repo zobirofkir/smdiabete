@@ -52,6 +52,13 @@ class AbstractController extends Controller
         
         AbstractForm::create($validatedData);
         
+        if (request()->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Merci pour votre soumission. Votre abstract a été reçu avec succès. Un email de confirmation vous sera envoyé.'
+            ]);
+        }
+        
         return redirect()->back()->with('success', 'Merci pour votre soumission. Votre abstract a été reçu avec succès. Un email de confirmation vous sera envoyé.');
     }
 }

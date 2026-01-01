@@ -48,11 +48,12 @@ document.getElementById('file-upload').addEventListener('change', function(e) {
 
 // Validation du formulaire
 document.getElementById('abstractForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
     const introduction = document.getElementById('introduction').value.trim();
     const abstractComplet = document.getElementById('abstract_complet').value.trim();
     
     if (!introduction && !abstractComplet) {
-        e.preventDefault();
         alert('Veuillez remplir au moins les sections structurées ou le texte complet de l\'abstract.');
         return false;
     }
@@ -73,11 +74,65 @@ document.getElementById('abstractForm').addEventListener('submit', function(e) {
         if (text) {
             const wordCount = text.split(/\s+/).length;
             if (wordCount > field.max) {
-                e.preventDefault();
                 alert(`Le champ "${textarea.previousElementSibling.textContent}" dépasse la limite de ${field.max} mots (${wordCount} mots actuellement).`);
                 textarea.focus();
                 return false;
             }
         }
     }
+    
+    // Soumission AJAX
+    const formData = new FormData(this);
+    
+    fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showModal();
+            this.reset();
+            document.getElementById('file-name').classList.add('hidden');
+            coauteurCount = 1;
+            document.getElementById('coauteurs-container').innerHTML = `
+                <div class="coauteur-field mb-4">
+                    <input type="text" name="coauteurs[]" 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" 
+                           placeholder="Nom, Prénom – Institution">
+                </div>
+            `;
+        }
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+        alert('Une erreur est survenue lors de la soumission.');
+    });
 });
+
+// Fonctions pour le modal
+function showModal() {
+    const modal = document.getElementById('successModal');
+    const content = document.getElementById('modalContent');
+    
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+    }, 10);
+}
+
+function closeModal() {
+    const modal = document.getElementById('successModal');
+    const content = document.getElementById('modalContent');
+    
+    content.classList.remove('scale-100', 'opacity-100');
+    content.classList.add('scale-95', 'opacity-0');
+    
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 300);
+}
