@@ -77,4 +77,14 @@ class AbstractForm extends Model
         'abstract_complet_word_count' => 'integer',
         'deleted_at' => 'datetime',
     ];
+    
+    /**
+     * Get the validation rules for the model.
+     */
+    public static function rules($id = null)
+    {
+        return [
+            'email' => 'required|email|unique:abstract_forms,email' . ($id ? ',' . $id : ''),
+        ];
+    }
 }

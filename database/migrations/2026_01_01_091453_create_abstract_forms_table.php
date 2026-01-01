@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->enum('titre', ['Dr', 'Pr', 'M.', 'Mme'])->nullable();
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('telephone')->nullable();
             $table->string('institution');
             $table->string('ville');
