@@ -72,7 +72,7 @@ return new class extends Migration
             /**
              * Informations de suivi
              */
-            $table->string('reference')->unique()->nullable();
+            $table->string('reference')->nullable();
             $table->dateTime('date_soumission')->nullable();
             $table->dateTime('date_evaluation')->nullable();
             $table->text('commentaires_evaluateur')->nullable();

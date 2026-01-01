@@ -27,7 +27,7 @@
             @include('components.abstracts.abstract-message')
 
             <!-- Instructions -->
-            @include('components.abstracts.abstract-insctruction')
+            @include('components.abstracts.abstract-instruction')
             
         </div>
     </div>

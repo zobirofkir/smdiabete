@@ -37,13 +37,13 @@ class AbstractFormRequest extends FormRequest
             'abstract_titre' => 'required|string|max:300',
             'presentation_type' => 'required|in:oral,poster',
             
-            'introduction' => 'required_without:abstract_complet|nullable|string|max:1000',
+            'introduction' => 'required_without:abstract_complet|string|max:1000',
             'objectifs' => 'nullable|string|max:1000',
             'methodes' => 'nullable|string|max:2000',
             'resultats' => 'nullable|string|max:2000',
             'conclusion' => 'nullable|string|max:1000',
             
-            'abstract_complet' => 'required_without:introduction|nullable|string|max:3000',
+            'abstract_complet' => 'required_without:introduction|string|max:3000',
             
             'langue' => 'required|in:francais,anglais',
             
@@ -72,9 +72,9 @@ class AbstractFormRequest extends FormRequest
             'pays.required' => 'Le pays est obligatoire.',
             'abstract_titre.required' => 'Le titre de l\'abstract est obligatoire.',
             'presentation_type.required' => 'Le type de présentation est obligatoire.',
-            'presentation_type.in' => 'Le type de présentation doit être "communication orale" ou "poster".',
+            'presentation_type.in' => 'Le type de présentation doit être "oral" ou "poster".',
             'langue.required' => 'La langue de soumission est obligatoire.',
-            'langue.in' => 'La langue doit être "français" ou "anglais".',
+            'langue.in' => 'La langue doit être "francais" ou "anglais".',
             'abstract_file.mimes' => 'Le fichier doit être au format Word (.doc, .docx) ou PDF (.pdf).',
             'abstract_file.max' => 'Le fichier ne doit pas dépasser 10 Mo.',
             'declaration_original.required' => 'Vous devez certifier que l\'abstract est original.',
@@ -127,19 +127,19 @@ class AbstractFormRequest extends FormRequest
     protected function prepareForValidation()
     {
         $this->merge([
-            'nom' => trim($this->nom),
-            'prenom' => trim($this->prenom),
-            'email' => trim($this->email),
-            'ville' => trim($this->ville),
-            'pays' => trim($this->pays),
-            'abstract_titre' => trim($this->abstract_titre),
-            'declaration_original' => $this->has('declaration_original') ? true : false,
-            'declaration_approval' => $this->has('declaration_approval') ? true : false,
-            'declaration_conditions' => $this->has('declaration_conditions') ? true : false,
+            'nom' => trim($this->nom ?? ''),
+            'prenom' => trim($this->prenom ?? ''),
+            'email' => trim($this->email ?? ''),
+            'ville' => trim($this->ville ?? ''),
+            'pays' => trim($this->pays ?? ''),
+            'abstract_titre' => trim($this->abstract_titre ?? ''),
+            'declaration_original' => $this->has('declaration_original'),
+            'declaration_approval' => $this->has('declaration_approval'),
+            'declaration_conditions' => $this->has('declaration_conditions'),
         ]);
 
         if ($this->has('coauteurs') && is_array($this->coauteurs)) {
-            $coauteurs = array_filter(array_map('trim', $this->coauteurs));
+            $coauteurs = array_filter(array_map(fn($item) => is_string($item) ? trim($item) : $item, $this->coauteurs));
             $this->merge(['coauteurs' => $coauteurs]);
         }
     }
