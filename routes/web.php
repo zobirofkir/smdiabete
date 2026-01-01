@@ -131,6 +131,11 @@ Route::post('/attestations/store', [AttestationController::class, 'store'])->nam
 Route::post('journée_Mondiale_du_Diabète_2025', [InscriptionFormController::class, 'store'])->name('inscription-form.store');
 
 /**
- * Abstracts Routes
+ * Get Abstracts Route
  */
 Route::get('/abstracts', [AbstractController::class, 'index'])->name("abstracts.index");
+
+/**
+ * Store Abstracts Route
+ */
+Route::post('/abstracts', [AbstractController::class, 'store'])->name("abstracts.store");
