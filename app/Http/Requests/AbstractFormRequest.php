@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class AbstractFormRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Détermine si l'utilisateur est autorisé à faire cette requête.
      */
     public function authorize(): bool
     {
@@ -15,7 +15,7 @@ class AbstractFormRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Obtient les règles de validation qui s'appliquent à la requête.
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
@@ -47,7 +47,7 @@ class AbstractFormRequest extends FormRequest
             
             'langue' => 'required|in:francais,anglais',
             
-            'abstract_file' => 'nullable|file|mimes:doc,docx,pdf|max:10240', // 10MB max
+            'abstract_file' => 'nullable|file|mimes:doc,docx,pdf|max:10240', 
             
             'declaration_original' => 'required|accepted',
             'declaration_approval' => 'required|accepted',
@@ -59,7 +59,7 @@ class AbstractFormRequest extends FormRequest
     }
 
     /**
-     * Get custom messages for validator errors.
+     * Obtient les messages personnalisés pour les erreurs de validation.
      *
      * @return array<string, string>
      */
@@ -92,7 +92,7 @@ class AbstractFormRequest extends FormRequest
     }
 
     /**
-     * Get custom attributes for validator errors.
+     * Obtient les attributs personnalisés pour les erreurs de validation.
      *
      * @return array<string, string>
      */
@@ -125,7 +125,7 @@ class AbstractFormRequest extends FormRequest
     }
 
     /**
-     * Prepare the data for validation.
+     * Prépare les données pour la validation.
      */
     protected function prepareForValidation()
     {

@@ -21,9 +21,14 @@ class AbstractController extends Controller
      */
     public function store(AbstractFormRequest $request)
     {
-        AbstractForm::create(
-            $request->validated()
-        );
+        $validatedData = $request->validated();
+        
+        if ($request->hasFile('abstract_file')) {
+            $validatedData['abstract_file'] = $request->file('abstract_file')->store('abstracts', 'public');
+        }
+        
+        AbstractForm::create($validatedData);
+        
         return redirect()->back()->with('success', 'Abstract submitted successfully!');
     }
 }
