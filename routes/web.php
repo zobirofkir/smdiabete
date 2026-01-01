@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbstractController;
 use App\Http\Controllers\AttestationController;
 use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\InscriptionController;
@@ -128,3 +129,8 @@ Route::post('/attestations/store', [AttestationController::class, 'store'])->nam
  * Inscription Form
  */
 Route::post('journée_Mondiale_du_Diabète_2025', [InscriptionFormController::class, 'store'])->name('inscription-form.store');
+
+/**
+ * Abstracts Routes
+ */
+Route::get('/abstracts', [AbstractController::class, 'index'])->name("abstracts.index");
