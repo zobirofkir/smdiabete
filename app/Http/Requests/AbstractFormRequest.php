@@ -37,13 +37,13 @@ class AbstractFormRequest extends FormRequest
             'abstract_titre' => 'required|string|max:300',
             'presentation_type' => 'required|in:oral,poster',
             
-            'introduction' => 'nullable|string|max:1000',
+            'introduction' => 'required_without:abstract_complet|nullable|string|max:1000',
             'objectifs' => 'nullable|string|max:1000',
             'methodes' => 'nullable|string|max:2000',
             'resultats' => 'nullable|string|max:2000',
             'conclusion' => 'nullable|string|max:1000',
             
-            'abstract_complet' => 'nullable|string|max:3000',
+            'abstract_complet' => 'required_without:introduction|nullable|string|max:3000',
             
             'langue' => 'required|in:francais,anglais',
             
@@ -52,9 +52,6 @@ class AbstractFormRequest extends FormRequest
             'declaration_original' => 'required|accepted',
             'declaration_approval' => 'required|accepted',
             'declaration_conditions' => 'required|accepted',
-            
-            'introduction' => 'required_without:abstract_complet|nullable|string|max:1000',
-            'abstract_complet' => 'required_without:introduction|nullable|string|max:3000',
         ];
     }
 
@@ -136,9 +133,12 @@ class AbstractFormRequest extends FormRequest
             'ville' => trim($this->ville),
             'pays' => trim($this->pays),
             'abstract_titre' => trim($this->abstract_titre),
+            'declaration_original' => $this->has('declaration_original') ? true : false,
+            'declaration_approval' => $this->has('declaration_approval') ? true : false,
+            'declaration_conditions' => $this->has('declaration_conditions') ? true : false,
         ]);
 
-        if ($this->has('coauteurs')) {
+        if ($this->has('coauteurs') && is_array($this->coauteurs)) {
             $coauteurs = array_filter(array_map('trim', $this->coauteurs));
             $this->merge(['coauteurs' => $coauteurs]);
         }

@@ -122,10 +122,6 @@
                                 </p>
                             </div>
                         </div>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                                </svg>
-                            </span>
-                        </button>
                     </form>
                 </div>
             </div>
@@ -147,10 +143,7 @@
     </div>
 </section>
 
-    </div>
-</section>
-
-    <!-- Bottom Affiche -->
+<!-- Bottom Affiche -->
 <section class="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative group">
