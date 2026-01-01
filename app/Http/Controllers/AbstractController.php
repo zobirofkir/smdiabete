@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class AbstractController extends Controller
 {
     /**
-     * Home Page
+     * Page d'accueil
      */
     public function index()
     {
@@ -17,7 +17,7 @@ class AbstractController extends Controller
     }
 
     /**
-     * Store Abstract
+     * Enregistrer l'abstract
      */
     public function store(AbstractFormRequest $request)
     {
@@ -29,6 +29,6 @@ class AbstractController extends Controller
         
         AbstractForm::create($validatedData);
         
-        return redirect()->back()->with('success', 'Abstract submitted successfully!');
+        return redirect()->back()->with('success', 'Abstract soumis avec succès!');
     }
 }
