@@ -95,10 +95,37 @@
                 <select id="pays" name="pays" required
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
                     <option value="">Sélectionnez un pays</option>
+                    <option value="maroc">Maroc</option>
                     <option value="france">France</option>
-                    <option value="suisse">Suisse</option>
+                    <option value="algerie">Algérie</option>
+                    <option value="tunisie">Tunisie</option>
                     <option value="belgique">Belgique</option>
+                    <option value="suisse">Suisse</option>
                     <option value="canada">Canada</option>
+                    <option value="espagne">Espagne</option>
+                    <option value="allemagne">Allemagne</option>
+                    <option value="italie">Italie</option>
+                    <option value="royaume-uni">Royaume-Uni</option>
+                    <option value="etats-unis">États-Unis</option>
+                    <option value="egypte">Égypte</option>
+                    <option value="senegal">Sénégal</option>
+                    <option value="cote-ivoire">Côte d'Ivoire</option>
+                    <option value="mauritanie">Mauritanie</option>
+                    <option value="mali">Mali</option>
+                    <option value="burkina-faso">Burkina Faso</option>
+                    <option value="niger">Niger</option>
+                    <option value="tchad">Tchad</option>
+                    <option value="cameroun">Cameroun</option>
+                    <option value="gabon">Gabon</option>
+                    <option value="congo">Congo</option>
+                    <option value="madagascar">Madagascar</option>
+                    <option value="liban">Liban</option>
+                    <option value="syrie">Syrie</option>
+                    <option value="jordanie">Jordanie</option>
+                    <option value="arabie-saoudite">Arabie Saoudite</option>
+                    <option value="emirats-arabes-unis">Émirats Arabes Unis</option>
+                    <option value="qatar">Qatar</option>
+                    <option value="koweit">Koweït</option>
                     <option value="autre">Autre</option>
                 </select>
             </div>
