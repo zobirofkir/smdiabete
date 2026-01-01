@@ -88,12 +88,12 @@ Route::get('/press', function() {
 });
 
 /**
- * Abstract Page
+ * Communication Page
  */
 Route::get('/communications', [CommunicationController::class, 'index'])->name('communications.index');
 
 /**
- * Post Abstract
+ * Post Communication
  */
 Route::post('/communications/inscription', [CommunicationController::class, 'store'])->name('communications.store');
 
@@ -108,7 +108,7 @@ Route::get('/smdparamedical', [ParamedicalController::class, 'index'])->name('pa
 Route::post('/smdparamedical', [ParamedicalController::class, 'store'])->name('paramedical.store');
 
 /**
- * Abstract Sended Successfully
+ * Communication Sended Successfully
  */
 Route::get('/communications/success', function() {
     return view('pages.success.success');
@@ -120,7 +120,7 @@ Route::get('/communications/success', function() {
 Route::get('/attestations', [AttestationController::class, 'index'])->name("attestation.index");
 
 /**
- * Store Abstract
+ * Store Attestation
  */
 Route::post('/attestations/store', [AttestationController::class, 'store'])->name("attestation.store");
 
