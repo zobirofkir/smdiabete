@@ -4,12 +4,16 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\AbstractFormResource\Pages;
 use App\Models\AbstractForm;
+use App\Mail\AbstractStatusMail;
 use Filament\Forms\Form;
 use Filament\Infolists\Infolist;
 use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\Actions;
+use Filament\Infolists\Components\Actions\Action;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Mail;
 
 class AbstractFormResource extends Resource
 {
@@ -83,6 +87,32 @@ class AbstractFormResource extends Resource
     public static function infolist(Infolist $infolist): Infolist
     {
         return $infolist->schema([
+            Actions::make([
+                Action::make('accepter')
+                    ->label('Accepter')
+                    ->color('success')
+                    ->icon('heroicon-o-check-circle')
+                    ->requiresConfirmation()
+                    ->action(function (AbstractForm $record) {
+                        $record->statut = 'accepte';
+                        $record->save();
+                        
+                        Mail::to($record->email)->send(new AbstractStatusMail($record, 'accepte'));
+                    }),
+                    
+                Action::make('refuser')
+                    ->label('Refuser')
+                    ->color('danger')
+                    ->icon('heroicon-o-x-circle')
+                    ->requiresConfirmation()
+                    ->action(function (AbstractForm $record) {
+                        $record->statut = 'refuse';
+                        $record->save();
+                        
+                        Mail::to($record->email)->send(new AbstractStatusMail($record, 'refuse'));
+                    }),
+            ]),
+            
             TextEntry::make('reference')
                 ->label('Référence')
                 ->inlineLabel()
