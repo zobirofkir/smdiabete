@@ -136,3 +136,13 @@ function closeModal() {
         modal.classList.add('hidden');
     }, 300);
 }
+
+// Fonction pour fermer le modal de deadline et activer le formulaire
+function closeDeadlineModal() {
+    const modal = document.getElementById('deadlineModal');
+    const form = document.getElementById('abstractForm');
+    
+    modal.style.display = 'none';
+    form.classList.remove('opacity-50', 'pointer-events-none');
+    form.removeAttribute('disabled');
+}

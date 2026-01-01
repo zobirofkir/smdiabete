@@ -1,4 +1,25 @@
-<form id="abstractForm" action="{{ route('abstracts.store') }}" method="POST" enctype="multipart/form-data" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+<!-- Deadline Notice Modal -->
+<div id="deadlineModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4">
+        <div class="p-8 text-center">
+            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <div class="text-4xl mb-4">⏰</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Information importante</h3>
+            <div class="text-lg font-bold text-red-600 mb-6">
+                Date limite d'acceptation : 10 février 2026
+            </div>
+            <button onclick="closeDeadlineModal()" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-200 font-medium">
+                J'ai lu et je comprends
+            </button>
+        </div>
+    </div>
+</div>
+
+<form id="abstractForm" action="{{ route('abstracts.store') }}" method="POST" enctype="multipart/form-data" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 opacity-50 pointer-events-none" disabled>
     @csrf
     <!-- 1. Informations personnelles -->
     <div class="p-6 border-b border-gray-200">
