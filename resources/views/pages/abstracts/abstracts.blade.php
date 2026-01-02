@@ -54,7 +54,7 @@
                 <!-- Content -->
                 <div class="flex-1 overflow-y-auto">
                     <div class="p-6 sm:p-8 space-y-8">
-                        <!-- Dates importantes -->
+                        <!-- Principales dates limites -->
                         <div class="space-y-6">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="p-2 bg-red-100 rounded-lg">
@@ -62,36 +62,48 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                 </div>
-                                <h3 class="text-xl font-bold text-gray-900">Dates importantes</h3>
+                                <h3 class="text-xl font-bold text-gray-900">Principales dates limites – en un coup d'œil</h3>
                             </div>
                             <div class="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-2xl p-6 space-y-4">
                                 <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
                                     <div class="bg-white rounded-xl p-4 shadow-sm border border-red-100">
-                                        <div class="text-sm text-red-600 font-medium mb-1">Soumission abstracts</div>
+                                        <div class="text-sm text-red-600 font-medium mb-1">Date limite de soumission des abstracts</div>
                                         <div class="text-lg font-bold text-gray-900">10 février 2026</div>
                                     </div>
                                     <div class="bg-white rounded-xl p-4 shadow-sm border border-orange-100">
-                                        <div class="text-sm text-orange-600 font-medium mb-1">E-posters</div>
-                                        <div class="text-lg font-bold text-gray-900">15 février 2026</div>
+                                        <div class="text-sm text-orange-600 font-medium mb-1">Date limite pour l'envoi des e-posters</div>
+                                        <div class="text-lg font-bold text-gray-900">15 Mars 2026</div>
                                     </div>
                                     <div class="bg-white rounded-xl p-4 shadow-sm border border-green-100">
-                                        <div class="text-sm text-green-600 font-medium mb-1">Début congrès</div>
+                                        <div class="text-sm text-green-600 font-medium mb-1">Début du congrès</div>
                                         <div class="text-lg font-bold text-gray-900">26 mars 2026</div>
                                     </div>
                                     <div class="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
-                                        <div class="text-sm text-blue-600 font-medium mb-1">Fin congrès</div>
+                                        <div class="text-sm text-blue-600 font-medium mb-1">Fin du congrès</div>
                                         <div class="text-lg font-bold text-gray-900">29 mars 2026</div>
                                     </div>
                                 </div>
-                                <div class="bg-blue-50 rounded-xl p-4 border border-blue-200">
-                                    <div class="flex items-start gap-3">
-                                        <svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                        </svg>
-                                        <div>
-                                            <p class="text-sm text-blue-800 font-medium mb-1">Notification d'acceptation</p>
-                                            <p class="text-blue-700 text-sm">10 mars 2026 - Consultez les Instructions de soumission pour plus d'informations.</p>
-                                        </div>
+                            </div>
+                        </div>
+
+                        <!-- Soumission des résumés -->
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-2 bg-green-100 rounded-lg">
+                                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Soumission des résumés des travaux scientifiques</h3>
+                            </div>
+                            <div class="bg-green-50 rounded-2xl p-6 border border-green-200">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-4">Soumettre un abstract</h4>
+                                <div class="space-y-3 text-gray-700">
+                                    <p>La date limite de soumission des abstracts est fixée au <strong>10 février 2026</strong>.</p>
+                                    <p>La date de notification de l'acceptation des travaux soumis est le <strong>25 Février 2026</strong>.</p>
+                                    <p>La date limite pour l'envoi des e-posters est le <strong>15 Mars 2026</strong>.</p>
+                                    <div class="bg-blue-50 rounded-xl p-4 border border-blue-200 mt-4">
+                                        <p class="text-blue-800">Veuillez consulter les Instructions de soumission pour plus d'informations (voir ci-dessous).</p>
                                     </div>
                                 </div>
                             </div>
@@ -112,15 +124,15 @@
                                     <div class="space-y-4">
                                         <div class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm">
                                             <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                                            <p class="text-gray-700">Assurez-vous que toutes vos informations sont à jour pour recevoir les notifications.</p>
+                                            <p class="text-gray-700">Assurez-vous que toutes vos informations sont à jour afin de recevoir les notifications pertinentes.</p>
                                         </div>
                                         <div class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm">
                                             <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                                            <p class="text-gray-700">Cliquez sur « Soumettre votre abstract » pour commencer la soumission.</p>
+                                            <p class="text-gray-700">Cliquez sur l'onglet « Soumettre votre abstract » dans la barre de navigation pour commencer la soumission.</p>
                                         </div>
                                         <div class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm">
                                             <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                                            <p class="text-gray-700">Respectez le nombre de mots autorisé par section.</p>
+                                            <p class="text-gray-700">Le texte du résumé ne doit pas dépasser le nombre de mots autorisé au total ni le nombre maximal par section.</p>
                                         </div>
                                     </div>
                                     <div class="space-y-4">
@@ -128,14 +140,15 @@
                                             <div class="text-sm font-medium text-blue-600 mb-2">Limites des titres</div>
                                             <div class="text-2xl font-bold text-gray-900 mb-1">25 mots</div>
                                             <div class="text-lg font-semibold text-gray-700">120 caractères</div>
+                                            <p class="text-sm text-gray-600 mt-2">Les titres des résumés peuvent contenir un maximum de 25 mots et 120 caractères.</p>
                                         </div>
                                         <div class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm">
                                             <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                                            <p class="text-gray-700">Email de confirmation envoyé après soumission.</p>
+                                            <p class="text-gray-700">Un email de confirmation vous sera envoyé après la soumission de votre résumé.</p>
                                         </div>
                                         <div class="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm">
                                             <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                                            <p class="text-gray-700">Notification d'acceptation/rejet après évaluation.</p>
+                                            <p class="text-gray-700">La confirmation d'acceptation ou de rejet, incluant l'identifiant du résumé et le type de présentation, vous sera communiquée après l'évaluation des résumés par le comité scientifique.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -153,14 +166,14 @@
                                 <h3 class="text-xl font-bold text-gray-900">Motifs possibles de rejet</h3>
                             </div>
                             <div class="bg-red-50 rounded-2xl p-6 border border-red-200">
-                                <p class="text-gray-700 mb-6 font-medium">Les raisons possibles de rejet peuvent inclure :</p>
+                                <p class="text-gray-700 mb-6 font-medium">Pour les résumés qui ne sont pas acceptés, les raisons possibles de rejet peuvent inclure :</p>
                                 <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-3 mb-6">
                                     <div class="bg-white rounded-xl p-4 shadow-sm border-l-4 border-red-400">
                                         <div class="flex items-start gap-3">
                                             <svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                             </svg>
-                                            <p class="text-sm text-gray-700">Données insuffisantes, notamment pour un rapport de cas unique.</p>
+                                            <p class="text-sm text-gray-700">Données insuffisantes.</p>
                                         </div>
                                     </div>
                                     <div class="bg-white rounded-xl p-4 shadow-sm border-l-4 border-red-400">
@@ -168,7 +181,7 @@
                                             <svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                             </svg>
-                                            <p class="text-sm text-gray-700">Sujet similaire déjà accepté lors des précédents congrès SMD.</p>
+                                            <p class="text-sm text-gray-700">Soumission par vous ou votre institution d'un résumé sur un sujet similaire déjà accepté lors des précédents congrès de la SMD.</p>
                                         </div>
                                     </div>
                                     <div class="bg-white rounded-xl p-4 shadow-sm border-l-4 border-red-400">
@@ -176,7 +189,7 @@
                                             <svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                             </svg>
-                                            <p class="text-sm text-gray-700">Présentation peu claire ou difficilement compréhensible.</p>
+                                            <p class="text-sm text-gray-700">Présentation du résumé jugée peu claire ou difficilement compréhensible par les reviewers.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -185,16 +198,16 @@
                                         <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
-                                        <span class="font-medium text-green-800">Recommandations du comité scientifique :</span>
+                                        <span class="font-medium text-green-800">Le comité scientifique recommande vivement :</span>
                                     </div>
                                     <div class="grid gap-2 sm:grid-cols-1 lg:grid-cols-2">
                                         <div class="flex items-center gap-2">
                                             <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-                                            <span class="text-sm text-green-700">Adopter une structure claire</span>
+                                            <span class="text-sm text-green-700">d'adopter une structure claire,</span>
                                         </div>
                                         <div class="flex items-center gap-2">
                                             <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-                                            <span class="text-sm text-green-700">Faire relire par un collègue</span>
+                                            <span class="text-sm text-green-700">de faire relire le résumé par un collègue non familier avec le travail afin de vérifier la clarté et la qualité de la langue avant soumission.</span>
                                         </div>
                                     </div>
                                 </div>
@@ -226,7 +239,7 @@
                                     <h3 class="text-xl font-bold text-gray-900">Décision</h3>
                                 </div>
                                 <div class="bg-green-50 rounded-xl p-6 border border-green-200 space-y-3">
-                                    <p class="text-gray-700">La décision sera finalisée sur la base de la note moyenne attribuée par les évaluateurs.</p>
+                                    <p class="text-gray-700">La décision concernant les résumés sera finalisée sur la base de la note moyenne attribuée par les évaluateurs.</p>
                                     <p class="text-gray-700">Certains résumés pourront être acceptés pour une présentation orale.</p>
                                 </div>
                             </div>
