@@ -45,132 +45,88 @@
                 
                 <!-- Content -->
                 <div class="flex-1 overflow-y-auto p-6 lg:p-8">
-                    <div class="max-w-4xl mx-auto space-y-8">
-                        <!-- Dates importantes -->
-                        <div class="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 border border-red-100">
-                            <h3 class="text-xl font-bold text-red-800 mb-4 flex items-center gap-2">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                Principales dates limites en un coup d'œil
-                            </h3>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-white rounded-lg p-4 shadow-sm">
-                                    <div class="font-semibold text-gray-900">Date limite pour la soumission d'un abstract :</div>
-                                    <div class="text-red-600 font-bold text-lg">10 Février 2026</div>
-                                </div>
-                                <div class="bg-white rounded-lg p-4 shadow-sm">
-                                    <div class="font-semibold text-gray-900">Date limite pour l'envoi des ePosters :</div>
-                                    <div class="text-red-600 font-bold text-lg">15 Février 2026</div>
-                                </div>
-                                <div class="bg-white rounded-lg p-4 shadow-sm">
-                                    <div class="font-semibold text-gray-900">Début du congrès :</div>
-                                    <div class="text-green-600 font-bold text-lg">26 Mars 2026</div>
-                                </div>
-                                <div class="bg-white rounded-lg p-4 shadow-sm">
-                                    <div class="font-semibold text-gray-900">Fin du congrès :</div>
-                                    <div class="text-green-600 font-bold text-lg">29 Mars 2026</div>
-                                </div>
-                            </div>
+                    <div class="max-w-4xl mx-auto space-y-8 text-gray-700">
+                        <!-- Principales dates limites -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">Principales dates limites – en un coup d'œil</h3>
+                            <ul class="space-y-2 ml-4">
+                                <li>• Date limite de soumission des abstracts : <strong>10 février 2026</strong></li>
+                                <li>• Date limite pour l'envoi des e-posters : <strong>15 février 2026</strong></li>
+                                <li>• Début du congrès : <strong>26 mars 2026</strong></li>
+                                <li>• Fin du congrès : <strong>29 mars 2026</strong></li>
+                            </ul>
                         </div>
+
+                        <div class="border-t border-gray-300 my-6"></div>
 
                         <!-- Soumission des résumés -->
-                        <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100">
-                            <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center gap-2">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                </svg>
-                                Soumission des résumés des travaux scientifiques
-                            </h3>
-                            <div class="space-y-4">
-                                <div class="bg-white rounded-lg p-4 shadow-sm">
-                                    <h4 class="font-semibold text-gray-900 mb-2">Soumettre un abstract</h4>
-                                    <ul class="space-y-2 text-gray-700">
-                                        <li>• La date limite de soumission des abstracts est le <strong class="text-red-600">10 Février 2026</strong>.</li>
-                                        <li>• Date de réception de l'acceptation des travaux soumis est le <strong class="text-blue-600">10 Mars 2026</strong>.</li>
-                                        <li>• Date limite pour l'envoi des ePosters : <strong class="text-red-600">15 Février 2026</strong></li>
-                                        <li>• Veuillez visiter les Instructions de Soumission pour plus d'informations (voir dessous).</li>
-                                    </ul>
-                                </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">Soumission des résumés des travaux scientifiques</h3>
+                            <h4 class="text-lg font-semibold text-gray-800">Soumettre un abstract</h4>
+                            <div class="space-y-2">
+                                <p>La date limite de soumission des abstracts est fixée au <strong>10 février 2026</strong>.</p>
+                                <p>La date de notification de l'acceptation des travaux soumis est le <strong>10 mars 2026</strong>.</p>
+                                <p>La date limite pour l'envoi des e-posters est le <strong>15 février 2026</strong>.</p>
+                                <p>Veuillez consulter les Instructions de soumission pour plus d'informations (voir ci-dessous).</p>
                             </div>
                         </div>
+
+                        <div class="border-t border-gray-300 my-6"></div>
 
                         <!-- Considérations générales -->
-                        <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
-                            <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center gap-2">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                Considérations générales
-                            </h3>
-                            <div class="bg-white rounded-lg p-4 shadow-sm space-y-3 text-gray-700">
-                                <p>• Assurez-vous que toutes vos informations sont à jour pour recevoir les notifications pertinentes. Cliquez sur l'onglet "Soumettre votre abstract" dans la barre de navigation et commencez la soumission.</p>
-                                <p>• Le texte de votre résumé ne peut pas dépasser un certain mots au total et un nombre limité par section. Les titres des résumés peuvent contenir un maximum de <strong>25 mots</strong> et <strong>120 caractères</strong>.</p>
-                                <p>• Vous recevrez un email de confirmation de votre résumé après la soumission de celui-ci. La confirmation d'acceptation ou de rejet, y compris l'identifiant du résumé et le type de présentation vous seront envoyés une fois les résumées évalués par le comité scientifique.</p>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">Considérations générales</h3>
+                            <div class="space-y-3">
+                                <p>Assurez-vous que toutes vos informations sont à jour afin de recevoir les notifications pertinentes.</p>
+                                <p>Cliquez sur l'onglet « Soumettre votre abstract » dans la barre de navigation pour commencer la soumission.</p>
+                                <p>Le texte du résumé ne doit pas dépasser le nombre de mots autorisé au total ni le nombre maximal par section.</p>
+                                <p>Les titres des résumés peuvent contenir un maximum de <strong>25 mots</strong> et <strong>120 caractères</strong>.</p>
+                                <p>Un email de confirmation vous sera envoyé après la soumission de votre résumé.</p>
+                                <p>La confirmation d'acceptation ou de rejet, incluant l'identifiant du résumé et le type de présentation, vous sera communiquée après l'évaluation des résumés par le comité scientifique.</p>
                             </div>
                         </div>
 
-                        <!-- Raisons de rejet -->
-                        <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl p-6 border border-orange-100">
-                            <h3 class="text-xl font-bold text-orange-800 mb-4 flex items-center gap-2">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                                </svg>
-                                Raisons possibles de rejet
-                            </h3>
-                            <div class="bg-white rounded-lg p-4 shadow-sm">
-                                <p class="text-gray-700 mb-3">Pour les résumés qui ne sont pas acceptés, les raisons possibles de rejet peuvent inclure :</p>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• Votre résumé ne contient pas assez de données suffisantes, particulièrement s'il s'agit d'un rapport de cas unique</li>
-                                    <li>• Vous ou votre institution avez soumis un résumé sur un sujet similaire accepté lors des derniers congrès de la SMD.</li>
-                                    <li>• Le résumé n'a pas été présenté de manière à être compréhensible par les reviewers</li>
-                                </ul>
-                                <div class="mt-4 p-3 bg-orange-50 rounded-lg border border-orange-200">
-                                    <p class="text-orange-800 font-medium">💡 Recommandation :</p>
-                                    <p class="text-gray-700 mt-1">Le comité scientifique recommande d'avoir une structure claire et de toujours faire relire votre résumé par un collègue non familier avec le travail pour vérifier la clarté et l'utilisation de la langue avant la soumission.</p>
-                                </div>
-                            </div>
+                        <div class="border-t border-gray-300 my-6"></div>
+
+                        <!-- Motifs possibles de rejet -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">Motifs possibles de rejet</h3>
+                            <p>Pour les résumés qui ne sont pas acceptés, les raisons possibles de rejet peuvent inclure :</p>
+                            <ul class="space-y-2 ml-4">
+                                <li>• Données insuffisantes, notamment s'il s'agit d'un rapport de cas unique.</li>
+                                <li>• Soumission par vous ou votre institution d'un résumé sur un sujet similaire déjà accepté lors des précédents congrès de la SMD.</li>
+                                <li>• Présentation du résumé jugée peu claire ou difficilement compréhensible par les reviewers.</li>
+                            </ul>
+                            <p class="mt-4">Le comité scientifique recommande vivement :</p>
+                            <ul class="space-y-2 ml-4">
+                                <li>• d'adopter une structure claire,</li>
+                                <li>• de faire relire le résumé par un collègue non familier avec le travail afin de vérifier la clarté et la qualité de la langue avant soumission.</li>
+                            </ul>
                         </div>
 
-                        <!-- Évaluation et Décision -->
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-6 border border-purple-100">
-                                <h3 class="text-xl font-bold text-purple-800 mb-4 flex items-center gap-2">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-                                    </svg>
-                                    Évaluation
-                                </h3>
-                                <div class="bg-white rounded-lg p-4 shadow-sm">
-                                    <p class="text-gray-700">Toutes les soumissions seront évaluées par les membres du comité scientifique avec un accent sur la <strong>qualité</strong> et surtout la <strong>nouveauté</strong> du contenu.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-6 border border-teal-100">
-                                <h3 class="text-xl font-bold text-teal-800 mb-4 flex items-center gap-2">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                                    </svg>
-                                    Décision
-                                </h3>
-                                <div class="bg-white rounded-lg p-4 shadow-sm space-y-2">
-                                    <p class="text-gray-700">• La décision sur les résumés sera finalisée en fonction de la note moyenne.</p>
-                                    <p class="text-gray-700">• Certains résumés peuvent être acceptés pour une présentation orale des travaux.</p>
-                                </div>
-                            </div>
+                        <div class="border-t border-gray-300 my-6"></div>
+
+                        <!-- Évaluation -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">Évaluation</h3>
+                            <p>Toutes les soumissions seront évaluées par les membres du comité scientifique, avec une attention particulière portée à la qualité scientifique et à la nouveauté du contenu.</p>
                         </div>
+
+                        <div class="border-t border-gray-300 my-6"></div>
+
+                        <!-- Décision -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">Décision</h3>
+                            <p>La décision concernant les résumés sera finalisée sur la base de la note moyenne attribuée par les évaluateurs.</p>
+                            <p>Certains résumés pourront être acceptés pour une présentation orale.</p>
+                        </div>
+
+                        <div class="border-t border-gray-300 my-6"></div>
 
                         <!-- Inscription -->
-                        <div class="bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl p-6 border border-gray-200">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                                Inscription
-                            </h3>
-                            <div class="bg-white rounded-lg p-4 shadow-sm">
-                                <p class="text-gray-700">Les auteurs présentateurs des résumés acceptés doivent assister au congrès sur place pour la présentation orale lors des sessions dédiées à côtés des bornes d'affichage.</p>
-                            </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-gray-900 border-b border-gray-200 pb-2">Inscription</h3>
+                            <p>Les auteurs présentateurs des résumés acceptés doivent assister au congrès sur place afin d'assurer la présentation orale lors des sessions dédiées, à proximité des panneaux d'affichage (e-posters).</p>
                         </div>
                     </div>
                 </div>
