@@ -387,7 +387,7 @@
             </label>
             <label class="flex items-start">
                 <input type="checkbox" name="declaration_conditions" class="h-5 w-5 text-blue-600 mt-1 mr-3" required>
-                <span class="text-gray-700">J'accepte les conditions du congrès</span>
+                <span class="text-gray-700">J’accepte les conditions générales</span>
             </label>
         </div>
         
