@@ -13,7 +13,7 @@
                 Date limite d'acceptation : 10 février 2026
             </div>
             <button onclick="closeDeadlineModal()" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-200 font-medium">
-                J'ai lu et je comprends
+                Lu et approuvé
             </button>
         </div>
     </div>
