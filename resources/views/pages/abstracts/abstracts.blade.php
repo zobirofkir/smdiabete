@@ -302,25 +302,39 @@
             <!-- En-tête du congrès -->
             @include('components.abstracts.abstract-header')
 
-            <!-- Bouton Conditions générales -->
-            <div class="mb-6 text-center">
-                <button onclick="openConditionsModal()" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 inline-flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                    </svg>
-                    Conditions générales
-                </button>
+            <!-- Layout principal avec image et formulaire -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <!-- Image à gauche -->
+                <div class="order-2 lg:order-1">
+                    <div class="sticky top-8">
+                        <img src="{{ asset('assets/images/affiche/affiche-four.jpeg') }}" 
+                             alt="Affiche du congrès" 
+                             class="w-full h-auto rounded-2xl shadow-2xl object-cover">
+                    </div>
+                </div>
+
+                <!-- Contenu du formulaire à droite -->
+                <div class="order-1 lg:order-2 space-y-6 h-full">
+                    <!-- Bouton Conditions générales -->
+                    <div class="text-center lg:text-left">
+                        <button onclick="openConditionsModal()" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 inline-flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Conditions générales
+                        </button>
+                    </div>
+
+                    <!-- Formulaire principal -->
+                    @include('components.abstracts.abstract-form')
+
+                    <!-- Message de confirmation (caché initialement) -->
+                    @include('components.abstracts.abstract-message')
+
+                    <!-- Instructions -->
+                    @include('components.abstracts.abstract-instruction')
+                </div>
             </div>
-
-            <!-- Formulaire principal -->
-            @include('components.abstracts.abstract-form')
-
-            <!-- Message de confirmation (caché initialement) -->
-            @include('components.abstracts.abstract-message')
-
-            <!-- Instructions -->
-            @include('components.abstracts.abstract-instruction')
-            
         </div>
     </div>
 
