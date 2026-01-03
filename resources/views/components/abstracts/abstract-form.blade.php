@@ -203,7 +203,7 @@
         
         <!-- Type de présentation -->
         <div>
-            <label class="block text-gray-700 font-medium mb-3">Type de présentation souhaité <span class="text-red-500">*</span></label>
+            <label class="block text-gray-700 font-medium mb-3">Type de présentation souhaitée <span class="text-red-500">*</span></label>
             <div class="flex flex-col sm:flex-row sm:space-x-8 space-y-3 sm:space-y-0">
                 <label class="inline-flex items-center">
                     <input type="radio" name="presentation_type" value="oral" required class="h-5 w-5 text-blue-600">
