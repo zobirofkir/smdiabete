@@ -1,6 +1,7 @@
 <x-app-layout>
     @include('components.slider.slider')
 
+    @include('components.counter.counter')
 
     @include('components.abouts.abouts')
 
