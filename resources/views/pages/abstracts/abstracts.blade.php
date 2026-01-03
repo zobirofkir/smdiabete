@@ -298,23 +298,33 @@
     @endif
 
     <div class="py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <!-- En-tête du congrès -->
             @include('components.abstracts.abstract-header')
 
-            <!-- Layout principal avec image et formulaire -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                <!-- Image à gauche -->
-                <div class="order-2 lg:order-1">
-                    <div class="sticky top-8">
+            <!-- Hero Section avec affiche -->
+            <div class="relative mb-12">
+                <!-- Mobile: Image en haut -->
+                <div class="block lg:hidden mb-8">
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur-xl transform scale-105"></div>
                         <img src="{{ asset('assets/images/affiche/affiche-four.jpeg') }}" 
-                             alt="Affiche du congrès" 
-                             class="w-full h-auto rounded-2xl shadow-2xl object-cover">
+                             alt="Affiche du congrès SMD 2024" 
+                             class="relative w-full max-w-sm mx-auto h-auto rounded-3xl shadow-2xl object-cover border-4 border-white/20 backdrop-blur-sm transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-center">
+                            <div class="bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg">
+                                <p class="text-sm font-semibold text-gray-800">Congrès SMD 2024</p>
+                                <p class="text-xs text-gray-600">Soumission des résumés</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Contenu du formulaire à droite -->
-                <div class="order-1 lg:order-2 space-y-6 h-full">
+                <!-- Desktop: Layout avec image à droite -->
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                    <!-- Contenu principal -->
+                    <div class="lg:col-span-3 space-y-8">
                     <!-- Bouton Conditions générales -->
                     <div class="text-center lg:text-left">
                         <button onclick="openConditionsModal()" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 inline-flex items-center gap-2">
@@ -334,6 +344,69 @@
                     <!-- Instructions -->
                     @include('components.abstracts.abstract-instruction')
                 </div>
+
+                    <!-- Affiche professionnelle pour desktop -->
+                    <div class="hidden lg:block lg:col-span-2">
+                        <div class="sticky top-8 space-y-6">
+                            <!-- Affiche principale -->
+                            <div class="relative group">
+                                <div class="absolute -inset-4 bg-gradient-to-r from-blue-600/30 via-purple-600/30 to-indigo-600/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div class="relative bg-white rounded-3xl p-4 shadow-2xl border border-gray-100">
+                                    <img src="{{ asset('assets/images/affiche/affiche-four.jpeg') }}" 
+                                         alt="Affiche officielle du Congrès SMD 2024" 
+                                         class="w-full h-auto rounded-2xl object-cover shadow-lg transition-transform duration-500 group-hover:scale-[1.02]">
+                                    
+                                    <!-- Overlay avec informations -->
+                                    <div class="absolute inset-4 rounded-2xl bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div class="absolute bottom-6 left-6 right-6">
+                                            <div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                                <h3 class="font-bold text-gray-900 text-lg mb-2">Congrès SMD 2024</h3>
+                                                <p class="text-sm text-gray-700 mb-3">Société Marocaine de Diabétologie</p>
+                                                <div class="flex items-center gap-2 text-xs text-gray-600">
+                                                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 4l6 6m0 0l6-6m-6 6V9a2 2 0 00-2-2H8a2 2 0 00-2 2v8z"></path>
+                                                    </svg>
+                                                    <span>Soumission des résumés ouverte</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Informations complémentaires -->
+                            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100 shadow-lg">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-blue-100 rounded-lg">
+                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Information importante</h3>
+                                </div>
+                                <p class="text-gray-700 leading-relaxed mb-4">Consultez les conditions générales avant de soumettre votre résumé.</p>
+                                <div class="flex items-center gap-2 text-sm text-blue-700">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <span>Processus de soumission sécurisé</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Contact rapide -->
+                            <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 border border-gray-200 shadow-lg">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="p-2 bg-gray-100 rounded-lg">
+                                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Besoin d'aide ?</h3>
+                                </div>
+                                <p class="text-gray-700 text-sm leading-relaxed">Pour toute question concernant la soumission, contactez notre équipe support.</p>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
