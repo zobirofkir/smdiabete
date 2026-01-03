@@ -33,7 +33,7 @@
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <!-- Logo -->
         <a href="{{ url('/') }}" class="flex items-center">
-            <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" class="h-12">
+            <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" class="h-12 rounded-full">
         </a>
 
         <!-- Mobile Menu Toggle -->

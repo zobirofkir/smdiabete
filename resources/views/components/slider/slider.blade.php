@@ -49,8 +49,8 @@
                     <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full blur-2xl opacity-30 animate-pulse-slow"></div>
                     
                     <!-- Logo -->
-                    <div class="relative bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-2xl">
-                        <img src="{{asset('assets/images/logo.png')}}" alt="SMD Logo" class="w-48 sm:w-64 lg:w-80 h-auto">
+                    <div class="relative bg-white/20 backdrop-blur-lg rounded-2xl p-8 border border-white shadow-2xl">
+                        <img src="{{asset('assets/images/logo.png')}}" alt="SMD Logo" class="w-48 sm:w-64 lg:w-80 h-auto rounded-md">
                     </div>
                 </div>
 
