@@ -54,7 +54,6 @@ return new class extends Migration
             /**
              * Déclarations
              */
-            $table->boolean('declaration_original')->default(false);
             $table->boolean('declaration_approval')->default(false);
             $table->boolean('declaration_conditions')->default(false);
             

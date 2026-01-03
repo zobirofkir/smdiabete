@@ -49,7 +49,6 @@ class AbstractFormRequest extends FormRequest
             
             'abstract_file' => 'nullable|file|mimes:doc,docx,pdf|max:10240', 
             
-            'declaration_original' => 'required|accepted',
             'declaration_approval' => 'required|accepted',
             'declaration_conditions' => 'required|accepted',
         ];
@@ -92,8 +91,6 @@ class AbstractFormRequest extends FormRequest
             'langue.in' => 'La langue doit être "francais" ou "anglais".',
             'abstract_file.mimes' => 'Le fichier doit être au format Word (.doc, .docx) ou PDF (.pdf).',
             'abstract_file.max' => 'Le fichier ne doit pas dépasser 10 Mo.',
-            'declaration_original.required' => 'Vous devez certifier que l\'abstract est original.',
-            'declaration_original.accepted' => 'Vous devez certifier que l\'abstract est original.',
             'declaration_approval.required' => 'Vous devez confirmer que tous les auteurs ont approuvé la soumission.',
             'declaration_approval.accepted' => 'Vous devez confirmer que tous les auteurs ont approuvé la soumission.',
             'declaration_conditions.required' => 'Vous devez accepter les conditions du congrès.',
@@ -130,7 +127,6 @@ class AbstractFormRequest extends FormRequest
             'abstract_complet' => 'texte complet',
             'langue' => 'langue de soumission',
             'abstract_file' => 'fichier abstract',
-            'declaration_original' => 'déclaration d\'originalité',
             'declaration_approval' => 'approbation des auteurs',
             'declaration_conditions' => 'conditions du congrès',
         ];
@@ -148,7 +144,6 @@ class AbstractFormRequest extends FormRequest
             'ville' => trim($this->ville ?? ''),
             'pays' => trim($this->pays ?? ''),
             'abstract_titre' => trim($this->abstract_titre ?? ''),
-            'declaration_original' => $this->has('declaration_original'),
             'declaration_approval' => $this->has('declaration_approval'),
             'declaration_conditions' => $this->has('declaration_conditions'),
         ]);

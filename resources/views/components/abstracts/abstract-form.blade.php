@@ -378,10 +378,6 @@
         
         <div class="space-y-4 mb-8">
             <label class="flex items-start">
-                <input type="checkbox" name="declaration_original" class="h-5 w-5 text-blue-600 mt-1 mr-3" required>
-                <span class="text-gray-700">Je certifie que cet abstract est original et n'a pas été publié auparavant</span>
-            </label>
-            <label class="flex items-start">
                 <input type="checkbox" name="declaration_approval" class="h-5 w-5 text-blue-600 mt-1 mr-3" required>
                 <span class="text-gray-700">Tous les auteurs ont approuvé la soumission</span>
             </label>

@@ -43,7 +43,6 @@ class AbstractForm extends Model
         'fichier_nom',
         'fichier_taille',
         'fichier_mime',
-        'declaration_original',
         'declaration_approval',
         'declaration_conditions',
         'statut',
@@ -63,7 +62,6 @@ class AbstractForm extends Model
      */
     protected $casts = [
         'coauteurs' => 'array',
-        'declaration_original' => 'boolean',
         'declaration_approval' => 'boolean',
         'declaration_conditions' => 'boolean',
         'date_soumission' => 'datetime',
