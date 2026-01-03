@@ -84,9 +84,9 @@
             <!-- Téléphone -->
             <div>
                 <label class="block text-gray-700 font-medium mb-2" for="telephone">
-                    Téléphone
+                    Tél <span class="text-red-500">*</span>
                 </label>
-                <input type="tel" id="telephone" name="telephone"
+                <input type="tel" id="telephone" name="telephone" required
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
             </div>
             
