@@ -39,7 +39,7 @@
 <body class="min-h-screen flex flex-col fade-in">
     @include('components.header')
 
-    <main>
+    <main class="overflow-x-hidden" >
         {{$slot}}
     </main>
 
