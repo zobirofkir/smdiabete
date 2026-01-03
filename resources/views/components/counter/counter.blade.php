@@ -6,7 +6,7 @@
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
     </div>
     
-    <div class="w-full max-w-6xl mx-auto bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-blue-200/50 overflow-hidden relative z-10">
+    <div class="w-full container mx-auto bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-blue-200/50 overflow-hidden relative z-10">
         <div class="grid lg:grid-cols-2 gap-0">
             <!-- Left Side - Poster -->
             <div class="relative overflow-hidden group">
