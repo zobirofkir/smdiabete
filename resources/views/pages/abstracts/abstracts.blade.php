@@ -309,12 +309,12 @@
                     <div class="relative group">
                         <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur-xl transform scale-105"></div>
                         <img src="{{ asset('assets/images/affiche/affiche-four.jpeg') }}" 
-                             alt="Affiche du congrès SMD 2024" 
+                             alt="Affiche du congrès SMD 2026" 
                              class="relative w-full max-w-sm mx-auto h-auto rounded-3xl shadow-2xl object-cover border-4 border-white/20 backdrop-blur-sm transition-transform duration-500 group-hover:scale-105">
                         <div class="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                         <div class="absolute bottom-4 left-4 right-4 text-center">
                             <div class="bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg">
-                                <p class="text-sm font-semibold text-gray-800">Congrès SMD 2024</p>
+                                <p class="text-sm font-semibold text-gray-800">Congrès SMD 2026</p>
                                 <p class="text-xs text-gray-600">Soumission des résumés</p>
                             </div>
                         </div>
@@ -353,14 +353,14 @@
                                 <div class="absolute -inset-4 bg-gradient-to-r from-blue-600/30 via-purple-600/30 to-indigo-600/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 <div class="relative bg-white rounded-3xl p-4 shadow-2xl border border-gray-100">
                                     <img src="{{ asset('assets/images/affiche/affiche-four.jpeg') }}" 
-                                         alt="Affiche officielle du Congrès SMD 2024" 
+                                         alt="Affiche officielle du Congrès SMD 2026" 
                                          class="w-full h-auto rounded-2xl object-cover shadow-lg transition-transform duration-500 group-hover:scale-[1.02]">
                                     
                                     <!-- Overlay avec informations -->
                                     <div class="absolute inset-4 rounded-2xl bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <div class="absolute bottom-6 left-6 right-6">
                                             <div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                                <h3 class="font-bold text-gray-900 text-lg mb-2">Congrès SMD 2024</h3>
+                                                <h3 class="font-bold text-gray-900 text-lg mb-2">Congrès SMD 2026</h3>
                                                 <p class="text-sm text-gray-700 mb-3">Société Marocaine de Diabétologie</p>
                                                 <div class="flex items-center gap-2 text-xs text-gray-600">
                                                     <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
