@@ -118,12 +118,12 @@ Route::get('/communications/success', function() {
 /**
  * Attestation Routes
  */
-Route::get('/attestations', [AttestationController::class, 'index'])->name("attestation.index");
+// Route::get('/attestations', [AttestationController::class, 'index'])->name("attestation.index");
 
 /**
  * Store Attestation
  */
-Route::post('/attestations/store', [AttestationController::class, 'store'])->name("attestation.store");
+// Route::post('/attestations/store', [AttestationController::class, 'store'])->name("attestation.store");
 
 /**
  * Inscription Form

@@ -160,11 +160,11 @@
                         Agenda
                     </a>
                 </li> --}}
-                <li>
+                {{-- <li>
                     <a href="{{ url('/attestations') }}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
                         Attestations
                     </a>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="{{ url('/contacts') }}" class="text-gray-700 hover:text-primary block focus:outline-none focus:text-primary">
