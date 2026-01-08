@@ -624,7 +624,7 @@
                         </div>
                         
                         <!-- Programme Button -->
-                        <a href="{{ route('programme') }}" 
+                        <a href="#" 
                            class="group relative bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500/50 shadow-xl overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <span class="relative z-10 flex items-center text-lg">
