@@ -6,7 +6,7 @@
         <div class="absolute top-0 right-0 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
         <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
         
-        <div class="max-w-5xl mx-auto relative z-10">
+        <div class="max-w-5xl mx-auto relative z-[9999] ">
             <!-- Header -->
             <div class="text-center mb-16">
                 <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl mb-6 shadow-lg">
@@ -17,6 +17,130 @@
                 <h1 class="text-5xl md:text-6xl font-black bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent mb-4 tracking-tight">INSCRIPTION</h1>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">Rejoignez notre événement médical d'excellence et participez à l'avenir de la médecine</p>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <!-- Pricing Info Button -->
+            <div class="text-center mb-8">
+                <button type="button" onclick="openPricingModal()" 
+                    class="group relative bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-amber-500/50 shadow-xl overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <span class="relative z-10 flex items-center text-lg">
+                        <svg class="w-6 h-6 mr-3 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+                        </svg>
+                        MONTANT DE L'INSCRIPTION
+                    </span>
+                </button>
+            </div>
+
+            <!-- Pricing Modal -->
+            <div id="pricingModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+                <div class="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-3xl font-bold text-gray-900">Montant de l'inscription</h2>
+                            <button onclick="closePricingModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <!-- Standard Registration -->
+                            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-200">
+                                <h3 class="text-xl font-bold text-blue-800 mb-4">Droits d'inscription :</h3>
+                                <p class="text-gray-700 mb-3">(droit d'entrée, cartables, pauses-café, déjeuner du vendredi et samedi + Dîner de Samedi)</p>
+                                <p class="text-gray-700 mb-2">• Accès Session ADA – Certifiée</p>
+                                <p class="text-gray-700 mb-4">• Accès Session EASD</p>
+                                <div class="text-2xl font-bold text-blue-800">6000,00 DHS / 600,00 € / 600,00 $</div>
+                            </div>
+
+                            <!-- Hotel Packages -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-2xl border border-green-200">
+                                    <h3 class="text-xl font-bold text-green-800 mb-4">Forfait package congrès 2 ou 3 nuits : HOTEL IDOU MALABATA</h3>
+                                    <p class="text-gray-700 mb-2">(Lieu du Congrès)</p>
+                                    <div class="text-2xl font-bold text-green-800 mb-4">13 000,00 DHS</div>
+                                    <p class="text-gray-700 mb-2">(Comprenant l'inscription et 3 nuitées du :</p>
+                                    <ul class="text-gray-700 mb-4 space-y-1">
+                                        <li>• Jeudi avec dîner</li>
+                                        <li>• Vendredi déjeuner / dîner</li>
+                                        <li>• Samedi déjeuner / dîner</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600">Supplément Double Hébergement Petit Déj : 300,00 DHS Par jour</p>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-200">
+                                    <h3 class="text-xl font-bold text-purple-800 mb-4">Forfait package congrès 2 ou 3 nuits : Hôtel Farah TANGER</h3>
+                                    <p class="text-gray-700 mb-2">(5 Mnt du lieu du Congrès)</p>
+                                    <div class="text-2xl font-bold text-purple-800 mb-4">11 000,00 DHS</div>
+                                    <p class="text-gray-700 mb-2">Inscription et 3 nuitées :</p>
+                                    <ul class="text-gray-700 mb-4 space-y-1">
+                                        <li>• Dîner Jeudi</li>
+                                        <li>• Vendredi dîner</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-600">Supplément Double Hébergement Petit Déj : 200,00 DHS par jour</p>
+                                </div>
+                            </div>
+
+                            <!-- Meal Tickets -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border border-orange-200">
+                                    <h3 class="text-xl font-bold text-orange-800 mb-4">Ticket repas seul IDOU MALABATA</h3>
+                                    <div class="text-2xl font-bold text-orange-800">450,00 DHS</div>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-2xl border border-teal-200">
+                                    <h3 class="text-xl font-bold text-teal-800 mb-4">Ticket repas seul Hôtel Farah</h3>
+                                    <div class="text-2xl font-bold text-teal-800">350,00 DHS</div>
+                                </div>
+                            </div>
+
+                            <!-- Gala Dinner -->
+                            <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border border-yellow-200">
+                                <h3 class="text-xl font-bold text-yellow-800 mb-4">Dîner DE GALA</h3>
+                                <div class="text-2xl font-bold text-yellow-800">900,00 DHS</div>
+                            </div>
+
+                            <!-- Workshops -->
+                            <div class="bg-gradient-to-r from-gray-50 to-slate-50 p-6 rounded-2xl border border-gray-200">
+                                <h3 class="text-xl font-bold text-gray-800 mb-4">Inscription « Ateliers » :</h3>
+                                <p class="text-gray-700 mb-2">INSCRIPTION OBLIGATOIRE / Places limitées</p>
+                                <div class="text-2xl font-bold text-green-600">Gratuite</div>
+                            </div>
+
+                            <!-- Residents Section -->
+                            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-2xl border border-indigo-200">
+                                <h3 class="text-xl font-bold text-indigo-800 mb-4">RÉSIDENTS (internes) : HÔTEL FARAH TANGER</h3>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-700">Inscription avec hébergement 3 nuits (en chambre double) 2 Résidents</span>
+                                        <span class="text-xl font-bold text-indigo-800">14 500,00 DHS</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-700">Inscription avec hébergement 3 nuits (en chambre Single) 1 Résident</span>
+                                        <span class="text-xl font-bold text-indigo-800">9 300,00 DHS</span>
+                                    </div>
+                                    <div class="border-t pt-4">
+                                        <p class="text-gray-700 mb-2">Inscription + repas (sans nuitée)</p>
+                                        <div class="text-xl font-bold text-indigo-800 mb-2">4 500,00 DHS</div>
+                                        <p class="text-sm text-gray-600 mb-2">(Droit d'entrée, cartables, pauses-café, déjeuner du vendredi et samedi + Dîner de Samedi)</p>
+                                        <p class="text-sm text-gray-600">• Accès Session ADA – Certifiée</p>
+                                        <p class="text-sm text-gray-600">• Accès Session EASD</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event Info -->
+                            <div class="bg-gradient-to-r from-red-50 to-pink-50 p-6 rounded-2xl border border-red-200 text-center">
+                                <h3 class="text-xl font-bold text-red-800 mb-2">Tanger : 26 – 29 Mars 2026</h3>
+                                <p class="text-gray-700">Hôtel IDOU MALABATA – Tanger</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Form Container -->
@@ -624,7 +748,7 @@
                         </div>
                         
                         <!-- Programme Button -->
-                        <a href="#" 
+                        {{-- <a href="#" 
                            class="group relative bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500/50 shadow-xl overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <span class="relative z-10 flex items-center text-lg">
@@ -633,7 +757,7 @@
                                 </svg>
                                 CONSULTER LE PROGRAMME
                             </span>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div>
@@ -642,6 +766,32 @@
 
     <link rel="stylesheet" href="{{asset('assets/css/form-animations.css')}}">
     <script src="{{asset('assets/js/inscriptions.js')}}"></script>
+    
+    <script>
+        function openPricingModal() {
+            document.getElementById('pricingModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closePricingModal() {
+            document.getElementById('pricingModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('pricingModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePricingModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePricingModal();
+            }
+        });
+    </script>
     
     <style>
         @keyframes rotate {
