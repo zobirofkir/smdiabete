@@ -18,7 +18,7 @@
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">Rejoignez notre événement médical d'excellence et participez à l'avenir de la médecine</p>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6 rounded-full"></div>
             </div>
-
+ 
             <!-- Pricing Info Button -->
             <div class="text-center mb-8">
                 <button type="button" onclick="openPricingModal()" 
