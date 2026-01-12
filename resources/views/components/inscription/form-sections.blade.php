@@ -1,0 +1,8 @@
+@include('components.inscription.personal-info')
+@include('components.inscription.contact-info')
+@include('components.inscription.professional-info')
+@include('components.inscription.registration-type')
+@include('components.inscription.accommodation')
+@include('components.inscription.payment-info')
+@include('components.inscription.rgpd-consent')
+@include('components.inscription.submit-button')
