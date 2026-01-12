@@ -19,6 +19,30 @@
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closePricingModal();
     });
+
+    function toggleAccommodation() {
+        const inscriptionType = document.querySelector('input[name="inscription_type"]:checked');
+        const accommodationSection = document.getElementById('accommodation-section');
+        const arrivalDate = document.getElementById('arrival_date');
+        const departureDate = document.getElementById('departure_date');
+        
+        if (inscriptionType && inscriptionType.value === 'hebergement') {
+            accommodationSection.style.display = 'block';
+            arrivalDate.disabled = false;
+            departureDate.disabled = false;
+        } else {
+            accommodationSection.style.display = 'none';
+            arrivalDate.disabled = true;
+            departureDate.disabled = true;
+            arrivalDate.value = '';
+            departureDate.value = '';
+        }
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleAccommodation();
+    });
 </script>
 
 <style>

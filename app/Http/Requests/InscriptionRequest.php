@@ -64,7 +64,13 @@ class InscriptionRequest extends FormRequest
             'departure_date' => 'nullable|date|in:2025-05-30,2025-05-31,2025-06-01',
             'payment_method' => 'nullable|string',
             'payment_choice' => 'required|string|in:yes,no',
+            'rib_pdf' => 'nullable|file|mimes:pdf|max:2048',
         ];
+
+        // Add conditional validation for RIB PDF when payment_choice is 'yes'
+        if (request('payment_choice') === 'yes') {
+            $rules['rib_pdf'] = 'required|file|mimes:pdf|max:2048';
+        }
 
         return $rules;
     }
@@ -132,6 +138,7 @@ class InscriptionRequest extends FormRequest
             'rib_pdf.required' => 'Le fichier RIB est requis pour le mode de paiement "virement".',
             'rib_pdf.file' => 'Le fichier RIB doit être un fichier.',
             'rib_pdf.mimes' => 'Le fichier RIB doit être au format PDF.',
+            'rib_pdf.max' => 'Le fichier RIB ne doit pas dépasser 2 MB.',
         ];
     }
 }
