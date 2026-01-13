@@ -373,10 +373,7 @@
                     <div class="relative">
                         <select id="arrival_date" name="arrival_date" disabled 
                             class="w-full px-6 py-4 bg-gray-100 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 transition-all duration-300 hover:border-gray-300 text-gray-500 appearance-none disabled:cursor-not-allowed">
-                            <option value="">Sélectionnez une date</option>
-                            <option value="2026-05-29" {{ old('arrival_date') == '2026-05-29' ? 'selected' : '' }}>29/05/2026</option>
-                            <option value="2026-05-30" {{ old('arrival_date') == '2026-05-30' ? 'selected' : '' }}>30/05/2026</option>
-                            <option value="2026-05-31" {{ old('arrival_date') == '2026-05-31' ? 'selected' : '' }}>31/05/2026</option>
+                            <option value="2026-03-26" {{ old('arrival_date') == '2026-03-26' ? 'selected' : '' }}>26/03/2026</option>
                         </select>
                         <div class="absolute inset-y-0 right-0 flex items-center pr-6 pointer-events-none">
                             <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
@@ -401,10 +398,7 @@
                     <div class="relative">
                         <select id="departure_date" name="departure_date" disabled 
                             class="w-full px-6 py-4 bg-gray-100 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-teal-500/20 focus:border-teal-500 transition-all duration-300 hover:border-gray-300 text-gray-500 appearance-none disabled:cursor-not-allowed">
-                            <option value="">Sélectionnez une date</option>
-                            <option value="2026-05-30" {{ old('departure_date') == '2026-05-30' ? 'selected' : '' }}>30/05/2026</option>
-                            <option value="2026-05-31" {{ old('departure_date') == '2026-05-31' ? 'selected' : '' }}>31/05/2026</option>
-                            <option value="2026-06-01" {{ old('departure_date') == '2026-06-01' ? 'selected' : '' }}>01/06/2026</option>
+                            <option value="2026-03-29" {{ old('departure_date') == '2026-03-29' ? 'selected' : '' }}>29/03/2026</option>
                         </select>
                         <div class="absolute inset-y-0 right-0 flex items-center pr-6 pointer-events-none">
                             <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
