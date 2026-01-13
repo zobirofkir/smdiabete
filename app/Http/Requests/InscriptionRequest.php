@@ -60,8 +60,8 @@ class InscriptionRequest extends FormRequest
             'other_specialite' => 'nullable|string|max:255',
             'ville' => 'required|string|max:255',
             'inscription_type' => 'required|string|in:seule,hebergement',
-            'arrival_date' => 'nullable|date|in:2025-05-29,2025-05-30,2025-05-31',
-            'departure_date' => 'nullable|date|in:2025-05-30,2025-05-31,2025-06-01',
+            'arrival_date' => 'nullable|date|in:2026-05-29,2026-05-30,2026-05-31',
+            'departure_date' => 'nullable|date|in:2026-05-30,2026-05-31,2026-06-01',
             'payment_method' => 'nullable|string',
             'payment_choice' => 'required|string|in:yes,no',
             'rib_pdf' => [
@@ -131,10 +131,10 @@ class InscriptionRequest extends FormRequest
             'inscription_type.in' => 'Le type d\'inscription doit être "seule" ou "hebergement".',
 
             'arrival_date.date' => 'La date d\'arrivée doit être une date valide.',
-            'arrival_date.in' => 'La date d\'arrivée doit être l\'une des dates suivantes : 2025-05-29, 2025-05-30, 2025-05-31.',
+            'arrival_date.in' => 'La date d\'arrivée doit être l\'une des dates suivantes : 2026-05-29, 2026-05-30, 2026-05-31.',
 
             'departure_date.date' => 'La date de départ doit être une date valide.',
-            'departure_date.in' => 'La date de départ doit être l\'une des dates suivantes : 2025-05-30, 2025-05-31, 2025-06-01.',
+            'departure_date.in' => 'La date de départ doit être l\'une des dates suivantes : 2026-05-30, 2026-05-31, 2026-06-01.',
 
             'payment_method.required' => 'Le mode de paiement est requis.',
             'payment_method.string' => 'Le mode de paiement doit être une chaîne de caractères.',

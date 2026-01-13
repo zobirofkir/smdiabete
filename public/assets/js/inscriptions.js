@@ -144,10 +144,10 @@ document.addEventListener("DOMContentLoaded", function () {
             departureDate.disabled = false;
             // Set default values if not already set
             if (!arrivalDate.value) {
-                arrivalDate.value = "2025-05-29";
+                arrivalDate.value = "2026-05-29";
             }
             if (!departureDate.value) {
-                departureDate.value = "2025-05-30";
+                departureDate.value = "2026-05-30";
             }
         } else if (selectedType === "seule") {
             arrivalDate.disabled = true;
