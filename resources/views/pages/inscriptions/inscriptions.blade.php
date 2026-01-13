@@ -586,6 +586,52 @@
                                 </span>
                             @enderror
                         </div>
+
+                        {{-- Personal Payment Section --}}
+                        <div id="personal_payment" class="hidden bg-gray-50 p-6 rounded-xl border border-gray-200">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Paiement personnel</h4>
+                            <div class="space-y-4">
+                                <label class="relative cursor-pointer">
+                                    <input type="radio" name="payment_method" value="virement" onclick="toggleVirementUpload(true)"
+                                        class="sr-only peer" {{ old('payment_method') == 'virement' ? 'checked' : '' }}>
+                                    <div class="p-4 border-2 border-gray-200 rounded-xl transition-all duration-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 hover:border-gray-300">
+                                        <div class="flex items-center">
+                                            <div class="w-5 h-5 border-2 border-gray-300 rounded-full peer-checked:border-blue-500 peer-checked:bg-blue-500 flex items-center justify-center">
+                                                <div class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></div>
+                                            </div>
+                                            <div class="ml-3">
+                                                <h5 class="font-semibold text-gray-800">Paiement par virement</h5>
+                                                <p class="text-sm text-gray-600">Téléchargez votre RIB au format PDF</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <div id="virement_upload" class="hidden mt-4">
+                                    <label for="rib_pdf" class="block text-sm font-semibold text-gray-700 mb-3">
+                                        Télécharger votre RIB (PDF) <span class="text-red-500">*</span>
+                                    </label>
+                                    <div class="relative">
+                                        <input type="file" id="rib_pdf" name="rib_pdf" accept=".pdf"
+                                            class="w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                        <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                                            <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-2">Format accepté: PDF (max 2 Mo)</p>
+                                    @error('rib_pdf')
+                                        <span class="text-red-500 text-sm flex items-center mt-1">
+                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                            </svg>
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     {{-- RGPD Consent Section --}}

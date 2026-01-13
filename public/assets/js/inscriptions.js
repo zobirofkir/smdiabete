@@ -35,6 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (selectedMethod) {
         togglePaymentFields(selectedMethod);
     }
+    
+    // Handle virement upload visibility on page load
+    const virementRadio = document.querySelector('input[name="payment_method"][value="virement"]');
+    if (virementRadio && virementRadio.checked) {
+        toggleVirementUpload(true);
+    }
 });
 
 /**
@@ -162,13 +168,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function handlePaymentChoice(choice) {
     const paymentFields = document.getElementById("payment_fields");
+    const personalPayment = document.getElementById("personal_payment");
     const contactMessage = document.getElementById("contact_message");
 
     if (choice === "yes") {
         paymentFields.classList.remove("hidden");
-        contactMessage.classList.add("hidden");
+        personalPayment.classList.add("hidden");
+        if (contactMessage) contactMessage.classList.add("hidden");
     } else {
         paymentFields.classList.add("hidden");
-        contactMessage.classList.remove("hidden");
+        personalPayment.classList.remove("hidden");
+        if (contactMessage) contactMessage.classList.add("hidden");
+    }
+}
+
+function toggleVirementUpload(show) {
+    const virementUpload = document.getElementById("virement_upload");
+    if (show) {
+        virementUpload.classList.remove("hidden");
+    } else {
+        virementUpload.classList.add("hidden");
     }
 }
