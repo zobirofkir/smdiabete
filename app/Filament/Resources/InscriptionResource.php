@@ -51,7 +51,11 @@ class InscriptionResource extends Resource
                 self::createTextColumn('departure_date', 'Date de départ'),
                 self::createTextColumn('arrival_date', "Date d'arrivée"),
                 self::createTextColumn('payment_method', 'Méthode de paiement'),
-                self::createTextColumn('rib_pdf_path', 'RIB PDF'),
+                self::createTextColumn('rib_pdf_path', 'RIB PDF')
+                    ->formatStateUsing(fn ($state) => $state ? 'Télécharger PDF' : 'Aucun fichier')
+                    ->url(fn ($record) => $record->rib_pdf_path ? asset('storage/' . $record->rib_pdf_path) : null)
+                    ->openUrlInNewTab()
+                    ->color('primary'),
                 self::createStatusColumn(),
             ])
             ->defaultSort('created_at', 'desc')
@@ -122,7 +126,13 @@ class InscriptionResource extends Resource
             self::createTextEntry('Date de départ:', $record->departure_date),
             self::createTextEntry("Date d'arrivée:", $record->arrival_date),
             self::createTextEntry('Méthode de paiement:', $record->payment_method),
-            self::createTextEntry('RIB PDF:', $record->rib_pdf_path),
+            TextEntry::make('rib_pdf_path')
+                ->label('RIB PDF:')
+                ->formatStateUsing(fn ($state) => $state ? 'Télécharger PDF' : 'Aucun fichier')
+                ->url(fn ($record) => $record->rib_pdf_path ? asset('storage/' . $record->rib_pdf_path) : null)
+                ->openUrlInNewTab()
+                ->inlineLabel()
+                ->badge(),
             self::createStatusEntry($record),
         ]);
     }
