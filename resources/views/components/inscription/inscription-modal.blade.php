@@ -76,7 +76,7 @@
 
                 <!-- Residents Section -->
                 <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-indigo-200">
-                    <h3 class="text-base sm:text-lg lg:text-xl font-bold text-indigo-800 mb-3 sm:mb-4">RÉSIDENTS (internes) : HÔTEL FARAH TANGER</h3>
+                    <h3 class="text-base sm:text-lg lg:text-xl font-bold text-indigo-800 mb-3 sm:mb-4">RÉSIDENTS : HÔTEL FARAH TANGER</h3>
                     <div class="space-y-3 sm:space-y-4">
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
                             <span class="text-sm sm:text-base text-gray-700">Inscription avec hébergement 3 nuits (en chambre double) 2 Résidents</span>
