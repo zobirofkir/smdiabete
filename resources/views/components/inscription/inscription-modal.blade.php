@@ -15,7 +15,7 @@
                 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-blue-200">
                     <h3 class="text-lg sm:text-xl font-bold text-blue-800 mb-3 sm:mb-4">Droits d'inscription :</h3>
                     <p class="text-sm sm:text-base text-gray-700 mb-2 sm:mb-3">(droit d'entrée, cartables, pauses-café, déjeuner du vendredi et samedi + Dîner de Samedi)</p>
-                    <p class="text-sm sm:text-base text-gray-700 mb-1 sm:mb-2">• Accès Session ADA – Certifiée</p>
+                    <p class="text-sm sm:text-base text-gray-700 mb-1 sm:mb-2">• Accès Session ADA – Session IDF</p>
                     <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4">• Accès Session EASD</p>
                     <div class="text-lg sm:text-xl lg:text-2xl font-bold text-blue-800">6000,00 DHS / 600,00 € / 600,00 $</div>
                 </div>
@@ -23,7 +23,7 @@
                 <!-- Hotel Packages -->
                 <div class="grid gap-4 sm:gap-6 lg:grid-cols-2">
                     <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-green-200">
-                        <h3 class="text-base sm:text-lg lg:text-xl font-bold text-green-800 mb-3 sm:mb-4 leading-tight">Forfait package congrès 2 ou 3 nuits : HOTEL IDOU MALABATA</h3>
+                        <h3 class="text-base sm:text-lg lg:text-xl font-bold text-green-800 mb-3 sm:mb-4 leading-tight">Forfait package congrès 3 nuits : HOTEL IDOU MALABATA</h3>
                         <p class="text-sm sm:text-base text-gray-700 mb-2">(Lieu du Congrès)</p>
                         <div class="text-lg sm:text-xl lg:text-2xl font-bold text-green-800 mb-3 sm:mb-4">13 000,00 DHS</div>
                         <p class="text-sm sm:text-base text-gray-700 mb-2">(Comprenant l'inscription et 3 nuitées du :</p>
@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-purple-200">
-                        <h3 class="text-base sm:text-lg lg:text-xl font-bold text-purple-800 mb-3 sm:mb-4 leading-tight">Forfait package congrès 2 ou 3 nuits : Hôtel Farah TANGER</h3>
+                        <h3 class="text-base sm:text-lg lg:text-xl font-bold text-purple-800 mb-3 sm:mb-4 leading-tight">Forfait package congrès 3 nuits : Hôtel Farah TANGER</h3>
                         <p class="text-sm sm:text-base text-gray-700 mb-2">(5 Mnt du lieu du Congrès)</p>
                         <div class="text-lg sm:text-xl lg:text-2xl font-bold text-purple-800 mb-3 sm:mb-4">11 000,00 DHS</div>
                         <p class="text-sm sm:text-base text-gray-700 mb-2">Inscription et 3 nuitées :</p>
@@ -90,7 +90,7 @@
                             <p class="text-sm sm:text-base text-gray-700 mb-2">Inscription + repas (sans nuitée)</p>
                             <div class="text-base sm:text-lg lg:text-xl font-bold text-indigo-800 mb-2">4 500,00 DHS</div>
                             <p class="text-xs sm:text-sm text-gray-600 mb-2">(Droit d'entrée, cartables, pauses-café, déjeuner du vendredi et samedi + Dîner de Samedi)</p>
-                            <p class="text-xs sm:text-sm text-gray-600">• Accès Session ADA – Certifiée</p>
+                            <p class="text-xs sm:text-sm text-gray-600">• Accès Session ADA – Session IDF</p>
                             <p class="text-xs sm:text-sm text-gray-600">• Accès Session EASD</p>
                         </div>
                     </div>
