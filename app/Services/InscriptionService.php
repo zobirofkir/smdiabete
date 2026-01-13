@@ -9,7 +9,7 @@ use App\Mail\InscriptionRejectedMail;
 
 class InscriptionService
 {
-    public function handleInscription(array $validatedData): Inscription
+    public function handleInscription(array $validatedData, ?string $ribPdfPath = null): Inscription
     {
         /**
          * Set default dates if not provided
@@ -34,6 +34,7 @@ class InscriptionService
          */
         $inscription = Inscription::create([
             'laboratoire' => $validatedData['laboratoire'] ?? null,
+            'rib_pdf_path' => $ribPdfPath,
             ...$validatedData,
         ]);
 
