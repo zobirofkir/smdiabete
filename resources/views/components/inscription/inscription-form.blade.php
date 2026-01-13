@@ -637,7 +637,7 @@
                         <div class="space-y-4">
                             <div class="flex items-center text-gray-700">
                                 <span class="font-semibold w-32">Banque:</span>
-                                <span class="text-gray-900 font-medium">BMCE Bank</span>
+                                <span class="text-gray-900 font-medium">AttijariWafa Bank</span>
                             </div>
                             <div class="flex items-center text-gray-700">
                                 <span class="font-semibold w-32">Titulaire:</span>
