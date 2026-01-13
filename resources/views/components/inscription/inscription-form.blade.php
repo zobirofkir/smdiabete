@@ -2,7 +2,7 @@
 <div class="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 overflow-hidden relative">
     <!-- Decorative Elements -->
     <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600"></div>                
-    <form action="{{ route('inscriptions.store') }}" method="POST" class="p-10" enctype="multipart/form-data">
+    <form action="{{ route('inscriptions.store') }}" method="POST" class="p-4 sm:p-6 lg:p-10" enctype="multipart/form-data">
         @csrf
 
         {{-- Success and Error Messages --}}
@@ -561,9 +561,9 @@
                         </svg>
                         <h5 class="font-semibold text-blue-800">RIB pour virement</h5>
                     </div>
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center bg-white p-3 rounded border gap-3">
-                        <p id="rib-number" class="text-blue-700 font-mono text-base sm:text-lg font-bold flex-1 whitespace-nowrap overflow-x-auto">MA64 007 826 000 268 300 030 536 778</p>
-                        <button type="button" onclick="copyRIBPayment()" class="w-full sm:w-auto px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors duration-200 flex items-center justify-center whitespace-nowrap">
+                    <div class="bg-white p-3 rounded border">
+                        <p id="rib-number" class="text-blue-700 font-mono text-sm sm:text-base lg:text-lg font-bold mb-3 break-all">MA64 007 826 000 268 300 030 536 778</p>
+                        <button type="button" onclick="copyRIBPayment()" class="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors duration-200 flex items-center justify-center">
                             <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"/>
                                 <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"/>
@@ -630,29 +630,29 @@
                     <p class="text-gray-600">Informations bancaires pour virement</p>
                 </div>
             </div>
-            <div class="bg-gradient-to-br from-slate-50 to-gray-100 border-2 border-gray-200 rounded-2xl p-8 relative overflow-hidden">
+            <div class="bg-gradient-to-br from-slate-50 to-gray-100 border-2 border-gray-200 rounded-2xl p-4 sm:p-6 lg:p-8 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-gray-300 rounded-full opacity-10 transform translate-x-8 -translate-y-8"></div>
                 <div class="relative z-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                         <div class="space-y-4">
-                            <div class="flex items-center text-gray-700">
-                                <span class="font-semibold w-32">Banque:</span>
+                            <div class="flex flex-col sm:flex-row sm:items-center text-gray-700">
+                                <span class="font-semibold sm:w-32 mb-1 sm:mb-0">Banque:</span>
                                 <span class="text-gray-900 font-medium">AttijariWafa Bank</span>
                             </div>
-                            <div class="flex items-center text-gray-700">
-                                <span class="font-semibold w-32">Titulaire:</span>
+                            <div class="flex flex-col sm:flex-row sm:items-center text-gray-700">
+                                <span class="font-semibold sm:w-32 mb-1 sm:mb-0">Titulaire:</span>
                                 <span class="text-gray-900 font-medium">SMDIABETE</span>
                             </div>
-                            <div class="flex items-center text-gray-700">
-                                <span class="font-semibold w-32">Devise:</span>
+                            <div class="flex flex-col sm:flex-row sm:items-center text-gray-700">
+                                <span class="font-semibold sm:w-32 mb-1 sm:mb-0">Devise:</span>
                                 <span class="text-gray-900 font-medium">MAD</span>
                             </div>
                         </div>
-                        <div class="bg-white border-2 border-gray-300 rounded-xl p-6 shadow-inner">
-                            <div class="flex items-center justify-between mb-4">
+                        <div class="bg-white border-2 border-gray-300 rounded-xl p-4 sm:p-6 shadow-inner">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-3">
                                 <h4 class="font-bold text-gray-800 text-lg">RIB</h4>
                                 <button type="button" onclick="copyRIBNumber()" 
-                                    class="group px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-sm rounded-lg transition-all duration-200 flex items-center shadow-md hover:shadow-lg transform hover:scale-105">
+                                    class="group w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-sm rounded-lg transition-all duration-200 flex items-center justify-center shadow-md hover:shadow-lg transform hover:scale-105">
                                     <svg class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"/>
                                         <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"/>
@@ -660,8 +660,8 @@
                                     <span id="copy-text">Copier</span>
                                 </button>
                             </div>
-                            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                                <p id="rib-number-display" class="text-gray-900 font-mono text-lg font-bold tracking-wider text-center break-all">
+                            <div class="bg-gray-50 border border-gray-200 rounded-lg p-3 sm:p-4">
+                                <p id="rib-number-display" class="text-gray-900 font-mono text-sm sm:text-base lg:text-lg font-bold tracking-wider text-center break-all">
                                     MA64 007 826 000 268 300 030 536 778
                                 </p>
                             </div>
@@ -681,7 +681,7 @@
 
         {{-- RGPD Consent Section --}}
         <div class="mb-12">
-            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-8 relative overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-4 sm:p-6 lg:p-8 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full opacity-20 transform translate-x-16 -translate-y-16"></div>
                 <div class="relative z-10">
                     <div class="flex items-start">
@@ -717,8 +717,8 @@
     </form>
     
     <!-- Bottom Section -->
-    <div class="bg-gradient-to-r from-gray-50 to-blue-50 p-8 border-t border-gray-100">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="bg-gradient-to-r from-gray-50 to-blue-50 p-4 sm:p-6 lg:p-8 border-t border-gray-100">
+        <div class="flex flex-col md:flex-row items-center justify-center md:justify-between gap-6">
             <!-- Contact Info -->
             <div class="flex items-center text-gray-700">
                 <div class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl mr-3 shadow-lg">
@@ -726,7 +726,7 @@
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                     </svg>
                 </div>
-                <div>
+                <div class="text-center md:text-left">
                     <p class="font-semibold text-gray-800">Comité d'organisation</p>
                     <p class="text-green-600 font-bold">+212 645-616510</p>
                 </div>
