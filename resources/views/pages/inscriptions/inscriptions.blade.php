@@ -8,7 +8,7 @@
         <div class="absolute top-0 right-0 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
         <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
         
-        <div class="max-w-5xl mx-auto relative ">
+        <div class="lg:max-w-5xl mx-w-full mx-auto relative ">
 
         
             @include('components.inscription.inscription-header')

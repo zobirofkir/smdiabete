@@ -551,6 +551,27 @@
             {{-- Personal Payment Section --}}
             <div id="personal_payment" class="hidden bg-gray-50 p-6 rounded-xl border border-gray-200">
                 <h4 class="text-lg font-semibold text-gray-800 mb-4">Paiement personnel</h4>
+                
+                {{-- RIB Information --}}
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                    <div class="flex items-center mb-3">
+                        <svg class="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
+                            <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/>
+                        </svg>
+                        <h5 class="font-semibold text-blue-800">RIB pour virement</h5>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center bg-white p-3 rounded border gap-3">
+                        <p id="rib-number" class="text-blue-700 font-mono text-base sm:text-lg font-bold flex-1 whitespace-nowrap overflow-x-auto">MA64 007 826 000 268 300 030 536 778</p>
+                        <button type="button" onclick="copyRIBPayment()" class="w-full sm:w-auto px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors duration-200 flex items-center justify-center whitespace-nowrap">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"/>
+                                <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"/>
+                            </svg>
+                            Copier
+                        </button>
+                    </div>
+                </div>
                 <div class="space-y-4">
                     <label class="relative cursor-pointer">
                         <input type="radio" name="payment_method" value="virement" onclick="toggleVirementUpload(true)"
@@ -590,6 +611,69 @@
                                 {{ $message }}
                             </span>
                         @enderror
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- RIP Section --}}
+        <div class="mb-12">
+            <div class="flex items-center mb-8">
+                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-gray-600 to-slate-700 rounded-xl mr-4 shadow-lg">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
+                        <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900">Relevé d'Identité Postale (RIP)</h3>
+                    <p class="text-gray-600">Informations bancaires pour virement</p>
+                </div>
+            </div>
+            <div class="bg-gradient-to-br from-slate-50 to-gray-100 border-2 border-gray-200 rounded-2xl p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gray-300 rounded-full opacity-10 transform translate-x-8 -translate-y-8"></div>
+                <div class="relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div class="flex items-center text-gray-700">
+                                <span class="font-semibold w-32">Banque:</span>
+                                <span class="text-gray-900 font-medium">BMCE Bank</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <span class="font-semibold w-32">Titulaire:</span>
+                                <span class="text-gray-900 font-medium">SMDIABETE</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <span class="font-semibold w-32">Devise:</span>
+                                <span class="text-gray-900 font-medium">MAD</span>
+                            </div>
+                        </div>
+                        <div class="bg-white border-2 border-gray-300 rounded-xl p-6 shadow-inner">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-bold text-gray-800 text-lg">RIB</h4>
+                                <button type="button" onclick="copyRIBNumber()" 
+                                    class="group px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-sm rounded-lg transition-all duration-200 flex items-center shadow-md hover:shadow-lg transform hover:scale-105">
+                                    <svg class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"/>
+                                        <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"/>
+                                    </svg>
+                                    <span id="copy-text">Copier</span>
+                                </button>
+                            </div>
+                            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                                <p id="rib-number-display" class="text-gray-900 font-mono text-lg font-bold tracking-wider text-center break-all">
+                                    MA64 007 826 000 268 300 030 536 778
+                                </p>
+                            </div>
+                            <div id="copy-success" class="hidden mt-3 p-2 bg-green-50 border border-green-200 rounded-lg">
+                                <div class="flex items-center text-green-700">
+                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span class="text-sm font-medium">RIB copié avec succès!</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -662,3 +746,142 @@
         </div>
     </div>
 </div>
+
+<script>
+// Copy RIB function for the main RIP section
+function copyRIBNumber() {
+    const ribText = 'MA64 007 826 000 268 300 030 536 778';
+    const copyButton = document.querySelector('#copy-text');
+    const successMessage = document.querySelector('#copy-success');
+    
+    navigator.clipboard.writeText(ribText).then(function() {
+        // Show success message
+        successMessage.classList.remove('hidden');
+        copyButton.textContent = 'Copié!';
+        
+        // Reset after 2 seconds
+        setTimeout(function() {
+            successMessage.classList.add('hidden');
+            copyButton.textContent = 'Copier';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Erreur lors de la copie: ', err);
+        alert('Erreur lors de la copie du RIB');
+    });
+}
+
+// Copy RIB function for the payment section
+function copyRIBPayment() {
+    const ribText = 'MA64 007 826 000 268 300 030 536 778';
+    
+    navigator.clipboard.writeText(ribText).then(function() {
+        // Show temporary success feedback
+        const button = event.target.closest('button');
+        const originalText = button.innerHTML;
+        
+        button.innerHTML = `
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            Copié!
+        `;
+        button.classList.add('bg-green-600', 'hover:bg-green-700');
+        button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+        
+        // Reset after 2 seconds
+        setTimeout(function() {
+            button.innerHTML = originalText;
+            button.classList.remove('bg-green-600', 'hover:bg-green-700');
+            button.classList.add('bg-blue-600', 'hover:bg-blue-700');
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Erreur lors de la copie: ', err);
+        alert('Erreur lors de la copie du RIB');
+    });
+}
+
+// Existing JavaScript functions
+function handlePaymentChoice(choice) {
+    const paymentFields = document.getElementById('payment_fields');
+    const personalPayment = document.getElementById('personal_payment');
+    const arrivalDate = document.getElementById('arrival_date');
+    const departureDate = document.getElementById('departure_date');
+    
+    if (choice === 'yes') {
+        paymentFields.classList.remove('hidden');
+        personalPayment.classList.add('hidden');
+        document.getElementById('laboratoire_list').classList.remove('hidden');
+        document.getElementById('status_select').classList.remove('hidden');
+    } else {
+        paymentFields.classList.add('hidden');
+        personalPayment.classList.remove('hidden');
+    }
+}
+
+function toggleOtherLaboratoireInput(select) {
+    const otherInput = document.getElementById('other_laboratoire_input');
+    if (select.value === 'other') {
+        otherInput.classList.remove('hidden');
+        document.getElementById('other_laboratoire').required = true;
+    } else {
+        otherInput.classList.add('hidden');
+        document.getElementById('other_laboratoire').required = false;
+    }
+}
+
+function toggleVirementUpload(show) {
+    const virementUpload = document.getElementById('virement_upload');
+    if (show) {
+        virementUpload.classList.remove('hidden');
+        document.getElementById('rib_pdf').required = true;
+    } else {
+        virementUpload.classList.add('hidden');
+        document.getElementById('rib_pdf').required = false;
+    }
+}
+
+// Handle inscription type changes
+document.addEventListener('DOMContentLoaded', function() {
+    const inscriptionRadios = document.querySelectorAll('input[name="inscription_type"]');
+    const arrivalDate = document.getElementById('arrival_date');
+    const departureDate = document.getElementById('departure_date');
+    
+    inscriptionRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'hebergement') {
+                arrivalDate.disabled = false;
+                departureDate.disabled = false;
+                arrivalDate.classList.remove('bg-gray-100', 'text-gray-500', 'disabled:cursor-not-allowed');
+                arrivalDate.classList.add('bg-gray-50', 'text-gray-900');
+                departureDate.classList.remove('bg-gray-100', 'text-gray-500', 'disabled:cursor-not-allowed');
+                departureDate.classList.add('bg-gray-50', 'text-gray-900');
+                arrivalDate.required = true;
+                departureDate.required = true;
+            } else {
+                arrivalDate.disabled = true;
+                departureDate.disabled = true;
+                arrivalDate.classList.add('bg-gray-100', 'text-gray-500', 'disabled:cursor-not-allowed');
+                arrivalDate.classList.remove('bg-gray-50', 'text-gray-900');
+                departureDate.classList.add('bg-gray-100', 'text-gray-500', 'disabled:cursor-not-allowed');
+                departureDate.classList.remove('bg-gray-50', 'text-gray-900');
+                arrivalDate.required = false;
+                departureDate.required = false;
+            }
+        });
+    });
+    
+    // Handle specialty selection
+    const specialiteSelect = document.getElementById('specialite');
+    const otherSpecialiteInput = document.getElementById('otherSpecialite');
+    
+    specialiteSelect.addEventListener('change', function() {
+        if (this.value === 'Autres') {
+            otherSpecialiteInput.classList.remove('hidden');
+            otherSpecialiteInput.required = true;
+        } else {
+            otherSpecialiteInput.classList.add('hidden');
+            otherSpecialiteInput.required = false;
+        }
+    });
+});
+</script>
