@@ -41,11 +41,11 @@
     <div class="content">
         <p class="greeting">Bonjour {{ $inscription->firstname }},</p>
 
-        <p class="message">Votre demande d'inscription au 2<sup>ème</sup> congrès de la SMD est enregistrée.</p>
+        <p class="message">Votre demande d'inscription au 3<sup>ème</sup> congrès de la SMD est enregistrée.</p>
 
         <p class="message">Vous allez recevoir une confirmation d'inscription dès réception de la confirmation de prise en charge de la part du laboratoire.</p>
 
-        <p class="message">Pour toute autre information, veuillez envoyer un message au numéro WhatsApp du comité d'organisation : <span class="highlight">0762011226</span>.</p>
+        <p class="message">Pour toute autre information, veuillez envoyer un message au numéro WhatsApp du comité d'organisation : <span class="highlight">+212 6 45 61 65 10</span>.</p>
 
         <p class="message">Au plaisir de vous rencontrer à Tanger.</p>
 
