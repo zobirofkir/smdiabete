@@ -38,7 +38,7 @@
 <body>
     <div class="content">
         <p class="greeting">Cher/Chère {{ $firstname }} {{ $lastname }},</p>
-        <p class="message">Nous vous confirmons votre inscription à la 2 ème Congrès National de Diabètologie , qui aura lieu le 29 Mai 2025, à L'hôtel ROYAL TULIP CITY CENTER TANGER.</p>
+        <p class="message">Nous vous confirmons votre inscription à la 3 ème Congrès National de Diabètologie , qui aura lieu le 26 Mars 2026, à L'hôtel ROYAL TULIP CITY CENTER TANGER.</p>
         <p class="signature">Equipe SMD.</p>
     </div>
 </body>
