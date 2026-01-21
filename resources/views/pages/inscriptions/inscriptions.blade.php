@@ -9,8 +9,15 @@
         <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
         
         <div class="lg:max-w-5xl mx-w-full mx-auto relative ">
+            <!-- Hero Image Section -->
+            <div class="relative mb-12 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 z-10"></div>
+                <img src="{{asset('assets/images/affiche/affiche-four.jpeg')}}" 
+                     alt="Formation Diabète" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/10 z-20"></div>
+            </div>
 
-        
             @include('components.inscription.inscription-header')
 
             @include('components.inscription.inscription-pricing')
