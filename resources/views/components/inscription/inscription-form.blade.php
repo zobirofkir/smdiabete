@@ -638,6 +638,7 @@
                 <div class="text-center md:text-left">
                     <p class="font-semibold text-gray-800">Comité d'organisation</p>
                     <p class="text-green-600 font-bold">+212 645-616510</p>
+                    <p class="text-blue-600 font-bold">+212 610446387</p>
                 </div>
             </div>
             
