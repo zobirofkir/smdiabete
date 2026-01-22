@@ -9,10 +9,15 @@
     <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
         Rejoignez notre événement d’excellence et participez à l’avenir de la Diabétologie
     </p>
+    
+    <!-- Pricing Information -->
+    <div class="mt-8 max-w-2xl mx-auto">
+        <h3 class="text-lg sm:text-xl font-bold text-blue-800 mb-3 sm:mb-4">Droits d'inscription :</h3>
+        <div class="text-lg sm:text-xl lg:text-2xl font-bold text-blue-800">6000,00 DHS / 600,00 € / 600,00 $</div>
+    </div>
+    
     <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6 rounded-full"></div>
 </div>
 
-<!-- Pricing Modal -->
-@include('components.inscription.inscription-modal')
 
-
+ 

@@ -20,8 +20,6 @@
 
             @include('components.inscription.inscription-header')
 
-            @include('components.inscription.inscription-pricing')
-
             @include('components.inscription.inscription-form')
             
         </div>
