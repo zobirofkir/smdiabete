@@ -4,7 +4,7 @@
           <i class="fa-solid fa-envelope"></i>  smdiabete@gmail.com
         </span>
         <span class="mr-4 flex items-center gap-2 whitespace-nowrap" onclick="window.location.href='https://wa.me/212662630559'">
-            <i class="fa-solid fa-phone"></i>  +212 6 62 63 05 59
+            <i class="fa-solid fa-phone"></i>  +212 6 10 44 63 87
         </span>
     </div>
     <div class="flex items-center space-x-4 md:block hidden">
